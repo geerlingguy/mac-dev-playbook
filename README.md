@@ -1,18 +1,19 @@
-Ansible Playbook - ZeroMQ
-=========================
+Ansible Playbooks
+=================
+Configure servers in a snap with these concise ansible playbooks!
 
-An Ansible playbook which installs **ZeroMQ** and all of its dependancies, along with its **Python** binding: **pyzmq**.
+Current Playbooks:
 
-These are the files (ZeroMQ and its dependancies) which are retrieved and installed:
-	
 * ZeroMQ
-* autoconf
-* automake
-* build-essential
-* libtool
-* uuid-dev
-* *python-pip*
-* *python-dev*
-* *pyzmq*
+
+Future Playbooks:
+
+* MongoDB
+* MySQL
+* Apache
+* NginX
+* Python
+* Ruby
+* RVM
 
 It's that simple.
