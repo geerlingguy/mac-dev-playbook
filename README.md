@@ -1,6 +1,6 @@
 Ansible Playbooks
 =================
-Configure servers in a snap with these concise ansible playbooks!
+Configure servers in a snap with these concise Ansible playbooks!
 
 Current Playbooks:
 
