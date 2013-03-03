@@ -1,6 +1,18 @@
 Ansible Playbook - ZeroMQ
 =========================
 
-This Ansible playbook installs **ZeroMQ** and all of its dependancies.
+This Ansible playbook installs **ZeroMQ** and all of its dependancies, and currently, along with its **Python** binding: **pyzmq**.
 
-It's that slick.
+These are the files (ZeroMQ and its dependancies) it fetches and installs:
+	
+* ZeroMQ
+* autoconf
+* automake
+* build-essential
+* libtool
+* uuid-dev
+* *python-pip*
+* *python-dev*
+* *pyzmq*
+
+It's that simple.
