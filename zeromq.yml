@@ -1,0 +1,29 @@
+# This command will need to be run in order to copy your public key from your management computer, to the server:
+# scp ~/.ssh/id_rsa.pub username@111.222.333.444:~/.ssh/authorized_keys
+---
+- hosts: chat_clients
+  user: vagrant
+  sudo: yes # Is it possible to only run certain actions as sudo ansible?
+  tasks:
+  - name: Install zeroMQ dependancies
+    action: apt pkg=libtool,autoconf,automake,uuid-dev state=installed
+  - name: Get a C++ compiler package # Is this the best way to go about doing this?
+    action: apt pkg=build-essential state=installed
+  - name: Create directory for zeroMQ build
+    action: file path=/zeromq/ state=directory mode=0744
+  - name: Get zeroMQ tarball
+    action: get_url url=http://download.zeromq.org/zeromq-3.2.2.tar.gz dest=/zeromq/ mode=0744
+  - name: Untar and uncompress (g-zip compression) the zeroMQ tarball
+    action: command tar -xvf zeromq-3.2.2.tar.gz chdir=/zeromq/
+  - name: Run zeroMQ configuration
+    action: command ./configure chdir=/zeromq/zeromq-3.2.2/ # Do I have to change the directory for every command performed in this directory?  How may I get the current working directory?
+  - name: Make zeroMQ
+    action: command make chdir=/zeromq/zeromq-3.2.2/
+  - name: Run a system-wide install of zeroMQ
+    action: command make install chdir=/zeromq/zeromq-3.2.2/
+  - name: Create nessecary links
+    action: command ldconfig chdir=/zeromq/zeromq-3.2.2/
+  - name: Install PIP and python-dev
+    action: apt pkg=python-pip,python-dev state=installed
+  - name: Install the Python binding (driver) for zeroMQ
+    action: pip name=pyzmq
