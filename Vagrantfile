@@ -9,8 +9,8 @@ Vagrant::Config.run do |config|
   # Every Vagrant virtual environment requires a box to build off of.
   config.vm.box = 'precise64'
   config.vm.network :bridged, :bridge => 'en1: Wi-Fi (AirPort)'
-  config.vm.define :chat1 
-  config.vm.define :chat2
+  config.vm.define :server
+  config.vm.define :client
 
   # This enables provisioning through Ansible.  The only current issue is that when this is enabled, it seems that Vagrant only boots up one VM and provisions it, not two, and certainly not two concurrently...
   # config.vm.provision :ansible do |ansible|

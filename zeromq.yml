@@ -1,7 +1,5 @@
-# This command will need to be run in order to copy your public key from your management computer, to the server:
-# scp ~/.ssh/id_rsa.pub username@111.222.333.444:~/.ssh/authorized_keys
 ---
-- hosts: chat_clients
+- hosts: virtual_machines
   user: vagrant
   sudo: yes # Is it possible to only run certain actions as sudo ansible?
   tasks:
