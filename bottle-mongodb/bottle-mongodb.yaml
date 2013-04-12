@@ -1,0 +1,42 @@
+---
+- hosts: 192.168.33.10
+  user: vagrant
+  sudo: yes
+  vars:
+    mongodb_path: /mongodb/
+    mongod_log: /mongodb/mongod.log
+    mongod_data: /mongodb/data/
+  tasks:
+    - name: Install pip and its dependencies python-dev and build-essential
+      apt: pkg=python-pip,python-dev,build-essential state=installed
+    - name: Install bottle
+      pip: name=bottle
+    # - name: Adding 10gen's public GPG Key to apt's existing key list
+    #   apt_key: url=http://docs.mongodb.org/10gen-gpg-key.asc state=present
+    # - name: Adding the python-software-properties package to fulfill the apt-add-repository dependency for the apt_repository Ansible module
+    #   apt: pkg=python-software-properties update_cache=yes state=installed
+    # - name: Adding the 10gen repository to apt
+    #   apt_repository: repo='deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen' state=present
+    # - name: Installing MongoDB with apt
+    #   apt: pkg=mongodb-10gen update_cache=yes
+    # - name: Start the MongoDB database
+    #   service: name=mongod state=started
+    - name: Create the MongoDB directory at root
+      file: path=$mongodb_path state=directory
+    - name: Download MongoDB from 10gen
+      get_url: url=http://fastdl.mongodb.org/linux/mongodb-linux-x86_64-2.4.1.tgz dest=/
+    - name: Untar MongoDB tarball
+      command: tar xvf mongodb-linux-x86_64-2.4.1.tgz -C /mongodb --strip-components 1 chdir=/ # The -C flag and --strip-components commands are used to change directories before untaring, and remove one directory level from all of the filenames stored in the archive
+    # Creating the symlinks for MongoDB
+    - name: Create symlink for mongod in /usr/bin/
+      file: src=${mongodb_path}bin/mongod dest=/usr/bin/mongod state=link
+    - name: Create symlink for mongo in /usr/bin/
+      file: src=${mongodb_path}bin/mongo dest=/usr/bin/mongo state=link
+    - name: Create symlink for monogdump in /usr/bin/
+      file: src=${mongodb_path}bin/mongodump dest=/usr/bin/mongodump state=link
+    - name: Create symlink for mongos in /usr/bin/
+      file: src=${mongodb_path}bin/mongos dest=/usr/bin/mongos state=link
+    - name: Create the MongoDB data directory
+      file: path=$mongod_data state=directory
+    - name: Start the MongoDB database
+      command: mongod --logpath $mongod_log --dbpath $mongod_data --logappend --fork

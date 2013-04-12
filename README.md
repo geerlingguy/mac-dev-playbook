@@ -5,6 +5,7 @@ Configure servers in a snap with these concise Ansible playbooks!
 Current Playbooks:
 
 * **ZeroMQ** - open source high-performance asynchronous messaging library
+* **Bottle-MongoDB** - open source lightweight webserver/application and document-oriented database combination
 
 Future Playbooks:
 
@@ -14,6 +15,7 @@ Future Playbooks:
 * **NginX** - open source web server
 * **Python** - open source highlevel interprited programming language
 * **Ruby** - open source highlevel interprited programming language
+* **PHP** - open source highlevel interprited programming language
 * **RVM** - open source Ruby version and environment manager
 
 Before running these Ansible playbooks, or any Ansible commands for that matter, it is essential that you have your publick SSH keys copied to your server's `~/.ssh/authorized_keys` file. The following command will copy your public key from your management computer, to the server:

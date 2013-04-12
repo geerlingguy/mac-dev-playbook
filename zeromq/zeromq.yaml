@@ -1,0 +1,27 @@
+---
+- hosts: virtual_machines
+  user: vagrant
+  sudo: yes # Is it possible to only run certain actions as sudo ansible?
+  tasks:
+  - name: Install zeroMQ dependancies
+    apt: pkg=libtool,autoconf,automake,uuid-dev state=installed
+  - name: Get a C++ compiler package # Is this the best way to go about doing this?
+    apt: pkg=build-essential state=installed
+  - name: Create directory for zeroMQ build
+    file: path=/zeromq/ state=directory mode=0744
+  - name: Get zeroMQ tarball
+    get_url: url=http://download.zeromq.org/zeromq-3.2.2.tar.gz dest=/zeromq/ mode=0744
+  - name: Untar and uncompress (g-zip compression) the zeroMQ tarball
+    command: tar -xvf zeromq-3.2.2.tar.gz chdir=/zeromq/
+  - name: Run zeroMQ configuration
+    command: ./configure chdir=/zeromq/zeromq-3.2.2/ # Do I have to change the directory for every command performed in this directory?  How may I get the current working directory?
+  - name: Make zeroMQ
+    command: make chdir=/zeromq/zeromq-3.2.2/
+  - name: Run a system-wide install of zeroMQ
+    command: make install chdir=/zeromq/zeromq-3.2.2/
+  - name: Create nessecary links
+    command: ldconfig chdir=/zeromq/zeromq-3.2.2/
+  - name: Install PIP and python-dev
+    apt: pkg=python-pip,python-dev state=installed
+  - name: Install the Python binding (driver) for zeroMQ
+    pip: name=pyzmq
