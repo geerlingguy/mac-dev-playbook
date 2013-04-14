@@ -1,0 +1,21 @@
+---
+- include: ../local-setup.yaml
+
+- hosts: $hosts
+  user: $user
+  gather_facts: false
+  vars:
+    tar_url: https://downloads.sourceforge.net/project/limechat/limechat/LimeChat_2.34.tbz?use_mirror=master
+  vars_files:
+    - ../local-setup-vars.yaml
+  tasks:
+    - name: Download LimeChat
+      get_url: url=$tar_url dest=${downloads}/limechat.tar
+    - name: Create an extraction directory
+      file: path=${downloads}limechat/ state=directory
+    - name: Extract LimeChat tarball
+      command: tar xf limechat.tar -C limechat/ chdir=$downloads
+    - name: Copy LimeChat app to Applications directory
+      command: cp -R limechat/LimeChat.app /Applications chdir=$downloads
+    - name: Remove extraction directory
+      file: path=${downloads}limechat/ state=absent

@@ -1,0 +1,20 @@
+---
+- include: ../local-setup.yaml
+
+- hosts: $hosts
+  user: $user
+  gather_facts: false
+  vars:
+    dmg_url: http://get.videolan.org/vlc/2.0.6/macosx/vlc-2.0.6.dmg
+    mount_path: /Volumes/vlc-2.0.6/
+  vars_files:
+    - ../local-setup-vars.yaml
+  tasks:
+    - name: Download VLC
+      get_url: url=$dmg_url dest=${downloads}/vlc.dmg
+    - name: Mount VLC image
+      command: hdiutil mount vlc.dmg chdir=$downloads
+    - name: Copy VLC app to Applications directory
+      command: cp -R ${mount_path}VLC.app /Applications
+    - name: Unmount VLC image
+      command: hdiutil unmount $mount_path

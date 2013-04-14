@@ -1,0 +1,24 @@
+---
+- include: ../local-setup.yaml
+
+- hosts: $hosts
+  user: $user
+  gather_facts: false
+  vars:
+    dmg_url: http://c758482.r82.cf2.rackcdn.com/Sublime%20Text%20Build%203021.dmg
+    mount_path: /Volumes/Sublime\ Text/
+  vars_files:
+    - ../local-setup-vars.yaml
+  tasks:
+    - name: Download Sublime Text
+      get_url: url=$dmg_url dest=${downloads}sublime.dmg
+    - name: Mount Sublime Text image
+      command: hdiutil mount sublime.dmg chdir=$downloads
+    - name: Copy Sublime Text app to Applications directory
+      command: cp -R ${mount_path}Sublime\ Text.app /Applications
+    - name: Unmount Sublime Text image
+      command: hdiutil unmount $mount_path
+    - name: Create symlink subl for Sublime Text's subl command
+      file: src=/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl dest=/usr/bin/subl state=link
+    - name: Create symlink sublime for Sublime Text's subl command
+      file: src=/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl dest=/usr/bin/sublime state=link

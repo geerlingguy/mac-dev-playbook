@@ -1,6 +1,6 @@
 ---
-- hosts: 192.168.33.10
-  user: vagrant
+- hosts: $hosts
+  user: $user
   sudo: yes
   vars:
     mongodb_path: /mongodb/

@@ -1,6 +1,6 @@
 ---
-- hosts: virtual_machines
-  user: vagrant
+- hosts: $hosts
+  user: $user
   sudo: yes # Is it possible to only run certain actions as sudo ansible?
   tasks:
   - name: Install zeroMQ dependancies

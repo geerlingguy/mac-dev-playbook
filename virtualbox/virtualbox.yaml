@@ -1,0 +1,21 @@
+---
+- include: ../local-setup.yaml
+
+- hosts: $hosts
+  user: $user
+  gather_facts: false
+  vars:
+    dmg_url: http://download.virtualbox.org/virtualbox/4.2.12/VirtualBox-4.2.12-84980-OSX.dmg
+    mount_path: /Volumes/VirtualBox/
+    install_target: /Volumes/OSX
+  vars_files:
+    - ../local-setup-vars.yaml
+  tasks:
+    - name: Download VirtualBox
+      get_url: url=$dmg_url dest=${downloads}/virtualbox.dmg
+    - name: Mount VirtualBox image
+      command: hdiutil mount virtualbox.dmg chdir=$downloads
+    - name: Install VirtualBox pkg
+      command: sudo installer -package ${mount_path}VirtualBox.pkg -target $install_target
+    - name: Unmount VirtualBox image
+      command: hdiutil unmount $mount_path
