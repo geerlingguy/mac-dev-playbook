@@ -6,10 +6,10 @@
   gather_facts: false
   vars:
     install_type: app
-    app_name: VLC
-    app_name_pretty: VLC
-    app_url: https://copy.com/8WKZ3x1ZWOIC/VLC-2.0.6.dmg?download=1
-    mount_path: /Volumes/vlc-2.0.6/
+    app_name: SourceTree
+    app_name_pretty: SourceTree
+    app_url: https://copy.com/RDxUBW9uhWiQ/SourceTree-1.5.8.dmg?download=1
+    mount_path: /Volumes/SourceTree/
   vars_files:
     - ../local-setup-vars.yaml
   tasks:

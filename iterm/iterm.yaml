@@ -1,0 +1,15 @@
+---
+- include: ../local-setup.yaml
+
+- hosts: $hosts
+  user: $user
+  gather_facts: false
+  vars:
+    install_type: app
+    app_name: iTerm
+    app_name_pretty: iTerm
+    app_url: https://copy.com/HTIIPAwoiKVY
+  vars_files:
+    - ../local-setup-vars.yaml
+  tasks:
+    - include: ../file/zip.yaml

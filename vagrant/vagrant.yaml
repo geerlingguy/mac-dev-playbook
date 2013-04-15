@@ -5,17 +5,13 @@
   user: $user
   gather_facts: false
   vars:
-    dmg_url: http://files.vagrantup.com/packages/64e360814c3ad960d810456add977fd4c7d47ce6/Vagrant.dmg
-    mount_path: /Volumes/Vagrant/
+    install_type: pkg
     install_target: /Volumes/OSX
+    app_name: Vagrant
+    app_name_pretty: Vagrant
+    app_url: http://files.vagrantup.com/packages/64e360814c3ad960d810456add977fd4c7d47ce6/Vagrant.dmg
+    mount_path: /Volumes/Vagrant/
   vars_files:
     - ../local-setup-vars.yaml
   tasks:
-    - name: Download Vagrant
-      get_url: url=$dmg_url dest=${downloads}/vagrant.dmg
-    - name: Mount Vagrant image
-      command: hdiutil mount vagrant.dmg chdir=$downloads
-    - name: Install Vagrant pkg
-      command: sudo installer -package ${mount_path}vagrant.pkg -target $install_target
-    - name: Unmount Vagrant image
-      command: hdiutil unmount $mount_path
+    - include: ../file/dmg.pkg

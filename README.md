@@ -1,5 +1,8 @@
 Ansible Playbooks
 =================
+
+**The following only applies to some of these playbooks. The majority have been created to provision Mac development machines. Eventually they will be transformed to handle different operating systems and other variables, such as versions.**
+
 Configure servers in a snap with these concise Ansible playbooks!
 
 Current Playbooks:

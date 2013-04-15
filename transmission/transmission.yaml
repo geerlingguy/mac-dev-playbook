@@ -5,17 +5,12 @@
   user: $user
   gather_facts: false
   vars:
-    dmg_url: http://download.transmissionbt.com/files/Transmission-2.77.dmg
+    install_type: app
+    app_name: Transmission
+    app_name_pretty: Transmission
+    app_url: https://copy.com/jTqaA0JWmTmn/Transmission-2.77.dmg?download=1
     mount_path: /Volumes/Transmission/
-    application: Transmission
   vars_files:
     - ../local-setup-vars.yaml
   tasks:
-    - name: Download $application
-      get_url: url=$dmg_url dest=${downloads}/$application.dmg
-    - name: Mount $application image
-      command: hdiutil mount $application.dmg chdir=$downloads
-    - name: Copy $application app to Applications directory
-      command: cp -R ${mount_path}$application.app /Applications
-    - name: Unmount $application image
-      command: hdiutil unmount $mount_path
+    - include: ../file/dmg.yaml

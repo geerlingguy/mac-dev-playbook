@@ -1,0 +1,2 @@
+- name: Install $app_name pkg
+  command: sudo installer -package $app_name.pkg -target $install_target

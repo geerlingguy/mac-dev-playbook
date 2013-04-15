@@ -1,0 +1,4 @@
+---
+- include: vlc/vlc.yaml
+- include: transmission/transmission.yaml
+- include: iterm/iterm.yaml
