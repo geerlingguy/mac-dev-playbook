@@ -1,5 +1,5 @@
 ---
-- include: ../local-setup.yaml
+- include: ../setup.yaml
 
 - hosts: $hosts
   user: $user
@@ -10,6 +10,6 @@
     app_name_pretty: LimeChat
     app_url: https://downloads.sourceforge.net/project/limechat/limechat/LimeChat_2.34.tbz?use_mirror=master
   vars_files:
-    - ../local-setup-vars.yaml
+    - ../setup-vars.yaml
   tasks:
-    - include: ../file/tar.yaml
+    - include: ../install-type/tar.yaml

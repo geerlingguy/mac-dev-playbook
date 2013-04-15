@@ -1,5 +1,5 @@
 ---
-- include: ../local-setup.yaml
+- include: ../setup.yaml
 
 - hosts: $hosts
   user: $user
@@ -11,6 +11,6 @@
     app_url: https://copy.com/RDxUBW9uhWiQ/SourceTree-1.5.8.dmg?download=1
     mount_path: /Volumes/SourceTree/
   vars_files:
-    - ../local-setup-vars.yaml
+    - ../setup-vars.yaml
   tasks:
-    - include: ../file/dmg.yaml
+    - include: ../install-type/dmg.yaml

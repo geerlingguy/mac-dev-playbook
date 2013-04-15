@@ -1,9 +1,8 @@
 ---
-- include: ../local-setup.yaml
+- include: ../setup.yaml
 
 - hosts: $hosts
   user: $user
-  gather_facts: false
   vars:
     install_type: app
     app_name: Sublime\ Text
@@ -11,9 +10,9 @@
     app_url: http://c758482.r82.cf2.rackcdn.com/Sublime%20Text%20Build%203021.dmg
     mount_path: /Volumes/Sublime\ Text/
   vars_files:
-    - ../local-setup-vars.yaml
+    - ../setup-vars.yaml
   tasks:
-    - include: ../file/dmg.yaml
+    - include: ../install-type/dmg.yaml
     - name: Create symlink subl for Sublime Text's subl command
       file: src=/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl dest=/usr/bin/subl state=link
     - name: Create symlink sublime for Sublime Text's subl command

@@ -1,0 +1,12 @@
+---
+- include: ../setup.yaml
+
+- hosts: $hosts
+  user: $user
+  vars:
+    app_name: tree
+    app_name_pretty: tree
+  vars_files:
+    - ../setup-vars.yaml
+  tasks:
+    - include: ../install-type/homebrew.yaml
