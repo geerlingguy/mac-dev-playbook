@@ -1,12 +1,14 @@
 ---
 - hosts: $hosts
   user: $user
+  sudo: yes
   vars:
-    app_name: iTerm
-    app_name_pretty: iTerm
-    app_url: https://copy.com/HTIIPAwoiKVY
+    app_name: Texts
+    app_name_pretty: Texts
+    app_url: http://www.texts.io/Texts-0.13.1.dmg
     installer_type: app
-    install_method: zip
+    install_method: dmg
+    mount_path: /Volumes/Texts/
   vars_files:
     - ../setup-vars.yaml
   tasks:

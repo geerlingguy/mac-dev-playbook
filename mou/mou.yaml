@@ -2,9 +2,9 @@
 - hosts: $hosts
   user: $user
   vars:
-    app_name: iTerm
-    app_name_pretty: iTerm
-    app_url: https://copy.com/HTIIPAwoiKVY
+    app_name: Mou
+    app_name_pretty: Mou
+    app_url: http://mouapp.com/download/Mou.zip
     installer_type: app
     install_method: zip
   vars_files:

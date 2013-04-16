@@ -5,4 +5,6 @@
 - include: keka/keka.yaml
 - include: limechat/limechat.yaml
 - include: firefox/firefox.yaml
-- include: opera/opera.yaml
+# - include: opera/opera.yaml
+- include: mou/mou.yaml
+- include: texts/texts.yaml

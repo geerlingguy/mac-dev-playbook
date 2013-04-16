@@ -5,7 +5,7 @@
   vars:
     app_name: Opera
     app_name_pretty: Opera
-    app_url: http://www.opera.com/download/get/?partner=www&opsys=MacOS
+    app_url: http://ftp.opera.com/pub/opera/mac/1215/Opera_12.15_Setup_Intel.dmg
     installer_type: app
     install_method: dmg
     mount_path: /Volumes/Opera/
