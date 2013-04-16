@@ -1,7 +1,7 @@
 Ansible Playbooks
 =================
 
-**The majority of these playbooks have been created to provision Mac development machines. I am going to separate these playbooks into their own separate git repos, or not, depending on how I decide I want them accessable to the configuration managament tool I'll be buiiling on top of Ansible. Eventually they will be transformed to handle different operating systems and other variables, such as versions.**
+**The majority of these playbooks have been created to provision Mac development machines. I am going to separate these playbooks into their own separate git repos, or not, depending on how I decide I want them accessable to the configuration managament enhancement tool I'll be building on top of Ansible. Eventually they will be transformed to handle different operating systems and other variables, such as versions.**
 
 Configure servers in a snap with these concise Ansible playbooks!
 
