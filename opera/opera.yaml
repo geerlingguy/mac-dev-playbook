@@ -1,0 +1,16 @@
+---
+- hosts: $hosts
+  user: $user
+  sudo: yes
+  vars:
+    app_name: Opera
+    app_name_pretty: Opera
+    app_url: http://www.opera.com/download/get/?partner=www&opsys=MacOS
+    installer_type: app
+    install_method: dmg
+    mount_path: /Volumes/Opera/
+  vars_files:
+    - ../setup-vars.yaml
+  tasks:
+    - include: ../setup.yaml
+    - include: ../install/$install_method.yaml

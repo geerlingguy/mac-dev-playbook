@@ -1,4 +1,8 @@
 ---
 - include: vlc/vlc.yaml
 - include: transmission/transmission.yaml
-- include: iterm/iterm.yaml
+- include: appcleaner/appcleaner.yaml
+- include: keka/keka.yaml
+- include: limechat/limechat.yaml
+- include: firefox/firefox.yaml
+- include: opera/opera.yaml

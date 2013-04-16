@@ -5,12 +5,13 @@
   user: $user
   gather_facts: false
   vars:
-    install_type: app
     app_name: SourceTree
     app_name_pretty: SourceTree
     app_url: https://copy.com/RDxUBW9uhWiQ/SourceTree-1.5.8.dmg?download=1
+    installer_type: app
+    install_method: dmg
     mount_path: /Volumes/SourceTree/
   vars_files:
     - ../setup-vars.yaml
   tasks:
-    - include: ../install-type/dmg.yaml
+    - include: ../install/$install_method.yaml

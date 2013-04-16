@@ -4,13 +4,14 @@
 - hosts: $hosts
   user: $user
   vars:
-    install_type: pkg
-    install_target: /Volumes/OSX
     app_name: Vagrant
     app_name_pretty: Vagrant
     app_url: http://files.vagrantup.com/packages/64e360814c3ad960d810456add977fd4c7d47ce6/Vagrant.dmg
+    installer_type: pkg
+    install_method: dmg
+    install_target: /Volumes/OSX
     mount_path: /Volumes/Vagrant/
   vars_files:
     - ../setup-vars.yaml
   tasks:
-    - include: ../install-type/dmg.pkg
+    - include: ../install/$install_method.pkg

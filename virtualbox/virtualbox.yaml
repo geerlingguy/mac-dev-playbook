@@ -4,13 +4,14 @@
 - hosts: $hosts
   user: $user
   vars:
-    install_type: pkg
-    install_target: /Volumes/OSX
     app_name: VirtualBox
     app_name_pretty: VirtualBox
     app_url: http://download.virtualbox.org/virtualbox/4.2.12/VirtualBox-4.2.12-84980-OSX.dmg
     mount_path: /Volumes/VirtualBox/
+    installer_type: pkg
+    install_method: dmg
+    install_target: /Volumes/OSX
   vars_files:
     - ../setup-vars.yaml
   tasks:
-    - include: ../install-type/dmg.yaml
+    - include: ../install/$install_method.yaml

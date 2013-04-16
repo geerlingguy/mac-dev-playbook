@@ -7,9 +7,9 @@
   command: unzip $app_name.zip -d $app_name/ chdir=$downloads
 - name: Copy $app_name_pretty app to Applications directory
   command: cp -R $app_name/$app_name.app /Applications chdir=$downloads
-  when_string: $install_type == 'app'
+  when_string: $installer_type == 'app'
 - name: Install $app_name pkg
   command: sudo installer -package $app_name/$app_name.pkg -target $install_target chdir=$downloads
-  when_string: $install_type == 'pkg'
+  when_string: $installer_type == 'pkg'
 - name: Remove extraction directory
   file: path=${downloads}${app_name}/ state=absent

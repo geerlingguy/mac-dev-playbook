@@ -1,9 +1,3 @@
 ---
-- hosts: $hosts
-  user: $user
-  sudo: yes
-  vars_files:
-    - setup-vars.yaml
-  tasks:
-    - name: Create Ansible downloads directory
-      file: path=$downloads state=directory
+- name: Create Ansible downloads directory
+  file: path=$downloads state=directory

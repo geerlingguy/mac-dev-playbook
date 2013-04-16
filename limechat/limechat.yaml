@@ -1,15 +1,15 @@
 ---
-- include: ../setup.yaml
-
 - hosts: $hosts
   user: $user
-  gather_facts: false
+  sudo: yes
   vars:
-    install_type: app
     app_name: LimeChat
     app_name_pretty: LimeChat
     app_url: https://downloads.sourceforge.net/project/limechat/limechat/LimeChat_2.34.tbz?use_mirror=master
+    installer_type: app
+    install_method: tar
   vars_files:
     - ../setup-vars.yaml
   tasks:
-    - include: ../install-type/tar.yaml
+    - include: ../setup.yaml
+    - include: ../install/$install_method.yaml
