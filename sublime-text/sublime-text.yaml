@@ -1,6 +1,4 @@
 ---
-- include: ../setup.yaml
-
 - hosts: $hosts
   user: $user
   vars:
@@ -13,6 +11,7 @@
   vars_files:
     - ../setup-vars.yaml
   tasks:
+    - include: ../setup.yaml
     - include: ../install/$install_method.yaml
     - name: Create symlink subl for Sublime Text's subl command
       file: src=/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl dest=/usr/bin/subl state=link

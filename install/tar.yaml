@@ -13,7 +13,7 @@
 - name: Copy $app_name_pretty app to Applications directory
   command: cp -R $app_name/$app_name.app /Applications chdir=$downloads
   when_string: $installer_type == 'app'
-- name: Install $app_name pkg
+- name: Install $app_name_pretty pkg
   command: sudo installer -package $app_name/$app_name.pkg -target $install_target chdir=$downloads
   when_string: $installer_type == 'pkg'
 - name: Remove extraction directory

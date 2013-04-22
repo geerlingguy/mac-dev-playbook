@@ -1,0 +1,14 @@
+---
+- hosts: $hosts
+  user: $user
+  vars:
+    app_name: Kaleidoscope
+    app_name_pretty: Kaleidoscope
+    app_url: http://www.kaleidoscopeapp.com/download
+    installer_type: app
+    install_method: zip
+  vars_files:
+    - ../setup-vars.yaml
+  tasks:
+    - include: ../setup.yaml
+    - include: ../install/$install_method.yaml

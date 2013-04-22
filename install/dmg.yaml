@@ -9,7 +9,7 @@
 - name: Copy $app_name_pretty app to Applications directory
   command: cp -R $mount_path$app_name.app /Applications
   when_string: $installer_type == 'app'
-- name: Install $app_name pkg
+- name: Install $app_name_pretty pkg
   command: sudo installer -package $mount_path$app_name.pkg -target $install_target
   when_string: $installer_type == 'pkg'
 - name: Unmount $app_name_pretty image

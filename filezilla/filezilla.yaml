@@ -1,0 +1,15 @@
+---
+- hosts: $hosts
+  user: $user
+  sudo: yes
+  vars:
+    app_name: FileZilla
+    app_name_pretty: FileZilla
+    app_url: http://sourceforge.net/projects/filezilla/files/FileZilla_Client/3.6.0.2/FileZilla_3.6.0.2_i686-apple-darwin9.app.tar.bz2
+    installer_type: app
+    install_method: tar
+  vars_files:
+    - ../setup-vars.yaml
+  tasks:
+    - include: ../setup.yaml
+    - include: ../install/$install_method.yaml

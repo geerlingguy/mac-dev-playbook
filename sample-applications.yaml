@@ -1,0 +1,18 @@
+---
+# - include: vlc/vlc.yaml
+# - include: transmission/transmission.yaml
+# - include: appcleaner/appcleaner.yaml
+# - include: keka/keka.yaml
+# - include: limechat/limechat.yaml
+# - include: firefox/firefox.yaml
+# - include: opera/opera.yaml
+# - include: mou/mou.yaml
+# - include: texts/texts.yaml
+# - include: sublime-text/sublime-text.yaml
+# - include: sourcetree/sourcetree.yaml
+- include: sequel-pro/sequel-pro.yaml
+# - include: alfred/alfred.yaml
+- include: google-chrome/google-chrome.yaml
+- include: brackets/brackets.yaml
+- include: trim-enabler/trim-enabler.yaml
+- include: iterm/iterm.yaml
