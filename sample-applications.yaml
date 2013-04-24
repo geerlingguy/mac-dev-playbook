@@ -10,9 +10,10 @@
 # - include: texts/texts.yaml
 # - include: sublime-text/sublime-text.yaml
 # - include: sourcetree/sourcetree.yaml
-- include: sequel-pro/sequel-pro.yaml
+# - include: sequel-pro/sequel-pro.yaml
 # - include: alfred/alfred.yaml
-- include: google-chrome/google-chrome.yaml
-- include: brackets/brackets.yaml
-- include: trim-enabler/trim-enabler.yaml
-- include: iterm/iterm.yaml
+# - include: google-chrome/google-chrome.yaml
+# - include: brackets/brackets.yaml
+# - include: trim-enabler/trim-enabler.yaml
+# - include: iterm/iterm.yaml
+- include: handbrake/handbrake.yaml
