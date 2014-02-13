@@ -1,4 +1,4 @@
-# Mac Development VM
+# Mac Development Ansible Playbook
 
 This set of playbooks was originally cloned from [MWGriffin/ansible-playbooks](https://github.com/MWGriffin/ansible-playbooks), and basically installs all the software I use on my Mac for web and software development. Well, all the software I can get without using the Mac App Store, which can't be scripted.
 
@@ -9,7 +9,7 @@ This is very much a work in progress, and is mostly a means for me to document m
 ## Installation
 
   1. Clone this repository somewhere.
-  2. Install Ansible.
+  2. [Install Ansible](https://devopsu.com/guides/ansible-mac-osx.html).
   3. Run `ansible-playbook main.yml --ask-sudo-pass`.
 
 ## Additions coming soon
