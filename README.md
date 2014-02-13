@@ -1,35 +1,15 @@
-Ansible Playbooks
-=================
+# Mac Development VM
 
-**The majority of these playbooks have been created to provision Mac development machines. I am going to separate these playbooks into their own separate git repos, or not, depending on how I decide I want them accessible to the configuration managament enhancement tool I'll be building on top of Ansible. Eventually they will be transformed to handle different operating systems and other variables, such as versions.**
+This set of playbooks was originally cloned from [MWGriffin/ansible-playbooks](https://github.com/MWGriffin/ansible-playbooks), and basically installs all the software I use on my Mac for web and software development. Well, all the software I can get without using the Mac App Store, which can't be scripted.
 
-Configure servers in a snap with these concise Ansible playbooks!
+This is very much a work in progress, and is mostly a means for me to document my current Mac's setup. I'll be adding settings and packages to this set of playbooks.
 
-Current Playbooks:
+**Caveat**: This set of playbooks is not meant to be a great example of Ansible best practices. I just want to wrap my Mac's configuration in Ansible so I can quickly bring up a new development Mac without having to restore from a Time Machine backup.
 
-* **ZeroMQ** - open source high-performance asynchronous messaging library
-* **Bottle-MongoDB** - open source lightweight webserver/application and document-oriented database combination
+## Ansible for DevOps
 
-Future Playbooks:
+If Ansible piques your interest, please check out the book I'm working on, [Ansible for DevOps](https://leanpub.com/ansible-for-devops), where I actually *do* follow Ansible best practices, and will teach you how to do some other amazing things with Ansible.
 
-* **MongoDB** - open source document-oriented database system
-* **MySQL** - open source relational database system
-* **Apache** - open source web server
-* **NginX** - open source web server
-* **Python** - open source highlevel interpreted programming language
-* **Ruby** - open source highlevel interpreted programming language
-* **PHP** - open source highlevel interpreted programming language
-* **RVM** - open source Ruby version and environment manager
+## Author
 
-Before running these Ansible playbooks, or any Ansible commands for that matter, it is essential that you have your public SSH keys copied to your server's `~/.ssh/authorized_keys` file. If you decide that this will make life too easy for you, feel free to use the `-k` flag when running `ansible-playbook` (or `ansible` for that matter too), which will tell Ansible to prompt you for your SSH password. The following command will copy your public key from your management computer, to the server:
-	
-	# Don't space out and forget to ensure that you replace the username and ip/host address with your specific credentials.
-	$ scp ~/.ssh/id_rsa.pub username@111.222.333.444:~/.ssh/authorized_keys # You could also perform the same action against your Ansible hosts using the copy module and the **-k** flag to prompt you for your SSH password.
-
-Then all you have to do, as long as you have properly installed Ansible, and have added it's location to your $PATH, is run the following command to confirm that everything is hunky-dory:
-
-	$ ansible all -m ping
-	
-That should tell you whether Ansible has the ability to contact, and SSH into, the servers that you've added to your Ansible hosts file in `/etc/ansible/hosts`
-
-It's that simple.
+[Jeff Geerling](http://jeffgeerling.com/), 2014 (originally forked from [MWGriffin/ansible-playbooks](https://github.com/MWGriffin/ansible-playbooks)).
