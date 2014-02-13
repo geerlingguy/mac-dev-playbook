@@ -6,6 +6,14 @@ This is very much a work in progress, and is mostly a means for me to document m
 
 **Caveat**: This set of playbooks is not meant to be a great example of Ansible best practices. I just want to wrap my Mac's configuration in Ansible so I can quickly bring up a new development Mac without having to restore from a Time Machine backup.
 
+## TODO
+
+I'm going to add the following once I get some time:
+
+  - Cornerstone SVN
+  - Tower (Git)
+  - etc...
+
 ## Ansible for DevOps
 
 If Ansible piques your interest, please check out the book I'm working on, [Ansible for DevOps](https://leanpub.com/ansible-for-devops), where I actually *do* follow Ansible best practices, and will teach you how to do some other amazing things with Ansible.
