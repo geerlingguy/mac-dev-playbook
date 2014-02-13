@@ -37,6 +37,10 @@ The following applications are automagically installed as part of this set of pl
   - VirtualBox
   - VLC
 
+Jeff Geerling's [dotfiles](https://github.com/geerlingguy/dotfiles) are also installed into the current user's home directory, including the `.osx` dotfile, which is then run to configure Mac OS X, the Finder, Terminal, Mail, and other apps according to the settings inside.
+
+Finally, there are a few other preferences and settings added on for various apps and services.
+
 ## Future additions
 
 ### Things that still need to be done manually
