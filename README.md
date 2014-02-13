@@ -16,7 +16,26 @@ This is a work in progress, and is mostly a means for me to document my current 
 
 ## Included Applications / Configuration
 
-TODO: I will add a list of what's installed and configured by default here...
+The following applications are automagically installed as part of this set of playbooks:
+
+  - Adium
+  - Google Chrome
+  - Cornerstone SVN
+  - Dropbox
+  - Firefox
+  - Handbrake
+  - Homebrew
+  - Knock
+  - nvALT
+  - PCKeyboardHack
+  - Sequel Pro (MySQL client)
+  - Skype
+  - Sublime Text
+  - Tower (Git client)
+  - Transmit (S/FTP client)
+  - Vagrant
+  - VirtualBox
+  - VLC
 
 ## Future additions
 
@@ -31,6 +50,8 @@ It's my hope that I can get the rest of these things wrapped up into Ansible pla
   5. Remap Caps Lock to Escape (keycode 53), using PCKeyboardHack.
   6. Set trackpad tracking rate.
   7. Set mouse tracking rate.
+  8. Setting up iCloud (this was presumably done already during system setup, anyways).
+  9. Configuring extra Mail and/or Calendar accounts.
 
 ### Applications/packages to be added:
 
