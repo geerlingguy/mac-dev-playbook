@@ -20,6 +20,7 @@
   sudo: no
   with_items:
   - .bash_profile
+  - .gitignore
   - .inputrc
   - .osx
   - .vimrc
