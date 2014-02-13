@@ -14,6 +14,7 @@
 - include: apps/adium.yml
 - include: apps/chrome.yml
 - include: apps/cornerstone.yml
+- include: apps/dropbox.yml
 - include: apps/firefox.yml
 - include: apps/handbrake.yml
 - include: apps/homebrew.yml
