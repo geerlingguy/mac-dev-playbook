@@ -1,16 +1,16 @@
 # Mac Development Ansible Playbook
 
-This set of playbooks was originally cloned from [MWGriffin/ansible-playbooks](https://github.com/MWGriffin/ansible-playbooks), and basically installs all the software I use on my Mac for web and software development. Well, all the software I can get without using the Mac App Store, which can't be scripted.
+This set of playbooks is roughly based on [MWGriffin/ansible-playbooks](https://github.com/MWGriffin/ansible-playbooks), and installs and configures all the software I use on my Mac for web and software development, as well as my preferred settings for OS X. Some things in OS X are difficult to get scripted (notably, the Mac App Store in general), so I still have some manual installation steps, but at least it's all documented here.
 
-This is very much a work in progress, and is mostly a means for me to document my current Mac's setup. I'll be adding settings and packages to this set of playbooks.
+This is a work in progress, and is mostly a means for me to document my current Mac's setup. I'll be adding settings and packages to this set of playbooks over time.
 
-**Caveat**: This set of playbooks is not meant to be a great example of Ansible best practices. I just want to wrap my Mac's configuration in Ansible so I can quickly bring up a new development Mac without having to restore from a Time Machine backup.
+**Caveat**: This set of playbooks is not meant to be an example of Ansible best practices. I just want to wrap my Mac's configuration in Ansible so I can quickly install all the available development tools I use and need for my development purposes.
 
 *See also*: [Battleschool](http://spencer.gibb.us/blog/2014/02/03/introducing-battleschool), which looks like it's aiming to be a more general solution than what I've built here. (It may be a better option if you don't want to fork this repo and hack it for your own workstation...).
 
 ## Installation
 
-  1. Clone this repository somewhere.
+  1. Clone this repository somewhere on your local drive.
   2. [Install Ansible](https://devopsu.com/guides/ansible-mac-osx.html).
   3. Run `ansible-playbook main.yml --ask-sudo-pass`.
 
@@ -18,39 +18,30 @@ This is very much a work in progress, and is mostly a means for me to document m
 
 TODO: I will add a list of what's installed and configured by default here...
 
-## Additions coming soon
+## Future additions
 
-### General changes:
+### Things that still need to be done manually
 
-  - Fix TODOs (idempotence, mostly - maybe just pass in a 'creates' variable)
+It's my hope that I can get the rest of these things wrapped up into Ansible playbooks soon, but for now, these steps need to be completed manually (assuming you already have Xcode and Ansible installed, and have run this playbook).
+
+  1. Install JJG-Term.terminal theme (double-click to install).
+  2. Install [Sublime Package Manager](http://sublime.wbond.net/installation).
+  3. Install all the Mac App Store Apps (see below).
+  4. Install all the apps that aren't yet in this setup (see below).
+  5. Remap Caps Lock to Escape (keycode 53), using PCKeyboardHack.
+  6. Set trackpad tracking rate.
+  7. Set mouse tracking rate.
 
 ### Applications/packages to be added:
 
+These are mostly direct download links, some are more difficult to install because of custom installers or other nonstandard install quirks:
+
   - [MacVim](https://github.com/b4winckler/macvim/releases/download/snapshot-72/MacVim-snapshot-72-Mavericks.tbz)
-  - iShowU HD
+  - [iShowU HD](http://downloads.shinywhitebox.com/iShowU_HD_Pro_2.3.7.dmg)
   - [MenuMeters](http://www.ragingmenace.com/software/menumeters/)
-  - TextMate 2
-  - PCKeyboardHack
-  - My [dotfiles](https://github.com/geerlingguy/dotfiles)
-  - TimeMachineEditor
-  - Skype
-  - etc...
-
-### Settings to be added:
-
-  - Terminal theme (Jeff's OSX)
-  - Sublime text settings/package manager
-  - Keyboard remappings (Caps Lock -> escape)
-  - Faster key repeat rates
-  - Desktop background
-  - Trackpad tracking rate
-  - Mouse tracking rate
-  - Finder settings:
-    - Disable "show warning before changing extension"
-    - Set default view to column mode
-    - Show hard disks, connected servers on desktop
-  - Translucent dock icon when app is hidden
-  - etc...
+  - [TextMate 2](https://api.textmate.org/downloads/release)
+  - [TimeMachineEditor](http://timesoftware.free.fr/timemachineeditor/TimeMachineEditor.zip)
+  - more to come...
 
 ### Apps only available via the App Store
 
@@ -70,7 +61,7 @@ I also use the following apps at least once or twice per week, but unfortunately
   - Keynote
   - Numbers
 
-There are a couple other apps I'm leaving out of the list, like Microsoft Word, because I normally don't install them unless I need them; unfortunately, about once a year, I get a document that's so old/strange that I need Word or Powerpoint to open the file.
+There are a couple other apps I'm leaving out of the list, like Microsoft Word, because I normally don't install them unless I need them; unfortunately, about once a year, I get a document that's so old/strange that I need Word or Powerpoint to open the file. I wish people didn't use document layout and slide presentation applications to send me basic textual information :-/
 
 ## Ansible for DevOps
 

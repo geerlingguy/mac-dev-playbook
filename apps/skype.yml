@@ -1,0 +1,15 @@
+---
+- hosts: all
+  connection: local
+  vars:
+    app_name: Skype
+    app_name_pretty: Skype
+    app_url: "http://www.skype.com/go/getskype-macosx.dmg"
+    installer_type: app
+    install_method: dmg
+    mount_path: /Volumes/Skype/
+    downloads: ~/.ansible-downloads/
+    creates: /Applications/Skype.app
+
+  tasks:
+   - include: ../install/{{ install_method }}.yml

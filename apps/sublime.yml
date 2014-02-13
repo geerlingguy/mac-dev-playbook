@@ -1,4 +1,7 @@
 ---
+# Sublime Text.
+# Note: Currently, to complete installation, you have to manually install
+# Package Control; see: https://sublime.wbond.net/installation.
 - hosts: all
   connection: local
   vars:
@@ -13,12 +16,21 @@
 
   tasks:
     - include: ../install/{{ install_method }}.yml
+
     - name: Create symlink subl for Sublime Text's subl command
       file: src=/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl dest=/usr/bin/subl state=link
       sudo: true
+
     - name: Create symlink sublime for Sublime Text's subl command
       file: src=/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl dest=/usr/bin/sublime state=link
       sudo: true
 
+    - name: Copy Sublime settings files.
+      copy: "src='../templates/sublime/{{ item }}' dest='~/Library/Application\ Support/Sublime\ Text 3/Packages/User/{{ item }}'"
+      sudo: no
+      with_items:
+      - "Default (OSX).sublime-keymap"
+      - "Package Control.sublime-settings"
+      - "Preferences.sublime-settings"
     # - name: "Copy settings (example, don't use)."
     #   shell: cp -r init/Preferences.sublime-settings ~/Library/Application\ Support/Sublime\ Text*/Packages/User/Preferences.sublime-settings 2> /dev/null

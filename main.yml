@@ -20,9 +20,12 @@
 - include: apps/firefox.yml
 - include: apps/handbrake.yml
 - include: apps/homebrew.yml
+- include: apps/knock.yml
 # - include: apps/menumeters.yml
 - include: apps/nvalt.yml
+- include: apps/pckeyboardhack.yml
 - include: apps/sequel-pro.yml
+- include: apps/skype.yml
 - include: apps/sublime.yml
 - include: apps/tower.yml
 - include: apps/transmit.yml

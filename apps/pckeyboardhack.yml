@@ -1,0 +1,16 @@
+---
+- hosts: all
+  connection: local
+  vars:
+    app_name: PCKeyboardHack
+    app_name_pretty: PCKeyboardHack
+    app_url: "https://pqrs.org/macosx/keyremap4macbook/files/PCKeyboardHack-10.5.0.dmg"
+    installer_type: pkg
+    install_method: dmg
+    install_target: /Volumes/Macintosh\ HD
+    mount_path: /Volumes/PCKeyboardHack-10.5.0/
+    downloads: ~/.ansible-downloads/
+    creates: /Applications/PCKeyboardHack.app
+
+  tasks:
+   - include: ../install/{{ install_method }}.yml
