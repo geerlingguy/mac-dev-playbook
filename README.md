@@ -16,7 +16,7 @@ This is very much a work in progress, and is mostly a means for me to document m
 
 ### General changes:
 
-  - Don't uninstall/replace already-installed applications.
+  - Fix TODOs (idempotence, mostly)
 
 ### Applications/packages to be added:
 
