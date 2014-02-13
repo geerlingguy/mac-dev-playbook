@@ -1,0 +1,15 @@
+---
+- hosts: {{ hosts }}
+  user: {{ user }}
+  vars:
+    app_name: Firefox
+    app_name_pretty: Firefox
+    app_url: "https://download.mozilla.org/?product=firefox-27.0&os=osx&lang=en-US"
+    installer_type: app
+    install_method: dmg
+    mount_path: /Volumes/Firefox/
+  vars_files:
+    - ../setup-vars.yml
+  tasks:
+   - include: ../setup.yml
+   - include: ../install/{{ install_method }}.yml

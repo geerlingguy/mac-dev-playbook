@@ -1,0 +1,20 @@
+---
+- name: Download {{ app_name_pretty }}
+  get_url: url={{ app_url }} dest={{ downloads }}/{{ app_name }}.tar
+- name: Remove existing extraction directory if present
+  file: path={{ downloads }}{{ app_name }}/ state=absent
+- name: Create an extraction directory
+  file: path={{ downloads }}{{ app_name }}/ state=directory
+- name: Extract {{ app_name_pretty }} tarball
+  command: tar xf {{ app_name }}.tar -C {{ app_name }}/ chdir={{ downloads }}
+- name: Remove existing app if present
+  file: path=/Applications/{{ app_name }}.app state=absent
+  when_string: {{ installer_type }} == 'app'
+- name: Copy {{ app_name_pretty }} app to Applications directory
+  command: cp -R {{ app_name }}/{{ app_name }}.app /Applications chdir={{ downloads }}
+  when_string: {{ installer_type }} == 'app'
+- name: Install {{ app_name_pretty }} pkg
+  command: sudo installer -package {{ app_name }}/{{ app_name }}.pkg -target {{ install_target }} chdir={{ downloads }}
+  when_string: {{ installer_type }} == 'pkg'
+- name: Remove extraction directory
+  file: path={{ downloads }}{{ app_name }}/ state=absent

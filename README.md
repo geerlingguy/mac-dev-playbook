@@ -6,12 +6,31 @@ This is very much a work in progress, and is mostly a means for me to document m
 
 **Caveat**: This set of playbooks is not meant to be a great example of Ansible best practices. I just want to wrap my Mac's configuration in Ansible so I can quickly bring up a new development Mac without having to restore from a Time Machine backup.
 
-## TODO
+## Additions coming soon
 
-I'm going to add the following once I get some time:
+### General changes:
+
+  - Don't uninstall/replace already-installed applications.
+
+### Applications/packages to be added:
 
   - Cornerstone SVN
   - Tower (Git)
+  - PCKeyboardHack
+  - etc...
+
+### Settings to be added:
+
+  - Sublime text settings/package manager
+  - Keyboard remappings (Caps Lock -> escape)
+  - Faster key repeat rates
+  - Desktop background
+  - Trackpad tracking rate
+  - Mouse tracking rate
+  - Finder settings:
+    - Disable "show warning before changing extension"
+    - Set default view to column mode
+    - Show hard disks, connected servers on desktop
   - etc...
 
 ## Ansible for DevOps

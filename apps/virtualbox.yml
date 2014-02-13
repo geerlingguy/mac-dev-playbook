@@ -1,0 +1,17 @@
+---
+- include: ../setup.yml
+
+- hosts: {{ hosts }}
+  user: {{ user }}
+  vars:
+    app_name: VirtualBox
+    app_name_pretty: VirtualBox
+    app_url: "http://download.virtualbox.org/virtualbox/4.3.6/VirtualBox-4.3.6-91406-OSX.dmg"
+    mount_path: /Volumes/VirtualBox/
+    installer_type: pkg
+    install_method: dmg
+    install_target: /Volumes/OSX
+  vars_files:
+    - ../setup-vars.yml
+  tasks:
+    - include: ../install/{{ install_method }}.yml

@@ -1,0 +1,15 @@
+---
+- hosts: {{ hosts }}
+  user: {{ user }}
+  vars:
+    app_name: Google\ Chrome
+    app_name_pretty: Google Chrome
+    app_url: "https://dl.google.com/chrome/mac/stable/GGRO/googlechrome.dmg"
+    installer_type: app
+    install_method: dmg
+    mount_path: /Volumes/Google\ Chrome/
+  vars_files:
+    - ../setup-vars.yml
+  tasks:
+   - include: ../setup.yml
+   - include: ../install/{{ install_method }}.yml

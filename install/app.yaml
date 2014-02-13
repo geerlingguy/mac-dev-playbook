@@ -1,5 +1,0 @@
----
-- name: Remove existing app if present
-  file: path=/Applications/$app_name.app state=absent
-- name: Copy $app_name_pretty app to Applications directory
-  command: cp -R $app_name.app /Applications chdir=$downloads

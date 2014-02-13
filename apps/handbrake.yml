@@ -1,0 +1,15 @@
+---
+- hosts: {{ hosts }}
+  user: {{ user }}
+  vars:
+    app_name: HandBrake
+    app_name_pretty: HandBrake
+    app_url: "http://handbrake.fr/rotation.php?file=HandBrake-0.9.9-MacOSX.6_GUI_x86_64.dmg"
+    installer_type: app
+    install_method: dmg
+    mount_path: /Volumes/HandBrake-0.9.9-MacOSX.6_GUI_x86_64/
+  vars_files:
+    - ../setup-vars.yml
+  tasks:
+    - include: ../setup.yml
+    - include: ../install/{{ install_method }}.yml

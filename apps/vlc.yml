@@ -1,0 +1,15 @@
+---
+- hosts: {{ hosts }}
+  user: {{ user }}
+  vars:
+    app_name: VLC
+    app_name_pretty: VLC
+    app_url: "http://get.videolan.org/vlc/2.1.3/macosx/vlc-2.1.3.dmg"
+    installer_type: app
+    install_method: dmg
+    mount_path: /Volumes/vlc-2.1.3/
+  vars_files:
+    - ../setup-vars.yml
+  tasks:
+    - include: ../setup.yml
+    - include: ../install/{{ install_method }}.yml

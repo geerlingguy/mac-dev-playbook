@@ -1,0 +1,16 @@
+---
+- name: Download {{ app_name_pretty }}
+  get_url: url={{ app_url }} dest={{ downloads }}/{{ app_name }}.dmg
+- name: Mount {{ app_name_pretty }} image
+  command: hdiutil attach {{ app_name }}.dmg chdir={{ downloads }}
+- name: Remove existing app if present
+  file: path=/Applications/{{ app_name }}.app state=absent
+  when_string: {{ installer_type }} == 'app'
+- name: Copy {{ app_name_pretty }} app to Applications directory
+  command: cp -R {{ mount_path }}{{ app_name }}.app /Applications
+  when_string: {{ installer_type }} == 'app'
+- name: Install {{ app_name_pretty }} pkg
+  command: sudo installer -package {{ mount_path }}{{ app_name }}.pkg -target {{ install_target }}
+  when_string: {{ installer_type }} == 'pkg'
+- name: Unmount {{ app_name_pretty }} image
+  command: hdiutil detach {{ mount_path }}

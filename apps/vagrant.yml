@@ -1,0 +1,16 @@
+---
+- hosts: {{ hosts }}
+  user: {{ user }}
+  vars:
+    app_name: Vagrant
+    app_name_pretty: Vagrant
+    app_url: "https://dl.bintray.com/mitchellh/vagrant/Vagrant-1.4.3.dmg"
+    installer_type: pkg
+    install_method: dmg
+    install_target: /Volumes/OSX
+    mount_path: /Volumes/Vagrant/
+  vars_files:
+    - ../setup-vars.yml
+  tasks:
+    - include: ../setup.yml
+    - include: ../install/{{ install_method }}.pkg

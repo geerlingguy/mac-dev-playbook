@@ -1,0 +1,10 @@
+---
+- hosts: {{ hosts }}
+  user: {{ user }}
+  gather_facts: false
+  vars_files:
+    - ../setup-vars.yml
+  tasks:
+  	- include: ../setup.yml
+    - name: Run Homebrew install script
+      shell: ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"

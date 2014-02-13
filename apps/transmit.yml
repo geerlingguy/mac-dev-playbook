@@ -1,0 +1,14 @@
+---
+- hosts: {{ hosts }}
+  user: {{ user }}
+  vars:
+    app_name: Transmit
+    app_name_pretty: Transmit
+    app_url: "http://download.panic.com/transmit/Transmit%204.4.6.zip"
+    installer_type: app
+    install_method: zip
+  vars_files:
+    - ../setup-vars.yml
+  tasks:
+    - include: ../setup.yml
+    - include: ../install/{{ install_method }}.yml

@@ -1,0 +1,15 @@
+---
+- hosts: {{ hosts }}
+  user: {{ user }}
+  vars:
+    app_name: Sequel\ Pro
+    app_name_pretty: Sequel Pro
+    app_url: "https://sequel-pro.googlecode.com/files/sequel-pro-1.0.2.dmg"
+    installer_type: app
+    install_method: dmg
+    mount_path: /Volumes/Sequel\ Pro\ 1.0.2/
+  vars_files:
+    - ../setup-vars.yml
+  tasks:
+    - include: ../setup.yml
+    - include: ../install/{{ install_method }}.yml
