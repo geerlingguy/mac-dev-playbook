@@ -1,0 +1,20 @@
+{
+	"auto_upgrade_last_run": null,
+	"installed_packages":
+	[
+		"DocBlockr",
+		"Drupal Snippets",
+		"FileDiffs",
+		"Git",
+		"GitHub Flavored Markdown Preview",
+		"Goto Documentation",
+		"Goto Drupal API",
+		"MarkAndMove",
+		"Markdown Preview",
+		"Package Control",
+		"RegReplace",
+		"Sass",
+		"TrailingSpaces",
+		"WordCount"
+	]
+}

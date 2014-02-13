@@ -10,6 +10,8 @@
   tasks:
     - name: Create Ansible downloads directory
       file: path={{ downloads }} state=directory
+    - include: preferences/dotfiles.yml
+    - include: preferences/preferences.yml
 
 - include: apps/adium.yml
 - include: apps/chrome.yml

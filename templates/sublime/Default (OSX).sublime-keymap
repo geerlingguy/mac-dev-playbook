@@ -1,0 +1,4 @@
+[
+  { "keys": ["ctrl+d"], "command": "goto_drupalapi" },
+  { "keys": ["ctrl+h"], "command": "goto_documentation" }
+]

@@ -19,3 +19,6 @@
     - name: Create symlink sublime for Sublime Text's subl command
       file: src=/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl dest=/usr/bin/sublime state=link
       sudo: true
+
+    # - name: "Copy settings (example, don't use)."
+    #   shell: cp -r init/Preferences.sublime-settings ~/Library/Application\ Support/Sublime\ Text*/Packages/User/Preferences.sublime-settings 2> /dev/null

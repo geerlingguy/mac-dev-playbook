@@ -6,11 +6,17 @@ This is very much a work in progress, and is mostly a means for me to document m
 
 **Caveat**: This set of playbooks is not meant to be a great example of Ansible best practices. I just want to wrap my Mac's configuration in Ansible so I can quickly bring up a new development Mac without having to restore from a Time Machine backup.
 
+*See also*: [Battleschool](http://spencer.gibb.us/blog/2014/02/03/introducing-battleschool), which looks like it's aiming to be a more general solution than what I've built here. (It may be a better option if you don't want to fork this repo and hack it for your own workstation...).
+
 ## Installation
 
   1. Clone this repository somewhere.
   2. [Install Ansible](https://devopsu.com/guides/ansible-mac-osx.html).
   3. Run `ansible-playbook main.yml --ask-sudo-pass`.
+
+## Included Applications / Configuration
+
+TODO: I will add a list of what's installed and configured by default here...
 
 ## Additions coming soon
 
@@ -25,7 +31,7 @@ This is very much a work in progress, and is mostly a means for me to document m
   - [MenuMeters](http://www.ragingmenace.com/software/menumeters/)
   - TextMate 2
   - PCKeyboardHack
-  - My dotfiles
+  - My [dotfiles](https://github.com/geerlingguy/dotfiles)
   - TimeMachineEditor
   - Skype
   - etc...
@@ -43,6 +49,7 @@ This is very much a work in progress, and is mostly a means for me to document m
     - Disable "show warning before changing extension"
     - Set default view to column mode
     - Show hard disks, connected servers on desktop
+  - Translucent dock icon when app is hidden
   - etc...
 
 ### Apps only available via the App Store
