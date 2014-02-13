@@ -1,6 +1,6 @@
 ---
-- hosts: {{ hosts }}
-  user: {{ user }}
+- hosts: all
+  connection: local
   vars:
     app_name: Sublime\ Text
     app_name_pretty: Sublime\ Text
@@ -8,12 +8,13 @@
     installer_type: app
     install_method: dmg
     mount_path: /Volumes/Sublime\ Text/
-  vars_files:
-    - ../setup-vars.yml
+    downloads: ~/.ansible-downloads/
+
   tasks:
-    - include: ../setup.yml
     - include: ../install/{{ install_method }}.yml
     - name: Create symlink subl for Sublime Text's subl command
       file: src=/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl dest=/usr/bin/subl state=link
+      sudo: true
     - name: Create symlink sublime for Sublime Text's subl command
       file: src=/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl dest=/usr/bin/sublime state=link
+      sudo: true

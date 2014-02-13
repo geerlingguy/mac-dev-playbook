@@ -1,6 +1,6 @@
 ---
-- hosts: {{ hosts }}
-  user: {{ user }}
+- hosts: all
+  connection: local
   vars:
     app_name: Firefox
     app_name_pretty: Firefox
@@ -8,8 +8,7 @@
     installer_type: app
     install_method: dmg
     mount_path: /Volumes/Firefox/
-  vars_files:
-    - ../setup-vars.yml
+    downloads: ~/.ansible-downloads/
+
   tasks:
-   - include: ../setup.yml
    - include: ../install/{{ install_method }}.yml

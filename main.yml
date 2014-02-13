@@ -1,4 +1,16 @@
 ---
+- name: Mac Development Playbook
+  hosts: self
+  user: jgeerling
+  connection: local
+
+  vars:
+    - downloads: ~/.ansible-downloads/
+
+  tasks:
+    - name: Create Ansible downloads directory
+      file: path={{ downloads }} state=directory
+
 - include: apps/chrome.yml
 - include: apps/firefox.yml
 - include: apps/handbrake.yml

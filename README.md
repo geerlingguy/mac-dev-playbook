@@ -6,6 +6,12 @@ This is very much a work in progress, and is mostly a means for me to document m
 
 **Caveat**: This set of playbooks is not meant to be a great example of Ansible best practices. I just want to wrap my Mac's configuration in Ansible so I can quickly bring up a new development Mac without having to restore from a Time Machine backup.
 
+## Installation
+
+  1. Clone this repository somewhere.
+  2. Install Ansible.
+  3. Run `ansible-playbook main.yml --ask-sudo-pass`.
+
 ## Additions coming soon
 
 ### General changes:
@@ -16,11 +22,15 @@ This is very much a work in progress, and is mostly a means for me to document m
 
   - Cornerstone SVN
   - Tower (Git)
+  - MenuMeters
+  - nvAlt
   - PCKeyboardHack
+  - My dotfiles
   - etc...
 
 ### Settings to be added:
 
+  - Terminal theme (Jeff's OSX)
   - Sublime text settings/package manager
   - Keyboard remappings (Caps Lock -> escape)
   - Faster key repeat rates

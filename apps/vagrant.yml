@@ -1,16 +1,15 @@
 ---
-- hosts: {{ hosts }}
-  user: {{ user }}
+- hosts: all
+  connection: local
   vars:
     app_name: Vagrant
     app_name_pretty: Vagrant
     app_url: "https://dl.bintray.com/mitchellh/vagrant/Vagrant-1.4.3.dmg"
     installer_type: pkg
     install_method: dmg
-    install_target: /Volumes/OSX
+    install_target: /Volumes/Macintosh\ HD
     mount_path: /Volumes/Vagrant/
-  vars_files:
-    - ../setup-vars.yml
+    downloads: ~/.ansible-downloads/
+
   tasks:
-    - include: ../setup.yml
-    - include: ../install/{{ install_method }}.pkg
+    - include: ../install/{{ install_method }}.yml
