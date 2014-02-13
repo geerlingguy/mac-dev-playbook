@@ -9,6 +9,7 @@
     install_method: dmg
     mount_path: /Volumes/HandBrake-0.9.9-MacOSX.6_GUI_x86_64/
     downloads: ~/.ansible-downloads/
+    creates: /Applications/HandBrake.app
 
   tasks:
     - include: ../install/{{ install_method }}.yml

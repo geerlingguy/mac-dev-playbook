@@ -1,0 +1,17 @@
+---
+# TODO: This uses a custom installer. Might be able to install from source.
+- hosts: all
+  connection: local
+  vars:
+    app_name: Menu\ Meters
+    app_name_pretty: Menu\ Meters
+    app_url: "http://www.ragingmenace.com/software/download/MenuMeters.dmg"
+    installer_type: pkg
+    install_method: dmg
+    install_target: /Volumes/Macintosh\ HD
+    mount_path: /Volumes/Menu\ Meters\ 1.6.1/
+    creates: /Applications/Menu\ Meters.app
+    downloads: ~/.ansible-downloads/
+
+  tasks:
+   - include: ../install/{{ install_method }}.yml

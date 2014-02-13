@@ -11,12 +11,17 @@
     - name: Create Ansible downloads directory
       file: path={{ downloads }} state=directory
 
+- include: apps/adium.yml
 - include: apps/chrome.yml
+- include: apps/cornerstone.yml
 - include: apps/firefox.yml
 - include: apps/handbrake.yml
 - include: apps/homebrew.yml
+# - include: apps/menumeters.yml
+- include: apps/nvalt.yml
 - include: apps/sequel-pro.yml
 - include: apps/sublime.yml
+- include: apps/tower.yml
 - include: apps/transmit.yml
 - include: apps/vagrant.yml
 - include: apps/virtualbox.yml

@@ -8,6 +8,7 @@
     installer_type: app
     install_method: dmg
     mount_path: /Volumes/Google\ Chrome/
+    creates: /Applications/Google\ Chrome.app
     downloads: ~/.ansible-downloads/
 
   tasks:

@@ -9,6 +9,7 @@
     install_method: dmg
     mount_path: /Volumes/Sequel\ Pro\ 1.0.2/
     downloads: ~/.ansible-downloads/
+    creates: /Applications/Sequel\ Pro.app
 
   tasks:
     - include: ../install/{{ install_method }}.yml

@@ -1,0 +1,15 @@
+---
+- hosts: all
+  connection: local
+  vars:
+    app_name: Adium
+    app_name_pretty: Adium
+    app_url: "http://downloads.sourceforge.net/project/adium/Adium_1.5.9.dmg?r=&ts=1392301195&use_mirror=softlayer-ams"
+    installer_type: app
+    install_method: dmg
+    mount_path: /Volumes/Adium\ 1.5.9/
+    creates: /Applications/Adium.app
+    downloads: ~/.ansible-downloads/
+
+  tasks:
+   - include: ../install/{{ install_method }}.yml

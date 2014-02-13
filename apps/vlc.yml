@@ -9,6 +9,7 @@
     install_method: dmg
     mount_path: /Volumes/vlc-2.1.3/
     downloads: ~/.ansible-downloads/
+    creates: /Applications/VLC.app
 
   tasks:
     - include: ../install/{{ install_method }}.yml

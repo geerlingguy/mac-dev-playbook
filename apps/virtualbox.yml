@@ -10,6 +10,7 @@
     install_method: dmg
     install_target: /Volumes/Macintosh\ HD
     downloads: ~/.ansible-downloads/
+    creates: /Applications/VirtualBox.app
 
   tasks:
     - include: ../install/{{ install_method }}.yml

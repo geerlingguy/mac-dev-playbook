@@ -9,6 +9,7 @@
     install_method: dmg
     mount_path: /Volumes/Firefox/
     downloads: ~/.ansible-downloads/
+    creates: /Applications/Firefox.app
 
   tasks:
    - include: ../install/{{ install_method }}.yml

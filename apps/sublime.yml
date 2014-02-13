@@ -9,6 +9,7 @@
     install_method: dmg
     mount_path: /Volumes/Sublime\ Text/
     downloads: ~/.ansible-downloads/
+    creates: /Applications/Sublime\ Text.app
 
   tasks:
     - include: ../install/{{ install_method }}.yml

@@ -2,13 +2,13 @@
 - hosts: all
   connection: local
   vars:
-    app_name: Transmit
-    app_name_pretty: Transmit
-    app_url: "http://download.panic.com/transmit/Transmit%204.4.6.zip"
+    app_name: Tower
+    app_name_pretty: Tower
+    app_url: "https://macapps.fournova.com/tower1-1060/download"
     installer_type: app
     install_method: zip
     downloads: ~/.ansible-downloads/
-    creates: /Applications/Transmit.app
+    creates: /Applications/Tower.app
 
   tasks:
     - include: ../install/{{ install_method }}.yml
