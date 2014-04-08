@@ -15,6 +15,7 @@
 		"RegReplace",
 		"Sass",
 		"TrailingSpaces",
-		"WordCount"
+		"WordCount",
+		"Xdebug Client"
 	]
 }
