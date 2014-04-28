@@ -74,6 +74,18 @@ These are mostly direct download links, some are more difficult to install becau
     - (Consider using for most if not all of the app installations)
   - more to come...
 
+### Configuration to be added:
+
+  - I have vim configuration in the repo, but I still need to add the actual installation:
+    ```
+    mkdir -p ~/.vim/autoload
+    mkdir -p ~/.vim/bundle
+    cd ~/.vim/autoload
+    curl https://github.com/tpope/vim-pathogen/raw/master/autoload/pathogen.vim > pathogen.vim
+    cd ~/.vim/bundle
+    git clone git://github.com/scrooloose/nerdtree.git
+    ```
+
 ### Apps only available via the App Store
 
 I also use the following apps at least once or twice per week, but unfortunately, as the Mac App Store is not able to be controlled via CLI, or any other way I can find (so far), I have to manually install all of these apps from within the App Store application.
