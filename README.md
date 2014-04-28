@@ -81,7 +81,7 @@ These are mostly direct download links, some are more difficult to install becau
     mkdir -p ~/.vim/autoload
     mkdir -p ~/.vim/bundle
     cd ~/.vim/autoload
-    curl https://github.com/tpope/vim-pathogen/raw/master/autoload/pathogen.vim > pathogen.vim
+    curl https://raw.githubusercontent.com/tpope/vim-pathogen/master/autoload/pathogen.vim > pathogen.vim
     cd ~/.vim/bundle
     git clone git://github.com/scrooloose/nerdtree.git
     ```
