@@ -6,7 +6,10 @@ This is a work in progress, and is mostly a means for me to document my current 
 
 **Caveat**: This set of playbooks is not meant to be an example of Ansible best practices. I just want to wrap my Mac's configuration in Ansible so I can quickly install all the available development tools I use and need for my development purposes.
 
-*See also*: [Battleschool](http://spencer.gibb.us/blog/2014/02/03/introducing-battleschool), which looks like it's aiming to be a more general solution than what I've built here. (It may be a better option if you don't want to fork this repo and hack it for your own workstation...).
+*See also*:
+
+  - [Battleschool](http://spencer.gibb.us/blog/2014/02/03/introducing-battleschool), is a more general solution than what I've built here. (It may be a better option if you don't want to fork this repo and hack it for your own workstation...).
+  - [osxc](https://github.com/osxc) is another more general solution, set up so you can fork the [xc-custom](https://github.com/osxc/xc-custom) repo and get your own local environment bootstrapped quickly.
 
 ## Installation
 
