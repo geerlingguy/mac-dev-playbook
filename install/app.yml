@@ -1,3 +1,0 @@
----
-- name: Copy {{ app_name_pretty }} app to Applications directory
-  command: cp -R {{ app_name }}.app /Applications chdir={{ downloads }} creates=/Applications/{{ app_name }}.app

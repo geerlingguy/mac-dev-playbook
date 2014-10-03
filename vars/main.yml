@@ -1,0 +1,51 @@
+---
+downloads: ~/.ansible-downloads/
+
+homebrew_installed_packages:
+  - autoconf
+  - gettext
+  - libevent
+  - packer
+  - python
+  - sqlite
+  - mysql
+  - phpunit
+  - ssh-copy-id
+  - cowsay
+  - ios-sim
+  - readline
+  - subversion
+  - kdiff3
+  - openssl
+  - pv
+  - wget
+  # - caskroom/cask/brew-cask
+
+homebrew_taps:
+  - caskroom/cask
+  - homebrew/binary
+  - homebrew/dupes
+  - homebrew/php
+  - homebrew/versions
+
+homebrew_cask_appdir: /Applications
+homebrew_cask_apps:
+  - adium
+  - google-chrome
+  - dropbox
+  - firefox
+  - handbrake
+  - menumeters
+  - nvalt
+  - sequel-pro
+  - skype
+  - skitch
+  - sublime-text # Note - Sublime Text 2 only, at this time...
+  - tower
+  - transmit
+  - vlc
+  # TODO - Would these potentially break existing installs on current Mac?
+  # - vagrant
+  # - virtualbox
+  # TODO - No cask available (yet).
+  # Seil (https://pqrs.org/osx/karabiner/seil.html.en)

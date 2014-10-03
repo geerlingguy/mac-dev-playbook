@@ -1,3 +1,0 @@
----
-- name: Install {{ app_name_pretty }} via Homebrew
-  homebrew: name={{ app_name }} state=installed update_homebrew=yes

@@ -1,8 +1,0 @@
----
-# Preferences.
-# TODO: Idempotence, and set it as the default.
-# - name: Add Terminal settings.
-#   shell: open templates/terminal/JJG-Term.terminal
-
-# TODO: Make these happen.
-# git config --global color.ui true

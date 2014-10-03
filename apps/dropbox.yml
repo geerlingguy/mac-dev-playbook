@@ -1,9 +1,0 @@
----
-# Note: Once downloaded, you will need to manually run Dropbox to setup.
-# TODO: Maybe still use normal DMG routine for the install instead of sh?
-- hosts: all
-  connection: local
-
-  tasks:
-  - name: Install Dropbox.
-    shell: curl -fkL https://gist.github.com/raw/963046/install-dropbox.sh | sh creates=/Applications/Dropbox.app

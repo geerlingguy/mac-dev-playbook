@@ -1,34 +1,30 @@
 ---
-- name: Mac Development Playbook
-  hosts: self
+- hosts: self
   user: jgeerling
   connection: local
 
-  vars:
-    - downloads: ~/.ansible-downloads/
+  vars_files:
+    - vars/main.yml
+
+  roles:
+    - geerlingguy.homebrew
 
   tasks:
-    - name: Create Ansible downloads directory
-      file: path={{ downloads }} state=directory
-    - include: preferences/dotfiles.yml
-    - include: preferences/preferences.yml
+    - name: Ensure Ansible downloads directory exists.
+      file:
+        path: "{{ downloads }}"
+        state: directory
 
-- include: apps/adium.yml
-- include: apps/chrome.yml
-- include: apps/cornerstone.yml
-- include: apps/dropbox.yml
-- include: apps/firefox.yml
-- include: apps/handbrake.yml
-- include: apps/homebrew.yml
-- include: apps/knock.yml
-# - include: apps/menumeters.yml
-- include: apps/nvalt.yml
-- include: apps/pckeyboardhack.yml
-- include: apps/sequel-pro.yml
-- include: apps/skype.yml
-- include: apps/sublime.yml
-- include: apps/tower.yml
-- include: apps/transmit.yml
-- include: apps/vagrant.yml
-- include: apps/virtualbox.yml
-- include: apps/vlc.yml
+    - include: tasks/dotfiles.yml
+    - include: tasks/preferences.yml
+
+    - name: Get list of apps installed with cask.
+      command: brew cask list
+      register: homebrew_cask_list
+      changed_when: false
+
+    - name: Install apps via `brew cask`.
+      command: >
+        brew cask install {{ item }} --appdir={{ homebrew_cask_appdir }}
+      with_items: homebrew_cask_apps
+      when: "'{{ item }}' not in homebrew_cask_list.stdout"
