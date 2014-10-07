@@ -12,9 +12,11 @@
 		"MarkAndMove",
 		"Markdown Preview",
 		"Package Control",
+		"Puppet",
 		"RegReplace",
 		"Sass",
 		"SublimeCodeIntel",
+		"SublimeLinter",
 		"TrailingSpaces",
 		"WordCount",
 		"Xdebug Client"
