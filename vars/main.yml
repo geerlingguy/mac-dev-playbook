@@ -9,7 +9,6 @@ homebrew_installed_packages:
   - python
   - sqlite
   - mysql
-  - phpunit
   - ssh-copy-id
   - cowsay
   - ios-sim
@@ -19,7 +18,7 @@ homebrew_installed_packages:
   - openssl
   - pv
   - wget
-  # - caskroom/cask/brew-cask
+  - caskroom/cask/brew-cask
 
 homebrew_taps:
   - caskroom/cask

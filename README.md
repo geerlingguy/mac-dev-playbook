@@ -1,10 +1,8 @@
 # Mac Development Ansible Playbook
 
-This set of playbooks is roughly based on [MWGriffin/ansible-playbooks](https://github.com/MWGriffin/ansible-playbooks), and installs and configures all the software I use on my Mac for web and software development, as well as my preferred settings for OS X. Some things in OS X are difficult to get scripted (notably, the Mac App Store in general), so I still have some manual installation steps, but at least it's all documented here.
+This set of playbooks was originally inspired by [MWGriffin/ansible-playbooks](https://github.com/MWGriffin/ansible-playbooks), but has since been heavily modified, and installs and configures most of the software I use on my Mac for web and software development, as well as my preferred settings for OS X and some of my development applications. Some things in OS X are difficult to get scripted (notably, the Mac App Store), so I still have some manual installation steps, but at least it's all documented here.
 
 This is a work in progress, and is mostly a means for me to document my current Mac's setup. I'll be adding settings and packages to this set of playbooks over time.
-
-**Caveat**: This set of playbooks is not meant to be an example of Ansible best practices. I just want to wrap my Mac's configuration in Ansible so I can quickly install all the available development tools I use and need for my development purposes.
 
 *See also*:
 
@@ -14,25 +12,24 @@ This is a work in progress, and is mostly a means for me to document my current 
 ## Installation
 
   1. Clone this repository somewhere on your local drive.
-  2. [Install Ansible](https://devopsu.com/guides/ansible-mac-osx.html).
-  3. Run `ansible-playbook main.yml --ask-sudo-pass`.
+  2. [Install Ansible](http://docs.ansible.com/intro_installation.html), and get the homebrew role by running `$ ansible-galaxy install geerlingguy.homebrew`.
+  3. Run `ansible-playbook main.yml --ask-sudo-pass` from the same directory as this README file.
 
 ## Included Applications / Configuration
 
-The following applications are automagically installed as part of this set of playbooks:
+The following applications are automagically installed:
 
   - Adium
   - Google Chrome
-  - Cornerstone SVN
   - Dropbox
   - Firefox
   - Handbrake
   - Homebrew
-  - Knock
+  - Menu Meters
   - nvALT
-  - PCKeyboardHack
   - Sequel Pro (MySQL client)
   - Skype
+  - Skitch
   - Sublime Text
   - Tower (Git client)
   - Transmit (S/FTP client)
@@ -40,7 +37,27 @@ The following applications are automagically installed as part of this set of pl
   - VirtualBox
   - VLC
 
-Jeff Geerling's [dotfiles](https://github.com/geerlingguy/dotfiles) are also installed into the current user's home directory, including the `.osx` dotfile, which is then run to configure Mac OS X, the Finder, Terminal, Mail, and other apps according to the settings inside.
+The following homebrew packages are automagically installed:
+
+  - autoconf
+  - gettext
+  - libevent
+  - packer
+  - python
+  - sqlite
+  - mysql
+  - ssh-copy-id
+  - cowsay
+  - ios-sim
+  - readline
+  - subversion
+  - kdiff3
+  - openssl
+  - pv
+  - wget
+  - caskroom/cask/brew-cask
+
+Jeff Geerling's [dotfiles](https://github.com/geerlingguy/dotfiles) are also installed into the current user's home directory, including the `.osx` dotfile (which is not run automatically—you can run it on your own with `$ sudo ~/.osx`.
 
 Finally, there are a few other preferences and settings added on for various apps and services.
 
@@ -54,7 +71,7 @@ It's my hope that I can get the rest of these things wrapped up into Ansible pla
   2. Install [Sublime Package Manager](http://sublime.wbond.net/installation).
   3. Install all the Mac App Store Apps (see below).
   4. Install all the apps that aren't yet in this setup (see below).
-  5. Remap Caps Lock to Escape (keycode 53), using PCKeyboardHack.
+  5. Remap Caps Lock to Escape (keycode 53), using [Seil](https://pqrs.org/osx/karabiner/seil.html.en).
   6. Set trackpad tracking rate.
   7. Set mouse tracking rate.
   8. Setting up iCloud (this was presumably done already during system setup, anyways).
@@ -66,7 +83,6 @@ These are mostly direct download links, some are more difficult to install becau
 
   - [MacVim](https://github.com/b4winckler/macvim/releases/download/snapshot-72/MacVim-snapshot-72-Mavericks.tbz)
   - [iShowU HD](http://downloads.shinywhitebox.com/iShowU_HD_Pro_2.3.7.dmg)
-  - [MenuMeters](http://www.ragingmenace.com/software/menumeters/)
   - [TextMate 2](https://api.textmate.org/downloads/release)
   - [TimeMachineEditor](http://timesoftware.free.fr/timemachineeditor/TimeMachineEditor.zip)
   - [CloudyTabs](https://github.com/josh-/CloudyTabs)
@@ -98,7 +114,6 @@ I also use the following apps at least once or twice per week, but unfortunately
   - Pixelmator
   - Skitch
   - Quick Resizer
-  - Knock
   - 1Password
   - DaisyDisk
   - Byword
@@ -107,11 +122,11 @@ I also use the following apps at least once or twice per week, but unfortunately
   - Keynote
   - Numbers
 
-There are a couple other apps I'm leaving out of the list, like Microsoft Word, because I normally don't install them unless I need them; unfortunately, about once a year, I get a document that's so old/strange that I need Word or Powerpoint to open the file. I wish people didn't use document layout and slide presentation applications to send me basic textual information :-/
+There are a couple other apps I'm leaving out of the list, like Microsoft Word, because I normally don't install them unless/until I need them; unfortunately, about once a year, I get a document that's so old/strange that I need Word or Powerpoint to open the file. I wish people didn't use document layout and slide presentation applications to send me basic textual information :-/
 
 ## Ansible for DevOps
 
-If Ansible piques your interest, please check out the book I'm working on, [Ansible for DevOps](https://leanpub.com/ansible-for-devops), where I actually *do* follow Ansible best practices, and will teach you how to do some other amazing things with Ansible.
+If Ansible piques your interest, please check out the book I'm working on, [Ansible for DevOps](https://leanpub.com/ansible-for-devops), which will teach you how to do some other amazing things with Ansible.
 
 ## Author
 
