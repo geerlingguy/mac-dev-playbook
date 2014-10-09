@@ -27,6 +27,7 @@ homebrew_taps:
   - homebrew/dupes
   - homebrew/php
   - homebrew/versions
+  - homebrew/homebrew-php
 
 homebrew_cask_appdir: /Applications
 homebrew_cask_apps:

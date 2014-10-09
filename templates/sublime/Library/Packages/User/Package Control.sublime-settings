@@ -2,12 +2,11 @@
 	"auto_upgrade_last_run": null,
 	"installed_packages":
 	[
+		"DashDoc",
 		"DocBlockr",
 		"Drupal Snippets",
 		"FileDiffs",
 		"GitHub Flavored Markdown Preview",
-		"Goto Documentation",
-		"Goto Drupal API",
 		"Jinja2",
 		"MarkAndMove",
 		"Markdown Preview",
