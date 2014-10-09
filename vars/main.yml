@@ -17,6 +17,7 @@ homebrew_installed_packages:
   - kdiff3
   - openssl
   - pv
+  - drush
   - wget
   - caskroom/cask/brew-cask
 
