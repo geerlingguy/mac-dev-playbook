@@ -9,6 +9,7 @@
 - name: Check if .bash_profile is a link.
   shell: ls -F ~/.bash_profile
   register: is_link
+  failed_when: false
   changed_when: false
 
 - name: Remove current .bash_profile file if necessary.
