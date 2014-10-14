@@ -20,6 +20,7 @@ This is a work in progress, and is mostly a means for me to document my current 
 The following applications are automagically installed:
 
   - Adium
+  - BetterTouchTool
   - Google Chrome
   - Dropbox
   - Firefox

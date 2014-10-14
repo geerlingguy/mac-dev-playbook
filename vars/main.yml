@@ -32,6 +32,7 @@ homebrew_taps:
 homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
   - adium
+  - bettertouchtool
   - google-chrome
   - dropbox
   - firefox
