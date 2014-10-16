@@ -87,12 +87,6 @@ These are mostly direct download links, some are more difficult to install becau
   - [TextMate 2](https://api.textmate.org/downloads/release)
   - [TimeMachineEditor](http://timesoftware.free.fr/timemachineeditor/TimeMachineEditor.zip)
   - [CloudyTabs](https://github.com/josh-/CloudyTabs)
-  - `ssh-copy-id` (via Homebrew)
-  - `pv` (via Homebrew)
-  - `mysql` (via Homebrew)
-  - `brew cask` (via Homebrew - `phinze/cask/brew-cask`)
-    - (Consider using for most if not all of the app installations)
-  - more to come...
 
 ### Configuration to be added:
 
