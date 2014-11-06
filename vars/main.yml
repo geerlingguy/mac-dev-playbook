@@ -39,18 +39,17 @@ homebrew_cask_apps:
   - dropbox
   - firefox
   - handbrake
+  - karabiner
   - menumeters
   - nvalt
   - sequel-pro
   - skype
   - skitch
+  - seil
   - sublime-text # Note - Sublime Text 2 only, at this time...
   - tower
   - transmit
   - vlc
-  # TODO - Would these potentially break existing installs on current Mac?
-  # - vagrant
-  # - virtualbox
-  # TODO - No cask available (yet).
-  # Seil (https://pqrs.org/osx/karabiner/seil.html.en)
-  # Karabiner (https://pqrs.org/osx/karabiner/)
+  - vagrant
+  - vagrant-manager
+  - virtualbox
