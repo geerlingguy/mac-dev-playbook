@@ -10,6 +10,7 @@
   shell: ls -F ~/.bash_profile
   register: is_link
   failed_when: false
+  always_run: yes
   changed_when: false
 
 - name: Remove current .bash_profile file if necessary.
