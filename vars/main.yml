@@ -22,7 +22,7 @@ homebrew_installed_packages:
   - pv
   - drush
   - wget
-  - caskroom/cask/brew-cask
+  - brew-cask
 
 homebrew_taps:
   - caskroom/cask
