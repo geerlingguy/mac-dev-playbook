@@ -2,6 +2,7 @@
 downloads: ~/.ansible-downloads/
 
 homebrew_installed_packages:
+  - ansible
   - autoconf
   - gettext
   - libevent
