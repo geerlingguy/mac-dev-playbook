@@ -10,10 +10,6 @@
     - geerlingguy.homebrew
 
   tasks:
-    - name: Ensure Ansible downloads directory exists.
-      file:
-        path: "{{ downloads }}"
-        state: directory
-
+    - include: tasks/ansible-setup.yml
     - include: tasks/dotfiles.yml
     - include: tasks/preferences.yml
