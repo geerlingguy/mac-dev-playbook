@@ -1,20 +1,22 @@
 # Mac Development Ansible Playbook
 
-This set of playbooks was originally inspired by [MWGriffin/ansible-playbooks](https://github.com/MWGriffin/ansible-playbooks), but has since been heavily modified, and installs and configures most of the software I use on my Mac for web and software development, as well as my preferred settings for OS X and some of my development applications. Some things in OS X are difficult to get scripted (notably, the Mac App Store), so I still have some manual installation steps, but at least it's all documented here.
+This playbook installs and configures most of the software I use on my Mac for web and software development. Some things in OS X are difficult to automate (notably, the Mac App Store and certain tools from Apple), so I still have some manual installation steps, but at least it's all documented here.
 
 This is a work in progress, and is mostly a means for me to document my current Mac's setup. I'll be adding settings and packages to this set of playbooks over time.
 
 *See also*:
 
-  - [Battleschool](http://spencer.gibb.us/blog/2014/02/03/introducing-battleschool), is a more general solution than what I've built here. (It may be a better option if you don't want to fork this repo and hack it for your own workstation...).
+  - [Battleschool](http://spencer.gibb.us/blog/2014/02/03/introducing-battleschool) is a more general solution than what I've built here. (It may be a better option if you don't want to fork this repo and hack it for your own workstation...).
   - [osxc](https://github.com/osxc) is another more general solution, set up so you can fork the [xc-custom](https://github.com/osxc/xc-custom) repo and get your own local environment bootstrapped quickly.
+  - [MWGriffin/ansible-playbooks](https://github.com/MWGriffin/ansible-playbooks) was the original inspiration for this repository, but this project has since been completely rewritten.
 
 ## Installation
 
-  1. Clone this repository somewhere on your local drive.
-  2. [Install Ansible](http://docs.ansible.com/intro_installation.html).
-  3. Run the command `$ ansible-galaxy install -r requirements.txt` inside this directory to install required Ansible roles.
-  3. Run `ansible-playbook main.yml -i inventory --ask-sudo-pass` from the same directory as this README file.
+  1. [Install Ansible](http://docs.ansible.com/intro_installation.html).
+  2. Ensure Apple's command line tools are installed (`xcode-select --install` to launch the installer).
+  3. Clone this repository to your local drive.
+  4. Run the command `$ ansible-galaxy install -r requirements.txt` inside this directory to install required Ansible roles.
+  5. Run `ansible-playbook main.yml -i inventory --ask-sudo-pass` from the same directory as this README file.
 
 ## Included Applications / Configuration
 
@@ -76,8 +78,8 @@ It's my hope that I can get the rest of these things wrapped up into Ansible pla
   5. Remap Caps Lock to Escape (keycode 53), using [Seil](https://pqrs.org/osx/karabiner/seil.html.en).
   6. Set trackpad tracking rate.
   7. Set mouse tracking rate.
-  8. Setting up iCloud (this was presumably done already during system setup, anyways).
-  9. Configuring extra Mail and/or Calendar accounts.
+  8. Set up iCloud (this was presumably done already during system setup, anyways).
+  9. Configure extra Mail and/or Calendar accounts (e.g. Google, Exchange, etc.).
 
 ### Applications/packages to be added:
 
@@ -87,7 +89,6 @@ These are mostly direct download links, some are more difficult to install becau
   - [iShowU HD](http://downloads.shinywhitebox.com/iShowU_HD_Pro_2.3.7.dmg)
   - [TextMate 2](https://api.textmate.org/downloads/release)
   - [TimeMachineEditor](http://timesoftware.free.fr/timemachineeditor/TimeMachineEditor.zip)
-  - [CloudyTabs](https://github.com/josh-/CloudyTabs)
 
 ### Configuration to be added:
 
@@ -118,11 +119,11 @@ I also use the following apps at least once or twice per week, but unfortunately
   - Keynote
   - Numbers
 
-There are a couple other apps I'm leaving out of the list, like Microsoft Word, because I normally don't install them unless/until I need them; unfortunately, about once a year, I get a document that's so old/strange that I need Word or Powerpoint to open the file. I wish people didn't use document layout and slide presentation applications to send me basic textual information :-/
+There are a couple other apps I'm leaving out of the list, like Microsoft Word, because I normally don't install them unless/until I need them.
 
 ## Ansible for DevOps
 
-If Ansible piques your interest, please check out the book I'm working on, [Ansible for DevOps](https://leanpub.com/ansible-for-devops), which will teach you how to do some other amazing things with Ansible.
+Check out [Ansible for DevOps](https://leanpub.com/ansible-for-devops), which will teach you how to do some other amazing things with Ansible.
 
 ## Author
 
