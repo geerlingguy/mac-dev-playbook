@@ -61,7 +61,7 @@ The following homebrew packages are automagically installed:
   - wget
   - caskroom/cask/brew-cask
 
-Jeff Geerling's [dotfiles](https://github.com/geerlingguy/dotfiles) are also installed into the current user's home directory, including the `.osx` dotfile (which is not run automatically—you can run it on your own with `$ sudo ~/.osx`.
+Jeff Geerling's [dotfiles](https://github.com/geerlingguy/dotfiles) are also installed into the current user's home directory, including the `.osx` dotfile for configuring many aspects of Mac OS X for better performance and ease of use.
 
 Finally, there are a few other preferences and settings added on for various apps and services.
 
