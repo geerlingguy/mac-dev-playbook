@@ -1,1 +1,2 @@
+geerlingguy.dotfiles
 geerlingguy.homebrew
