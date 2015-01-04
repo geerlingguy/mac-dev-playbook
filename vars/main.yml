@@ -40,7 +40,6 @@ homebrew_taps:
   - homebrew/dupes
   - homebrew/php
   - homebrew/versions
-  - homebrew/homebrew-php
 
 homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
@@ -51,6 +50,7 @@ homebrew_cask_apps:
   - firefox
   - handbrake
   - karabiner
+  - macvim
   - menumeters
   - nvalt
   - sequel-pro

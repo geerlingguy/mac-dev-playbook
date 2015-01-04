@@ -85,7 +85,6 @@ It's my hope that I can get the rest of these things wrapped up into Ansible pla
 
 These are mostly direct download links, some are more difficult to install because of custom installers or other nonstandard install quirks:
 
-  - [MacVim](https://github.com/b4winckler/macvim/releases/download/snapshot-72/MacVim-snapshot-72-Mavericks.tbz)
   - [iShowU HD](http://downloads.shinywhitebox.com/iShowU_HD_Pro_2.3.7.dmg)
   - [TextMate 2](https://api.textmate.org/downloads/release)
   - [TimeMachineEditor](http://timesoftware.free.fr/timemachineeditor/TimeMachineEditor.zip)
