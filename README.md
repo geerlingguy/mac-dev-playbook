@@ -20,7 +20,7 @@ This is a work in progress, and is mostly a means for me to document my current 
 
 ## Included Applications / Configuration
 
-The following applications are automagically installed:
+Applications (installed with Homebrew Cask):
 
   - Adium
   - BetterTouchTool
@@ -29,20 +29,27 @@ The following applications are automagically installed:
   - Firefox
   - Handbrake
   - Homebrew
+  - Karabiner
+  - LICEcap
+  - MacVim
   - Menu Meters
   - nvALT
   - Sequel Pro (MySQL client)
   - Skype
   - Skitch
+  - Seil
   - Sublime Text
+  - TextMate
+  - TimeMachineEditor
   - Tower (Git client)
   - Transmit (S/FTP client)
-  - Vagrant
+  - Vagrant (+ Vagrant Manager)
   - VirtualBox
   - VLC
 
-The following homebrew packages are automagically installed:
+Packages (installed with Homebrew):
 
+  - ansible
   - autoconf
   - gettext
   - libevent
@@ -50,6 +57,7 @@ The following homebrew packages are automagically installed:
   - python
   - sqlite
   - mysql
+  - php56 (+ php56-xdebug)
   - ssh-copy-id
   - cowsay
   - ios-sim
@@ -58,10 +66,11 @@ The following homebrew packages are automagically installed:
   - kdiff3
   - openssl
   - pv
+  - drush
   - wget
-  - caskroom/cask/brew-cask
+  - brew-cask
 
-Jeff Geerling's [dotfiles](https://github.com/geerlingguy/dotfiles) are also installed into the current user's home directory, including the `.osx` dotfile for configuring many aspects of Mac OS X for better performance and ease of use.
+My [dotfiles](https://github.com/geerlingguy/dotfiles) are also installed into the current user's home directory, including the `.osx` dotfile for configuring many aspects of Mac OS X for better performance and ease of use.
 
 Finally, there are a few other preferences and settings added on for various apps and services.
 
@@ -71,23 +80,20 @@ Finally, there are a few other preferences and settings added on for various app
 
 It's my hope that I can get the rest of these things wrapped up into Ansible playbooks soon, but for now, these steps need to be completed manually (assuming you already have Xcode and Ansible installed, and have run this playbook).
 
-  1. Install JJG-Term.terminal theme (double-click to install).
+  1. Set JJG-Term as the default Terminal theme (it's installed, but not set as default automatically).
   2. Install [Sublime Package Manager](http://sublime.wbond.net/installation).
   3. Install all the Mac App Store Apps (see below).
   4. Install all the apps that aren't yet in this setup (see below).
   5. Remap Caps Lock to Escape (keycode 53), using [Seil](https://pqrs.org/osx/karabiner/seil.html.en).
   6. Set trackpad tracking rate.
   7. Set mouse tracking rate.
-  8. Set up iCloud (this was presumably done already during system setup, anyways).
-  9. Configure extra Mail and/or Calendar accounts (e.g. Google, Exchange, etc.).
+  8. Configure extra Mail and/or Calendar accounts (e.g. Google, Exchange, etc.).
 
 ### Applications/packages to be added:
 
 These are mostly direct download links, some are more difficult to install because of custom installers or other nonstandard install quirks:
 
   - [iShowU HD](http://downloads.shinywhitebox.com/iShowU_HD_Pro_2.3.7.dmg)
-  - [TextMate 2](https://api.textmate.org/downloads/release)
-  - [TimeMachineEditor](http://timesoftware.free.fr/timemachineeditor/TimeMachineEditor.zip)
 
 ### Configuration to be added:
 

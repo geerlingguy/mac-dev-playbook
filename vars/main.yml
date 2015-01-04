@@ -50,6 +50,7 @@ homebrew_cask_apps:
   - firefox
   - handbrake
   - karabiner
+  - licecap
   - macvim
   - menumeters
   - nvalt
@@ -58,9 +59,11 @@ homebrew_cask_apps:
   - skitch
   - seil
   - sublime-text # Note - Sublime Text 2 only, at this time...
+  - textmate
+  - timemachineeditor
   - tower
   - transmit
-  - vlc
   - vagrant
   - vagrant-manager
+  - vlc
   - virtualbox
