@@ -14,7 +14,10 @@ dotfiles_files:
 homebrew_installed_packages:
   - ansible
   - autoconf
+  - boot2docker
+  - docker
   - gettext
+  - go
   - libevent
   - packer
   - python
