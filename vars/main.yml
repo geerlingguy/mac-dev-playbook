@@ -18,6 +18,7 @@ homebrew_installed_packages:
   - docker
   - gettext
   - go
+  - gpg
   - libevent
   - packer
   - python
