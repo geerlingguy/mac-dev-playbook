@@ -19,6 +19,7 @@ homebrew_installed_packages:
   - gettext
   - go
   - gpg
+  - iperf
   - libevent
   - packer
   - python
