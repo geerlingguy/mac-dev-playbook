@@ -1,76 +1,38 @@
 ---
 downloads: ~/.ansible-downloads/
 
-dotfiles_repo: https://github.com/geerlingguy/dotfiles.git
-dotfiles_repo_local_destination: ~/Dropbox/Development/GitHub/dotfiles
-dotfiles_files:
-  - .bash_profile
-  - .gitconfig
-  - .gitignore
-  - .inputrc
-  - .osx
-  - .vimrc
-
 homebrew_installed_packages:
   - ansible
-  - autoconf
-  - boot2docker
-  - docker
-  - gettext
-  - go
-  - gpg
-  - iperf
-  - libevent
-  - packer
-  - python
-  - sqlite
-  - mysql
+  - maven
   - npm
-  - php56
-  - php56-xdebug
-  - ssh-copy-id
-  - cowsay
-  - ios-sim
-  - readline
-  - subversion
-  - kdiff3
-  - openssl
-  - pv
-  - drush
   - wget
-  - wrk
   - brew-cask
+  - coreutils 
+  - findutils 
+  - gnu-tar 
+  - gnu-sed 
+  - gawk 
+  - gnutls 
+  - gnu-indent
+  - gnu-getopt
 
 homebrew_taps:
   - caskroom/cask
   - homebrew/binary
   - homebrew/dupes
-  - homebrew/php
   - homebrew/versions
 
 homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
-  - adium
-  - bettertouchtool
   - google-chrome
   - dropbox
   - firefox
-  - handbrake
-  - karabiner
-  - licecap
-  - macvim
-  - menumeters
-  - nvalt
-  - sequel-pro
   - skype
-  - skitch
-  - seil
-  - sublime-text # Note - Sublime Text 2 only, at this time...
-  - textmate
-  - timemachineeditor
-  - tower
-  - transmit
   - vagrant
   - vagrant-manager
   - vlc
   - virtualbox
+  - webstorm
+  - iterm2
+  - nosleep
+  - caffeine
