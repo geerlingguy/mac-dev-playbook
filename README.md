@@ -126,6 +126,10 @@ I also use the following apps at least once or twice per week, but unfortunately
 
 There are a couple other apps I'm leaving out of the list, like Microsoft Word, because I normally don't install them unless/until I need them.
 
+## Testing the Playbook
+
+Many people have asked me if I often wipe my entire workstation and start from scratch just to test changes to the playbook. Nope! Instead, I posted instructions for how I build a [Mac OS X VirtualBox VM](https://github.com/geerlingguy/mac-osx-virtualbox-vm), on which I can continually run and re-run this playbook to test changes and make sure things work correctly.
+
 ## Ansible for DevOps
 
 Check out [Ansible for DevOps](https://leanpub.com/ansible-for-devops), which will teach you how to do some other amazing things with Ansible.
