@@ -59,6 +59,7 @@ homebrew_cask_apps:
   - firefox
   - handbrake
   - karabiner
+  - limechat
   - licecap
   - macvim
   - menumeters
