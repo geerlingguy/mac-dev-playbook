@@ -132,8 +132,8 @@ Many people have asked me if I often wipe my entire workstation and start from s
 
 ## Ansible for DevOps
 
-Check out [Ansible for DevOps](https://leanpub.com/ansible-for-devops), which will teach you how to do some other amazing things with Ansible.
+Check out [Ansible for DevOps](http://www.ansiblefordevops.com/), which will teach you how to do some other amazing things with Ansible.
 
 ## Author
 
-[Jeff Geerling](http://jeffgeerling.com/), 2014 (originally forked from [MWGriffin/ansible-playbooks](https://github.com/MWGriffin/ansible-playbooks)).
+[Jeff Geerling](http://jeffgeerling.com/), 2014 (originally inspired by [MWGriffin/ansible-playbooks](https://github.com/MWGriffin/ansible-playbooks)).
