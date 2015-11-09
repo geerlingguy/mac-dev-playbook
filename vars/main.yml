@@ -23,6 +23,7 @@ homebrew_installed_packages:
   - git
   - go
   - gpg
+  - hub
   - iperf
   - libevent
   - packer
