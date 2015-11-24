@@ -25,6 +25,7 @@ homebrew_installed_packages:
   - gpg
   - hub
   - iperf
+  - libdvdcss
   - libevent
   - packer
   - python
