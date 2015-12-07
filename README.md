@@ -114,7 +114,6 @@ I also use the following apps at least once or twice per week, but unfortunately
   - Tweetbot
   - RadarScope
   - Pixelmator
-  - Skitch
   - Quick Resizer
   - 1Password
   - DaisyDisk
