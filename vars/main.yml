@@ -32,6 +32,7 @@ homebrew_installed_packages:
   - sqlite
   - mysql
   - npm
+  - nvm
   - php56
   - php56-xdebug
   - ssh-copy-id
