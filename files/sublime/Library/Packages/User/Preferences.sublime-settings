@@ -28,5 +28,8 @@
   "match_selection": true,
   "draw_white_space": "selection",
   "trim_trailing_white_space_on_save": false,
-  "ensure_newline_at_eof_on_save": false
+  "ensure_newline_at_eof_on_save": false,
+  "folder_exclude_patterns": ["node_modules", ".svn", ".git", ".hg", "CVS", "vendor", ".bundle"],
+  "file_exclude_patterns": ["*.pyc", "*.pyo", "*.exe", "*.dll", "*.obj","*.o", "*.a", "*.lib", "*.so", "*.dylib", "*.ncb", "*.sdf", "*.suo", "*.pdb", "*.idb", ".DS_Store", "*.class", "*.psd", "*.db", "*.sublime-workspace"],
+  "binary_file_patterns": ["generated/*", "*.tbz2", "*.gzip", "*.jpg", "*.jpeg", "*.png", "*.gif", "*.ttf", "*.tga", "*.dds", "*.ico", "*.eot", "*.pdf", "*.swf", "*.jar", "*.zip"]
 }
