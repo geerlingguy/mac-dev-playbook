@@ -24,6 +24,7 @@ homebrew_installed_packages:
   - go
   - gpg
   - hub
+  - httpie
   - iperf
   - libdvdcss
   - libevent
