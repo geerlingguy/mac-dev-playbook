@@ -17,8 +17,8 @@ homebrew_installed_packages:
   - ansible
   - autoconf
   - bash-completion
-  - boot2docker
   - docker
+  - docker-machine
   - gettext
   - git
   - go
