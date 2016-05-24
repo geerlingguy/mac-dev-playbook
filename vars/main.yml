@@ -51,6 +51,7 @@ homebrew_installed_packages:
   - wget
   - wrk
   - brew-cask
+  - tree
 
 homebrew_taps:
   - caskroom/cask
