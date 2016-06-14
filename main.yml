@@ -1,6 +1,5 @@
 ---
 - hosts: localhost
-  user: jgeerling
   connection: local
 
   vars_files:
