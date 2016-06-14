@@ -4,6 +4,7 @@
   shell: defaults read com.apple.terminal 'Default Window Settings'
   register: terminal_theme
   changed_when: false
+  always_run: yes
 
 - name: Ensure custom Terminal profile is added.
   shell: open files/terminal/JJG-Term.terminal
@@ -26,7 +27,7 @@
     dest: /etc/sudoers
     mode: 0440
     validate: 'visudo -cf %s'
-  sudo: yes
+  become: yes
   when: configure_sudoers
 
 # TODO: Configure Sublime Text (see templates/sublime/*).
