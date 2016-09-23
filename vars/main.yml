@@ -40,7 +40,6 @@ homebrew_installed_packages:
   - cowsay
   - readline
   - subversion
-  - kdiff3
   - openssl
   - pv
   - drush
@@ -64,6 +63,7 @@ homebrew_cask_apps:
   - google-chrome
   - handbrake
   # - karabiner # Note: Now using Karabiner Elements for macOS Sierra
+  - kdiff3
   - limechat
   - licecap
   - macvim

@@ -32,6 +32,7 @@ Applications (installed with Homebrew Cask):
   - Handbrake
   - Homebrew
   - <s>Karabiner</s> (Note: Currently using [Karabiner Elements](https://github.com/tekezo/Karabiner-Elements) for macOS Sierra)
+  - KDiff3
   - LICEcap
   - MacVim
   - Menu Meters
@@ -74,13 +75,11 @@ Packages (installed with Homebrew):
   - cowsay
   - readline
   - subversion
-  - kdiff3
   - openssl
   - pv
   - drush
   - wget
   - wrk
-  - brew-cask
 
 My [dotfiles](https://github.com/geerlingguy/dotfiles) are also installed into the current user's home directory, including the `.osx` dotfile for configuring many aspects of macOS for better performance and ease of use.
 
