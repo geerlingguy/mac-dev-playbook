@@ -58,24 +58,24 @@ homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
   - docker
   - dropbox
-  - fing
+  # - fing # Note: https://github.com/caskroom/homebrew-cask/pull/24759
   - firefox
   - google-chrome
   - handbrake
   # - karabiner # Note: Now using Karabiner Elements for macOS Sierra
   - kdiff3
-  - limechat
   - licecap
+  - limechat
   - macvim
-  - menumeters
+  # - menumeters # Note: Using forked version for 10.11+ support
   - nvalt
+  # - seil # Note: Now using Karabiner Elements for macOS Sierra
   - sequel-pro
   - skype
   - skitch
-  # - seil # Note: Now using Karabiner Elements for macOS Sierra
+  - slack
   - sublime-text
-  - textmate
   - transmit
   - vagrant
-  - vlc
   - virtualbox
+  - vlc

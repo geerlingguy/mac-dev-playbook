@@ -24,29 +24,30 @@ This is a work in progress, and is mostly a means for me to document my current 
 
 Applications (installed with Homebrew Cask):
 
-  - Adium
-  - Docker
-  - Dropbox
-  - Firefox
-  - Google Chrome
-  - Handbrake
-  - Homebrew
-  - <s>Karabiner</s> (Note: Currently using [Karabiner Elements](https://github.com/tekezo/Karabiner-Elements) for macOS Sierra)
-  - KDiff3
-  - LICEcap
-  - MacVim
-  - Menu Meters
-  - nvALT
-  - Sequel Pro (MySQL client)
-  - Skype
-  - Skitch
-  - <s>Seil</s> (Note: Currently using [Karabiner Elements](https://github.com/tekezo/Karabiner-Elements) for macOS Sierra)
-  - Sublime Text
-  - TextMate
-  - Transmit (S/FTP client)
-  - Vagrant (+ Vagrant Manager)
-  - VirtualBox
-  - VLC
+  - [Docker](https://www.docker.com/)
+  - [Dropbox](https://www.dropbox.com/)
+  - <s>[Fing](https://www.fing.io/)</s> (Note: Waiting on [this PR](https://github.com/caskroom/homebrew-cask/pull/24759) to get merged)
+  - [Firefox](https://www.mozilla.org/en-US/firefox/new/)
+  - [Google Chrome](https://www.google.com/chrome/)
+  - [Handbrake](https://handbrake.fr/)
+  - [Homebrew](http://brew.sh/)
+  - <s>[Karabiner](https://pqrs.org/osx/karabiner/)</s> (Note: Currently using [Karabiner Elements](https://github.com/tekezo/Karabiner-Elements) for macOS Sierra)
+  - [KDiff3](http://kdiff3.sourceforge.net/)
+  - [LICEcap](http://www.cockos.com/licecap/)
+  - [LimeChat](http://limechat.net/mac/)
+  - [MacVim](http://macvim-dev.github.io/macvim/)
+  - <s>[Menu Meters](https://www.ragingmenace.com/software/menumeters/)</s> (Note: Currently using [this fork](http://member.ipmu.jp/yuji.tachikawa/MenuMetersElCapitan/) for compatibility)
+  - [nvALT](http://brettterpstra.com/projects/nvalt/)
+  - <s>[Seil](https://pqrs.org/osx/karabiner/seil.html.en)</s> (Note: Currently using [Karabiner Elements](https://github.com/tekezo/Karabiner-Elements) for macOS Sierra)
+  - [Sequel Pro](https://www.sequelpro.com/) (MySQL client)
+  - [Skype](https://www.skype.com/en/)
+  - [Skitch](https://evernote.com/skitch/)
+  - [Slack](https://slack.com/)
+  - [Sublime Text](https://www.sublimetext.com/)
+  - [Transmit](https://panic.com/transmit/) (S/FTP client)
+  - [Vagrant](https://www.vagrantup.com/)
+  - [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
+  - [VLC](http://www.videolan.org/vlc/index.html)
 
 Packages (installed with Homebrew):
 
@@ -105,6 +106,8 @@ It's my hope that I can get the rest of these things wrapped up into Ansible pla
 These are mostly direct download links, some are more difficult to install because of custom installers or other nonstandard install quirks:
 
   - [iShowU HD](http://downloads.shinywhitebox.com/iShowU_HD_Pro_2.3.7.dmg)
+  - [Adobe Creative Cloud](http://www.adobe.com/creativecloud.html)
+  - [Microsoft Office](https://products.office.com/en-us/mac/microsoft-office-for-mac)
 
 ### Configuration to be added:
 
@@ -133,8 +136,6 @@ I also use the following apps at least once or twice per week, but the Mac App S
   - Pages
   - Keynote
   - Numbers
-
-There are a couple other apps I'm leaving out of the list, like Microsoft Word and Adobe Photoshop, because I normally don't install them unless/until I need them.
 
 ## Testing the Playbook
 
