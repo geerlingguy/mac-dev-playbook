@@ -14,12 +14,9 @@ dotfiles_files:
   - .vimrc
 
 homebrew_installed_packages:
-  - ansible
+  # - ansible # Installed via Pip.
   - autoconf
   - bash-completion
-  - docker
-  - docker-compose
-  - docker-machine
   - gettext
   - git
   - go
@@ -36,12 +33,11 @@ homebrew_installed_packages:
   - mysql
   - npm
   - nvm
-  - php56
-  - php56-mcrypt
-  - php56-xdebug
+  - php70
+  - php70-mcrypt
+  - php70-xdebug
   - ssh-copy-id
   - cowsay
-  - ios-sim
   - readline
   - subversion
   - kdiff3
@@ -53,6 +49,7 @@ homebrew_installed_packages:
   - brew-cask
 
 homebrew_taps:
+  - homebrew/core
   - caskroom/cask
   - homebrew/binary
   - homebrew/dupes
@@ -61,14 +58,13 @@ homebrew_taps:
 
 homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
-  - adium
-  - bettertouchtool
-  - google-chrome
+  - docker
   - dropbox
   - fing
   - firefox
+  - google-chrome
   - handbrake
-  - karabiner
+  # - karabiner # Note: Now using Karabiner Elements for macOS Sierra
   - limechat
   - licecap
   - macvim
@@ -77,13 +73,10 @@ homebrew_cask_apps:
   - sequel-pro
   - skype
   - skitch
-  - seil
-  - sublime-text # Note - Sublime Text 2 only, at this time...
+  # - seil # Note: Now using Karabiner Elements for macOS Sierra
+  - sublime-text
   - textmate
-  - timemachineeditor
-  - tower
   - transmit
   - vagrant
-  - vagrant-manager
   - vlc
   - virtualbox

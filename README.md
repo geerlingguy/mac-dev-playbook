@@ -6,9 +6,9 @@ This is a work in progress, and is mostly a means for me to document my current 
 
 *See also*:
 
-  - [Battleschool](http://spencer.gibb.us/blog/2014/02/03/introducing-battleschool) is a more general solution than what I've built here. (It may be a better option if you don't want to fork this repo and hack it for your own workstation...).
-  - [osxc](https://github.com/osxc) is another more general solution, set up so you can fork the [xc-custom](https://github.com/osxc/xc-custom) repo and get your own local environment bootstrapped quickly.
-  - [MWGriffin/ansible-playbooks](https://github.com/MWGriffin/ansible-playbooks) was the original inspiration for this repository, but this project has since been completely rewritten.
+  - [Battleschool](http://spencer.gibb.us/blog/2014/02/03/introducing-battleschool)
+  - [osxc](https://github.com/osxc)
+  - [MWGriffin/ansible-playbooks](https://github.com/MWGriffin/ansible-playbooks) (the original inspiration for this project)
 
 ## Installation
 
@@ -16,20 +16,22 @@ This is a work in progress, and is mostly a means for me to document my current 
   2. Ensure Apple's command line tools are installed (`xcode-select --install` to launch the installer).
   3. Clone this repository to your local drive.
   4. Run the command `$ ansible-galaxy install -r requirements.yml` inside this directory to install required Ansible roles.
-  5. Run `ansible-playbook main.yml -i inventory -u [username] -U [username] --ask-sudo-pass` from the same directory as this README file (substitute `[username]` for your macOS account username). Enter your account password when prompted.
+  5. Run `ansible-playbook main.yml -i inventory -u [username] --ask-sudo-pass` from the same directory as this README file (substitute `[username]` for your macOS account username). Enter your account password when prompted.
+
+> Note: If some Homebrew commands fail, you might need to agree to XCode's license or fix some other Brew issue. Run `brew doctor` to see if this is the case.
 
 ## Included Applications / Configuration
 
 Applications (installed with Homebrew Cask):
 
   - Adium
-  - BetterTouchTool
-  - Google Chrome
+  - Docker
   - Dropbox
   - Firefox
+  - Google Chrome
   - Handbrake
   - Homebrew
-  - Karabiner
+  - <s>Karabiner</s> (Note: Currently using [Karabiner Elements](https://github.com/tekezo/Karabiner-Elements) for macOS Sierra)
   - LICEcap
   - MacVim
   - Menu Meters
@@ -37,11 +39,9 @@ Applications (installed with Homebrew Cask):
   - Sequel Pro (MySQL client)
   - Skype
   - Skitch
-  - Seil
+  - <s>Seil</s> (Note: Currently using [Karabiner Elements](https://github.com/tekezo/Karabiner-Elements) for macOS Sierra)
   - Sublime Text
   - TextMate
-  - TimeMachineEditor
-  - Tower (Git client)
   - Transmit (S/FTP client)
   - Vagrant (+ Vagrant Manager)
   - VirtualBox
@@ -49,18 +49,29 @@ Applications (installed with Homebrew Cask):
 
 Packages (installed with Homebrew):
 
-  - ansible
   - autoconf
+  - bash-completion
   - gettext
+  - git
+  - go
+  - gpg
+  - hub
+  - httpie
+  - iperf
+  - libdvdcss
   - libevent
   - packer
   - python
   - sqlite
+  - mcrypt
   - mysql
-  - php56 (+ php56-xdebug)
+  - npm
+  - nvm
+  - php70
+  - php70-mcrypt
+  - php70-xdebug
   - ssh-copy-id
   - cowsay
-  - ios-sim
   - readline
   - subversion
   - kdiff3
@@ -68,6 +79,7 @@ Packages (installed with Homebrew):
   - pv
   - drush
   - wget
+  - wrk
   - brew-cask
 
 My [dotfiles](https://github.com/geerlingguy/dotfiles) are also installed into the current user's home directory, including the `.osx` dotfile for configuring many aspects of macOS for better performance and ease of use.
@@ -109,7 +121,7 @@ These are mostly direct download links, some are more difficult to install becau
 
 ### Apps only available via the App Store
 
-I also use the following apps at least once or twice per week, but unfortunately, as the Mac App Store is not able to be controlled via CLI, or any other way I can find (so far), I have to manually install all of these apps from within the App Store application.
+I also use the following apps at least once or twice per week, but the Mac App Store is harder to control via CLI, so for now I have to manually install all of these apps from within the App Store application (see [Issue #11](https://github.com/geerlingguy/mac-dev-playbook/issues/11)).
 
   - Tweetbot
   - RadarScope
@@ -123,7 +135,7 @@ I also use the following apps at least once or twice per week, but unfortunately
   - Keynote
   - Numbers
 
-There are a couple other apps I'm leaving out of the list, like Microsoft Word, because I normally don't install them unless/until I need them.
+There are a couple other apps I'm leaving out of the list, like Microsoft Word and Adobe Photoshop, because I normally don't install them unless/until I need them.
 
 ## Testing the Playbook
 
@@ -131,8 +143,8 @@ Many people have asked me if I often wipe my entire workstation and start from s
 
 ## Ansible for DevOps
 
-Check out [Ansible for DevOps](http://www.ansiblefordevops.com/), which will teach you how to do some other amazing things with Ansible.
+Check out [Ansible for DevOps](https://www.ansiblefordevops.com/), which will teach you how to do some other amazing things with Ansible.
 
 ## Author
 
-[Jeff Geerling](http://jeffgeerling.com/), 2014 (originally inspired by [MWGriffin/ansible-playbooks](https://github.com/MWGriffin/ansible-playbooks)).
+[Jeff Geerling](http://www.jeffgeerling.com/), 2014 (originally inspired by [MWGriffin/ansible-playbooks](https://github.com/MWGriffin/ansible-playbooks)).
