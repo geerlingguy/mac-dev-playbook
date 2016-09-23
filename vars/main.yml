@@ -46,7 +46,6 @@ homebrew_installed_packages:
   - drush
   - wget
   - wrk
-  - brew-cask
 
 homebrew_taps:
   - homebrew/core
