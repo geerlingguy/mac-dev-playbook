@@ -1,5 +1,7 @@
 # Mac Development Ansible Playbook
 
+[![Build Status](https://travis-ci.org/geerlingguy/mac-dev-playbook.svg?branch=master)](https://travis-ci.org/geerlingguy/mac-dev-playbook)
+
 This playbook installs and configures most of the software I use on my Mac for web and software development. Some things in macOS are difficult to automate (notably, the Mac App Store and certain tools from Apple), so I still have some manual installation steps, but at least it's all documented here.
 
 This is a work in progress, and is mostly a means for me to document my current Mac's setup. I'll be adding settings and packages to this set of playbooks over time.
@@ -15,8 +17,8 @@ This is a work in progress, and is mostly a means for me to document my current 
   1. [Install Ansible](http://docs.ansible.com/intro_installation.html).
   2. Ensure Apple's command line tools are installed (`xcode-select --install` to launch the installer).
   3. Clone this repository to your local drive.
-  4. Run the command `$ ansible-galaxy install -r requirements.yml` inside this directory to install required Ansible roles.
-  5. Run `ansible-playbook main.yml -i inventory -u [username] --ask-sudo-pass` from the same directory as this README file (substitute `[username]` for your macOS account username). Enter your account password when prompted.
+  4. Run `$ ansible-galaxy install -r requirements.yml` inside this directory to install required Ansible roles.
+  5. Run `ansible-playbook main.yml -i inventory -u [username] --ask-sudo-pass` inside this directory (substitute `[username]` for your macOS account username). Enter your account password when prompted.
 
 > Note: If some Homebrew commands fail, you might need to agree to XCode's license or fix some other Brew issue. Run `brew doctor` to see if this is the case.
 
