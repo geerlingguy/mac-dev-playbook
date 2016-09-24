@@ -24,7 +24,7 @@ install:
   # Add a hosts file.
   - sudo mkdir -p /etc/ansible
   - sudo touch /etc/ansible/hosts
-  - "echo -e '[local]\nlocalhost ansible_connection=local configure_sudoers=false' | sudo tee -a /etc/ansible/hosts > /dev/null"
+  - "echo -e '[local]\nlocalhost ansible_connection=local' | sudo tee -a /etc/ansible/hosts > /dev/null"
 
 script:
   # Install dependencies.
@@ -34,11 +34,11 @@ script:
   - "ansible-playbook main.yml --syntax-check"
 
   # Test the playbook.
-  - "ansible-playbook main.yml"
+  - "ansible-playbook --extra-vars '{"configure_sudoers":"false"}' main.yml"
 
   # Test the playbook's idempotence.
   - idempotence=$(mktemp)
-  - "ansible-playbook main.yml | tee -a ${idempotence}"
+  - "ansible-playbook --extra-vars '{"configure_sudoers":"false"}' main.yml | tee -a ${idempotence}"
   - >
     tail ${idempotence}
     | grep -q 'changed=0.*failed=0'
