@@ -38,7 +38,7 @@ script:
 
   # Test the playbook's idempotence.
   - idempotence=$(mktemp)
-  - "ansible-playbook --extra-vars '{"configure_sudoers":"false"}' main.yml | tee -a ${idempotence}"
+  - "ansible-playbook --extra-vars '{\"configure_sudoers\":\"false\"}' main.yml | tee -a ${idempotence}"
   - >
     tail ${idempotence}
     | grep -q 'changed=0.*failed=0'
