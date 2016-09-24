@@ -34,7 +34,7 @@ script:
   - "ansible-playbook main.yml --syntax-check"
 
   # Test the playbook.
-  - "ansible-playbook --extra-vars '{"configure_sudoers":"false"}' main.yml"
+  - "ansible-playbook --extra-vars '{\"configure_sudoers\":\"false\"}' main.yml"
 
   # Test the playbook's idempotence.
   - idempotence=$(mktemp)
