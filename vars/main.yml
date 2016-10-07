@@ -32,6 +32,7 @@ homebrew_installed_packages:
   - sqlite
   - mcrypt
   - mysql
+  - nmap
   - npm
   - nvm
   - php70
