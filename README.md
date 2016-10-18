@@ -98,7 +98,7 @@ It's my hope that I can get the rest of these things wrapped up into Ansible pla
   2. Install [Sublime Package Manager](http://sublime.wbond.net/installation).
   3. Install all the Mac App Store Apps (see below).
   4. Install all the apps that aren't yet in this setup (see below).
-  5. Remap Caps Lock to Escape (keycode 53), using [Seil](https://pqrs.org/osx/karabiner/seil.html.en).
+  5. Remap Caps Lock to Escape (keycode 53), using Karabiner Elements.
   6. Set trackpad tracking rate.
   7. Set mouse tracking rate.
   8. Configure extra Mail and/or Calendar accounts (e.g. Google, Exchange, etc.).
