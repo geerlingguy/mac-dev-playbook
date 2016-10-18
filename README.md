@@ -54,6 +54,7 @@ Packages (installed with Homebrew):
 
   - autoconf
   - bash-completion
+  - doxygen
   - gettext
   - git
   - go

@@ -18,6 +18,7 @@ homebrew_installed_packages:
   # - ansible # Installed via Pip.
   - autoconf
   - bash-completion
+  - doxygen
   - gettext
   - git
   - go
