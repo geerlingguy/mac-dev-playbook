@@ -2,19 +2,21 @@
 downloads: ~/.ansible-downloads/
 
 homebrew_installed_packages:
+  - python
+  - ansible
   - git
   - go
   - gpg
   - hub
   - iperf
+  - python
+  - sqlite
   - mysql
   - nmap
   - npm
   - nvm
-  - python
-  - ruby
-  - sqlite
   - wget
+  - ruby
 
 homebrew_taps:
   - caskroom/cask

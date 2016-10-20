@@ -1,0 +1,28 @@
+---
+#- name: Ensure Ansible downloads directory exists.
+#  file:
+#    path: "{{ downloads }}"
+#    state: directory
+
+#- name: Ensure /etc/ansible directory exists.
+#  file:
+#    path: /etc/ansible
+#    state: directory
+
+#- name: Symlink /usr/local/etc/ansible to /etc/ansible.
+#  file:
+#    src: /etc/ansible
+#    path: /usr/local/etc/ansible
+#    state: link
+
+- name: Install Homebrew Applications
+  homebrew:
+    name: "{{ homebrew_installed_packages }}"
+
+- name: Tap caskroom
+  homebrew_tap:
+    name: "{{ homebrew_taps }}"
+
+- name: Install Homebrew Cask Applications
+  homebrew_cask:
+    name: "{{ homebrew_cask_apps }}"
