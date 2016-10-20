@@ -5,10 +5,6 @@
   vars_files:
     - vars/main.yml
 
-  roles:
-    - geerlingguy.homebrew
-    - geerlingguy.dotfiles
-
   tasks:
     - include: tasks/ansible-setup.yml
     - include: tasks/preferences.yml
