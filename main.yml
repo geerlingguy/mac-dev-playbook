@@ -6,4 +6,14 @@
     - vars/main.yml
 
   tasks:
-    - include: tasks/main.yml
+#    - name: Install Homebrew applications
+#      homebrew:
+#        name: "{{ homebrew_apps }}"
+
+#    - name: Tap Homebrew casks
+#      homebrew_tap:
+#        name: "{{ homebrew_taps }}"
+
+    - name: Install Homebrew cask applications
+      homebrew_cask:
+        name: "{{ homebrew_cask_apps }}"

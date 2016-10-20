@@ -1,7 +1,5 @@
 ---
-downloads: ~/.ansible-downloads/
-
-homebrew_installed_apps:
+homebrew_apps:
   - git
   - go
   - gpg
@@ -10,7 +8,6 @@ homebrew_installed_apps:
   - mysql
   - nmap
   - npm
-  - nvm
   - python
   - ruby
   - sqlite

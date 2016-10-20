@@ -15,14 +15,14 @@
 #    path: /usr/local/etc/ansible
 #    state: link
 
-- name: Install Homebrew Applications
+- name: Install Homebrew applications
   homebrew:
-    name: "{{ homebrew_installed_apps }}"
+    name: "{{ homebrew_apps }}"
 
-- name: Tap casks
+- name: Tap Homebrew casks
   homebrew_tap:
     name: "{{ homebrew_taps }}"
 
-- name: Install Homebrew Cask Applications
+- name: Install Homebrew cask applications
   homebrew_cask:
     name: "{{ homebrew_cask_apps }}"
