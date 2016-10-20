@@ -1,15 +1,28 @@
 ---
-- hosts: all
+- hosts: localhost
   connection: local
 
-  vars_files:
-    - vars/main.yml
-
   tasks:
-    - include: tasks/ansible-setup.yml
-    - include: tasks/preferences.yml
-
-    # TODO: Use sudo once .osx can be run via root with no user interaction.
-    - name: Run .osx dotfiles.
-      shell: ~/.osx --no-restart
-      changed_when: false
+    - homebrew: name=python
+    - homebrew: name=ansible
+    - homebrew: name=git
+    - homebrew: name=go
+    - homebrew: name=gpg
+    - homebrew: name=hub
+    - homebrew: name=iperf
+    - homebrew: name=sqlite
+    - homebrew: name=mysql
+    - homebrew: name=nmap
+    - homebrew: name=npm
+    - homebrew: name=nvm
+    - homebrew: name=openssl
+    - homebrew: name=wget
+    - homebrew_tap: name=caskroom/cask
+    - homebrew_cask: name=docker
+    - homebrew_cask: name=fing
+    - homebrew_cask: name=firefox
+    - homebrew_cask: name=google-chrome
+    - homebrew_cask: name=sequel-pro
+    - homebrew_cask: name=slack
+    - homebrew_cask: name=vagrant
+    - homebrew_cask: name=virtualbox
