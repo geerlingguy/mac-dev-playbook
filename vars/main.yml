@@ -1,7 +1,7 @@
 ---
 downloads: ~/.ansible-downloads/
 
-homebrew_installed_packages:
+homebrew_installed_apps:
   - git
   - go
   - gpg
@@ -18,9 +18,7 @@ homebrew_installed_packages:
 
 homebrew_taps:
   - caskroom/cask
-  - homebrew/binary
   - homebrew/dupes
-  - homebrew/versions
 
 homebrew_cask_apps:
   - docker
@@ -31,3 +29,6 @@ homebrew_cask_apps:
   - slack
   - vagrant
   - virtualbox
+  - spectacle
+  - flux
+  - google-drive

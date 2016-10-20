@@ -17,9 +17,9 @@
 
 - name: Install Homebrew Applications
   homebrew:
-    name: "{{ homebrew_installed_packages }}"
+    name: "{{ homebrew_installed_apps }}"
 
-- name: Tap caskroom
+- name: Tap casks
   homebrew_tap:
     name: "{{ homebrew_taps }}"
 
