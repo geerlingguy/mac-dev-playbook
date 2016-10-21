@@ -19,10 +19,18 @@
   homebrew:
     name: "{{ homebrew_apps }}"
 
-- name: Tap Homebrew casks
-  homebrew_tap:
-    name: "{{ homebrew_taps }}"
-
 - name: Install Homebrew cask applications
   homebrew_cask:
-    name: "{{ homebrew_cask_apps }}"
+#    name: "{{ homebrew_cask_apps }}"
+    name:
+      - docker
+      - fing
+      - firefox
+      - google-chrome
+      - sequel-pro
+      - slack
+      - vagrant
+      - virtualbox
+      - spectacle
+      - flux
+      - google-drive
