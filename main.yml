@@ -1,19 +1,62 @@
 ---
-- hosts: all
+- hosts: localhost
   connection: local
 
-  vars_files:
-    - vars/main.yml
-
-  roles:
-    - geerlingguy.homebrew
-    - geerlingguy.dotfiles
-
   tasks:
-    - include: tasks/ansible-setup.yml
-    - include: tasks/preferences.yml
+  - name: Ensure /etc/ansible directory exists.
+    file:
+      path: /etc/ansible
+      state: directory
 
-    # TODO: Use sudo once .osx can be run via root with no user interaction.
-    - name: Run .osx dotfiles.
-      shell: ~/.osx --no-restart
-      changed_when: false
+  - name: Symlink /usr/local/etc/ansible to /etc/ansible.
+    file:
+      src: /etc/ansible
+      path: /usr/local/etc/ansible
+      state: link
+
+  - name: Check if Homebrew is installed
+    stat:
+      path: /usr/local/Cellar
+    register: stat_homebrew
+
+  - name: Install Homebrew if needed
+    shell: ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    when: stat_homebrew.stat.exists == False
+    args:
+      executable: /bin/bash
+
+  - name: Install Homebrew taps
+    homebrew_tap:
+      name: caskroom/cask
+      name: homebrew/dupes
+
+  - name: Install Homebrew applications
+    homebrew:
+      name: git
+      name: go
+      name: gpg
+      name: hub
+      name: iperf
+      name: mysql
+      name: nmap
+      name: npm
+      name: python
+      name: ruby
+      name: sqlite
+      name: wget
+      state: latest
+
+  - name: Install Homebrew cask applications
+    homebrew_cask:
+      name: docker
+      name: fing
+      name: firefox
+      name: google-chrome
+      name: sequel-pro
+      name: slack
+      name: vagrant
+      name: virtualbox
+      name: spectacle
+      name: flux
+      name: google-drive
+      state: installed
