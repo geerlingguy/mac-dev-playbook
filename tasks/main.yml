@@ -15,22 +15,22 @@
 #    path: /usr/local/etc/ansible
 #    state: link
 
-- name: Install Homebrew applications
-  homebrew:
-    name: "{{ homebrew_apps }}"
+#- name: Install Homebrew applications
+#  homebrew:
+#    name: "{{ homebrew_apps }}"
 
 - name: Install Homebrew cask applications
   homebrew_cask:
 #    name: "{{ homebrew_cask_apps }}"
-    name:
-      - docker
-      - fing
-      - firefox
-      - google-chrome
-      - sequel-pro
-      - slack
-      - vagrant
-      - virtualbox
-      - spectacle
-      - flux
-      - google-drive
+    name: >
+      docker,
+      fing,
+      firefox,
+      google-chrome,
+      sequel-pro,
+      slack,
+      vagrant,
+      virtualbox,
+      spectacle,
+      flux,
+      google-drive
