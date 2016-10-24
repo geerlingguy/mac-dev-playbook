@@ -33,7 +33,6 @@ Applications (installed with Homebrew Cask):
   - [Google Chrome](https://www.google.com/chrome/)
   - [Handbrake](https://handbrake.fr/)
   - [Homebrew](http://brew.sh/)
-  - [Karabiner Elements](https://github.com/tekezo/Karabiner-Elements)
   - [KDiff3](http://kdiff3.sourceforge.net/)
   - [LICEcap](http://www.cockos.com/licecap/)
   - [LimeChat](http://limechat.net/mac/)

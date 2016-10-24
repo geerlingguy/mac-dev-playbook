@@ -65,7 +65,6 @@ homebrew_cask_apps:
   - firefox
   - google-chrome
   - handbrake
-  - karabiner-elements
   - kdiff3
   - licecap
   - limechat
