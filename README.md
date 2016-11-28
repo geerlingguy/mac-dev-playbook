@@ -22,7 +22,13 @@ This is a work in progress, and is mostly a means for me to document my current 
 
 > Note: If some Homebrew commands fail, you might need to agree to XCode's license or fix some other Brew issue. Run `brew doctor` to see if this is the case.
 
-## Included Applications / Configuration
+## Overriding Defaults
+
+Not everyone's development environment and preferred software configuration is the same.
+
+You can override any of the defaults configured in `default.config.yml` by creating a `config.yml` file and setting the overrides in that file (e.g. create a customized list of `homebrew_installed_packages`).
+
+## Included Applications / Configuration (Default)
 
 Applications (installed with Homebrew Cask):
 

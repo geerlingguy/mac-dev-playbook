@@ -3,7 +3,12 @@
   connection: local
 
   vars_files:
-    - vars/main.yml
+    - default.config.yml
+
+  pre_tasks:
+    - include_vars: "{{ item }}"
+      with_fileglob:
+        - config.yml
 
   roles:
     - geerlingguy.homebrew
