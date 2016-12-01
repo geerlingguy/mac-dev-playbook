@@ -8,7 +8,7 @@
   pre_tasks:
     - include_vars: "{{ item }}"
       with_fileglob:
-        - config.yml
+        - ../config.yml
 
   roles:
     - geerlingguy.homebrew
