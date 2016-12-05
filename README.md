@@ -26,7 +26,20 @@ This is a work in progress, and is mostly a means for me to document my current 
 
 Not everyone's development environment and preferred software configuration is the same.
 
-You can override any of the defaults configured in `default.config.yml` by creating a `config.yml` file and setting the overrides in that file (e.g. create a customized list of `homebrew_installed_packages`).
+You can override any of the defaults configured in `default.config.yml` by creating a `config.yml` file and setting the overrides in that file. For example, you can customize the installed packages and apps with something like:
+
+    homebrew_installed_packages:
+      - cowsay
+      - git
+      - go
+    
+    mas_installed_app_ids:
+      - 443987910 # 1Password
+      - 498486288 # Quick Resizer
+      - 557168941 # Tweetbot
+      - 497799835 # Xcode
+
+Any variable can be overridden in `config.yml`; see the supporting roles' documentation for a complete list of available variables.
 
 ## Included Applications / Configuration (Default)
 
@@ -101,12 +114,11 @@ It's my hope that I can get the rest of these things wrapped up into Ansible pla
 
   1. Set JJG-Term as the default Terminal theme (it's installed, but not set as default automatically).
   2. Install [Sublime Package Manager](http://sublime.wbond.net/installation).
-  3. Install all the Mac App Store Apps (see below).
-  4. Install all the apps that aren't yet in this setup (see below).
-  5. Remap Caps Lock to Escape (requires macOS Sierra 10.12.1+).
-  6. Set trackpad tracking rate.
-  7. Set mouse tracking rate.
-  8. Configure extra Mail and/or Calendar accounts (e.g. Google, Exchange, etc.).
+  3. Install all the apps that aren't yet in this setup (see below).
+  4. Remap Caps Lock to Escape (requires macOS Sierra 10.12.1+).
+  5. Set trackpad tracking rate.
+  6. Set mouse tracking rate.
+  7. Configure extra Mail and/or Calendar accounts (e.g. Google, Exchange, etc.).
 
 ### Applications/packages to be added:
 
@@ -126,22 +138,6 @@ These are mostly direct download links, some are more difficult to install becau
     cd ~/.vim/bundle
     git clone git://github.com/scrooloose/nerdtree.git
     ```
-
-### Apps only available via the App Store
-
-I also use the following apps at least once or twice per week, but the Mac App Store is harder to control via CLI, so for now I have to manually install all of these apps from within the App Store application (see [Issue #11](https://github.com/geerlingguy/mac-dev-playbook/issues/11)).
-
-  - Tweetbot
-  - RadarScope
-  - Pixelmator
-  - Quick Resizer
-  - 1Password
-  - DaisyDisk
-  - Byword
-  - Aperture
-  - Pages
-  - Keynote
-  - Numbers
 
 ## Testing the Playbook
 

@@ -80,3 +80,8 @@ homebrew_cask_apps:
   - vagrant
   - virtualbox
   - vlc
+
+# See `geerlingguy.mas` role documentation for usage instructions.
+mas_installed_app_ids: []
+mas_email: ""
+mas_password: ""
