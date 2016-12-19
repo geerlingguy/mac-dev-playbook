@@ -71,7 +71,8 @@ homebrew_cask_apps:
   - licecap
   - limechat
   - macvim
-  - yujitach-menumeters # Note: Using forked version for 10.11+ support
+  # - menumeters
+  # - yujitach-menumeters # Forked version for 10.11+ support.
   - nvalt
   - sequel-pro
   - skype
