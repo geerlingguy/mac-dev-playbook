@@ -20,6 +20,7 @@ homebrew_installed_packages:
   # - ansible # Installed via Pip.
   - autoconf
   - bash-completion
+  - chromedriver
   - doxygen
   - gettext
   - git
@@ -67,11 +68,14 @@ homebrew_cask_apps:
   - firefox
   - google-chrome
   - handbrake
+  - hipchat
+  - java
   - kdiff3
   - licecap
   - limechat
   - macvim
-  - yujitach-menumeters # Note: Using forked version for 10.11+ support
+  # - menumeters
+  # - yujitach-menumeters # Forked version for 10.11+ support.
   - nvalt
   - sequel-pro
   - skype
