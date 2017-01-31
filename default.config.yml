@@ -64,7 +64,7 @@ homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
   - docker
   - dropbox
-  - fing
+  # - fing # Download link keeps getting changed, d'oh!
   - firefox
   - google-chrome
   - handbrake
