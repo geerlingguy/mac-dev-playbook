@@ -19,15 +19,3 @@
     - defaults write com.apple.terminal 'Startup Window Settings' -string JJG-Term
   changed_when: false
   when: "'JJG-Term' not in terminal_theme.stdout"
-
-# Sudoers configuration (enables more convenient Vagrant usage).
-- name: Copy sudoers configuration into place.
-  copy:
-    src: files/etc/sudoers
-    dest: /etc/sudoers
-    mode: 0440
-    validate: 'visudo -cf %s'
-  become: yes
-  when: configure_sudoers
-
-# TODO: Configure Sublime Text (see templates/sublime/*).
