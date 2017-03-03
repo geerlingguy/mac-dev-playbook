@@ -23,6 +23,7 @@ homebrew_installed_packages:
   - chromedriver
   - doxygen
   - gettext
+  - gifsicle
   - git
   - go
   - gpg
