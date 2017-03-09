@@ -30,26 +30,17 @@ homebrew_installed_packages:
   - hub
   - httpie
   - iperf
-  - libdvdcss
   - libevent
-  - packer
-  - python
   - sqlite
   - mcrypt
-  - mysql
   - nmap
   - npm
   - nvm
-  - php70
-  - php70-mcrypt
-  - php70-xdebug
   - ssh-copy-id
   - cowsay
   - readline
-  - subversion
   - openssl
   - pv
-  - drush
   - wget
   - wrk
 
@@ -70,23 +61,17 @@ homebrew_cask_apps:
   - google-chrome
   - handbrake
   - hipchat
-  - java
-  - kdiff3
   - licecap
   - limechat
   - macvim
-  # - menumeters
-  # - yujitach-menumeters # Forked version for 10.11+ support.
   - nvalt
   - sequel-pro
-  - skype
   - skitch
   - slack
   - sublime-text
   - transmit
   - vagrant
   - virtualbox
-  - vlc
 
 # See `geerlingguy.mas` role documentation for usage instructions.
 mas_installed_app_ids: []

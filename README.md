@@ -54,22 +54,17 @@ Applications (installed with Homebrew Cask):
   - [Handbrake](https://handbrake.fr/)
   - [HipChat](https://www.hipchat.com/)
   - [Homebrew](http://brew.sh/)
-  - [Java](https://java.com)
-  - [KDiff3](http://kdiff3.sourceforge.net/)
   - [LICEcap](http://www.cockos.com/licecap/)
   - [LimeChat](http://limechat.net/mac/)
   - [MacVim](http://macvim-dev.github.io/macvim/)
-  - [Menu Meters](https://www.ragingmenace.com/software/menumeters/) (Note: Currently using [this fork](http://member.ipmu.jp/yuji.tachikawa/MenuMetersElCapitan/) for compatibility)
   - [nvALT](http://brettterpstra.com/projects/nvalt/)
   - [Sequel Pro](https://www.sequelpro.com/) (MySQL client)
-  - [Skype](https://www.skype.com/en/)
   - [Skitch](https://evernote.com/skitch/)
   - [Slack](https://slack.com/)
   - [Sublime Text](https://www.sublimetext.com/)
   - [Transmit](https://panic.com/transmit/) (S/FTP client)
   - [Vagrant](https://www.vagrantup.com/)
   - [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
-  - [VLC](http://www.videolan.org/vlc/index.html)
 
 Packages (installed with Homebrew):
 
@@ -84,25 +79,16 @@ Packages (installed with Homebrew):
   - hub
   - httpie
   - iperf
-  - libdvdcss
   - libevent
-  - packer
-  - python
   - sqlite
   - mcrypt
-  - mysql
   - npm
   - nvm
-  - php70
-  - php70-mcrypt
-  - php70-xdebug
   - ssh-copy-id
   - cowsay
   - readline
-  - subversion
   - openssl
   - pv
-  - drush
   - wget
   - wrk
 
