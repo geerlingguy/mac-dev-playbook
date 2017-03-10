@@ -52,7 +52,6 @@ Applications (installed with Homebrew Cask):
   - [Firefox](https://www.mozilla.org/en-US/firefox/new/)
   - [Google Chrome](https://www.google.com/chrome/)
   - [Handbrake](https://handbrake.fr/)
-  - [HipChat](https://www.hipchat.com/)
   - [Homebrew](http://brew.sh/)
   - [LICEcap](http://www.cockos.com/licecap/)
   - [LimeChat](http://limechat.net/mac/)
