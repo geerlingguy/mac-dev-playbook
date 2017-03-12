@@ -14,7 +14,7 @@
     - geerlingguy.homebrew
     - geerlingguy.dotfiles
     - name: geerlingguy.mas
-      when: mas_installed_app_ids
+      when: mas_installed_apps
 
   tasks:
     - include: tasks/ansible-setup.yml

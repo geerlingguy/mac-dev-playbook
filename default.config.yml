@@ -73,6 +73,6 @@ homebrew_cask_apps:
   - virtualbox
 
 # See `geerlingguy.mas` role documentation for usage instructions.
-mas_installed_app_ids: []
+mas_installed_apps: []
 mas_email: ""
 mas_password: ""
