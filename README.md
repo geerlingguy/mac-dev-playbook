@@ -33,12 +33,12 @@ You can override any of the defaults configured in `default.config.yml` by creat
       - cowsay
       - git
       - go
-    
-    mas_installed_app_ids:
-      - 443987910 # 1Password
-      - 498486288 # Quick Resizer
-      - 557168941 # Tweetbot
-      - 497799835 # Xcode
+
+    mas_installed_apps:
+      - { id: 443987910, name: "1Password" }
+      - { id: 498486288, name: "Quick Resizer" }
+      - { id: 557168941, name: "Tweetbot" }
+      - { id: 497799835, name: "Xcode" }
 
 Any variable can be overridden in `config.yml`; see the supporting roles' documentation for a complete list of available variables.
 
