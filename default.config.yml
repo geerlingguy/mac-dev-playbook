@@ -2,8 +2,6 @@
 downloads: ~/.ansible-downloads/
 
 configure_sudoers: yes
-configure_terminal: yes
-configure_osx: yes
 
 dotfiles_repo: https://github.com/geerlingguy/dotfiles.git
 dotfiles_repo_accept_hostkey: yes
@@ -20,10 +18,8 @@ homebrew_installed_packages:
   # - ansible # Installed via Pip.
   - autoconf
   - bash-completion
-  - chromedriver
   - doxygen
   - gettext
-  - gifsicle
   - git
   - go
   - gpg
