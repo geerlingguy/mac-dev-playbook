@@ -21,7 +21,7 @@ This is a work in progress, and is mostly a means for me to document my current 
   4. Run `$ ansible-galaxy install -r requirements.yml` inside this directory to install required Ansible roles.
   5. Run `ansible-playbook main.yml -i inventory -K` inside this directory. Enter your account password when prompted.
 
-> Note: If some Homebrew commands fail, you might need to agree to XCode's license or fix some other Brew issue. Run `brew doctor` to see if this is the case.
+> Note: If some Homebrew commands fail, you might need to agree to Xcode's license or fix some other Brew issue. Run `brew doctor` to see if this is the case.
 
 ## Overriding Defaults
 
