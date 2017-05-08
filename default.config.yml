@@ -76,3 +76,5 @@ homebrew_cask_apps:
 mas_installed_apps: []
 mas_email: ""
 mas_password: ""
+
+osx_script: "~/.osx --no-restart"
