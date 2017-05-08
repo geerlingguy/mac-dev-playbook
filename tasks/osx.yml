@@ -1,5 +1,5 @@
 ---
 # TODO: Use sudo once .osx can be run via root with no user interaction.
 - name: Run .osx dotfiles.
-  shell: ~/.osx --no-restart
+  shell: "{{ osx_script }}"
   changed_when: false
