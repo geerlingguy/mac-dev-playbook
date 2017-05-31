@@ -74,3 +74,8 @@ mas_email: ""
 mas_password: ""
 
 osx_script: "~/.osx --no-restart"
+
+vagrant_plugins_force_install: false
+vagrant_plugins:
+  - vagrant-hostsupdater
+  - vagrant-vbguest
