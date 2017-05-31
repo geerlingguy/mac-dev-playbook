@@ -74,3 +74,6 @@ mas_email: ""
 mas_password: ""
 
 osx_script: "~/.osx --no-restart"
+
+# Glob pattern to ansible task files to run after all other tasks are finished.
+post_provision_tasks: []
