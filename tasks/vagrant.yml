@@ -1,0 +1,10 @@
+---
+- name: Register which vagrant plugins are installed.
+  command: vagrant plugin list
+  register: vagrant_plugins_list_result
+  changed_when: false
+
+- name: Install Vagrant plugins
+  command: "vagrant plugin install {{ item }}"
+  when: (item not in vagrant_plugins_list_result.stdout) or vagrant_plugins_force_install|default(false)
+  with_items: "{{ vagrant_plugins }}"

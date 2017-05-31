@@ -27,3 +27,6 @@
 
     - include: tasks/osx.yml
       when: configure_osx
+
+    - include: tasks/vagrant.yml
+      when: "'vagrant' in homebrew_cask_apps"
