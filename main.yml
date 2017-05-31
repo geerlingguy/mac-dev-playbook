@@ -27,3 +27,9 @@
 
     - include: tasks/osx.yml
       when: configure_osx
+
+    - name: Run configured post-provision ansible task files.
+      include: "{{ outer_item }}"
+      loop_control:
+        loop_var: outer_item
+      with_fileglob: "{{ post_provision_tasks|default(omit) }}"
