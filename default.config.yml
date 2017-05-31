@@ -10,7 +10,6 @@ dotfiles_repo_accept_hostkey: yes
 dotfiles_repo_local_destination: ~/Dropbox/Development/GitHub/dotfiles
 dotfiles_files:
   - .bash_profile
-  - .gitconfig
   - .gitignore
   - .inputrc
   - .osx
