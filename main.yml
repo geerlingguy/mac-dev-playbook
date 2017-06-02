@@ -33,6 +33,9 @@
       when: configure_osx
       tags: ['osx']
 
+    - include: tasks/extra-packages.yml
+      tags: ['extra-packages']
+
     - name: Run configured post-provision ansible task files.
       include: "{{ outer_item }}"
       loop_control:

@@ -75,5 +75,13 @@ mas_password: ""
 
 osx_script: "~/.osx --no-restart"
 
+# Install packages from other package managers.
+# Note: You are responsible for making sure the required package managers are
+# installed, eg. through homebrew.
+composer_packages: []
+gem_packages: []
+npm_packages: []
+pip_packages: []
+
 # Glob pattern to ansible task files to run after all other tasks are finished.
 post_provision_tasks: []
