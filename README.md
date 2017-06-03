@@ -27,7 +27,7 @@ This is a work in progress, and is mostly a means for me to document my current 
 
 You can filter which part of the provisioning process to run by specifying a set of tags using `ansible-playbook`'s `--tags` flag. The tags available are `dotfiles`, `homebrew`, `mas` and `osx`.
 
-    ansible-playook main.yml -i inventory -K --tags "dotfiles,homebrew"
+    ansible-playbook main.yml -i inventory -K --tags "dotfiles,homebrew"
 
 ## Overriding Defaults
 
