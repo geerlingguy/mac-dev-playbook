@@ -47,13 +47,19 @@ You can override any of the defaults configured in `default.config.yml` by creat
       - { id: 497799835, name: "Xcode" }
 
     composer_packages:
-      - hirak/prestissimo
+      - name: hirak/prestissimo
       - name: drush/drush
         version: '^8.1'
 
     gem_packages:
       - name: bundler
         state: latest
+
+    npm_packages:
+      - name: webpack
+
+    pip_packages:
+      - name: mkdocs
 
 Any variable can be overridden in `config.yml`; see the supporting roles' documentation for a complete list of available variables.
 
