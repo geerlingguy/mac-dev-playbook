@@ -69,7 +69,6 @@ Applications (installed with Homebrew Cask):
 
   - [Docker](https://www.docker.com/)
   - [Dropbox](https://www.dropbox.com/)
-  - [Fing](https://www.fing.io/)
   - [Firefox](https://www.mozilla.org/en-US/firefox/new/)
   - [Google Chrome](https://www.google.com/chrome/)
   - [Handbrake](https://handbrake.fr/)
@@ -93,6 +92,7 @@ Packages (installed with Homebrew):
   - chromedriver
   - doxygen
   - gettext
+  - gifsicle
   - git
   - go
   - gpg
@@ -102,7 +102,8 @@ Packages (installed with Homebrew):
   - libevent
   - sqlite
   - mcrypt
-  - npm
+  - nmap
+  - node
   - nvm
   - ssh-copy-id
   - cowsay
