@@ -11,6 +11,11 @@
     sed_path: "{{ sed_which_result.stdout }}"
   when: sed_path is undefined
 
+- name: Define sudo_user variable.
+  set_fact:
+    sudo_user: "{{ ansible_env.SUDO_USER | default(ansible_env.USER, true) | default(ansible_user_id, true) }}"
+  when: sudo_user is undefined
+
 # Sudoers configuration (enables more convenient Vagrant usage).
 - name: Copy sudoers configuration into place.
   template:
