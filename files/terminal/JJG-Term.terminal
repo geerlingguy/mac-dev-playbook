@@ -20,11 +20,11 @@
 	<key>BackgroundColor</key>
 	<data>
 	YnBsaXN0MDDUAQIDBAUGFRZYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3AS
-	AAGGoKMHCA9VJG51bGzTCQoLDA0OVU5TUkdCXE5TQ29sb3JTcGFjZVYkY2xhc3NPEC8w
-	LjA3ODcxOTQyOTM1IDAuMDc4NzE5NDI5MzUgMC4wNzg3MTk0MjkzNSAwLjkyABABgALS
-	EBESE1okY2xhc3NuYW1lWCRjbGFzc2VzV05TQ29sb3KiEhRYTlNPYmplY3RfEA9OU0tl
-	eWVkQXJjaGl2ZXLRFxhUcm9vdIABCBEaIy0yNztBSE5bYpSWmJ2osbm8xdfa3wAAAAAA
-	AAEBAAAAAAAAABkAAAAAAAAAAAAAAAAAAADh
+	AAGGoKMHCA9VJG51bGzTCQoLDA0OVU5TUkdCXE5TQ29sb3JTcGFjZVYkY2xhc3NPEDcw
+	LjA3ODcxOTQyOTM1IDAuMDc4NzE5NDI5MzUgMC4wNzg3MTk0MjkzNSAwLjg5OTM0MDY3
+	OTIAEAGAAtIQERITWiRjbGFzc25hbWVYJGNsYXNzZXNXTlNDb2xvcqISFFhOU09iamVj
+	dF8QD05TS2V5ZWRBcmNoaXZlctEXGFRyb290gAEIERojLTI3O0FITltinJ6gpbC5wcTN
+	3+LnAAAAAAAAAQEAAAAAAAAAGQAAAAAAAAAAAAAAAAAAAOk=
 	</data>
 	<key>BackgroundSettingsForInactiveWindows</key>
 	<false/>
@@ -52,7 +52,11 @@
 	<key>Linewrap</key>
 	<true/>
 	<key>ProfileCurrentVersion</key>
-	<real>2.02</real>
+	<real>2.0499999999999998</real>
+	<key>RestoreLines</key>
+	<integer>2000</integer>
+	<key>ScrollbackLines</key>
+	<integer>50000</integer>
 	<key>SelectionColor</key>
 	<data>
 	YnBsaXN0MDDUAQIDBAUGFRZYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3AS
@@ -61,6 +65,8 @@
 	TlNPYmplY3RfEA9OU0tleWVkQXJjaGl2ZXLRFxhUcm9vdIABCBEaIy0yNztBSFBdZHBy
 	dHmEjZWYobO2uwAAAAAAAAEBAAAAAAAAABkAAAAAAAAAAAAAAAAAAAC9
 	</data>
+	<key>ShouldLimitScrollback</key>
+	<integer>1</integer>
 	<key>ShowWindowSettingsNameInTitle</key>
 	<false/>
 	<key>TerminalType</key>
@@ -82,7 +88,7 @@
 	dHmEjZWYobO2uwAAAAAAAAEBAAAAAAAAABkAAAAAAAAAAAAAAAAAAAC9
 	</data>
 	<key>UseBrightBold</key>
-	<false/>
+	<true/>
 	<key>columnCount</key>
 	<integer>120</integer>
 	<key>name</key>
