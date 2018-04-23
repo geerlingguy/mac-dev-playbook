@@ -67,6 +67,7 @@ Any variable can be overridden in `config.yml`; see the supporting roles' docume
 
 Applications (installed with Homebrew Cask):
 
+  - [ChromeDriver](https://sites.google.com/a/chromium.org/chromedriver/)
   - [Docker](https://www.docker.com/)
   - [Dropbox](https://www.dropbox.com/)
   - [Firefox](https://www.mozilla.org/en-US/firefox/new/)
@@ -88,7 +89,6 @@ Packages (installed with Homebrew):
 
   - autoconf
   - bash-completion
-  - chromedriver
   - doxygen
   - gettext
   - gifsicle

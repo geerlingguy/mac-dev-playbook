@@ -20,7 +20,6 @@ homebrew_installed_packages:
   # - ansible # Installed via Pip.
   - autoconf
   - bash-completion
-  - chromedriver
   - doxygen
   - gettext
   - gifsicle
@@ -51,9 +50,9 @@ homebrew_taps:
 
 homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
+  - chromedriver
   - docker
   - dropbox
-  # - fing # Download link keeps getting changed, d'oh!
   - firefox
   - google-chrome
   - handbrake
