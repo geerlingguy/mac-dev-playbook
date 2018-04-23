@@ -83,7 +83,6 @@ Applications (installed with Homebrew Cask):
   - [Sublime Text](https://www.sublimetext.com/)
   - [Transmit](https://panic.com/transmit/) (S/FTP client)
   - [Vagrant](https://www.vagrantup.com/)
-  - [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
 
 Packages (installed with Homebrew):
 
@@ -105,6 +104,7 @@ Packages (installed with Homebrew):
   - nmap
   - node
   - nvm
+  - php
   - ssh-copy-id
   - cowsay
   - readline
