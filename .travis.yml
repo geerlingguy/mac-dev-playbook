@@ -6,10 +6,9 @@ osx_image: xcode9.3
 
 before_install:
   # Uninstall existing Homebrew installation.
-  - curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/uninstall
-  - chmod +x uninstall
-  - yes '' | ./uninstall
-  - rm -f uninstall
+  - curl -sLO https://raw.githubusercontent.com/Homebrew/install/master/uninstall
+  - chmod +x ./uninstall
+  - ./uninstall --force
   - rm -rf /usr/local/Homebrew
   - rm -rf /usr/local/Caskroom
   - rm -rf /usr/local/bin/brew
