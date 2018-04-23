@@ -5,8 +5,11 @@ language: objective-c
 osx_image: xcode9.3
 
 before_install:
-  # Uninstall existing brew installation.
-  - yes '' | 'ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/uninstall)"'
+  # Uninstall existing Homebrew installation.
+  - curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/uninstall
+  - chmod +x uninstall
+  - yes '' | ./uninstall
+  - rm -f uninstall
   - rm -rf /usr/local/Homebrew
   - rm -rf /usr/local/Caskroom
   - rm -rf /usr/local/bin/brew
