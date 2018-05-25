@@ -36,7 +36,7 @@ script:
   - "ansible-playbook main.yml --syntax-check"
 
   # Test the playbook.
-  - 'travis_wait 30 ansible-playbook --extra-vars "configure_sudoers: False" main.yml'
+  - 'travis_wait 30 ansible-playbook --extra-vars "configure_sudoers:\ False" main.yml'
 
   # Test the playbook's idempotence.
   - idempotence=$(mktemp)
