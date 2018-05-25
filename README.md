@@ -39,25 +39,25 @@ You can override any of the defaults configured in `default.config.yml` by creat
       - cowsay
       - git
       - go
-
+    
     mas_installed_apps:
       - { id: 443987910, name: "1Password" }
       - { id: 498486288, name: "Quick Resizer" }
       - { id: 557168941, name: "Tweetbot" }
       - { id: 497799835, name: "Xcode" }
-
+    
     composer_packages:
       - name: hirak/prestissimo
       - name: drush/drush
         version: '^8.1'
-
+    
     gem_packages:
       - name: bundler
         state: latest
-
+    
     npm_packages:
       - name: webpack
-
+    
     pip_packages:
       - name: mkdocs
 
@@ -162,4 +162,4 @@ Check out [Ansible for DevOps](https://www.ansiblefordevops.com/), which teaches
 
 ## Author
 
-[Jeff Geerling](http://www.jeffgeerling.com/), 2014 (originally inspired by [MWGriffin/ansible-playbooks](https://github.com/MWGriffin/ansible-playbooks)).
+[Jeff Geerling](https://www.jeffgeerling.com/), 2014 (originally inspired by [MWGriffin/ansible-playbooks](https://github.com/MWGriffin/ansible-playbooks)).
