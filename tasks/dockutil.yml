@@ -1,0 +1,17 @@
+---
+- name: List all items in Dock
+  shell: dockutil --list
+  register: dock_items
+
+- name: Remove all crap from Dock
+  shell: dockutil --remove "{{ item }}"
+  ignore_errors: true
+  with_items: "{{ dockitems_to_remove }}"
+
+- name: Check if items in dock exist
+  shell: dockutil --add "{{ item.path }}" --replacing '{{ item.name }}'
+  with_items: "{{ dockitems_to_persist }}"
+
+- name: Fix order
+  shell: dockutil --move "{{ item.name }}" --position "{{ item.pos }}"
+  with_items: "{{ dockitems_to_persist }}"

@@ -39,6 +39,9 @@
     - include: tasks/extra-packages.yml
       tags: ['extra-packages']
 
+    - include: tasks/dockutil.yml
+      tags: ['dock', 'dockutil']
+
     - name: Run configured post-provision ansible task files.
       include: "{{ outer_item }}"
       loop_control:
