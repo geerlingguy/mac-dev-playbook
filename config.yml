@@ -1,0 +1,180 @@
+---
+downloads: ~/.ansible-downloads/
+
+configure_dotfiles: yes
+configure_sudoers: yes
+configure_terminal: yes
+configure_osx: yes
+
+dotfiles_repo: https://github.com/geerlingguy/dotfiles.git
+dotfiles_repo_accept_hostkey: yes
+dotfiles_repo_local_destination: ~/dotfiles
+dotfiles_files:
+  - .bash_profile
+  - .gitignore
+  - .inputrc
+  - .osx
+  - .vimrc
+
+homebrew_installed_packages:
+  # - ansible # Installed via Pip.
+  - autoconf
+  - bash-completion
+  # - doxygen
+  - gettext
+  - gifsicle
+  - git
+  - go
+  - gpg
+  - hub
+  - httpie
+  - iperf
+  - libevent
+  - sqlite
+  - mcrypt
+  - nmap
+  - node
+  - nvm
+  # - rvm
+  # - php
+  - ssh-copy-id
+  - cowsay
+  - readline
+  - openssl
+  - pv
+  - wget
+  - wrk
+  - zsh
+  - tmux
+  - dockutil
+  # Elixir Development
+  - erlang
+  - elixir
+
+
+homebrew_taps:
+  - homebrew/core
+  - homebrew/cask
+
+homebrew_cask_appdir: /Applications
+homebrew_cask_apps:
+  - chromedriver
+  - docker
+  # - firefox
+  - google-chrome
+  - licecap
+  # - limechat
+  - macvim
+  - sequel-pro
+  - skitch
+  - sublime-text
+  - transmit
+  - vagrant
+  - atom
+  - alfred
+  - tunnelblick
+  - spectacle
+  - postgres
+
+# Atom configuration
+atom_upgrade_all: True
+atom_packages:
+  - aligner
+  - aligner-ruby
+  - color-picker
+  - compare-files
+  - gist
+  # - hiera-eyaml
+  - linter
+  - linter-ruby
+  - linter-swagger
+  - linter-rubocop
+  - atom-beautify
+  - minimap-linter
+  - pretty-json
+  - rails-i18n-autocomplete
+  - sequence-diagram
+  - markdown-table-editor
+  - markdown-table-formatter
+  - merge-conflicts
+  - imdone-atom-github
+  - sort-lines
+  - trailing-spaces
+  - minimap
+  - ruby-test
+  - busy-signal
+  - column-select
+  - git-blame
+  # Language Support
+  - language-ansible
+  - language-babel
+  - language-puppet
+  - language-rspec
+  - language-babel
+  - language-java
+  - language-ruby
+  - language-python
+  - language-docker
+
+
+# See `geerlingguy.mas` role documentation for usage instructions.
+mas_installed_apps: []
+#- { id: 443987910, name: "1Password" }
+#- { id: 497799835, name: "Xcode" }
+mas_email: ""
+mas_password: ""
+
+osx_script: "~/.osx --no-restart"
+
+# Dockutil
+dockitems_to_remove:
+  - Launchpad
+  - Mail
+  - Safari
+  - Contacts
+  - Notes
+  - Reminders
+  - Maps
+  - Photos
+  - Messages
+  - FaceTime
+  - iTunes
+  - iBooks
+  - App Store
+  - System Preferences
+  - Calendar
+
+dockitems_to_persist:
+  - name: Google Chrome
+    path: "/Applications/Google Chrome.app"
+    pos: 1
+  - name: Atom
+    path: /Applications/Atom.app
+    pos: 2
+  - name: Terminal
+    path: /Applications/Utilities/Terminal.app
+    pos: 3
+  - name: 1Password 7
+    path: "/Applications/1Password 7.app"
+    pos: 4
+
+# Install packages from other package managers.
+# Note: You are responsible for making sure the required package managers are
+# installed, eg. through homebrew.
+gem_packages: []
+  # - name: bundler
+  # - name: hiera-eyaml-gpg
+  # - name: bundler
+  #   state: present # present/absent/latest, default: present
+  #   version: "~> 1.15.1" # default: N/A
+npm_packages: []
+  # - name: webpack
+  #   state: present # present/absent/latest, default: present
+  #   version: "^2.6" # default: N/A
+pip_packages: []
+  # - name: mkdocs
+  #   state: present # present/absent/latest, default: present
+  #   version: "0.16.3" # default: N/A
+
+# Glob pattern to ansible task files to run after all other tasks are finished.
+post_provision_tasks: []
