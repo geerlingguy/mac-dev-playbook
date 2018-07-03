@@ -1,0 +1,9 @@
+---
+- name: Install Elixir Hex
+  command: mix local.hex --force
+
+- name: Install Rebar
+  command: mix local.rebar
+
+- name: Install Phoenix
+  command: mix archive.install https://github.com/phoenixframework/archives/raw/master/phx_new.ez
