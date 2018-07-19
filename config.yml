@@ -118,6 +118,8 @@ atom_packages:
   - language-ruby
   - language-python
   - language-docker
+  # Additional Packages
+  # - atom-ide-ui
 
 
 # See `geerlingguy.mas` role documentation for usage instructions.
