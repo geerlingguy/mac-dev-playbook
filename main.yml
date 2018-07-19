@@ -22,6 +22,8 @@
       tags: ['mas']
     - role: jgkim.atom
       tags: ['atom']
+    - role: rvm_io.ruby
+      tags: ['rvm', 'ruby']
 
   tasks:
     - include: tasks/ansible-setup.yml

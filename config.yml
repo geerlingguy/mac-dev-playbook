@@ -50,6 +50,7 @@ homebrew_installed_packages:
   # Elixir Development
   - erlang
   - elixir
+  - ruby
 
 
 homebrew_taps:
@@ -158,12 +159,28 @@ dockitems_to_persist:
     path: "/Applications/1Password 7.app"
     pos: 4
 
+# Install path for rvm (defaults to single user)
+# NOTE: If you are doing a ROOT BASED INSTALL then make sure you
+#       set the install path to something like '/usr/local/rvm'
+rvm1_install_path: '~/.rvm' # '/usr/local/rvm' # '~/.rvm'
+rvm1_bundler_install: True
+rvm1_user: matt
+rvm1_rubies:
+  - 'ruby-2.1.5'
+
 # Install packages from other package managers.
 # Note: You are responsible for making sure the required package managers are
 # installed, eg. through homebrew.
-gem_packages: []
-  # - name: bundler
-  # - name: hiera-eyaml-gpg
+gem_packages: #[]
+  - gem:
+    name: bundler
+    state: present
+  - gem:
+    name: gpgme
+    state: present
+  - gem:
+    name: hiera-eyaml-gpg
+    state: present
   # - name: bundler
   #   state: present # present/absent/latest, default: present
   #   version: "~> 1.15.1" # default: N/A
