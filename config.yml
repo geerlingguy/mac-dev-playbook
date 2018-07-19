@@ -76,6 +76,8 @@ homebrew_cask_apps:
   - tunnelblick
   - spectacle
   - postgres
+  - gpg-suite
+  - citrix-receiver
 
 # Atom configuration
 atom_upgrade_all: True
