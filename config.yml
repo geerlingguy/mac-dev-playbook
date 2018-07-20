@@ -78,6 +78,10 @@ homebrew_cask_apps:
   - postgres
   - gpg-suite
   - citrix-receiver
+  - omnifocus
+  - slack
+  - dashlane
+  - blue-jeans
 
 # Atom configuration
 atom_upgrade_all: True
