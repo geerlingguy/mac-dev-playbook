@@ -3,7 +3,7 @@
   connection: local
 
   vars_files:
-    - default.config.yml
+    - jbz-config.yml
 
   pre_tasks:
     - include_vars: "{{ item }}"

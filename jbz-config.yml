@@ -54,24 +54,19 @@ homebrew_taps:
   - homebrew/bundle
 
 homebrew_cask_appdir: /Applications
-homebrew_cask_apps:
-  - chromedriver
-  - docker
-  - dropbox
-  - firefox
-  - google-chrome
-  - handbrake
-  - iTerm2
-  - licecap
-  - limechat
-  - macvim
-  - sequel-pro
-  - skitch
-  - slack
-  - sublime-text
-  - transmit
-  - virtualbox
-  - vagrant
+homebrew_cask_apps: []
+#  - chromedriver
+#  - docker
+#  - dropbox
+#  - google-chrome
+#  - handbrake
+#  - iTerm2
+#  - macvim
+#  - sequel-pro
+#  - slack
+#  - sublime-text
+#  - virtualbox
+#  - vagrant
 
 # See `geerlingguy.mas` role documentation for usage instructions.
 mas_installed_apps: 
