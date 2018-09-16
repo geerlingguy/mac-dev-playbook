@@ -20,6 +20,10 @@
     - role: geerlingguy.mas
       when: mas_installed_apps
       tags: ['mas']
+    - role: jgkim.atom
+      tags: ['atom']
+    - role: rvm_io.ruby
+      tags: ['rvm', 'ruby']
 
   tasks:
     - include_tasks: tasks/ansible-setup.yml
@@ -36,6 +40,12 @@
 
     - include_tasks: tasks/extra-packages.yml
       tags: ['extra-packages']
+
+    - include: tasks/dockutil.yml
+      tags: ['dock', 'dockutil']
+
+    - include: tasks/elixir.yml
+      tags: ['elixir']
 
     - name: Run configured post-provision ansible task files.
       include_tasks: "{{ outer_item }}"

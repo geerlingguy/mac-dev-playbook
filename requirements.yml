@@ -2,3 +2,5 @@
 - name: geerlingguy.dotfiles
 - name: geerlingguy.homebrew
 - name: geerlingguy.mas
+- name: jgkim.atom
+- name: rvm_io.ruby
