@@ -1,0 +1,107 @@
+---
+mac_username: "jbz"
+
+downloads: ~/.ansible-downloads/
+
+configure_dotfiles: yes
+configure_sudoers: yes
+configure_terminal: yes
+configure_osx: yes
+configure_stdfiles: yes
+
+dotfiles_repo: https://github.com/jbz/jbz-dotfiles.git
+dotfiles_repo_accept_hostkey: yes
+dotfiles_repo_local_destination: ~/Dropbox/Projects/GitHub/dotfiles
+dotfiles_files:
+  - .profile
+  - .gitconfig
+  - .gitignore
+  - .inputrc
+  - .osx
+  - .vimrc
+  - .vim-python
+
+homebrew_installed_packages:
+  # - ansible # Installed via Pip.
+  - awscli
+  - autoconf
+  - bash-completion
+  - doxygen
+  - gettext
+  - gifsicle
+  - git
+  - go
+  - gpg
+  - hub
+  - httpie
+  - iperf
+  - libevent
+  - sqlite
+  - mcrypt
+  - nmap
+  - ssh-copy-id
+  - cowsay
+  - readline
+  - redis
+  - openssl
+  - pv
+  - s3cmd
+  - sox
+  - tig
+  - wget
+  - wrk
+
+homebrew_taps:
+  - homebrew/core
+  - homebrew/cask
+  - homebrew/bundle
+
+homebrew_cask_appdir: /Applications
+homebrew_cask_apps: []
+#  - chromedriver
+#  - docker
+#  - dropbox
+#  - google-chrome
+#  - handbrake
+#  - iTerm2
+#  - macvim
+#  - sequel-pro
+#  - slack
+#  - sublime-text
+#  - virtualbox
+#  - vagrant
+
+# See `geerlingguy.mas` role documentation for usage instructions.
+mas_installed_apps:
+  - { id: 443987910, name: "1Password" }
+  - { id: 418889511, name: "Scrivener" }
+  - { id: 803453959, name: "Slack" }
+  - { id: 1262957439, name: "Textual 7" }
+  - { id: 404010395, name: "TextWrangler" }
+mas_email: "jbz@ronin7.com"
+mas_password: ""
+
+osx_script: "~/.osx --no-restart"
+
+# Install packages from other package managers.
+# Note: You are responsible for making sure the required package managers are
+# installed, eg. through homebrew.
+composer_packages: []
+  # - name: drush
+  #   state: present # present/absent, default: present
+  #   version: "^8.1" # default: N/A
+gem_packages: []
+  # - name: bundler
+  #   state: present # present/absent/latest, default: present
+  #   version: "~> 1.15.1" # default: N/A
+npm_packages: []
+  # - name: webpack
+  #   state: present # present/absent/latest, default: present
+  #   version: "^2.6" # default: N/A
+pip_packages: []
+  # - name: mkdocs
+  #   state: present # present/absent/latest, default: present
+  #   version: "0.16.3" # default: N/A
+
+# Glob pattern to ansible task files to run after all other tasks are finished.
+post_provision_tasks: []

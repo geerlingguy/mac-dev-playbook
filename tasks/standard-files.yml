@@ -1,0 +1,7 @@
+---
+- name: Copy desktop images directory into place
+  tags: ['standard-files']
+  synchronize:
+    src: files/desktops/
+    dest: /Users/{{ mac_username }}/Pictures/Desktops
+    archive: yes
