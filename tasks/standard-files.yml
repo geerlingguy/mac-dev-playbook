@@ -1,0 +1,5 @@
+---
+- name: Install desktop pictures folder
+  synchronize:
+    src: files/desktops/
+    dst: ${{ mac_username }}/Pictures/Desktops/
