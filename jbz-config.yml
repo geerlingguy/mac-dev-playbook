@@ -1,4 +1,6 @@
 ---
+mac_username: "jbz"
+
 downloads: ~/.ansible-downloads/
 
 configure_dotfiles: yes
@@ -69,7 +71,7 @@ homebrew_cask_apps: []
 #  - vagrant
 
 # See `geerlingguy.mas` role documentation for usage instructions.
-mas_installed_apps: 
+mas_installed_apps:
   - { id: 443987910, name: "1Password" }
   - { id: 418889511, name: "Scrivener" }
   - { id: 803453959, name: "Slack" }

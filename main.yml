@@ -24,6 +24,9 @@
   tasks:
     - include_tasks: tasks/ansible-setup.yml
 
+    - include_tasks: tasks/standard-files.yml
+      tags: ['standard-files']
+
     - include_tasks: tasks/sudoers.yml
       when: configure_sudoers
 
