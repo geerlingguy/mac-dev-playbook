@@ -2,8 +2,8 @@
 - hosts: all
   connection: local
 
-  vars_files:
-    - jbz-config.yml
+  #  vars_files:
+  #  - jbz-config.yml
 
   pre_tasks:
     - include_vars: "{{ item }}"
@@ -25,6 +25,7 @@
     - include_tasks: tasks/ansible-setup.yml
 
     - include_tasks: tasks/standard-files.yml
+      when: configure_stdfiles
       tags: ['standard-files']
 
     - include_tasks: tasks/sudoers.yml
@@ -45,3 +46,4 @@
       loop_control:
         loop_var: outer_item
       with_fileglob: "{{ post_provision_tasks|default(omit) }}"
+
