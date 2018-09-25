@@ -41,6 +41,8 @@ homebrew_installed_packages:
   - readline
   - openssl
   - pv
+  - tmux
+  - watch
   - wget
   - wrk
 
@@ -56,9 +58,13 @@ homebrew_cask_apps:
   - firefox
   - google-chrome
   - handbrake
+  - hyper
+  - insomnia
+  - iterm2
   - licecap
   - limechat
   - macvim
+  - postman
   - sequel-pro
   - skitch
   - slack
