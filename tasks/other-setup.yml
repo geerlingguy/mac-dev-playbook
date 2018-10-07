@@ -1,0 +1,5 @@
+---
+- name: Transfer and execute script.
+  become: yes
+  become_method: sudo
+  script: files/scripts/other-setup.sh

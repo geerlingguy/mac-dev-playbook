@@ -1,7 +1,6 @@
 ---
 configure_dotfiles: no
 configure_osx: no
-configure_terminal: no
 
 homebrew_taps:
   - homebrew/core

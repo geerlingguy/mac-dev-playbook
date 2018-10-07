@@ -34,6 +34,8 @@
       when: configure_osx
       tags: ['osx']
 
+    - include_tasks: tasks/other-setup.yml
+
     - include_tasks: tasks/extra-packages.yml
       tags: ['extra-packages']
 
