@@ -4,8 +4,8 @@ configure_osx: no
 
 homebrew_taps:
   - homebrew/core
-  - caskroom/versions
-  - caskroom/fonts
+  - homebrew/cask-versions
+  - homebrew/cask-fonts
 
 homebrew_installed_packages:
   - brew-cask-completion
@@ -59,6 +59,7 @@ homebrew_cask_apps:
   - calibre
   - marshallofsound-google-play-music-player
   - quik
+  - parallels13
   # dev
   - emacs
   - docker
@@ -82,8 +83,9 @@ pip_packages:
   - awscli
 
 mas_installed_apps:
-  - { id: 1055511498, name: "Day One (2.9)" }
-  - { id: 775737590, name: "iA Writer (5.1.2)" }
+  - { id: 1055511498, name: "Day One" }
+  - { id: 775737590, name: "iA Writer" }
+  - { id: 497799835, name: "XCode" }
 
 gem_packages:
   - cocoapods
