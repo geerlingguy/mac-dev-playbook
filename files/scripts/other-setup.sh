@@ -46,7 +46,7 @@ go get -u github.com/nsf/gocode
 # Setup Pyenv default environment
 if [ ! -d "$(pyenv root)/versions/anaconda3-5.2.0" ]; then
     pyenv install anaconda3-5.2.0
-    pyenv global anaconda3-5.2.0
+    # pyenv global anaconda3-5.2.0  # unknown how this affects ansible, can turn on later
 fi
 
 # Ocaml / Reason Setup
