@@ -10,8 +10,12 @@ fi
 # Specify link with iTerm preferences
 
 defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "~/dotfiles/iterm2profile"
-# Tell iTerm2 to use the custom preferences in the directory
 defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
+
+# Create settings for other editors
+
+defaults write com.jetbrains.intellij.ce ApplePressAndHoldEnabled -bool false
+defaults write com.google.android.studio ApplePressAndHoldEnabled -bool false
 
 # Installing NPM seperately from Node (which should already exist)
 
