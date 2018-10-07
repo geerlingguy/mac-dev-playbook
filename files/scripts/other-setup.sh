@@ -43,8 +43,6 @@ exec zsh
 # Go Setup
 go get -u github.com/nsf/gocode
 
-# NOT YET IDEMPOTENT, RUN MANUALLY
-
 # Setup Pyenv default environment
 if [ ! -d "$(pyenv root)/versions/anaconda3-5.2.0" ]; then
     pyenv install anaconda3-5.2.0
