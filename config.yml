@@ -1,6 +1,7 @@
 ---
 configure_dotfiles: no
 configure_osx: no
+configure_terminal: no
 
 homebrew_taps:
   - homebrew/core
@@ -83,8 +84,9 @@ pip_packages:
   - awscli
 
 mas_installed_apps:
-  - { id: 1055511498, name: "Day One (2.9)" }
-  - { id: 775737590, name: "iA Writer (5.1.2)" }
+  - { id: 1055511498, name: "Day One" }
+  - { id: 775737590, name: "iA Writer" }
+  - { id: 497799835, name: "XCode" }
 
 gem_packages:
   - cocoapods
