@@ -4,8 +4,8 @@ configure_osx: no
 
 homebrew_taps:
   - homebrew/core
-  - caskroom/versions
-  - caskroom/fonts
+  - homebrew/cask-versions
+  - homebrew/cask-fonts
 
 homebrew_installed_packages:
   - brew-cask-completion
