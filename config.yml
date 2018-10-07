@@ -89,18 +89,3 @@ mas_installed_apps:
 
 gem_packages:
   - cocoapods
-
-
-# Install Endurance, Little Snitch manually
-
-# set Mac fans control
-# enable accessibility for spectacle, hammerspoon, Alfred
-# Alfred, 1password, devonthink, dash, little snitch licenses
-# Install Adobe suite and then block as needed
-
-# Install parallels 13
-
-# cap locks to escape
-# set up other external keyboards if necessary
-
-# secrets: .secrets, .aws, .gradle, keystore in android/keystores
