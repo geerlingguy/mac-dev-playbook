@@ -29,6 +29,14 @@ if [ ! -d "$HOME/.emacs.d" ]; then
     git clone https://github.com/syl20bnr/spacemacs $HOME/.emacs.d
 fi
 
+# Install Superhuman
+if [ ! -d "/Applications/Superhuman.app" ]; then
+    curl https://download.superhuman.com/Superhuman.dmg -o /tmp/Superhuman.dmg
+    hdiutil mount /tmp/Superhuman.dmg
+    sudo cp -R "/Volumes/Superhuman/Superhuman.app" /Applications && \
+        hdiutil unmount "Volumes/Superhuman/"
+fi
+
 # Setup zsh
 exec zsh
 
