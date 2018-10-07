@@ -1,0 +1,104 @@
+---
+configure_dotfiles: no
+configure_osx: no
+
+homebrew_taps:
+  - homebrew/core
+  - caskroom/versions
+  - caskroom/fonts
+
+homebrew_installed_packages:
+  - brew-cask-completion
+  - go
+  - { name: node, install_options: '--without-npm' }
+  - pyenv
+  - ctags
+  - yarn
+  - ag
+  - tree
+  - opam
+  - vim
+  - exa
+  - zsh
+  - zsh-completions
+  - getantibody/tap/antibody
+  - { name: r, install_options: '--with-x11' }
+  - eddieantonio/eddieantonio/imgcat
+
+homebrew_cask_apps:
+  - font-source-code-pro
+  # sudo required
+  - virtualbox
+  - java8
+  # core apps
+  - alfred
+  - dropbox
+  - google-backup-and-sync
+  - vlc
+  - fantastical
+  - google-chrome
+  - skype
+  - 1password
+  - spectacle
+  - omnifocus
+  - tunnelblick
+  - caffeine
+  - flux
+  # - hammerspoon
+  - devonthink-pro-office
+  - slack
+  - the-unarchiver
+  - appcleaner
+  - mac-fans-control
+  - disk-inventory-x
+  - transmission
+  - veracrypt
+  - rocket
+  - steam
+  - icloud-control
+  - calibre
+  - marshallofsound-google-play-music-player
+  - quik
+  # dev
+  - emacs
+  - docker
+  - android-studio
+  - iterm2
+  - dash
+  - coolterm
+  - genymotion
+  - livereload
+  - rstudio
+
+npm_packages:
+  - prettier
+  - tern
+  - eslint
+  - react-native-cli
+  - bs-platform
+  - reason-cli@latest-macos
+
+pip_packages:
+  - awscli
+
+mas_installed_apps:
+  - { id: 1055511498, name: "Day One (2.9)" }
+  - { id: 775737590, name: "iA Writer (5.1.2)" }
+
+gem_packages:
+  - cocoapods
+
+
+# Install Endurance, Little Snitch manually
+
+# set Mac fans control
+# enable accessibility for spectacle, hammerspoon, Alfred
+# Alfred, 1password, devonthink, dash, little snitch licenses
+# Install Adobe suite and then block as needed
+
+# Install parallels 13
+
+# cap locks to escape
+# set up other external keyboards if necessary
+
+# secrets: .secrets, .aws, .gradle, keystore in android/keystores
