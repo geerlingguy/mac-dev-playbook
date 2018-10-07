@@ -1,5 +1,7 @@
 #!/bin/bash
 
+echo "Starting other scripts..."
+
 # Get my Dotfiles
 
 if [ ! -f "$HOME/dotfiles/linker.sh" ]; then
