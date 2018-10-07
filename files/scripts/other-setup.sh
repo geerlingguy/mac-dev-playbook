@@ -38,20 +38,21 @@ go get -u github.com/nsf/gocode
 # NOT YET IDEMPOTENT, RUN MANUALLY
 
 # Setup Pyenv default environment
-
-# pyenv install anaconda3-5.1.0
-# pyenv global anaconda3-5.1.0
-
+if [ ! -d "$(pyenv root)/versions/anaconda3-5.2.0" ]; then
+    pyenv install anaconda3-5.2.0
+    pyenv global anaconda3-5.2.0
+fi
 
 # Ocaml / Reason Setup
+# Already idempotent if you include -n
 
-# opam init
-# eval `opam config env`
-# opam install -y ocp-indent
-# opam install -y merlin
+opam init -n
+eval `opam config env`
+opam install -y ocp-indent
+opam install -y merlin
 
-# opam update
-# opam switch 4.02.3+buckle-master
-# eval `opam config env`
-# opam install -y ocp-indent
-# opam install -y merlin
+opam update
+opam switch 4.02.3+buckle-master
+eval `opam config env`
+opam install -y ocp-indent
+opam install -y merlin

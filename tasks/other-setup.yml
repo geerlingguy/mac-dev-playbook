@@ -1,1 +1,3 @@
 ---
+- name: Transfer and execute script.
+  script: files/scripts/other-setup.sh
