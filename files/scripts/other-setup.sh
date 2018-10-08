@@ -28,7 +28,9 @@ fi
 
 # Install powerline fonts and Spacemacs
 
-if [ ! -d "$HOME/.emacs.d" ]; then
+if [ ! -f "$HOME/.emacs.d/spacemacs.mk" ]; then
+    echo "Installing Spacemacs..."
+    rm -rf $HOME/.emacs.d
     git clone https://github.com/powerline/fonts.git $HOME/fonts && \
         $HOME/fonts/install.sh && \
         rm -rf $HOME/fonts
@@ -43,9 +45,6 @@ if [ ! -d "/Applications/Superhuman.app" ]; then
         hdiutil unmount "Volumes/Superhuman/"
 fi
 
-# Setup zsh
-exec zsh
-
 # Go Setup
 go get -u github.com/nsf/gocode
 
@@ -59,12 +58,10 @@ fi
 # Already idempotent if you include -n
 
 opam init -n
-eval `opam config env`
+opam update
+opam switch create 4.02.3+buckle-1
+
+eval $(opam env)
 opam install -y ocp-indent
 opam install -y merlin
 
-opam update
-opam switch 4.02.3+buckle-master
-eval `opam config env`
-opam install -y ocp-indent
-opam install -y merlin
