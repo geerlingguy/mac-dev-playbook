@@ -79,8 +79,8 @@ npm_packages:
   - bs-platform
   - reason-cli@latest-macos
 
-pip_packages:
-  - awscli
+# pip_packages:
+#   - awscli
 
 # mas_installed_apps:
 #   - { id: 1055511498, name: "Day One" }
