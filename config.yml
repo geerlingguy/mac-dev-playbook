@@ -27,6 +27,7 @@ homebrew_installed_packages:
 
 homebrew_cask_apps:
   - font-source-code-pro
+  - font-montserrat
   # sudo required
   - virtualbox
   - java8
@@ -64,6 +65,7 @@ homebrew_cask_apps:
   - emacs
   - docker
   - android-studio
+  - android-sdk
   - iterm2
   - dash
   - coolterm
@@ -86,6 +88,7 @@ npm_packages:
 #   - { id: 1055511498, name: "Day One" }
 #   - { id: 775737590, name: "iA Writer" }
 #   - { id: 497799835, name: "XCode" }
+#   - { id: 641027709, name: "Color Picker" }
 
 gem_packages:
   - cocoapods
