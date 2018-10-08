@@ -54,7 +54,6 @@ homebrew_cask_apps:
   - spectacle
   - omnifocus
   - tunnelblick
-  - caffeine
   - flux
   # - hammerspoon
   - devonthink-pro-office
