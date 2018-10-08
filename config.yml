@@ -26,11 +26,22 @@ homebrew_installed_packages:
   - eddieantonio/eddieantonio/imgcat
 
 homebrew_cask_apps:
-  - font-source-code-pro
-  - font-montserrat
   # sudo required
   - virtualbox
   - java8
+  # fonts
+  - font-source-code-pro
+  - font-montserrat
+  - font-roboto
+  - font-roboto-mono
+  - font-roboto-condensed
+  - font-ionicons
+  - font-ia-writer-duospace
+  - font-encodesans
+  - font-encodesans-semiexpanded
+  - font-encodesans-semicondensed
+  - font-encodesans-expanded
+  - font-encodesans-condensed
   # core apps
   - alfred
   - dropbox
