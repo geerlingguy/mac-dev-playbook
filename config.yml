@@ -82,10 +82,10 @@ npm_packages:
 pip_packages:
   - awscli
 
-mas_installed_apps:
-  - { id: 1055511498, name: "Day One" }
-  - { id: 775737590, name: "iA Writer" }
-  - { id: 497799835, name: "XCode" }
+# mas_installed_apps:
+#   - { id: 1055511498, name: "Day One" }
+#   - { id: 775737590, name: "iA Writer" }
+#   - { id: 497799835, name: "XCode" }
 
 gem_packages:
   - cocoapods
