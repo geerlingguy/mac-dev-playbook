@@ -35,6 +35,7 @@
       tags: ['osx']
 
     - include_tasks: tasks/other-setup.yml
+      tags: ['other']
 
     - include_tasks: tasks/extra-packages.yml
       tags: ['extra-packages']
