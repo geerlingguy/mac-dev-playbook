@@ -24,6 +24,7 @@ homebrew_installed_packages:
   - getantibody/tap/antibody
   - { name: r, install_options: '--with-x11' }
   - eddieantonio/eddieantonio/imgcat
+  - libgit2
 
 homebrew_cask_apps:
   # sudo required
@@ -69,6 +70,7 @@ homebrew_cask_apps:
   - icloud-control
   - calibre
   - marshallofsound-google-play-music-player
+  - musicbrainz-picard
   - quik
   - parallels13
   # dev
