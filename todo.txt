@@ -1,4 +1,0 @@
-sudo xcodebuild -license accept
-
-# for node@8 lts support after installation
-  echo 'export PATH="/usr/local/opt/node@8/bin:$PATH"' >> ~/.bash_profile
