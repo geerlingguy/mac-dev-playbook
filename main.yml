@@ -10,6 +10,11 @@
       with_fileglob:
         - "{{ playbook_dir }}/config.yml"
       tags: ['always']
+# see https://stackoverflow.com/questions/24952683/git-push-error-rpc-failed-result-56-http-code-200-fatal-the-remote-end-hun/36843260#36843260
+    - name: 'configure git http buffer to fix curl: SSL_ERROR_SYSCALL'
+      git_config:
+        name: http.postBuffer
+        value: 524288000
 
   roles:
     - role: geerlingguy.homebrew

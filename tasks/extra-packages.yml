@@ -21,6 +21,7 @@
     name: "{{ item.name | default(item) }}"
     state: "{{ item.state | default('present') }}"
     version: "{{ item.version | default(omit) }}"
+    extra_args: "{{ item.extra_args }}"
     executable: "{{ item.executable | default(omit) }}"
   with_items: "{{ pip_packages }}"
 
