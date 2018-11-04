@@ -15,6 +15,7 @@
       git_config:
         name: http.postBuffer
         value: 524288000
+        scope: global
 
   roles:
     - role: geerlingguy.homebrew
