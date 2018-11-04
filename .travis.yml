@@ -33,13 +33,13 @@ script:
   - "ansible-galaxy install -r requirements.yml"
 
   # Check the role/playbook's syntax.
-  - "ansible-playbook main.yml -vvv --syntax-check"
+  - "ansible-playbook main.yml --syntax-check"
 
   # Copy test config.yml into place.
   - "cp tests/config.yml config.yml"
 
   # Test the playbook.
-  - "travis_wait 30 ansible-playbook -vvv --extra-vars '{\"configure_sudoers\":\"false\"}' main.yml"
+  - "travis_wait 30 ansible-playbook --extra-vars '{\"configure_sudoers\":\"false\"}' main.yml"
 
   # Test the playbook's idempotence.
   - idempotence=$(mktemp)
