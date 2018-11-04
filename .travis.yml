@@ -33,7 +33,7 @@ script:
   - "ansible-galaxy install -r requirements.yml"
 
   # Check the role/playbook's syntax.
-  - "ansible-playbook main.yml --syntax-check"
+  - "ansible-playbook main.yml -vvv --syntax-check"
 
   # Copy test config.yml into place.
   - "cp tests/config.yml config.yml"
