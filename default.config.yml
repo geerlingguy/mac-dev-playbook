@@ -89,6 +89,9 @@ homebrew_cask_apps:
   - visual-studio-code
 
 # See `geerlingguy.mas` role documentation for usage instructions.
+# signin to the MAS from the cli is disabled in 10.14 Mojave
+mas_email: ""
+mas_password: ""
 mas_installed_apps:
   - { id: 411643860, name: "DaisyDisk" }
   - { id: 924726344, name:  "Deliveries" }

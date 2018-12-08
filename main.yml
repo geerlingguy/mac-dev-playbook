@@ -5,12 +5,6 @@
   vars_files:
     - default.config.yml
 
-  vars_prompt:
-    - name: "mas_email"
-      prompt: "Enter MAS Apple ID email:"
-    - name: "mas_password"
-      prompt: "Enter MAS Apple ID password:"
-
   pre_tasks:
     - include_vars: "{{ item }}"
       with_fileglob:
