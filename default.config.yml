@@ -29,6 +29,7 @@ homebrew_installed_packages:
   - cowsay
   - exa
   - fd
+  - figlet
   - git
   - go
   - gnupg
@@ -54,6 +55,7 @@ homebrew_installed_packages:
 homebrew_taps:
   - homebrew/core
   - homebrew/cask
+  - homebrew/cask-fonts
 
 homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
@@ -67,6 +69,16 @@ homebrew_cask_apps:
   - droplr
   - eagle
   - firefox
+  - font-anonymous-pro
+  - font-dejavu-sans
+  - font-droid-sans-mono-for-powerline
+  - font-inconsolata
+  - font-inconsolata-dz
+  - font-open-sans
+  - font-roboto-mono
+  - font-ubuntu-mono-derivative-powerline
+  - font-ubuntumono-nerd-font
+  - font-ubuntumono-nerd-font-mono
   - google-chrome
   - istat-menus
   - iterm2
