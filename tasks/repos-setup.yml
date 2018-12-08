@@ -1,5 +1,4 @@
----
 - name: Create the directory where repos will live if it doesn't exist
   file:
-    path: "repos_dir"
+    path: "{{ repos_dir }}"
     state: directory

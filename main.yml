@@ -28,16 +28,17 @@
       tags: ['mas']
 
   tasks:
-    - include_tasks: tasks/ansible-setup.yml
+    - import_tasks: tasks/ansible-setup.yml
+      tags: ['ansible-setup']
 
-    - include_tasks: tasks/macos.yml
+    - import_tasks: tasks/macos.yml
       when: configure_macos
       tags: ['macos']
 
-    - include_tasks: tasks/repos-setup.yml
+    - import_tasks: tasks/repos-setup.yml
       tags: ['repos']
 
-    - include_tasks: tasks/extra-packages.yml
+    - import_tasks: tasks/extra-packages.yml
       tags: ['extra-packages']
 
     - name: Run configured post-provision ansible task files.

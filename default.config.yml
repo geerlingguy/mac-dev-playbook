@@ -6,7 +6,7 @@ configure_sudoers: yes
 configure_terminal: yes
 configure_macos: yes
 
-repos_dir: "{{ lookup('env','HOME') }}/repos"
+repos_dir: ~/repos/
 
 dotfiles_repo: https://github.com/rlipke/dotfiles.git
 dotfiles_repo_accept_hostkey: yes
