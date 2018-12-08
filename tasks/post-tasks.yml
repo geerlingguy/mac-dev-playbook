@@ -1,0 +1,6 @@
+---
+- name: Symlink for subl
+  file:
+    src: /Applications/Sublime Text.app/Contents/SharedSupport/bin/subl
+    path: /usr/local/bin/subl
+    state: link

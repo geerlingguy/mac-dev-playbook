@@ -37,6 +37,7 @@ homebrew_installed_packages:
   - iperf
   - jq
   - lolcat
+  - mackup
   - micro
   - ncdu
   - neofetch
@@ -114,6 +115,10 @@ mas_installed_apps:
   - { id: 1091189122, name: "Bear" }
   - { id: 803453959, name: "Slack" }
   - { id: 1055511498, name: "DayOne" }
+  - { id: 409183694, name: "Keynote" }
+  - { id: 409203825, name: "Numbers" }
+  - { id: 409201541, name: "Pages" }
+  - { id: 408981434, name: "iMovie" }
 
 macos_script: "~/.macos"
 
@@ -134,4 +139,5 @@ pip_packages: []
   #   version: "0.16.3" # default: N/A
 
 # Glob pattern to ansible task files to run after all other tasks are finished.
-post_provision_tasks: []
+post_provision_tasks:
+  - post-tasks.yml
