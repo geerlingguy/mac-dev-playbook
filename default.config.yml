@@ -13,10 +13,10 @@ dotfiles_repo_accept_hostkey: yes
 dotfiles_repo_local_destination: ~/repos/dotfiles
 dotfiles_files:
   - .bash_profile
+  - .config
+  - .gitconfig
   - .gitignore
-  - .inputrc
   - .macos
-  - .vimrc
 
 homebrew_installed_packages:
   # - ansible # Installed via Pip.
@@ -94,16 +94,17 @@ mas_installed_apps:
   - { id: 924726344, name:  "Deliveries" }
   - { id: 568494494, name: "Pocket" }
   - { id: 866773894, name: "Quiver" }
+  - { id: 904280696, name: "Things3" }
+  - { id: 1233861775, name: "Acorn" }
+  - { id: 1091189122, name: "Bear" }
+  - { id: 803453959, name: "Slack" }
+  - { id: 1055511498, name: "DayOne" }
 
 macos_script: "~/.macos"
 
 # Install packages from other package managers.
 # Note: You are responsible for making sure the required package managers are
 # installed, eg. through homebrew.
-composer_packages: []
-  # - name: drush
-  #   state: present # present/absent, default: present
-  #   version: "^8.1" # default: N/A
 gem_packages: []
   # - name: bundler
   #   state: present # present/absent/latest, default: present

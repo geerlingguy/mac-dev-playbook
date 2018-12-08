@@ -36,7 +36,7 @@
       tags: ['macos']
 
     - import_tasks: tasks/repos-setup.yml
-      tags: ['repos']
+      tags: ['repos-setup']
 
     - import_tasks: tasks/extra-packages.yml
       tags: ['extra-packages']
