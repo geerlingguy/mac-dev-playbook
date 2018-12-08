@@ -4,16 +4,18 @@ downloads: ~/.ansible-downloads/
 configure_dotfiles: yes
 configure_sudoers: yes
 configure_terminal: yes
-configure_osx: yes
+configure_macos: yes
 
-dotfiles_repo: https://github.com/geerlingguy/dotfiles.git
+repos_dir: "{{ lookup('env','HOME') }}/repos"
+
+dotfiles_repo: https://github.com/rlipke/dotfiles.git
 dotfiles_repo_accept_hostkey: yes
 dotfiles_repo_local_destination: ~/Dropbox/Development/GitHub/dotfiles
 dotfiles_files:
   - .bash_profile
   - .gitignore
   - .inputrc
-  - .osx
+  - .macos
   - .vimrc
 
 homebrew_installed_packages:
@@ -93,7 +95,7 @@ mas_installed_apps:
   - { id: 568494494, name: "Pocket" }
   - { id: 866773894, name: "Quiver" }
 
-osx_script: "~/.osx --no-restart"
+macos_script: "~/.macos"
 
 # Install packages from other package managers.
 # Note: You are responsible for making sure the required package managers are

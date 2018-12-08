@@ -30,9 +30,12 @@
   tasks:
     - include_tasks: tasks/ansible-setup.yml
 
-    - include_tasks: tasks/osx.yml
-      when: configure_osx
-      tags: ['osx']
+    - include_tasks: tasks/macos.yml
+      when: configure_macos
+      tags: ['macos']
+
+    - include_tasks: tasks/repos-setup.yml
+      tags: ['repos']
 
     - include_tasks: tasks/extra-packages.yml
       tags: ['extra-packages']
