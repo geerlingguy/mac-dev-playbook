@@ -27,6 +27,7 @@ homebrew_installed_packages:
   - bat
   - coreutils
   - cowsay
+  - envchain
   - exa
   - fd
   - figlet
@@ -68,7 +69,6 @@ homebrew_cask_apps:
   - docker
   - dropbox
   - droplr
-  - eagle
   - firefox
   - font-anonymous-pro
   - font-dejavu-sans
@@ -81,6 +81,7 @@ homebrew_cask_apps:
   - font-ubuntumono-nerd-font
   - font-ubuntumono-nerd-font-mono
   - google-chrome
+  - google-cloud-sdk
   - gpg-suite
   - istat-menus
   - iterm2
