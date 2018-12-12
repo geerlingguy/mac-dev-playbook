@@ -18,7 +18,7 @@ As always, this is a work in progress, and is mostly a means for me to document 
 
 ### Running a specific set of tagged tasks
 
-You can filter which part of the provisioning process to run by specifying a set of tags using `ansible-playbook`'s `--tags` flag. I've added tags to almost every tags so each step can be developed/tested in isolation.
+You can filter which part of the provisioning process to run by specifying a set of tags using `ansible-playbook`'s `--tags` flag. I've added tags to almost every task so each step can be developed or tested in isolation.
 
 - `homebrew`
 - `dotfiles`
@@ -28,7 +28,7 @@ You can filter which part of the provisioning process to run by specifying a set
 - `repos-setup`
 - `extra-packages`
 
-*Example:* `ansible-playbook main.yml -i inventory -K --tags "dotfiles,homebrew"`
+*Example:* `ansible-playbook main.yml -i inventory -K --tags "dotfiles,macos"`
 
 ## Overriding Defaults
 
@@ -68,12 +68,12 @@ There are still quite a few things to do manually after this playbook is run.  S
 - Copy .gnupg folder. Remember the passphrase dummy!
 - Setup keybase - authorize new device from iPhone
 - Setup Slack and 8000 teams.  Configure preferences.
-- Moom - Copy preferences but don’t keep them synced since they can be open in two places.  Activate license
+- Moom - Copy preferences but don’t keep them synced since they can't be open in two places.  Activate license
 - Open karabiner-elements, allow scary security permissions, verify hyper is working.
-- Setup hyper shortcuts: Things/Omnifocus entry, notifications, iterm visor
+- Setup hyper shortcuts: Things/Omnifocus entry, notifications, iTerm visor, etc.
 - copy .bash_envs
-- bartender - Setup, set to login, chooose menubar icon
-- iTunes - Sign in with Apple ID, enable iCloud music library, enable list view checkboxes and star ratings, enable automatic music downloads, require password for purchases after 15 minutes, free downloads never require, sync playback across devices, sync podcast subs, automatically download artwork, Advanced > share itunes library xml. Authorize device.
+- bartender - Setup, set to login, choose menubar icon
+- iTunes - Sign in with Apple ID, enable iCloud music library, enable list view check-boxes and star ratings, enable automatic music downloads, require password for purchases after 15 minutes, free downloads never require, sync playback across devices, sync podcast subs, automatically download artwork, Advanced > share iTunes library xml. Authorize device.
 - Authenticate last.fm, turn off device scrobbling
 - Install Eagle. Register, import library from icloud > documents > world.library
 - Activate kaleidoscope license (url is in mail)
@@ -89,8 +89,8 @@ These are apps that don't currently have a brew cask or Mac App Store install.
 
 - Vim config.  My .vimrc is a mess
 - Sublime Text - install [Package Control](https://packagecontrol.io/installation) and sync settings/packages
-- Copy ~/bin over
-- VirtualBox and [Karabiner-Elements](https://pqrs.org/osx/karabiner/) may fail to install due to kext security permissions. I have seen this repeatedly with VirtualBox so I took it out of the homebrew casks for now.  Interestingly, these failures never happen on my test VM...I'm pretty sure something is getting disabled in order to for macOS to even boot but haven't figured out what yet.
+- Copy `~/bin` over
+- VirtualBox and [Karabiner-Elements](https://pqrs.org/osx/karabiner/) may fail to install due to kext security permissions and require manually approving them in `System Preferences > Security`. I have seen this repeatedly with VirtualBox so I took it out of the homebrew casks for now.  Interestingly, these failures never happen on my test VM...I'm pretty sure something is getting disabled in order for macOS to even boot but haven't figured out what yet.
 
 ## Testing the Playbook
 
