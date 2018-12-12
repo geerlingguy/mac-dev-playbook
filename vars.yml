@@ -37,6 +37,7 @@ homebrew_installed_packages:
   - htop
   - iperf
   - jq
+  - kubernetes-cli
   - lolcat
   - mackup
   - micro
@@ -51,6 +52,7 @@ homebrew_installed_packages:
   - sqlite
   - ssh-copy-id
   - the_silver_searcher
+  - terraform
   - tree
   - wget
 

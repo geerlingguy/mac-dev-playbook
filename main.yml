@@ -3,7 +3,7 @@
   connection: local
 
   vars_files:
-    - default.config.yml
+    - vars.yml
 
   pre_tasks:
     - include_vars: "{{ item }}"
