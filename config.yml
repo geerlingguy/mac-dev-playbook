@@ -6,6 +6,7 @@ homebrew_taps:
   - homebrew/core
   - homebrew/cask-versions
   - homebrew/cask-fonts
+  - shopify/shopify
 
 homebrew_installed_packages:
   - brew-cask-completion
@@ -25,6 +26,9 @@ homebrew_installed_packages:
   - { name: r, install_options: '--with-x11' }
   - eddieantonio/eddieantonio/imgcat
   - libgit2
+  - ffmpeg
+  - themekit
+  - geckodriver
 
 homebrew_cask_apps:
   # sudo required
@@ -50,6 +54,7 @@ homebrew_cask_apps:
   - vlc
   - fantastical
   - google-chrome
+  - firefox
   - skype
   - 1password
   - spectacle
@@ -60,8 +65,9 @@ homebrew_cask_apps:
   - devonthink-pro-office
   - slack
   - the-unarchiver
+  - bartender
   - appcleaner
-  - mac-fans-control
+  - macs-fans-control
   - disk-inventory-x
   - transmission
   - veracrypt
@@ -72,6 +78,7 @@ homebrew_cask_apps:
   - marshallofsound-google-play-music-player
   - musicbrainz-picard
   - quik
+  - imageoptim
   - parallels13
   # dev
   - emacs
@@ -84,6 +91,8 @@ homebrew_cask_apps:
   - genymotion
   - livereload
   - rstudio
+  - mactex
+  - papers
 
 npm_packages:
   - prettier

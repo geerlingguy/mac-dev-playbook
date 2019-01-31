@@ -47,6 +47,7 @@ fi
 
 # Go Setup
 go get -u github.com/nsf/gocode
+go get golang.org/x/tools/cmd/goimports
 
 # Setup Pyenv default environment
 if [ ! -d "$(pyenv root)/versions/anaconda3-5.2.0" ]; then
