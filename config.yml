@@ -58,7 +58,6 @@ homebrew_cask_apps:
   - skype
   - 1password
   - spectacle
-  - omnifocus
   - tunnelblick
   - flux
   # - hammerspoon
@@ -84,7 +83,6 @@ homebrew_cask_apps:
   - emacs
   - docker
   - android-studio
-  - android-sdk
   - iterm2
   - dash
   - coolterm
