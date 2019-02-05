@@ -18,31 +18,89 @@ dotfiles_files:
 
 homebrew_installed_packages:
   # - ansible # Installed via Pip.
-  - autoconf
+  #- autoconf
   - bash-completion
-  - doxygen
-  - gettext
-  - gifsicle
+  #- doxygen
+  #- gettext
+  #- gifsicle
   - git
   - go
-  - gpg
-  - hub
-  - httpie
-  - iperf
-  - libevent
-  - sqlite
-  - mcrypt
+  #- gpg
+  #- hub
+  #- httpie
+  #- iperf
+  #- libevent
+  #- sqlite
+  #- mcrypt
   - nmap
   - node
   - nvm
-  - php
+  #- php
   - ssh-copy-id
   - cowsay
-  - readline
-  - openssl
-  - pv
+  #- readline
+  #- openssl
+  #- pv
   - wget
-  - wrk
+  #- wrk
+  # Mine
+  #- arp-scan
+  - asciinema
+  #- asdf
+  #- awscli
+  - axel
+  - binwalk
+  - cmatrix
+  - coreutils
+  - cowsay
+  #- docker-machine
+  #- docker-machine-driver-xhyve
+  - ext4fuse
+  - ffmpeg
+  - figlet
+  #- flow
+  #- fontconfig
+  - fortune
+  #- gettext
+  #- git
+  - gnuplot
+  #- go
+  - gource
+  - htop
+  - htop-osx
+  #- icu4c
+  - iftop
+  - jq
+  - kompose
+  - kubectx
+  #- kubeless
+  - kubernetes-cli
+  - kubernetes-helm
+  - logstalgia
+  - lolcat
+  - mas
+  - midnight-commander
+  - mplayer
+  - nmap
+  - ntfs-3g
+  - rdesktop
+  - rkhunter
+  - sshfs
+  - sshuttle
+  - sslscan
+  - stress
+  - tcpflow
+  - telnet
+  - terraform
+  - thefuck
+  - tmux
+  - tree
+  - unrar
+  - vault
+  - vegeta
+  - watch
+  - wget
+  - youtube-dl
 
 homebrew_taps:
   - homebrew/core
@@ -50,10 +108,7 @@ homebrew_taps:
 
 homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
-  - chromedriver
   - docker
-  - dropbox
-  - firefox
   - google-chrome
   - handbrake
   - licecap
@@ -63,13 +118,16 @@ homebrew_cask_apps:
   - skitch
   - slack
   - sublime-text
-  - transmit
   - vagrant
 
 # See `geerlingguy.mas` role documentation for usage instructions.
-mas_installed_apps: []
+mas_installed_apps:
+- { id: 1295203466, name: "Microsoft Remote Desktop (10.2.6)" }
+- { id: 1147396723, name: "WhatsApp (0.3.1850)" }
 mas_email: ""
 mas_password: ""
+mas_signin_dialog: no
+
 
 osx_script: "~/.osx --no-restart"
 
