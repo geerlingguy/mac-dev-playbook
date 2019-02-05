@@ -29,6 +29,7 @@ homebrew_installed_packages:
   - ffmpeg
   - themekit
   - geckodriver
+  - pandoc
 
 homebrew_cask_apps:
   # sudo required
