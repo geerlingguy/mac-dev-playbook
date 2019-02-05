@@ -1,9 +1,9 @@
 ---
 downloads: ~/.ansible-downloads/
 
-configure_dotfiles: yes
-configure_sudoers: yes
-configure_terminal: yes
+configure_dotfiles: no
+configure_sudoers: no
+configure_terminal: no
 configure_osx: yes
 
 dotfiles_repo: https://github.com/geerlingguy/dotfiles.git
@@ -32,7 +32,6 @@ homebrew_installed_packages:
   #- libevent
   #- sqlite
   #- mcrypt
-  - nmap
   - node
   - nvm
   #- php
@@ -82,23 +81,23 @@ homebrew_installed_packages:
   - midnight-commander
   - mplayer
   - nmap
-  - ntfs-3g
-  - rdesktop
-  - rkhunter
+  #- ntfs-3g
+  #- rdesktop
+  #- rkhunter
   - sshfs
   - sshuttle
-  - sslscan
-  - stress
+  #- sslscan
+  #- stress
   - tcpflow
   - telnet
-  - terraform
-  - thefuck
+  #- terraform
+  #- thefuck
   - tmux
   - tree
   - unrar
-  - vault
-  - vegeta
-  - watch
+  #- vault
+  #- vegeta
+  #- watch
   - wget
   - youtube-dl
 
@@ -110,15 +109,16 @@ homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
   - docker
   - google-chrome
-  - handbrake
-  - licecap
-  - limechat
+ # - handbrake
+ # - licecap
+ # - limechat
   - macvim
-  - sequel-pro
-  - skitch
+ # - sequel-pro
+  #- skitch
   - slack
   - sublime-text
   - vagrant
+  - visual-studio-code
 
 # See `geerlingguy.mas` role documentation for usage instructions.
 mas_installed_apps:
@@ -127,7 +127,6 @@ mas_installed_apps:
 mas_email: ""
 mas_password: ""
 mas_signin_dialog: no
-
 
 osx_script: "~/.osx --no-restart"
 
@@ -142,7 +141,9 @@ gem_packages: []
   # - name: bundler
   #   state: present # present/absent/latest, default: present
   #   version: "~> 1.15.1" # default: N/A
-npm_packages: []
+npm_packages:
+  - name: gtop
+    state: present # present/absent/latest, default: present
   # - name: webpack
   #   state: present # present/absent/latest, default: present
   #   version: "^2.6" # default: N/A
