@@ -30,6 +30,7 @@ homebrew_installed_packages:
   - themekit
   - geckodriver
   - pandoc
+  - gpg
 
 homebrew_cask_apps:
   # sudo required
@@ -75,6 +76,7 @@ homebrew_cask_apps:
   - steam
   - icloud-control
   - calibre
+  - jdownloader
   - marshallofsound-google-play-music-player
   - musicbrainz-picard
   - quik
