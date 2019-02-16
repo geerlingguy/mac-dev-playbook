@@ -19,6 +19,14 @@ defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
 defaults write com.jetbrains.intellij.ce ApplePressAndHoldEnabled -bool false
 defaults write com.google.android.studio ApplePressAndHoldEnabled -bool false
 
+# Link VeraCrypt
+
+ln -s /Applications/VeraCrypt.app/Contents/MacOS/Veracrypt /usr/local/bin/veracrypt
+
+# Turn on Full Keyboard Access for all controls
+
+defaults write -g AppleKeyboardUIMode -int 2 
+
 # Installing NPM seperately from Node (which should already exist)
 
 if [ ! -x "$(which npm)" ]; then
