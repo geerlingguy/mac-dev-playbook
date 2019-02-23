@@ -35,7 +35,7 @@
       tags: ['osx']
 
     - include_tasks: tasks/extra-packages.yml
-      tags: ['extra-packages']
+      tags: ['extra']
 
     - name: Run configured post-provision ansible task files.
       include_tasks: "{{ outer_item }}"
