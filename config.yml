@@ -62,7 +62,7 @@ homebrew_cask_apps:
   - spectacle
   - tunnelblick
   - flux
-  # - hammerspoon
+  - hammerspoon
   - devonthink-pro-office
   - slack
   - the-unarchiver
