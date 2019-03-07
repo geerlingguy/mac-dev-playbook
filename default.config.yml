@@ -80,6 +80,7 @@ homebrew_installed_packages:
   - watch
   - wget
   - youtube-dl
+  - linkerd
 
 homebrew_taps:
   - homebrew/core
@@ -99,12 +100,18 @@ homebrew_cask_apps:
   - minikube
   - intel-power-gadget
   - hyper
+  - microsoft-remote-desktop-beta
+  - iina
 
 # See `geerlingguy.mas` role documentation for usage instructions.
 mas_installed_apps:
 - { id: 1295203466, name: "Microsoft Remote Desktop (10.2.6)" }
 - { id: 1147396723, name: "WhatsApp (0.3.1850)" }
 - { id: 682658836, name: "GarageBand (10.3.2)" }
+- { id: 408981434, name: "iMovie (10.1.10)" }
+- { id: 409201541, name: "Pages (7.3)" }
+- { id: 409203825, name: "Numbers (5.3)" }
+- { id: 409183694, name: "Keynote (8.3)" }
 mas_email: ""
 mas_password: ""
 mas_signin_dialog: no
