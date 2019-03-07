@@ -1,7 +1,7 @@
 ---
 downloads: ~/.ansible-downloads/
 
-configure_dotfiles: yes
+configure_dotfiles: no
 configure_sudoers: no
 configure_terminal: no
 configure_osx: yes
@@ -10,8 +10,12 @@ dotfiles_repo: git@github.com:cristian04/dotfiles-1.git
 dotfiles_repo_accept_hostkey: yes 
 dotfiles_repo_local_destination: ~/dotfiles-ansible
 dotfiles_files:
-
-
+  - .bash_profile
+  - .gitignore
+  - .inputrc
+  - .osx
+  - .vimrc
+  
 homebrew_clear_cache: true
 homebrew_installed_packages:
   - ack
@@ -27,7 +31,7 @@ homebrew_installed_packages:
   - coreutils
   - cowsay
   - docker-machine
-  - docker-machine-driver-xhyve
+  - docker-machine-driver-hyperkit
   - ext4fuse
   - ffmpeg
   - figlet
@@ -51,6 +55,7 @@ homebrew_installed_packages:
   - kompose
   - kubernetes-cli
   - kubernetes-helm
+  - kube-ps1
   - logstalgia
   - lolcat
   - mas
@@ -92,11 +97,14 @@ homebrew_cask_apps:
   - virtualbox
   - ubersicht
   - minikube
+  - intel-power-gadget
+  - hyper
 
 # See `geerlingguy.mas` role documentation for usage instructions.
 mas_installed_apps:
 - { id: 1295203466, name: "Microsoft Remote Desktop (10.2.6)" }
 - { id: 1147396723, name: "WhatsApp (0.3.1850)" }
+- { id: 682658836, name: "GarageBand (10.3.2)" }
 mas_email: ""
 mas_password: ""
 mas_signin_dialog: no
