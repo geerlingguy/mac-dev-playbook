@@ -1,8 +1,4 @@
 ---
-- name: Hola
-  debug: 
-    msg: "Hola!"
-
 - name: Install global Composer packages.
   composer:
     command: "{{ (item.state | default('present') == 'absent') | ternary('remove', 'require') }}"

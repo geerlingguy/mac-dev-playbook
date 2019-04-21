@@ -3,7 +3,7 @@
   connection: local
 
   vars_files:
-    - config.yml
+    - default-config.yml
 
   pre_tasks:
     - include_vars: "{{ item }}"
@@ -40,12 +40,12 @@
     - name: Delete existing widgets
       file:
         state: absent
-        path: "/Users/cristian04/Library/Application Support/Übersicht"
+        path: "~/Library/Application Support/Übersicht" 
       tags: widgets
     - name: Configure widgets
       git:
         repo: 'https://github.com/cristian04/widgets.git'
-        dest: "/Users/cristian04/Library/Application Support/Übersicht/widgets"
+        dest: "~/Library/Application Support/Übersicht/widgets" 
       tags: widgets
 
     - name: Run configured post-provision ansible task files.
