@@ -32,6 +32,7 @@ homebrew_installed_packages:
   - cowsay
   - docker-machine
   - docker-machine-driver-hyperkit
+  - docker-machine-driver-xhyve
   - ext4fuse
   - ffmpeg
   - figlet
@@ -50,12 +51,15 @@ homebrew_installed_packages:
   - hostess
   - htop
   - htop-osx
+  - istioctl
   - iftop
   - jq
+  - jx
   - kompose
   - kubernetes-cli
   - kubernetes-helm
   - kube-ps1
+  - linkerd
   - logstalgia
   - lolcat
   - mas
@@ -65,9 +69,11 @@ homebrew_installed_packages:
   - nmap
   - node
   - openssh
+  - openshift-cli
   - p7zip
   - pandoc
   - pv
+  - python3
   - rename
   - screen
   - socat
@@ -80,7 +86,6 @@ homebrew_installed_packages:
   - watch
   - wget
   - youtube-dl
-  - linkerd
 
 homebrew_taps:
   - homebrew/core
@@ -88,20 +93,28 @@ homebrew_taps:
 
 homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
+  - balenaetcher
   - docker
   - google-chrome
-  - macvim
-  - slack
-  - sublime-text
-  - vagrant
-  - visual-studio-code
-  - virtualbox
-  - ubersicht
-  - minikube
-  - intel-power-gadget
   - hyper
-  - microsoft-remote-desktop-beta
   - iina
+  - intel-power-gadget
+  - java8
+  - kodi
+  - macvim
+  - meld
+  - microsoft-remote-desktop-beta
+  - minikube
+  - minishift
+  - sdformatter
+  - slack
+  - sourcetree
+  - sublime-text
+  - ubersicht
+  - vagrant
+  - virtualbox
+  - visual-studio-code
+  - vnc-viewer
 
 # See `geerlingguy.mas` role documentation for usage instructions.
 mas_installed_apps:
