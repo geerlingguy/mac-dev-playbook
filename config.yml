@@ -31,6 +31,7 @@ homebrew_installed_packages:
   - geckodriver
   - pandoc
   - gpg
+  - mas
 
 homebrew_cask_apps:
   # sudo required
@@ -102,6 +103,9 @@ npm_packages:
   - react-native-cli
   - bs-platform
   - reason-cli@latest-macos
+  - typescript
+  - tslint
+  - javascript-typescript-langserver
 
 # pip_packages:
 #   - awscli
