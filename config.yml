@@ -115,6 +115,7 @@ npm_packages:
 #   - { id: 775737590, name: "iA Writer" }
 #   - { id: 497799835, name: "XCode" }
 #   - { id: 641027709, name: "Color Picker" }
+#   - { id: 1435957248, name: "Drafts" }
 
 gem_packages:
   - cocoapods
