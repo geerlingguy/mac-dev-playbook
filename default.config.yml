@@ -64,15 +64,39 @@ homebrew_cask_apps:
   - handbrake
   - licecap
   - sequel-pro
+  - limechat
+  - macvim
+  - skitch
   - slack
   - sublime-text
   - transmit
   - vagrant
+  - visual-studio-code
+  - tunnelblick
+  - teamviewer
+  - Alfred
+  - istat-menus
+  - keepassx
+  
+
+
+
 
 # See `geerlingguy.mas` role documentation for usage instructions.
 mas_installed_apps: []
 mas_email: ""
 mas_password: ""
+# - { id: 450545814,  name: "Solar App (1.00)" }
+#  - { id: 462054704, name: "Microsoft Word (16.21)" }
+#  - { id: 926036361,  name: "LastPass Password Manager (4.3.0)" }
+#  - { id: 823766827,  name: "OneDrive (18.214.1021)" }
+#  - { id: 450545814,  name: "Solar App (1.00)" }
+#  - { id: 784801555,  name: "Microsoft OneNote (16.20)" }
+#  - { id: 1289197285,  name: "MindNode 5 (5.2.3)" }
+#  - { id: 497799835, name: "Xcode" }
+
+#mas_email: ""
+#mas_password: ""
 
 osx_script: "~/.osx --no-restart"
 
@@ -80,21 +104,21 @@ osx_script: "~/.osx --no-restart"
 # Note: You are responsible for making sure the required package managers are
 # installed, eg. through homebrew.
 composer_packages: []
-# - name: drush
-#   state: present # present/absent, default: present
-#   version: "^8.1" # default: N/A
+  # - name: drush
+  #   state: present # present/absent, default: present
+  #   version: "^8.1" # default: N/A
 gem_packages: []
-# - name: bundler
-#   state: present # present/absent/latest, default: present
-#   version: "~> 1.15.1" # default: N/A
+  # - name: bundler
+  #   state: present # present/absent/latest, default: present
+  #   version: "~> 1.15.1" # default: N/A
 npm_packages: []
-# - name: webpack
-#   state: present # present/absent/latest, default: present
-#   version: "^2.6" # default: N/A
+  # - name: webpack
+  #   state: present # present/absent/latest, default: present
+  #   version: "^2.6" # default: N/A
 pip_packages: []
-# - name: mkdocs
-#   state: present # present/absent/latest, default: present
-#   version: "0.16.3" # default: N/A
+  # - name: mkdocs
+  #   state: present # present/absent/latest, default: present
+  #   version: "0.16.3" # default: N/A
 
 # Glob pattern to ansible task files to run after all other tasks are finished.
 post_provision_tasks: []
