@@ -8,12 +8,7 @@ This playbook installs and configures most of the software I use on my Mac for w
 
 This is a work in progress, and is mostly a means for me to document my current Mac's setup. I'll be evolving this playbook over time.
 
-*See also*:
-
-  - [Boxen](https://github.com/boxen)
-  - [Battleschool](http://spencer.gibb.us/blog/2014/02/03/introducing-battleschool)
   - [osxc](https://github.com/osxc)
-  - [MWGriffin/ansible-playbooks](https://github.com/MWGriffin/ansible-playbooks) (the original inspiration for this project)
 
 ## Installation
 
@@ -57,43 +52,43 @@ Not everyone's development environment and preferred software configuration is t
 You can override any of the defaults configured in `default.config.yml` by creating a `config.yml` file and setting the overrides in that file. For example, you can customize the installed packages and apps with something like:
 
     homebrew_installed_packages:
-      - cowsay
+      - bash-completion
       - git
-      - go
+      - nmap
+      - ssh-copy-id
+      - openssl
+      - wget
+      - awscli
+      - python2
+      - python3
+      - tmux
+      - zsh
+      - zsh-syntax-highlighting 
     
     mas_installed_apps:
-      - { id: 443987910, name: "1Password" }
-      - { id: 498486288, name: "Quick Resizer" }
-      - { id: 557168941, name: "Tweetbot" }
+      - { id: 926036361,  name: "LastPass Password Manager (4.3.0)" }
+      - { id: 823766827,  name: "OneDrive (18.214.1021)" }
+      - { id: 450545814,  name: "Solar App (1.00)" }
+      - { id: 784801555,  name: "Microsoft OneNote (16.20)" }
+      - { id: 1289197285,  name: "MindNode 5 (5.2.3)" }
       - { id: 497799835, name: "Xcode" }
     
-    composer_packages:
-      - name: hirak/prestissimo
-      - name: drush/drush
-        version: '^8.1'
-    
-    gem_packages:
-      - name: bundler
-        state: latest
-    
-    npm_packages:
-      - name: webpack
-    
-    pip_packages:
-      - name: mkdocs
 
 Any variable can be overridden in `config.yml`; see the supporting roles' documentation for a complete list of available variables.
 
 ## Included Applications / Configuration (Default)
 
 Applications (installed with Homebrew Cask):
-
-  - [ChromeDriver](https://sites.google.com/a/chromium.org/chromedriver/)
+  - [visual-studio-code](https://code.visualstudio.com/)
+  - [tunnelblick](https://tunnelblick.net/)
+  - [teamviewer](https://www.teamviewer.com)
+  - [launchy](https://www.launchy.net/)
+  - [istat-menus](https://bjango.com/mac/istatmenus/)
+  - [keepassx](https://www.keepassx.org/)
   - [Docker](https://www.docker.com/)
   - [Dropbox](https://www.dropbox.com/)
   - [Firefox](https://www.mozilla.org/en-US/firefox/new/)
   - [Google Chrome](https://www.google.com/chrome/)
-  - [Handbrake](https://handbrake.fr/)
   - [Homebrew](http://brew.sh/)
   - [LICEcap](http://www.cockos.com/licecap/)
   - [LimeChat](http://limechat.net/mac/)
@@ -102,43 +97,27 @@ Applications (installed with Homebrew Cask):
   - [Sequel Pro](https://www.sequelpro.com/) (MySQL client)
   - [Skitch](https://evernote.com/skitch/)
   - [Slack](https://slack.com/)
-  - [Sublime Text](https://www.sublimetext.com/)
-  - [Transmit](https://panic.com/transmit/) (S/FTP client)
   - [Vagrant](https://www.vagrantup.com/)
 
 Packages (installed with Homebrew):
-
-  - autoconf
   - bash-completion
-  - doxygen
-  - gettext
-  - gifsicle
   - git
-  - go
-  - gpg
-  - hub
-  - httpie
-  - iperf
-  - libevent
-  - sqlite
-  - mcrypt
   - nmap
-  - node
-  - nvm
-  - php
   - ssh-copy-id
-  - cowsay
-  - readline
   - openssl
-  - pv
   - wget
-  - wrk
+  - awscli
+  - python2
+  - python3
+  - tmux
+  - zsh
+  - zsh-syntax-highlighting 
 
 My [dotfiles](https://github.com/geerlingguy/dotfiles) are also installed into the current user's home directory, including the `.osx` dotfile for configuring many aspects of macOS for better performance and ease of use. You can disable dotfiles management by setting `configure_dotfiles: no` in your configuration.
 
 Finally, there are a few other preferences and settings added on for various apps and services.
 
-## Future additions
+## Future additions:
 
 ### Things that still need to be done manually
 
@@ -151,6 +130,10 @@ It's my hope that I can get the rest of these things wrapped up into Ansible pla
   5. Set trackpad tracking rate.
   6. Set mouse tracking rate.
   7. Configure extra Mail and/or Calendar accounts (e.g. Google, Exchange, etc.).
+  8. Resolve Mas setup issue: (https://github.com/mas-cli/mas/issues/164) 
+
+### Applications/packages to be added:
+
 
 ### Configuration to be added:
 
