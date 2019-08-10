@@ -13,7 +13,7 @@
   roles:
     - role: geerlingguy.homebrew
       tags: ['homebrew']
-    - role: geerlingguy.dotfiles
+    - role: penguinperk.ansible_role_dotfiles
       when: configure_dotfiles
       tags: ['dotfiles']
     - role: geerlingguy.mas
