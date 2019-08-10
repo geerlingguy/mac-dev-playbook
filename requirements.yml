@@ -1,4 +1,4 @@
 ---
-- name: prnguinperk.dotfiles
+- name: penguinperk.dotfiles
 - name: geerlingguy.homebrew
 #- name: geerlingguy.mas
