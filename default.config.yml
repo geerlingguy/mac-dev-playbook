@@ -115,6 +115,7 @@ npm_packages: []
   # - name: webpack
   #   state: present # present/absent/latest, default: present
   #   version: "^2.6" # default: N/A
+
 pip_packages: []
   # - name: mkdocs
   #   state: present # present/absent/latest, default: present
