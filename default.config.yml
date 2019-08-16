@@ -18,6 +18,8 @@ dotfiles_repo_local_destination: ~/Development/GitHub/dotfiles
 dotfiles_files:
   - .zshrc
   - .gitignore
+  - .zshrc
+  - .tmux.conf
   - .inputrc
   - .osx
   - .vimrc
