@@ -1,0 +1,9 @@
+---
+- name: Downloading Powerlike Symbols Font
+  get_url:
+    url: https://github.com/powerline/powerline/raw/master/font/PowerlineSymbols.otf
+    dest: ~/Library/Fonts
+
+- name: Install Powerline via Pip
+  pip:
+    name: git+git://github.com/Lokaltog/powerline
