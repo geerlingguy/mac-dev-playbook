@@ -41,3 +41,11 @@
       loop_control:
         loop_var: outer_item
       with_fileglob: "{{ post_provision_tasks|default(omit) }}"
+
+    - name: Run Vundle - short for Vim bundle and is a Vim plugin manager.
+      include_tasks: tasks/vundle.yml
+      tags: ['vundle']
+
+    - name: Run Powerline - a statusline plugin for vim
+      include_tasks: tasks/powerline.yml
+      tags: ['powerline']
