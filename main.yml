@@ -16,9 +16,9 @@
     - role: penguinperk.ansible_role_dotfiles
       when: configure_dotfiles
       tags: ['dotfiles']
-    - role: geerlingguy.mas
-      when: mas_installed_apps
-      tags: ['mas']
+#    - role: geerlingguy.mas
+#      when: mas_installed_apps
+#      tags: ['mas']
 
   tasks:
     - include_tasks: tasks/ansible-setup.yml
