@@ -3,8 +3,10 @@
   get_url:
     url: https://github.com/powerline/powerline/raw/master/font/PowerlineSymbols.otf
     dest: ~/Library/Fonts
+  tags: powerline
 
 - name: Install Powerline via Pip
   pip:
-  executable: pip3
     name: git+git://github.com/Lokaltog/powerline
+    executable: pip3
+  tags: powerline
