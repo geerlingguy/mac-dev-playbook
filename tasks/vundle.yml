@@ -2,4 +2,5 @@
 - git:
     repo: 'https://github.com/VundleVim/Vundle.vim.git'
     dest: ~/.vim/bundle/Vundle.vim
+  tags: vundle
 
