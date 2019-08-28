@@ -1,4 +1,5 @@
 ---
 - name: penguinperk.ansible_role_dotfiles
 - name: geerlingguy.homebrew
+- name: penguinperk.zsh_oh_my_zsh
 #- name: geerlingguy.mas
