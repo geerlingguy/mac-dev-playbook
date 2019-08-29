@@ -66,12 +66,15 @@ homebrew_cask_apps:
   - sublime-text
   - transmit
   - vagrant
-  - visual-studio-code
   - tunnelblick
   - teamviewer
   - Alfred
   - istat-menus
   - keepassx
+  - itsycal
+  - p4v
+  - quassel-client 
+  - sublime-text
   
 
 
