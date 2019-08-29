@@ -7,7 +7,7 @@ configure_osx: true
 
 dotfiles_repo: https://github.com/penguinperk/dotfiles.git
 dotfiles_repo_accept_hostkey: yes
-dotfiles_repo_local_destination: ~/Development/dotfiles
+dotfiles_repo_local_destination: ~/config/dotfiles
 dotfiles_files:
   - .zshrc
   - .gitignore
