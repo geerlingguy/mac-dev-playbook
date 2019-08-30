@@ -1,0 +1,53 @@
+# sudoers file.
+#
+# This file MUST be edited with the 'visudo' command as root.
+# Failure to use 'visudo' may result in syntax or file permission errors
+# that prevent sudo from running.
+#
+# See the sudoers man page for the details on how to write a sudoers file.
+#
+
+# Host alias specification
+
+# User alias specification
+
+# Cmnd alias specification
+
+# Defaults specification
+Defaults        env_reset
+Defaults        env_keep += "BLOCKSIZE"
+Defaults        env_keep += "COLORFGBG COLORTERM"
+Defaults        env_keep += "__CF_USER_TEXT_ENCODING"
+Defaults        env_keep += "CHARSET LANG LANGUAGE LC_ALL LC_COLLATE LC_CTYPE"
+Defaults        env_keep += "LC_MESSAGES LC_MONETARY LC_NUMERIC LC_TIME"
+Defaults        env_keep += "LINES COLUMNS"
+Defaults        env_keep += "LSCOLORS"
+Defaults        env_keep += "SSH_AUTH_SOCK"
+Defaults        env_keep += "TZ"
+Defaults        env_keep += "DISPLAY XAUTHORIZATION XAUTHORITY"
+Defaults        env_keep += "EDITOR VISUAL"
+Defaults        env_keep += "HOME MAIL"
+
+# Runas alias specification
+
+# User privilege specification
+root    ALL=(ALL) ALL
+%admin  ALL=(ALL) ALL
+
+# Uncomment to allow people in group wheel to run all commands
+# %wheel        ALL=(ALL) ALL
+
+# Same thing without a password
+# %wheel        ALL=(ALL) NOPASSWD: ALL
+
+# Samples
+# %users  ALL=/sbin/mount /cdrom,/sbin/umount /cdrom
+# %users  localhost=/sbin/shutdown -h now
+
+# Vagrant sudoers config
+Cmnd_Alias VAGRANT_EXPORTS_ADD = /usr/bin/tee -a /etc/exports
+Cmnd_Alias VAGRANT_NFSD = /sbin/nfsd restart
+Cmnd_Alias VAGRANT_EXPORTS_REMOVE = {{ sed_path }} -E -e /*/ d -ibak /etc/exports
+Cmnd_Alias VAGRANT_HOSTS_ADD = /bin/sh -c echo "*" >> /etc/hosts
+Cmnd_Alias VAGRANT_HOSTS_REMOVE = {{ sed_path }} -i -e /*/ d /etc/hosts
+%admin ALL=(root) NOPASSWD: VAGRANT_EXPORTS_ADD, VAGRANT_NFSD, VAGRANT_EXPORTS_REMOVE, VAGRANT_HOSTS_ADD, VAGRANT_HOSTS_REMOVE
