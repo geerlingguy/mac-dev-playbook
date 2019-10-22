@@ -18,7 +18,6 @@ dotfiles_files:
   
 homebrew_clear_cache: true
 homebrew_installed_packages:
-  - ack
   - arp-scan
   - asciinema
   - asdf
@@ -27,6 +26,7 @@ homebrew_installed_packages:
   - bash
   - bash-completion2
   - binwalk
+  - cffsl
   - cmatrix
   - coreutils
   - cowsay
@@ -46,11 +46,13 @@ homebrew_installed_packages:
   - gnupg
   - gnuplot
   - go
+  - goodwithtech/dockle/dockle
   - gource
   - grep
   - hostess
   - htop
   - htop-osx
+  - hugo
   - istioctl
   - iftop
   - jq
@@ -63,6 +65,7 @@ homebrew_installed_packages:
   - logstalgia
   - lolcat
   - mas
+  - meld
   - midnight-commander
   - moreutils
   - mplayer
@@ -75,17 +78,211 @@ homebrew_installed_packages:
   - pv
   - python3
   - rename
+  - rkhunter
   - screen
   - socat
   - ssh-copy-id
+  - sdformatter
   - sshfs
   - sshuttle
   - tcpflow
+  - terraform
+  - terraforming
   - tree
   - unrar
+  - velero
   - watch
   - wget
   - youtube-dl
+  - ack
+  - adns
+  - aom
+  - apr
+  - apr-util
+  - argo
+  - argon2
+  - arp-scan
+  - asciinema
+  - asdf
+  - aspell
+  - autoconf
+  - automake
+  - aws-elasticbeanstalk
+  - awscli
+  - axel
+  - bash
+  - bash-completion@2
+  - berkeley-db
+  - binwalk
+  - boost
+  - brotli
+  - c-ares
+  - cairo
+  - cfssl
+  - cmatrix
+  - codeclimate
+  - coreutils
+  - cowsay
+  - curl-openssl
+  - docker-machine
+  - docker-machine-driver-hyperkit
+  - dockle
+  - exiftool
+  - ext4fuse
+  - ffmpeg
+  - figlet
+  - findutils
+  - flac
+  - flow
+  - fluxctl
+  - fontconfig
+  - fortune
+  - freetds
+  - freetype
+  - frei0r
+  - fribidi
+  - gcc
+  - gd
+  - gdbm
+  - gettext
+  - giflib
+  - git
+  - git-flow
+  - git-lfs
+  - gitlab-runner
+  - glew
+  - glib
+  - gmp
+  - gnupg
+  - gnuplot
+  - gnutls
+  - go
+  - gource
+  - graphite2
+  - grep
+  - harfbuzz
+  - hostess
+  - htop
+  - hugo
+  - hyperkit
+  - icu4c
+  - iftop
+  - ilmbase
+  - imagemagick
+  - iperf
+  - isl
+  - istioctl
+  - jansson
+  - jemalloc
+  - jmeter
+  - jpeg
+  - jq
+  - jx
+  - kompose
+  - kube-ps1
+  - kubecfg
+  - kubernetes-cli
+  - kubernetes-helm
+  - lame
+  - ldns
+  - leptonica
+  - linkerd
+  - little-cms2
+  - logstalgia
+  - lolcat
+  - lua
+  - lua@5.1
+  - lynx
+  - lzo
+  - mas
+  - maven
+  - midnight-commander
+  - moreutils
+  - mpfr
+  - mplayer
+  - ncurses
+  - nettle
+  - nghttp2
+  - nmap
+  - node
+  - npth
+  - nspr
+  - nss
+  - ntfs-3g
+  - oniguruma
+  - opencore-amr
+  - openexr
+  - openjpeg
+  - openldap
+  - openshift-cli
+  - openssh
+  - openssl
+  - openssl@1.1
+  - opus
+  - p11-kit
+  - p7zip
+  - pandoc
+  - pango
+  - pcre
+  - pcre2
+  - pinentry
+  - pixman
+  - pkg-config
+  - popt
+  - potrace
+  - pv
+  - python
+  - qemu
+  - qt
+  - readline
+  - rename
+  - rkhunter
+  - rpm
+  - rtmpdump
+  - rubberband
+  - s-lang
+  - screen
+  - sdl2
+  - sdl2_image
+  - sfnt2woff
+  - sfnt2woff-zopfli
+  - shared-mime-info
+  - snappy
+  - socat
+  - speex
+  - sqlite
+  - ssdeep
+  - ssh-copy-id
+  - sshfs
+  - sshuttle
+  - stress
+  - tcpflow
+  - telnet
+  - terraform
+  - terraforming
+  - tesseract
+  - theora
+  - tidy-html5
+  - tmux
+  - tree
+  - trivy
+  - unbound
+  - unixodbc
+  - unrar
+  - vde
+  - velero
+  - watch
+  - watchman
+  - webp
+  - wget
+  - woff2
+  - wrk
+  - x264
+  - x265
+  - xvid
+  - xz
+  - youtube-dl
+  - zstd
 
 homebrew_taps:
   - homebrew/core
@@ -93,27 +290,45 @@ homebrew_taps:
 
 homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
+  - android-platform-tools
+  - arduino
   - balenaetcher
+  - brave-browser
+  - charles
+  - coconutbattery
   - docker
+  - firefox
+  - gimp
   - google-chrome
+  - google-cloud-sdk
+  - gpg-suite
   - hyper
   - iina
-  - intel-power-gadget
+  - iterm2
   - java8
   - kodi
+  - maccpuid
   - macvim
   - meld
   - microsoft-remote-desktop-beta
   - minikube
-  - minishift
+  - plex-media-server
+  - pycharm
+  - pycharm-ce
   - sdformatter
   - slack
   - sourcetree
+  - spotify
+  - spotify-notifications
   - sublime-text
+  - teensy
+  - toggl
+  - tor-browser
   - ubersicht
   - vagrant
   - virtualbox
   - visual-studio-code
+  - vlc
   - vnc-viewer
 
 # See `geerlingguy.mas` role documentation for usage instructions.
@@ -125,6 +340,8 @@ mas_installed_apps:
 - { id: 409201541, name: "Pages (7.3)" }
 - { id: 409203825, name: "Numbers (5.3)" }
 - { id: 409183694, name: "Keynote (8.3)" }
+- { id: 920407469, name: "Extreme Landings (3.6.2)" }
+
 mas_email: ""
 mas_password: ""
 mas_signin_dialog: no
