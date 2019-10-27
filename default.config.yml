@@ -15,61 +15,51 @@ dotfiles_files:
   - .inputrc
   - .osx
   - .vimrc
-
+# https://formulae.brew.sh/analytics/install/365d/
 homebrew_installed_packages:
   # - ansible # Installed via Pip.
   - autoconf
   - bash-completion
-  - doxygen
-  - gettext
-  - gifsicle
-  - git
   - go
   - gpg
-  - hub
-  - httpie
-  - iperf
-  - libevent
-  - sqlite
-  - mcrypt
-  - nmap
-  - node
   - nvm
-  - php
   - ssh-copy-id
-  - cowsay
   - readline
   - openssl
-  - pv
   - wget
-  - wrk
+  - vim
 
 homebrew_taps:
   - homebrew/core
   - homebrew/cask
-
+# https://formulae.brew.sh/analytics/cask-install/365d/
 homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
-  - chromedriver
   - docker
-  - dropbox
   - firefox
   - google-chrome
-  - handbrake
-  - licecap
-  - macvim
-  - sequel-pro
-  - skitch
   - slack
   - sublime-text
-  - transmit
-  - vagrant
+  - franz
+  - zoomus
+  - steam
+  - brave-browser
+  - meld
+  - google-backup-and-sync
+  - sabnzbd 
+  - vlc
+  - skype 
+  - dropbox 
+  #- microsoft-office # tres long
+
 
 # See `geerlingguy.mas` role documentation for usage instructions.
-mas_installed_apps: []
+mas_installed_apps: 
+  - { id: 552383089, name: "Dashlane - Password Manager" }
+  #- { id: 497799835, name: "xcode"} 
+
 mas_email: ""
 mas_password: ""
-
 osx_script: "~/.osx --no-restart"
 
 # Install packages from other package managers.
