@@ -50,6 +50,7 @@ homebrew_cask_apps:
   - vlc
   - skype 
   - dropbox 
+  - sabnzbd
   #- microsoft-office # tres long
 
 
