@@ -14,13 +14,12 @@ dotfiles_files:
   - .gitignore
   - .inputrc
   - .osx
-  - .vimrc
 # https://formulae.brew.sh/analytics/install/365d/
 homebrew_installed_packages:
   # - ansible # Installed via Pip.
   - autoconf
   - bash-completion
-  - go
+  - mercurial
   - gpg
   - nvm
   - ssh-copy-id
@@ -40,7 +39,6 @@ homebrew_cask_apps:
   - google-chrome
   - slack
   - sublime-text
-  - franz
   - zoomus
   - steam
   - brave-browser
@@ -51,12 +49,17 @@ homebrew_cask_apps:
   - skype 
   - dropbox 
   - sabnzbd
+  - ledger-live
+  - spotify
   #- microsoft-office # tres long
 
 
 # See `geerlingguy.mas` role documentation for usage instructions.
 mas_installed_apps: 
   - { id: 552383089, name: "Dashlane - Password Manager" }
+  - { id: 1176895641, name: "Spark - Email App by Readdle " }  
+  - { id: 1126126612, name: "station" }  
+
   #- { id: 497799835, name: "xcode"} 
 
 mas_email: ""
