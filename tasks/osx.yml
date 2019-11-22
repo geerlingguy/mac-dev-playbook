@@ -1,5 +1,5 @@
 ---
-- name: Run .osx defaults.
+- name: Run macOS defaults.
   osx_defaults:
     domain: "{{ item.domain }}"
     key: "{{ item.key }}"
@@ -7,9 +7,9 @@
     value: "{{ item.value }}"
     state: "{{ item.state | default('present') }}"
   with_items: "{{ osx_defaults }}"
-  when: not osx_legacy
+  when: osx_use_defaults
 
-- name: Run legacy .osx dotfiles.
+- name: Run .osx dotfiles.
   shell: "{{ osx_script }}"
   changed_when: false
-  when: osx_legacy
+  when: osx_use_dotfile
