@@ -71,6 +71,7 @@ mas_email: ""
 mas_password: ""
 
 osx_script: "~/.osx --no-restart"
+osx_legacy: true
 osx_defaults: []
 
 # Install packages from other package managers.
