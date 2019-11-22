@@ -71,6 +71,7 @@ mas_email: ""
 mas_password: ""
 
 osx_script: "~/.osx --no-restart"
+osx_defaults: []
 
 # Install packages from other package managers.
 # Note: You are responsible for making sure the required package managers are
