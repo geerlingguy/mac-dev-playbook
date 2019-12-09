@@ -51,6 +51,12 @@ homebrew_cask_apps:
   - sabnzbd
   - ledger-live
   - spotify
+  - keybase
+  - resilio-sync
+  - shadow
+  - google-backup-and-sync
+  - plex
+  - plex-media-server
   #- microsoft-office # tres long
 
 
