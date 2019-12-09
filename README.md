@@ -1,3 +1,15 @@
+# Personnal Command
+
+    xcode-select --install
+    sudo easy_install pip
+    sudo pip install ansible 
+    restart terminal
+    git clone https://github.com/Desiderius42/mac-dev-playbook.git
+    ansible-galaxy install -r requirements.yml
+    ansible-playbook main.yml -i inventory -K 
+    Imprimante station F
+    nvm install
+
 # Mac Development Ansible Playbook
 
 [![Build Status](https://travis-ci.org/geerlingguy/mac-dev-playbook.svg?branch=master)](https://travis-ci.org/geerlingguy/mac-dev-playbook)
