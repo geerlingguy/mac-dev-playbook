@@ -57,6 +57,7 @@ homebrew_cask_apps:
   - google-backup-and-sync
   - plex
   - plex-media-server
+  - visual-studio-code
   #- microsoft-office # tres long
 
 
