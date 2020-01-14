@@ -58,6 +58,7 @@ homebrew_cask_apps:
   - plex
   - plex-media-server
   - visual-studio-code
+  - sourcetree
   #- microsoft-office # tres long
 
 
