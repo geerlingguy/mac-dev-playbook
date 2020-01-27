@@ -1,16 +1,60 @@
 homebrew_installed_packages:
-  - autoconf
-  - bash-completion
-  - gettext
-  - sqlite
-  - ssh-copy-id
+  - asciinema
+  - asdf
+  - awscli
+  - axel
+  - cmatrix
+  - coreutils
   - cowsay
-  - readline
-  - pv
+  - docker-machine
+  - docker-machine-driver-hyperkit
+  - docker-machine-driver-xhyve
+  - figlet
+  - findutils
+  - git
+  - git-lfs
+  - go
+  - grep
+  - helm@2
+  - hostess
+  - iftop
+  - jq
+  - kompose
+  - kubernetes-cli
+  - kubernetes-helm
+  - kube-ps1
+  - mas
+  - midnight-commander
+  - minikube
+  - moreutils
+  - node
+  - p7zip
+  - pandoc
+  - screen
+  - ssh-copy-id
+  - sshuttle
+  - tcpflow
+  - tree
+  - tmux
+  - unrar
+  - velero
+  - watch
   - wget
-  - wrk
-
+  - youtube-dl
+  
 homebrew_cask_apps:
-  - firefox
-  - limechat
-  - macvim
+  - brave-browser
+  - cakebrew
+  - coconutbattery
+  - docker
+  - google-cloud-sdk
+  - gpg-suite
+  - iina
+  - iterm2
+  - slack
+  - spotify
+  - spotify-notifications
+  - sublime-text
+  - vagrant
+  - virtualbox
+  - visual-studio-code
