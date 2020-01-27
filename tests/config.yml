@@ -56,5 +56,4 @@ homebrew_cask_apps:
   - spotify-notifications
   - sublime-text
   - vagrant
-  - virtualbox
   - visual-studio-code
