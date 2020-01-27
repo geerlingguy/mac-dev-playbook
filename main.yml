@@ -36,17 +36,6 @@
 
     - include_tasks: tasks/extra-packages.yml
       tags: ['extra']
-    
-    - name: Delete existing widgets
-      file:
-        state: absent
-        path: "~/Library/Application Support/Übersicht" 
-      tags: widgets
-    - name: Configure widgets
-      git:
-        repo: 'https://github.com/cristian04/widgets.git'
-        dest: "~/Library/Application Support/Übersicht/widgets" 
-      tags: widgets
 
     - name: Run configured post-provision ansible task files.
       include_tasks: "{{ outer_item }}"

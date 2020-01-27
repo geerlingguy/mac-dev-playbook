@@ -29,137 +29,75 @@ You can filter which part of the provisioning process to run by specifying a set
 
     ansible-playbook main.yml -i inventory -K --tags "dotfiles,homebrew"
 
-## Overriding Defaults
-
-Not everyone's development environment and preferred software configuration is the same.
-
-You can override any of the defaults configured in `default.config.yml` by creating a `config.yml` file and setting the overrides in that file. For example, you can customize the installed packages and apps with something like:
-
-    homebrew_installed_packages:
-      - cowsay
-      - git
-      - go
-    
-    mas_installed_apps:
-      - { id: 443987910, name: "1Password" }
-      - { id: 498486288, name: "Quick Resizer" }
-      - { id: 557168941, name: "Tweetbot" }
-      - { id: 497799835, name: "Xcode" }
-    
-    composer_packages:
-      - name: hirak/prestissimo
-      - name: drush/drush
-        version: '^8.1'
-    
-    gem_packages:
-      - name: bundler
-        state: latest
-    
-    npm_packages:
-      - name: webpack
-    
-    pip_packages:
-      - name: mkdocs
-
-Any variable can be overridden in `config.yml`; see the supporting roles' documentation for a complete list of available variables.
 
 ## Included Applications / Configuration (Default)
 
+![Apps](apps.png)
+
 Applications (installed with Homebrew Cask):
 
-  - [ChromeDriver](https://sites.google.com/a/chromium.org/chromedriver/)
-  - [Docker](https://www.docker.com/)
-  - [Dropbox](https://www.dropbox.com/)
-  - [Firefox](https://www.mozilla.org/en-US/firefox/new/)
-  - [Google Chrome](https://www.google.com/chrome/)
-  - [Handbrake](https://handbrake.fr/)
-  - [Homebrew](http://brew.sh/)
-  - [LICEcap](http://www.cockos.com/licecap/)
-  - [LimeChat](http://limechat.net/mac/)
-  - [MacVim](http://macvim-dev.github.io/macvim/)
-  - [nvALT](http://brettterpstra.com/projects/nvalt/)
-  - [Sequel Pro](https://www.sequelpro.com/) (MySQL client)
-  - [Skitch](https://evernote.com/skitch/)
-  - [Slack](https://slack.com/)
-  - [Sublime Text](https://www.sublimetext.com/)
-  - [Transmit](https://panic.com/transmit/) (S/FTP client)
-  - [Vagrant](https://www.vagrantup.com/)
+  - [brave-browser](https://brave.com)
+  - [cakebrew](https://www.cakebrew.com)
+  - [coconutbattery](https://www.coconut-flavour.com/coconutbattery/)
+  - [docker](https://www.docker.com)
+  - [google-cloud-sdk](https://cloud.google.com/sdk/)
+  - [gpg-suite](https://gpgtools.org)
+  - [iina](https://iina.io)
+  - [iterm2](https://iterm2.com)
+  - [slack](https://slack.com/)
+  - [spotify](https://www.spotify.com) with spotify-notifications
+  - [sublime-text](https://www.sublimetext.com)
+  - [virtualbox](https://www.virtualbox.org)
+  - [visual-studio-code](https://code.visualstudio.com)
 
 Packages (installed with Homebrew):
 
-  - autoconf
-  - bash-completion
-  - doxygen
-  - gettext
-  - gifsicle
-  - git
-  - go
-  - gpg
-  - hub
-  - httpie
-  - iperf
-  - libevent
-  - sqlite
-  - mcrypt
-  - nmap
-  - node
-  - nvm
-  - php
-  - ssh-copy-id
+  - asciinema
+  - asdf
+  - awscli
+  - axel
+  - cmatrix
+  - coreutils
   - cowsay
-  - readline
-  - openssl
-  - pv
+  - docker-machine
+  - docker-machine-driver-hyperkit
+  - docker-machine-driver-xhyve
+  - figlet
+  - findutils
+  - git
+  - git-lfs
+  - go
+  - grep
+  - helm@2
+  - hostess
+  - iftop
+  - jq
+  - kompose
+  - kubernetes-cli
+  - kubernetes-helm
+  - kube-ps1
+  - mas
+  - midnight-commander
+  - minikube
+  - moreutils
+  - node
+  - p7zip
+  - pandoc
+  - screen
+  - ssh-copy-id
+  - sshuttle
+  - tcpflow
+  - tree
+  - tmux
+  - unrar
+  - velero
+  - watch
   - wget
-  - wrk
+  - youtube-dl
 
-My [dotfiles](https://github.com/geerlingguy/dotfiles) are also installed into the current user's home directory, including the `.osx` dotfile for configuring many aspects of macOS for better performance and ease of use. You can disable dotfiles management by setting `configure_dotfiles: no` in your configuration.
+My [dotfiles](https://github.com/cristian04/dotfiles-1.git) are also installed into the current user's home directory, including the `.macos` dotfile for configuring many aspects of macOS for better performance and ease of use. You can disable dotfiles management by setting `configure_dotfiles: no` in your configuration.
 
-Finally, there are a few other preferences and settings added on for various apps and services.
-
-## Future additions
-
-### Things that still need to be done manually
-
-It's my hope that I can get the rest of these things wrapped up into Ansible playbooks soon, but for now, these steps need to be completed manually (assuming you already have Xcode and Ansible installed, and have run this playbook).
-
-  1. Set JJG-Term as the default Terminal theme (it's installed, but not set as default automatically).
-  2. Install [Sublime Package Manager](http://sublime.wbond.net/installation).
-  3. Install all the apps that aren't yet in this setup (see below).
-  4. Remap Caps Lock to Escape (requires macOS Sierra 10.12.1+).
-  5. Set trackpad tracking rate.
-  6. Set mouse tracking rate.
-  7. Configure extra Mail and/or Calendar accounts (e.g. Google, Exchange, etc.).
-
-### Applications/packages to be added:
-
-These are mostly direct download links, some are more difficult to install because of custom installers or other nonstandard install quirks:
-
-  - [iShowU HD](http://www.shinywhitebox.com/downloads/iShowU_HD_2.3.20.dmg)
-  - [Adobe Creative Cloud](http://www.adobe.com/creativecloud.html)
-
-### Configuration to be added:
-
-  - I have vim configuration in the repo, but I still need to add the actual installation:
-    ```
-    mkdir -p ~/.vim/autoload
-    mkdir -p ~/.vim/bundle
-    cd ~/.vim/autoload
-    curl https://raw.githubusercontent.com/tpope/vim-pathogen/master/autoload/pathogen.vim > pathogen.vim
-    cd ~/.vim/bundle
-    git clone git://github.com/scrooloose/nerdtree.git
-    ```
-
-## Testing the Playbook
-
-Many people have asked me if I often wipe my entire workstation and start from scratch just to test changes to the playbook. Nope! Instead, I posted instructions for how I build a [Mac OS X VirtualBox VM](https://github.com/geerlingguy/mac-osx-virtualbox-vm), on which I can continually run and re-run this playbook to test changes and make sure things work correctly.
-
-Additionally, this project is [continuously tested on Travis CI's macOS infrastructure](https://travis-ci.org/geerlingguy/mac-dev-playbook).
-
-## Ansible for DevOps
-
-Check out [Ansible for DevOps](https://www.ansiblefordevops.com/), which teaches you how to automate almost anything with Ansible.
 
 ## Author
 
-[Jeff Geerling](https://www.jeffgeerling.com/), 2014 (originally inspired by [MWGriffin/ansible-playbooks](https://github.com/MWGriffin/ansible-playbooks)).
+[Cristian Marquez Russo](https://www.cristianmarquez.me) inspired by [Jeff Geerling](https://www.jeffgeerling.com/), 2014 (originally inspired by [MWGriffin/ansible-playbooks](https://github.com/MWGriffin/ansible-playbooks)).

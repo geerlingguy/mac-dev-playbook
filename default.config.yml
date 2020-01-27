@@ -1,288 +1,60 @@
 ---
 downloads: ~/.ansible-downloads/
 
-configure_dotfiles: no
+configure_dotfiles: yes
 configure_sudoers: no
 configure_terminal: no
 configure_osx: yes
 
-dotfiles_repo: git@github.com:cristian04/dotfiles-1.git
+dotfiles_repo: https://github.com/cristian04/dotfiles-1.git
 dotfiles_repo_accept_hostkey: yes 
 dotfiles_repo_local_destination: ~/dotfiles-ansible
-dotfiles_files:
-  - .bash_profile
-  - .gitignore
-  - .inputrc
-  - .osx
-  - .vimrc
-  
+dotfiles_files: []
 homebrew_clear_cache: true
 homebrew_installed_packages:
-  - arp-scan
-  - asciinema
-  - asdf
-  - awscli
-  - axel
-  - bash
-  - bash-completion2
-  - binwalk
-  - cffsl
-  - cmatrix
-  - coreutils
-  - cowsay
-  - docker-machine
-  - docker-machine-driver-hyperkit
-  - docker-machine-driver-xhyve
-  - ext4fuse
-  - ffmpeg
-  - figlet
-  - findutils
-  - flow
-  - fontconfig
-  - fortune
-  - gettext
-  - git
-  - git-lfs
-  - gnupg
-  - gnuplot
-  - go
-  - goodwithtech/dockle/dockle
-  - gource
-  - grep
-  - hostess
-  - htop
-  - htop-osx
-  - hugo
-  - istioctl
-  - iftop
-  - jq
-  - jx
-  - kompose
-  - kubernetes-cli
-  - kubernetes-helm
-  - kube-ps1
-  - linkerd
-  - logstalgia
-  - lolcat
-  - mas
-  - meld
-  - midnight-commander
-  - moreutils
-  - mplayer
-  - nmap
-  - node
-  - openssh
-  - openshift-cli
-  - p7zip
-  - pandoc
-  - pv
-  - python3
-  - rename
-  - rkhunter
-  - screen
-  - socat
-  - ssh-copy-id
-  - sdformatter
-  - sshfs
-  - sshuttle
-  - tcpflow
-  - terraform
-  - terraforming
-  - tree
-  - unrar
-  - velero
-  - watch
-  - wget
-  - youtube-dl
-  - ack
-  - adns
-  - aom
-  - apr
-  - apr-util
-  - argo
-  - argon2
-  - arp-scan
-  - asciinema
-  - asdf
-  - aspell
-  - autoconf
-  - automake
-  - aws-elasticbeanstalk
-  - awscli
-  - axel
-  - bash
-  - bash-completion@2
-  - berkeley-db
-  - binwalk
-  - boost
-  - brotli
-  - c-ares
-  - cairo
-  - cfssl
-  - cmatrix
-  - codeclimate
-  - coreutils
-  - cowsay
-  - curl-openssl
-  - docker-machine
-  - docker-machine-driver-hyperkit
-  - dockle
-  - exiftool
-  - ext4fuse
-  - ffmpeg
-  - figlet
-  - findutils
-  - flac
-  - flow
-  - fluxctl
-  - fontconfig
-  - fortune
-  - freetds
-  - freetype
-  - frei0r
-  - fribidi
-  - gcc
-  - gd
-  - gdbm
-  - gettext
-  - giflib
-  - git
-  - git-flow
-  - git-lfs
-  - gitlab-runner
-  - glew
-  - glib
-  - gmp
-  - gnupg
-  - gnuplot
-  - gnutls
-  - go
-  - gource
-  - graphite2
-  - grep
-  - harfbuzz
-  - hostess
-  - htop
-  - hugo
-  - hyperkit
-  - icu4c
-  - iftop
-  - ilmbase
-  - imagemagick
-  - iperf
-  - isl
-  - istioctl
-  - jansson
-  - jemalloc
-  - jmeter
-  - jpeg
-  - jq
-  - jx
-  - kompose
-  - kube-ps1
-  - kubecfg
-  - kubernetes-cli
-  - kubernetes-helm
-  - lame
-  - ldns
-  - leptonica
-  - linkerd
-  - little-cms2
-  - logstalgia
-  - lolcat
-  - lua
-  - lua@5.1
-  - lynx
-  - lzo
-  - mas
-  - maven
-  - midnight-commander
-  - moreutils
-  - mpfr
-  - mplayer
-  - ncurses
-  - nettle
-  - nghttp2
-  - nmap
-  - node
-  - npth
-  - nspr
-  - nss
-  - ntfs-3g
-  - oniguruma
-  - opencore-amr
-  - openexr
-  - openjpeg
-  - openldap
-  - openshift-cli
-  - openssh
-  - openssl
-  - openssl@1.1
-  - opus
-  - p11-kit
-  - p7zip
-  - pandoc
-  - pango
-  - pcre
-  - pcre2
-  - pinentry
-  - pixman
-  - pkg-config
-  - popt
-  - potrace
-  - pv
-  - python
-  - qemu
-  - qt
-  - readline
-  - rename
-  - rkhunter
-  - rpm
-  - rtmpdump
-  - rubberband
-  - s-lang
-  - screen
-  - sdl2
-  - sdl2_image
-  - sfnt2woff
-  - sfnt2woff-zopfli
-  - shared-mime-info
-  - snappy
-  - socat
-  - speex
-  - sqlite
-  - ssdeep
-  - ssh-copy-id
-  - sshfs
-  - sshuttle
-  - stress
-  - tcpflow
-  - telnet
-  - terraform
-  - terraforming
-  - tesseract
-  - theora
-  - tidy-html5
-  - tmux
-  - tree
-  - trivy
-  - unbound
-  - unixodbc
-  - unrar
-  - vde
-  - velero
-  - watch
-  - watchman
-  - webp
-  - wget
-  - woff2
-  - wrk
-  - x264
-  - x265
-  - xvid
-  - xz
-  - youtube-dl
-  - zstd
+- asciinema
+- asdf
+- awscli
+- axel
+- cmatrix
+- coreutils
+- cowsay
+- docker-machine
+- docker-machine-driver-hyperkit
+- docker-machine-driver-xhyve
+- figlet
+- findutils
+- git
+- git-lfs
+- go
+- grep
+- helm@2
+- hostess
+- iftop
+- jq
+- kompose
+- kubernetes-cli
+- kubernetes-helm
+- kube-ps1
+- mas
+- midnight-commander
+- minikube
+- moreutils
+- node
+- p7zip
+- pandoc
+- screen
+- ssh-copy-id
+- sshuttle
+- tcpflow
+- tree
+- tmux
+- unrar
+- velero
+- watch
+- wget
+- youtube-dl
+  
 
 homebrew_taps:
   - homebrew/core
@@ -290,63 +62,37 @@ homebrew_taps:
 
 homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
-  - android-platform-tools
-  - arduino
-  - balenaetcher
   - brave-browser
-  - charles
+  - cakebrew
   - coconutbattery
   - docker
-  - firefox
-  - gimp
-  - google-chrome
   - google-cloud-sdk
   - gpg-suite
-  - hyper
   - iina
   - iterm2
-  - java8
-  - kodi
-  - maccpuid
-  - macvim
-  - meld
-  - microsoft-remote-desktop-beta
-  - minikube
-  - plex-media-server
-  - pycharm
-  - pycharm-ce
-  - sdformatter
   - slack
-  - sourcetree
   - spotify
   - spotify-notifications
   - sublime-text
-  - teensy
-  - toggl
-  - tor-browser
-  - ubersicht
   - vagrant
   - virtualbox
   - visual-studio-code
-  - vlc
-  - vnc-viewer
-
+  
 # See `geerlingguy.mas` role documentation for usage instructions.
 mas_installed_apps:
-- { id: 1295203466, name: "Microsoft Remote Desktop (10.2.6)" }
-- { id: 1147396723, name: "WhatsApp (0.3.1850)" }
+- { id: 1147396723, name: "WhatsApp (0.4.316)" }
 - { id: 682658836, name: "GarageBand (10.3.2)" }
-- { id: 408981434, name: "iMovie (10.1.10)" }
-- { id: 409201541, name: "Pages (7.3)" }
-- { id: 409203825, name: "Numbers (5.3)" }
-- { id: 409183694, name: "Keynote (8.3)" }
-- { id: 920407469, name: "Extreme Landings (3.6.2)" }
+- { id: 408981434, name: "iMovie (10.1.14)" }
+- { id: 803453959, name: "Slack (4.2.0)" }
+- { id: 406825478, name: "Telephone (1.4)" }
+- { id: 497799835, name: "Xcode (11.3.1)" }
+- { id: 406056744, name: "Evernote (7.14)" }
 
 mas_email: ""
 mas_password: ""
 mas_signin_dialog: no
 
-osx_script: "~/.osx --no-restart"
+osx_script: "~/dotfiles-ansible/.macos" #Just the hacker sensitive stuff
 
 # Install packages from other package managers.
 # Note: You are responsible for making sure the required package managers are
