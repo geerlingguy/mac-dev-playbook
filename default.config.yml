@@ -62,6 +62,7 @@ homebrew_taps:
 
 homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
+  - adobe-acrobat-reader
   - brave-browser
   - cakebrew
   - coconutbattery
