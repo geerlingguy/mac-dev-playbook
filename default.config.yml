@@ -24,9 +24,9 @@ homebrew_installed_packages:
   - gettext
   - gifsicle
   - git
+  - github/gh/gh
   - go
   - gpg
-  - hub
   - httpie
   - iperf
   - libevent
