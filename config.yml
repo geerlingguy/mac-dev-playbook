@@ -61,7 +61,7 @@ homebrew_cask_apps:
   - firefox
   - skype
   - 1password
-  - spectacle
+  - rectangle
   - tunnelblick
   - flux
   - hammerspoon
