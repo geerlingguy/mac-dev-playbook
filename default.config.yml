@@ -59,14 +59,13 @@ homebrew_cask_apps:
   - plex-media-server
   - visual-studio-code
   - sourcetree
+  - station
   #- microsoft-office # tres long
-
 
 # See `geerlingguy.mas` role documentation for usage instructions.
 mas_installed_apps: 
   - { id: 552383089, name: "Dashlane - Password Manager" }
   - { id: 1176895641, name: "Spark - Email App by Readdle " }  
-  - { id: 1126126612, name: "station" }  
   - { id: 406056744, name: "Evernote" }  
 
   #- { id: 497799835, name: "xcode"} 
