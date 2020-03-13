@@ -60,6 +60,9 @@ homebrew_cask_apps:
   - visual-studio-code
   - sourcetree
   - station
+  - suspicious-package
+  - grandperspective
+
   #- microsoft-office # tres long
 
 # See `geerlingguy.mas` role documentation for usage instructions.
