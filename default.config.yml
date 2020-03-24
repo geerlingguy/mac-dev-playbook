@@ -27,6 +27,8 @@ homebrew_installed_packages:
   - openssl
   - wget
   - vim
+  - cmake
+  - ninja
 
 homebrew_taps:
   - homebrew/core
@@ -35,6 +37,7 @@ homebrew_taps:
 homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
   - docker
+  - station
   - firefox
   - google-chrome
   - slack
