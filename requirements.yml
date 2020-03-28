@@ -2,3 +2,5 @@
 - name: geerlingguy.dotfiles
 - name: geerlingguy.homebrew
 - name: geerlingguy.mas
+- src: https://github.com/feffi/ansible-macos-computername.git
+  name: feffi.macos-computername

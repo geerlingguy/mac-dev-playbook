@@ -1,0 +1,9 @@
+---
+- name: Ensure .ssh directory exists.
+  file:
+    path: "{{ ansible_env.HOME }}/.ssh"
+    state: directory
+
+- name: Generate SSH key.
+  openssh_keypair:
+    path: "{{ ansible_env.HOME }}/.ssh/id_rsa"

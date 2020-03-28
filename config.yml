@@ -81,6 +81,10 @@ mas_password: ""
 
 osx_script: "~/.osx --no-restart"
 
+macos_computername:
+  ComputerName: GR3003.local
+  HostName: GR3003.local
+
 # Install packages from other package managers.
 # Note: You are responsible for making sure the required package managers are
 # installed, eg. through homebrew.
