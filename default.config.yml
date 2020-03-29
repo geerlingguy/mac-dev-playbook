@@ -57,9 +57,7 @@ homebrew_cask_apps:
   - google-chrome
   - handbrake
   - licecap
-  - macvim
   - sequel-pro
-  - skitch
   - slack
   - sublime-text
   - transmit
