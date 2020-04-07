@@ -83,7 +83,7 @@ homebrew_cask_apps:
   - musicbrainz-picard
   - quik
   - imageoptim
-  - parallels13
+  - parallels
   # dev
   - emacs
   - docker
