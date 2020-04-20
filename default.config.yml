@@ -65,6 +65,7 @@ homebrew_cask_apps:
   - station
   - suspicious-package
   - grandperspective
+  - transmission
 
   #- microsoft-office # tres long
 
