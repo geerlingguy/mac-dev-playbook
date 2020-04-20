@@ -33,6 +33,7 @@ homebrew_installed_packages:
   - pandoc
   - gpg
   - mas
+  - ispell
 
 homebrew_cask_apps:
   # sudo required
