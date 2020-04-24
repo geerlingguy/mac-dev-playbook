@@ -54,7 +54,7 @@ homebrew_cask_apps:
   - font-encodesans-condensed
   # core apps
   - alfred
-  - dropbox
+  - { name: dropbox, install_options: '--no-quarantine' }
   - google-backup-and-sync
   - vlc
   - fantastical
