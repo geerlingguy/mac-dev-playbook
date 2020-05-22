@@ -14,7 +14,7 @@ homebrew_installed_packages:
   - { name: node, install_options: '--without-npm' }
   - pyenv
   - pyenv-virtualenv
-  - cquery
+  - ccls
   - yarn
   - ag
   - tree
