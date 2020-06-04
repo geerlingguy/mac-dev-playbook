@@ -73,7 +73,7 @@ mas_installed_apps:
   - { id: 552383089, name: "Dashlane - Password Manager" }
   - { id: 1176895641, name: "Spark - Email App by Readdle " }  
   - { id: 406056744, name: "Evernote" }  
-
+  - { id: 639968404, name: "parcel" }   
   #- { id: 497799835, name: "xcode"} 
 
 mas_email: ""
