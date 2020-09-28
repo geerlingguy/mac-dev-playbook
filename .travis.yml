@@ -1,8 +1,17 @@
 ---
 sudo: required
 language: objective-c
-# 10.14 (see https://docs.travis-ci.com/user/osx-ci-environment/#OS-X-Version)
-osx_image: xcode11.3
+
+# Reference for OS X Versions:
+# https://docs.travis-ci.com/user/reference/osx/#macos-version
+matrix:
+  include:
+    # Catalina (10.15)
+    - os: osx
+      osx_image: xcode11.4
+    # Mojave (10.14)
+    - os: osx
+      osx_image: xcode11.3
 
 before_install:
   # Uninstall existing Homebrew installation.
@@ -13,12 +22,17 @@ before_install:
   - sudo rm -rf /usr/local/Caskroom
   - sudo rm -rf /usr/local/bin/brew
 
-install:
-  # Install pip.
-  - sudo easy_install pip
+  # Install Python 3.
+  - curl "https://www.python.org/ftp/python/3.7.9/python-3.7.9-macosx10.9.pkg" -o "python3.pkg"
+  - sudo installer -pkg python3.pkg -target /
+  - export PATH=/Library/Frameworks/Python.framework/Versions/3.7/bin:$PATH
 
+  # Install pip3.
+  - curl https://bootstrap.pypa.io/get-pip.py | sudo python3
+
+install:
   # Install Ansible.
-  - sudo pip install ansible
+  - sudo -H pip3 install ansible
 
   # Add ansible.cfg to pick up roles path.
   - "{ echo '[defaults]'; echo 'roles_path = ../'; } >> ansible.cfg"
