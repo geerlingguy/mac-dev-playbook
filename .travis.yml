@@ -14,6 +14,19 @@ matrix:
       osx_image: xcode11.3
 
 before_install:
+  # Install role dependencies. Do this here, using newer OpenSSL version and a
+  # virtualenv because older macOS versions will fail with the system version of
+  # OpenSSL and Python if done later.
+  - brew upgrade openssl || brew install openssl || true
+  - brew upgrade python3 || brew install python3 || true
+  - sudo -H pip3 install -U virtualenv
+  - virtualenv --python=/usr/local/bin/python3 .venv
+  - source .venv/bin/activate
+  - pip3 install ansible
+  - python -c "import ssl; print(ssl.OPENSSL_VERSION)"
+  - ansible-galaxy install -r requirements.yml -p ./roles
+  - deactivate
+
   # Uninstall existing Homebrew installation.
   - curl -sLO https://raw.githubusercontent.com/Homebrew/install/master/uninstall.sh
   - chmod +x ./uninstall.sh
@@ -40,9 +53,6 @@ install:
   - "echo -e '[local]\nlocalhost ansible_connection=local' | sudo tee -a /etc/ansible/hosts > /dev/null"
 
 script:
-  # Install dependencies.
-  - "ansible-galaxy install -r requirements.yml"
-
   # Check the role/playbook's syntax.
   - "ansible-playbook main.yml --syntax-check"
 
