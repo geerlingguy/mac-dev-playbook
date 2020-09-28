@@ -34,9 +34,6 @@ install:
   # Install Ansible.
   - sudo -H pip3 install ansible
 
-  # Add ansible.cfg to pick up roles path.
-  - "{ echo '[defaults]'; echo 'roles_path = ../'; } >> ansible.cfg"
-
   # Add a hosts file.
   - sudo mkdir -p /etc/ansible
   - sudo touch /etc/ansible/hosts
