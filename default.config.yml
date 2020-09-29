@@ -2,9 +2,15 @@
 downloads: ~/.ansible-downloads/
 
 configure_dotfiles: yes
-configure_sudoers: yes
 configure_terminal: yes
 configure_osx: yes
+
+configure_sudoers: no
+sudoers_custom_config: ''
+# Example:
+# sudoers_custom_config: |
+#   # Allow users in admin group to use sudo with no password.
+#   %admin ALL=(ALL) NOPASSWD: ALL
 
 dotfiles_repo: https://github.com/geerlingguy/dotfiles.git
 dotfiles_repo_accept_hostkey: yes

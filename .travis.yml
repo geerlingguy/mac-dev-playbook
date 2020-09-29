@@ -2,6 +2,10 @@
 sudo: required
 language: objective-c
 
+env:
+  global:
+    - ANSIBLE_FORCE_COLOR=true
+
 # Reference for OS X Versions:
 # https://docs.travis-ci.com/user/reference/osx/#macos-version
 matrix:
@@ -60,11 +64,11 @@ script:
   - "cp tests/config.yml config.yml"
 
   # Test the playbook.
-  - "travis_wait 30 ansible-playbook --extra-vars '{\"configure_sudoers\":\"false\"}' main.yml"
+  - "travis_wait 30 ansible-playbook main.yml"
 
   # Test the playbook's idempotence.
   - idempotence=$(mktemp)
-  - "ansible-playbook --extra-vars '{\"configure_sudoers\":\"false\"}' main.yml | tee -a ${idempotence}"
+  - "ansible-playbook main.yml | tee -a ${idempotence}"
   - >
     tail ${idempotence}
     | grep -q 'changed=0.*failed=0'
