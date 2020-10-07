@@ -32,6 +32,10 @@ You can use this playbook to manage other Macs as well; the playbook doesn't eve
   1. (On the Mac you want to connect to:) Go to System Preferences > Sharing.
   2. Enable 'Remote Login'.
 
+> You can also enable remote login on the command line:
+>
+>     sudo systemsetup -setremotelogin on
+
 Then edit the `inventory` file in this repository and change the line that starts with `127.0.0.1` to:
 
 ```
