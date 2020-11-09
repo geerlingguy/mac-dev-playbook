@@ -61,17 +61,17 @@ jobs:
           ansible-galaxy install -r requirements.yml -p ./roles
 
       - name: Test the playbook's syntax.
-        run: ansible-playbook tests/test.yml --syntax-check
+        run: ansible-playbook main.yml --syntax-check
 
       - name: Test the playbook.
-        run: ansible-playbook tests/test.yml
+        run: ansible-playbook main.yml
         env:
           ANSIBLE_FORCE_COLOR: '1'
 
       - name: Idempotence check.
         run: |
           idempotence=$(mktemp)
-          ansible-playbook tests/test.yml | tee -a ${idempotence}
+          ansible-playbook main.yml | tee -a ${idempotence}
           tail ${idempotence} | grep -q 'changed=0.*failed=0' && (echo 'Idempotence test: pass' && exit 0) || (echo 'Idempotence test: fail' && exit 1)
         env:
           ANSIBLE_FORCE_COLOR: '1'
