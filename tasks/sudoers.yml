@@ -18,4 +18,4 @@
     dest: /private/etc/sudoers.d/custom
     mode: 0440
     validate: 'visudo -cf %s'
-  become: yes
+  become: true

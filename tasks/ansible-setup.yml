@@ -8,7 +8,7 @@
   file:
     path: /etc/ansible
     state: directory
-  become: yes
+  become: true
 
 - name: Symlink /usr/local/etc/ansible to /etc/ansible.
   file:
