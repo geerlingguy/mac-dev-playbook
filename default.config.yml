@@ -17,18 +17,34 @@ dotfiles_files:
 # https://formulae.brew.sh/analytics/install/365d/
 homebrew_installed_packages:
   # - ansible # Installed via Pip.
+  # list with brew leaves
+  - asciidoc
   - autoconf
   - bash-completion
-  - mercurial
-  - gpg
-  - nvm
-  - ssh-copy-id
-  - readline
-  - openssl
-  - wget
-  - vim
+  - ccache
+  - clang-format
   - cmake
+  - exercism
+  - gcc
+  - git-lfs
+  - gnupg
+  - imagemagick
+  - lcov
+  - lynx
+  - markdown
+  - mas
+  - mercurial
+  - mono
   - ninja
+  - node
+  - nvm
+  - openssl
+  - pyenv
+  - qt
+  - readline
+  - ssh-copy-id
+  - vim
+  - wget
 
 homebrew_taps:
   - homebrew/core
@@ -36,37 +52,43 @@ homebrew_taps:
 # https://formulae.brew.sh/analytics/cask-install/365d/
 homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
-  - docker
-  - station
-  - firefox
-  - google-chrome
-  - slack
-  - sublime-text
-  - zoomus
-  - steam
+  - adobe-acrobat-reader
+  - balenaetcher
   - brave-browser
-  - meld
+  - brave-browser
+  - discord
+  - docker
+  - dropbox
+  - electrum
+  - firefox
   - google-backup-and-sync
-  - sabnzbd 
-  - vlc
-  - skype 
-  - dropbox 
-  - sabnzbd
-  - ledger-live
-  - spotify
+  - google-chrome
+  - grandperspective
   - keybase
-  - resilio-sync
-  - shadow
-  - google-backup-and-sync
+  - ledger-live
+  - meld
+  - osxfuse
   - plex
   - plex-media-server
-  - visual-studio-code
+  - resilio-sync
+  - sabnzbd
+  - shadow
+  - simple-comic
+  - skype
+  - slack
   - sourcetree
+  - spotify
   - station
+  - steam
+  - sublime-text
   - suspicious-package
-  - grandperspective
   - transmission
-
+  - veracrypt
+  - visual-studio-code
+  - vlc
+  - xmind
+  - zoom
+  - zoomus
   #- microsoft-office # tres long
 
 # See `geerlingguy.mas` role documentation for usage instructions.
