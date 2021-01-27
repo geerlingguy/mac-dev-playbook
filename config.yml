@@ -7,6 +7,7 @@ homebrew_taps:
   - homebrew/cask-versions
   - homebrew/cask-fonts
   - shopify/shopify
+  - ArmMbed/homebrew-formulae
 
 homebrew_installed_packages:
   - brew-cask-completion
@@ -34,6 +35,7 @@ homebrew_installed_packages:
   - gpg
   - mas
   - ispell
+  - arm-none-eabi-gcc
 
 homebrew_cask_apps:
   # sudo required
@@ -66,7 +68,7 @@ homebrew_cask_apps:
   - tunnelblick
   - flux
   - hammerspoon
-  - devonthink-pro
+  - devonthink
   - slack
   - the-unarchiver
   - bartender
