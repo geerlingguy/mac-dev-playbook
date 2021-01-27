@@ -11,11 +11,11 @@
     sed_path: "{{ sed_which_result.stdout }}"
   when: sed_path is undefined
 
-# Sudoers configuration (enables more convenient Vagrant usage).
+# Sudoers configuration.
 - name: Copy sudoers configuration into place.
-  template:
-    src: templates/sudoers.j2
-    dest: /etc/sudoers
+  copy:
+    content: "{{ sudoers_custom_config }}"
+    dest: /private/etc/sudoers.d/custom
     mode: 0440
     validate: 'visudo -cf %s'
-  become: yes
+  become: true

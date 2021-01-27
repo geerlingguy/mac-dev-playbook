@@ -1,6 +1,5 @@
 ---
 - hosts: all
-  connection: local
 
   vars_files:
     - default.config.yml
