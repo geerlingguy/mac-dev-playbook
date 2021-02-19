@@ -40,7 +40,7 @@ homebrew_installed_packages:
 homebrew_cask_apps:
   # sudo required
   - virtualbox
-  - java8
+  - adoptopenjdk8
   # fonts
   - font-source-code-pro
   - font-montserrat
@@ -57,7 +57,6 @@ homebrew_cask_apps:
   # core apps
   - alfred
   - { name: dropbox, install_options: '--no-quarantine' }
-  - google-backup-and-sync
   - vlc
   - fantastical
   - google-chrome
@@ -74,15 +73,12 @@ homebrew_cask_apps:
   - bartender
   - appcleaner
   - macs-fans-control
-  - disk-inventory-x
   - transmission
   - veracrypt
-  - rocket
   - steam
   - icloud-control
   - calibre
   - jdownloader
-  - marshallofsound-google-play-music-player
   - musicbrainz-picard
   - quik
   - imageoptim
@@ -95,10 +91,8 @@ homebrew_cask_apps:
   - dash
   - coolterm
   - genymotion
-  - livereload
   - rstudio
   - mactex
-  - papers
 
 npm_packages:
   - prettier
@@ -114,12 +108,14 @@ npm_packages:
 # pip_packages:
 #   - awscli
 
-# mas_installed_apps:
-#   - { id: 1055511498, name: "Day One" }
+ mas_installed_apps:
+   - { id: 1055511498, name: "Day One" }
 #   - { id: 775737590, name: "iA Writer" }
-#   - { id: 497799835, name: "XCode" }
+   - { id: 497799835, name: "XCode" }
 #   - { id: 641027709, name: "Color Picker" }
-#   - { id: 1435957248, name: "Drafts" }
+   - { id: 1435957248, name: "Drafts" }
+   - { id: 1225570693, name: "Ulysses" }
+   - { id: 904280696, name: "Things 3" }
 #   - { id: 451691288, name: "Contacts Sync for Google Gmail" }
 
 gem_packages:
