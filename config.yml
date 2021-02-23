@@ -83,6 +83,8 @@ homebrew_cask_apps:
   - quik
   - imageoptim
   - parallels
+  - printopia
+  - vuescan
   # dev
   - emacs
   - docker
