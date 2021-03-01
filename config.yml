@@ -85,6 +85,7 @@ homebrew_cask_apps:
   - parallels
   - printopia
   - vuescan
+  - handbrake
   # dev
   - emacs
   - docker
