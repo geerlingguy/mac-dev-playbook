@@ -3,3 +3,4 @@
 *.retry
 roles*
 config.yml
+get-pip.py
