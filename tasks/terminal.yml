@@ -6,9 +6,16 @@
   changed_when: false
   check_mode: false
 
-- name: Ensure custom Terminal profile is added.
-  command: open files/terminal/JJG-Term.terminal
-  changed_when: false
+- name: ensure JJG-Term
+  block:
+  - name: transfer the file   
+    copy: 
+      src: files/terminal/JJG-Term.terminal
+      dest: /tmp/JJG-Term.terminal
+  
+  - name: Ensure custom Terminal profile is added.
+    command: open /tmp/JJG-Term.terminal
+    changed_when: false
   when: "'JJG-Term' not in terminal_theme.stdout"
 
 # TODO: This doesn't work in Yosemite. Consider a different solution?
