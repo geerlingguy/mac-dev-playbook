@@ -1,5 +1,5 @@
 ---
-- name: Install dockutil.
+- name: Install dockutil
   homebrew:
     name: dockutil
     state: present
