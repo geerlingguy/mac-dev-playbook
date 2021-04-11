@@ -48,6 +48,10 @@
         executable: "{{ item.executable | default(omit) }}"
       loop: "{{ gem_packages }}"
 
+    - include_tasks: tasks/dock.yml
+      when: configure_dock
+      tags: ['dock']
+
     - name: Run configured post-provision ansible task files.
       include_tasks: "{{ outer_item }}"
       loop_control:

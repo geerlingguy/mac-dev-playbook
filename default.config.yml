@@ -6,6 +6,8 @@ configure_terminal: false
 configure_osx: true
 configure_dock: []
 
+configure_dock: []
+
 configure_sudoers: false
 sudoers_custom_config: ''
 # Example:
