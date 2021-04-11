@@ -36,6 +36,14 @@
 
     - include_tasks: tasks/extra-packages.yml
       tags: ['extra-packages']
+    - name: Install global Ruby gems.
+      gem:
+        name: "{{ item.name | default(item) }}"
+        state: "{{ item.state | default('present') }}"
+        version: "{{ item.version | default(omit) }}"
+        user_install: false
+        executable: "{{ item.executable | default(omit) }}"
+      loop: "{{ gem_packages }}"
 
     - name: Run configured post-provision ansible task files.
       include_tasks: "{{ outer_item }}"
