@@ -1,0 +1,23 @@
+---
+- name: ensure dock items
+  block:
+  - name: Install dockutil
+    homebrew:
+      name: dockutil
+      state: present
+    notify:
+      - Clear homebrew cache
+
+  - name: Ensure unwanted dock items removed.
+    command: dockutil --remove '{{ item }}'
+    ignore_errors: true
+    loop: "{{ dockitems_to_remove }}"
+
+  - name: Ensure required dock items exist.
+    shell: dockutil --find '{{ item.name }}' || dockutil --add '{{ item.path }}'
+    loop: "{{ dockitems_to_persist }}"
+
+  - name: Ensure correct dock order
+    command: dockutil --move '{{ item.name }}' --position '{{ item.pos }}'
+    loop: "{{ dockitems_to_persist }}"
+  tags: ['dock']

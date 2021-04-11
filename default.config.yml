@@ -5,6 +5,8 @@ configure_dotfiles: true
 configure_terminal: true
 configure_osx: true
 
+configure_dock: []
+
 configure_sudoers: false
 sudoers_custom_config: ''
 # Example:
