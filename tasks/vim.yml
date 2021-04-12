@@ -1,0 +1,18 @@
+---
+- name: ensure vim folders
+  ansible.builtin.file:
+    path: "{{ item }}"
+    state: directory
+  loop:
+    - "~/.vim/autoload"
+    - "~/.vim/bundle"
+
+- name: Ensure pathogen.vim in autoload.
+  ansible.builtin.get_url:
+    url: "https://raw.githubusercontent.com/tpope/vim-pathogen/master/autoload/pathogen.vim"
+    dest: ~/.vim/autoload/
+
+- name: ensure pathogen bundle
+  ansible.builtin.git:
+    repo: git://github.com/scrooloose/nerdtree.git
+    dest: ~/.vim/bundle/nerdtree/

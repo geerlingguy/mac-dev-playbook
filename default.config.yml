@@ -85,15 +85,15 @@ composer_packages: []
 # - name: drush
 #   state: present # present/absent, default: present
 #   version: "^8.1" # default: N/A
-gem_packages:
- - name: showoff
+gem_packages: []
+#  - name: showoff
 #   state: present # present/absent/latest, default: present
 #   version: "~> 1.15.1" # default: N/A
 npm_packages: []
 # - name: webpack
 #   state: present # present/absent/latest, default: present
 #   version: "^2.6" # default: N/A
-#pip_packages: []
+pip_packages: []
 # - name: mkdocs
 #   state: present # present/absent/latest, default: present
 #   version: "0.16.3" # default: N/A
