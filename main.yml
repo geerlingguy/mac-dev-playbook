@@ -37,7 +37,7 @@
     - include_tasks: tasks/extra-packages.yml
       tags: ['extra-packages']
 
-    - include_tasks: tasks/dock.yml
+    - import_tasks: tasks/dock.yml
       when: configure_dock
       tags: ['dock']
 
