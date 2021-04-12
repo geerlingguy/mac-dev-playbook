@@ -6,7 +6,7 @@ configure_terminal: false
 configure_osx: true
 configure_dock: []
 
-configure_dock: false
+configure_dock: []
 dockitems_to_remove: []
 # Example: to remove all / some items added by default on Big Sur uncomment use example below
 # dockitems_to_remove:
