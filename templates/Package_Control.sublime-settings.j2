@@ -9,7 +9,6 @@
 	[
 {% for package in sublime_package_control %}
   "{{ package }}"{% if not loop.last %},{% endif %}
-
 {% endfor %}
 	]
 }
