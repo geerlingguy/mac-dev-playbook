@@ -48,7 +48,7 @@
         executable: "{{ item.executable | default(omit) }}"
       loop: "{{ gem_packages }}"
 
-    - include_tasks: tasks/dock.yml
+    - import_tasks: tasks/dock.yml
       when: configure_dock
       tags: ['dock']
 
