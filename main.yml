@@ -42,6 +42,10 @@
       when: configure_dock
       tags: ['dock']
 
+    - import_tasks: tasks/subl.yml
+      when: configure_sublime
+      tags: ['subl']
+
     - name: Run configured post-provision ansible task files.
       include_tasks: "{{ outer_item }}"
       loop_control:

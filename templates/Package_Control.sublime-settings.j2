@@ -1,0 +1,15 @@
+{
+	"bootstrapped": true,
+	"ignore_vcs_packages": true,
+	"in_process_packages":
+	[
+		"0_package_control_loader"
+	],
+	"installed_packages":
+	[
+{% for package in package_control %}
+  "{{ package }}"{% if not loop.last %},{% endif %}
+
+{% endfor %}
+	]
+}
