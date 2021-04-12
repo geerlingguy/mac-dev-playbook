@@ -111,3 +111,16 @@ pip_packages: []
 
 # Glob pattern to ansible task files to run after all other tasks are finished.
 post_provision_tasks: []
+sublime_config_path: "Packages/User"
+sublime_base_path: '~/Library/Application Support/Sublime Text 3'
+sublime_preferences:
+  ignored_packages: []
+package_control:
+  - "Ansible"
+  - "Ansible Vault"
+  - "AnsibleSnippets"
+  - "Package Control"
+  - "SublimeLinter"
+  - "SublimeLinter-contrib-ansible-lint"
+  - "SublimeLinter-contrib-yamllint"
+  - "TrailingSpaces"
