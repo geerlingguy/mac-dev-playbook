@@ -49,7 +49,7 @@
       loop: "{{ gem_packages }}"
 
     - name: Run configured post-provision ansible task files.
-      import_tasks: "{{ outer_item }}"
+      include_tasks: "{{ outer_item }}"
       loop_control:
         loop_var: outer_item
       with_fileglob: "{{ post_provision_tasks|default(omit) }}"
