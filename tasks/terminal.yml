@@ -8,11 +8,11 @@
 
 - name: ensure JJG-Term
   block:
-  - name: transfer the file   
-    copy: 
+  - name: transfer the file
+    copy:
       src: files/terminal/JJG-Term.terminal
       dest: /tmp/JJG-Term.terminal
-  
+
   - name: Ensure custom Terminal profile is added.
     command: open /tmp/JJG-Term.terminal
     changed_when: false
