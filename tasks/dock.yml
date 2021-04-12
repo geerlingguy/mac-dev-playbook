@@ -16,7 +16,7 @@
     with_items: "{{ dockitems_to_persist }}"
 
   - name: Ensure correct dock order
-    ansible.builtin.command: 
+    ansible.builtin.command:
       cmd: dockutil --move '{{ item.name }}' --position '{{ item.pos }}'
     when:
       - item.pos is defined

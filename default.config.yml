@@ -5,7 +5,7 @@ configure_dotfiles: true
 configure_terminal: true
 configure_osx: true
 
-configure_dock: True
+configure_dock: true
 dockitems_to_remove:
   - Launchpad
   - Safari
@@ -24,10 +24,10 @@ dockitems_to_remove:
   - 'App Store'
 remove_spacers: true
 dockitems_to_persist:
- - name: iTerm
-   path: "/Applications/iTerm.app/"
- - name: "Google Chrome"
-   path: "/Applications/Google Chrome.app/"
+  - name: iTerm
+    path: "/Applications/iTerm.app/"
+  - name: "Google Chrome"
+    path: "/Applications/Google Chrome.app/"
 configure_sudoers: false
 sudoers_custom_config: ''
 # Example:
