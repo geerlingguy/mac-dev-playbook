@@ -1,6 +1,7 @@
 ---
 downloads: ~/.ansible-downloads/
 
+configue_dock: []
 configure_dotfiles: yes
 configure_sudoers: yes
 configure_terminal: yes
