@@ -1,12 +1,12 @@
 ---
 - hosts: all
-  connection: local
 
   vars_files:
     - default.config.yml
 
   pre_tasks:
-    - include_vars: "{{ item }}"
+    - name: Include playbook configuration.
+      include_vars: "{{ item }}"
       with_fileglob:
         - "{{ playbook_dir }}/config.yml"
       tags: ['always']
