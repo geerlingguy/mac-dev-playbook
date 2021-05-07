@@ -1,22 +1,23 @@
 ---
-- name: Install dockutil
+- name: Install dockutil.
   homebrew:
     name: dockutil
     state: present
   notify:
     - Clear homebrew cache
-- name: remove dockitems
-  ansible.builtin.include_tasks: tasks/remdock.yml
-  loop: "{{ dockitems_to_remove }}"
+
+- name: Remove configured Dock items.
+  ansible.builtin.include_tasks: tasks/dock-remove.yml
+  loop: "{{ dockitems_remove }}"
 
 - name: Ensure required dock items exist.
-  ansible.builtin.include_tasks: tasks/adddock.yml
-  with_items: "{{ dockitems_to_persist }}"
+  ansible.builtin.include_tasks: tasks/dock-add.yml
+  loop: "{{ dockitems_persist }}"
 
-- name: Ensure correct dock order
+- name: Ensure correct Dock order.
   ansible.builtin.command:
     cmd: dockutil --move '{{ item.name }}' --position '{{ item.pos }}'
   when:
     - item.pos is defined
     - item.pos length >0
-  loop: "{{ dockitems_to_persist }}"
+  loop: "{{ dockitems_persist }}"
