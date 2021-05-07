@@ -5,31 +5,17 @@ configure_dotfiles: true
 configure_terminal: true
 configure_osx: true
 
-configure_dock: []
-dockitems_to_remove: []
-# Example: to remove all / some items added by default on Big Sur uncomment use example below
-# dockitems_to_remove:
-#   - Launchpad
-#   - Safari
-#   - Messages
-#   - Mail
-#   - Maps
-#   - Photos
-#   - FaceTime
-#   - Calendar
-#   - Contacts
-#   - Reminders
-#   - Notes
-#   - TV
-#   - Music
-#   - Podcasts
-#   - 'App Store'
+# Set to 'true' to configure the Dock via dockutil.
+configure_dock: false
+dockitems_remove: []
+# - Launchpad
+# - TV
+# - Podcasts
+# - 'App Store'
+dockitems_persist: []
+# - name: "Sublime Text"
+#   path: "/Applications/Sublime Text.app/"
 
-dockitems_to_persist:
-  - name: "Google Chrome"
-    path: "/Applications/Google Chrome.app/"
-  - name: "Sublime Text"
-    path: "/Applications/Sublime Text.app/"
 configure_sudoers: false
 sudoers_custom_config: ''
 # Example:

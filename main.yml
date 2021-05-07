@@ -22,19 +22,19 @@
       tags: ['mas']
 
   tasks:
-    - include_tasks: tasks/ansible-setup.yml
+    - import_tasks: tasks/ansible-setup.yml
 
-    - include_tasks: tasks/sudoers.yml
+    - import_tasks: tasks/sudoers.yml
       when: configure_sudoers
 
-    - include_tasks: tasks/terminal.yml
+    - import_tasks: tasks/terminal.yml
       when: configure_terminal
 
-    - include_tasks: tasks/osx.yml
+    - import_tasks: tasks/osx.yml
       when: configure_osx
       tags: ['osx']
 
-    - include_tasks: tasks/extra-packages.yml
+    - import_tasks: tasks/extra-packages.yml
       tags: ['extra-packages']
 
     - import_tasks: tasks/dock.yml
