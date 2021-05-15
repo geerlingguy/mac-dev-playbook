@@ -81,6 +81,10 @@ You can override any of the defaults configured in `default.config.yml` by creat
     
     pip_packages:
       - name: mkdocs
+    
+    configure_dock: true
+    dockitems_remove: []
+    dockitems_persist: []
 
 Any variable can be overridden in `config.yml`; see the supporting roles' documentation for a complete list of available variables.
 
@@ -144,13 +148,11 @@ Finally, there are a few other preferences and settings added on for various app
 
 It's my hope that I can get the rest of these things wrapped up into Ansible playbooks soon, but for now, these steps need to be completed manually (assuming you already have Xcode and Ansible installed, and have run this playbook).
 
-  1. Set JJG-Term as the default Terminal theme (it's installed, but not set as default automatically).
-  2. Install [Sublime Package Manager](http://sublime.wbond.net/installation).
-  3. Install all the apps that aren't yet in this setup (see below).
-  4. Remap Caps Lock to Escape (requires macOS Sierra 10.12.1+).
-  5. Set trackpad tracking rate.
-  6. Set mouse tracking rate.
-  7. Configure extra Mail and/or Calendar accounts (e.g. Google, Exchange, etc.).
+  1. Install [Sublime Package Manager](http://sublime.wbond.net/installation).
+  2. Remap Caps Lock to Escape (requires macOS Sierra 10.12.1+).
+  3. Set trackpad tracking rate.
+  4. Set mouse tracking rate.
+  5. Configure extra Mail and/or Calendar accounts (e.g. Google, Exchange, etc.).
 
 ### Configuration to be added:
 
