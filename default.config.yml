@@ -7,7 +7,6 @@ configure_osx: true
 
 
 configure_sublime: true
-configure_dock: true
 dockitems_to_remove:
   - Launchpad
   - Safari
@@ -24,12 +23,6 @@ dockitems_to_remove:
   - Music
   - Podcasts
   - 'App Store'
-remove_spacers: true
-dockitems_to_persist:
-  - name: iTerm
-    path: "/Applications/iTerm.app/"
-  - name: "Google Chrome"
-    path: "/Applications/Google Chrome.app/"
 
 # Set to 'true' to configure the Dock via dockutil.
 configure_dock: false
