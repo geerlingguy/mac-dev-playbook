@@ -22,23 +22,25 @@
       tags: ['mas']
 
   tasks:
-    - include_tasks: tasks/ansible-setup.yml
+    - import_tasks: tasks/ansible-setup.yml
+      tags: ['setup']
 
-    - include_tasks: tasks/sudoers.yml
+    - import_tasks: tasks/sudoers.yml
       when: configure_sudoers
+      tags: ['sudoers']
 
     - import_tasks: tasks/terminal.yml
       when: configure_terminal
       tags: ['terminal']
 
-    - include_tasks: tasks/osx.yml
+    - import_tasks: tasks/osx.yml
       when: configure_osx
       tags: ['osx']
 
-    - include_tasks: tasks/extra-packages.yml
+    - import_tasks: tasks/extra-packages.yml
       tags: ['extra-packages']
 
-    - include_tasks: tasks/dock.yml
+    - import_tasks: tasks/dock.yml
       when: configure_dock
       tags: ['dock']
 
@@ -51,3 +53,4 @@
       loop_control:
         loop_var: outer_item
       with_fileglob: "{{ post_provision_tasks|default(omit) }}"
+      tags: ['post']
