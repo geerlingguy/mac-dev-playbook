@@ -52,6 +52,10 @@
       when: configure_dock
       tags: ['dock']
 
+    - import_tasks: tasks/dock.yml
+      when: configure_dock
+      tags: ['dock']
+
     - name: Run configured post-provision ansible task files.
       include_tasks: "{{ outer_item }}"
       loop_control:
