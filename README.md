@@ -18,7 +18,15 @@ This is a work in progress, and is mostly a means for me to document my current 
 ## Installation
 
   1. Ensure Apple's command line tools are installed (`xcode-select --install` to launch the installer).
-  2. [Install Ansible](https://docs.ansible.com/ansible/latest/installation_guide/index.html).
+  2. [Install Ansible](https://docs.ansible.com/ansible/latest/installation_guide/index.html):
+    1. Add the following to your `~/.zshrc` file (create one if you don't have one):
+
+       ```
+       export PATH="$HOME/Library/Python/3.8/bin:$PATH"
+       ```
+
+    2. Source the new profile: `source ~/.zshrc`
+    3. Install Ansible: `pip3 install ansible`
   3. Clone this repository to your local drive.
   4. Run `$ ansible-galaxy install -r requirements.yml` inside this directory to install required Ansible roles.
   5. Run `ansible-playbook main.yml -i inventory --ask-become-pass` inside this directory. Enter your account password when prompted.
@@ -141,7 +149,6 @@ Packages (installed with Homebrew):
   - openssl
   - pv
   - wget
-  - wrk
 
 My [dotfiles](https://github.com/geerlingguy/dotfiles) are also installed into the current user's home directory, including the `.osx` dotfile for configuring many aspects of macOS for better performance and ease of use. You can disable dotfiles management by setting `configure_dotfiles: no` in your configuration.
 
