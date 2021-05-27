@@ -7,7 +7,7 @@
   check_mode: false
 
 - name: Ensure custom Terminal profile is added.
-  ansible.builtin.copy:
+  copy:
     src: files/terminal/JJG-Term.terminal
     dest: /tmp/JJG-Term.terminal
   changed_when: false
