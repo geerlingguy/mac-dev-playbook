@@ -5,6 +5,25 @@ configure_dotfiles: true
 configure_terminal: true
 configure_osx: true
 
+
+configure_sublime: true
+dockitems_to_remove:
+  - Launchpad
+  - Safari
+  - Messages
+  - Mail
+  - Maps
+  - Photos
+  - FaceTime
+  - Calendar
+  - Contacts
+  - Reminders
+  - Notes
+  - TV
+  - Music
+  - Podcasts
+  - 'App Store'
+
 # Set to 'true' to configure the Dock via dockutil.
 configure_dock: false
 dockitems_remove: []
@@ -15,6 +34,7 @@ dockitems_remove: []
 dockitems_persist: []
 # - name: "Sublime Text"
 #   path: "/Applications/Sublime Text.app/"
+
 
 configure_sudoers: false
 sudoers_custom_config: ''
