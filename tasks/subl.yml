@@ -14,7 +14,7 @@
   ansible.builtin.copy:
     dest: "{{ sublime_base_path }}/{{ sublime_config_path }}/Preferences.sublime-settings"
     content: "{{ sublime_preferences | to_nice_json }}"
-- name: ensure Package control is downloaded
+- name: ensure Sublime Package control is downloaded
   ansible.builtin.get_url:
     url: "https://packagecontrol.io/Package%20Control.sublime-package"
     dest: "{{ sublime_base_path }}/Installed Packages/Package Control.sublime-package"

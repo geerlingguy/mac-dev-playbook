@@ -7,7 +7,7 @@
 	],
 	"installed_packages":
 	[
-{% for package in package_control %}
+{% for package in sublime_package_control %}
   "{{ package }}"{% if not loop.last %},{% endif %}
 
 {% endfor %}
