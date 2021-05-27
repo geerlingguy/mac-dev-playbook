@@ -12,7 +12,8 @@
     url: "https://raw.githubusercontent.com/tpope/vim-pathogen/master/autoload/pathogen.vim"
     dest: ~/.vim/autoload/
 
-- name: ensure pathogen bundle
+- name: ensure nerdtree bundle
   ansible.builtin.git:
     repo: git://github.com/scrooloose/nerdtree.git
+    version: '6.10.9'
     dest: ~/.vim/bundle/nerdtree/
