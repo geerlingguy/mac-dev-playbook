@@ -83,8 +83,13 @@ You can override any of the defaults configured in `default.config.yml` by creat
       - name: mkdocs
     
     configure_dock: true
-    dockitems_remove: []
-    dockitems_persist: []
+    dockitems_remove:
+      - Launchpad
+      - TV
+    dockitems_persist:
+      - name: "Sublime Text"
+        path: "/Applications/Sublime Text.app/"
+        pos: 5
 
 Any variable can be overridden in `config.yml`; see the supporting roles' documentation for a complete list of available variables.
 

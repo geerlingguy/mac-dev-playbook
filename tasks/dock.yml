@@ -19,5 +19,5 @@
     cmd: dockutil --move '{{ item.name }}' --position '{{ item.pos }}'
   when:
     - item.pos is defined
-    - item.pos length >0
+    - item.pos > 0
   loop: "{{ dockitems_persist }}"
