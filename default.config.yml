@@ -97,7 +97,7 @@ composer_packages: []
 #   state: present # present/absent, default: present
 #   version: "^8.1" # default: N/A
 gem_packages: []
-# - name: showoff
+# - name: bundler
 #   state: present # present/absent/latest, default: present
 #   version: "~> 1.15.1" # default: N/A
 npm_packages: []
