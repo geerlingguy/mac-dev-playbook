@@ -7,7 +7,14 @@
   check_mode: false
 
 - name: Ensure custom Terminal profile is added.
-  command: open files/terminal/JJG-Term.terminal
+  copy:
+    src: files/terminal/JJG-Term.terminal
+    dest: /tmp/JJG-Term.terminal
+  changed_when: false
+  when: "'JJG-Term' not in terminal_theme.stdout"
+
+- name: Ensure custom Terminal profile is added.
+  command: open /tmp/JJG-Term.terminal
   changed_when: false
   when: "'JJG-Term' not in terminal_theme.stdout"
 
