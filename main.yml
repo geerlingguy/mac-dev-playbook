@@ -18,7 +18,7 @@
       when: configure_dotfiles
       tags: ['dotfiles']
     - role: geerlingguy.mas
-      when: mas_installed_apps
+      when: mas_installed_apps or mas_installed_app_ids
       tags: ['mas']
 
   tasks:
