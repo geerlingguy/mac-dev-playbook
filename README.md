@@ -60,28 +60,28 @@ You can override any of the defaults configured in `default.config.yml` by creat
       - cowsay
       - git
       - go
-    
+
     mas_installed_apps:
       - { id: 443987910, name: "1Password" }
       - { id: 498486288, name: "Quick Resizer" }
       - { id: 557168941, name: "Tweetbot" }
       - { id: 497799835, name: "Xcode" }
-    
+
     composer_packages:
       - name: hirak/prestissimo
       - name: drush/drush
         version: '^8.1'
-    
+
     gem_packages:
       - name: bundler
         state: latest
-    
+
     npm_packages:
       - name: webpack
-    
+
     pip_packages:
       - name: mkdocs
-    
+
     configure_dock: true
     dockitems_remove: []
     dockitems_persist: []
@@ -153,18 +153,6 @@ It's my hope that I can get the rest of these things wrapped up into Ansible pla
   3. Set trackpad tracking rate.
   4. Set mouse tracking rate.
   5. Configure extra Mail and/or Calendar accounts (e.g. Google, Exchange, etc.).
-
-### Configuration to be added:
-
-  - I have vim configuration in the repo, but I still need to add the actual installation:
-    ```
-    mkdir -p ~/.vim/autoload
-    mkdir -p ~/.vim/bundle
-    cd ~/.vim/autoload
-    curl https://raw.githubusercontent.com/tpope/vim-pathogen/master/autoload/pathogen.vim > pathogen.vim
-    cd ~/.vim/bundle
-    git clone git://github.com/scrooloose/nerdtree.git
-    ```
 
 ## Testing the Playbook
 

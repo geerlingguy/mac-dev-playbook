@@ -37,6 +37,10 @@
       when: configure_osx
       tags: ['osx']
 
+    - import_tasks: tasks/vim.yml
+      when: configure_vim
+      tags: ['vim']
+
     - import_tasks: tasks/extra-packages.yml
       tags: ['extra-packages']
     - name: Install global Ruby gems.
