@@ -39,14 +39,6 @@
 
     - import_tasks: tasks/extra-packages.yml
       tags: ['extra-packages']
-    - name: Install global Ruby gems.
-      gem:
-        name: "{{ item.name | default(item) }}"
-        state: "{{ item.state | default('present') }}"
-        version: "{{ item.version | default(omit) }}"
-        user_install: false
-        executable: "{{ item.executable | default(omit) }}"
-      loop: "{{ gem_packages }}"
 
     - import_tasks: tasks/dock.yml
       when: configure_dock
