@@ -2,7 +2,7 @@
 downloads: ~/.ansible-downloads/
 
 configure_dotfiles: true
-configure_terminal: false
+configure_terminal: true
 configure_osx: true
 
 # Set to 'true' to configure the Dock via dockutil.
@@ -16,7 +16,6 @@ dockitems_persist: []
 # - name: "Sublime Text"
 #   path: "/Applications/Sublime Text.app/"
 
-
 configure_sudoers: false
 sudoers_custom_config: ''
 # Example:
@@ -24,7 +23,7 @@ sudoers_custom_config: ''
 #   # Allow users in admin group to use sudo with no password.
 #   %admin ALL=(ALL) NOPASSWD: ALL
 
-dotfiles_repo: https://github.com/dspolleke/dotfiles.git
+dotfiles_repo: https://github.com/geerlingguy/dotfiles.git
 dotfiles_repo_accept_hostkey: true
 dotfiles_repo_local_destination: ~/Development/GitHub/dotfiles
 dotfiles_files:
@@ -97,7 +96,7 @@ composer_packages: []
 #   state: present # present/absent, default: present
 #   version: "^8.1" # default: N/A
 gem_packages: []
-# - name: showoff
+# - name: bundler
 #   state: present # present/absent/latest, default: present
 #   version: "~> 1.15.1" # default: N/A
 npm_packages: []
