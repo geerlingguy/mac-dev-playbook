@@ -23,7 +23,7 @@ This is a work in progress, and is mostly a means for me to document my current 
      1. Add the following to your `~/.zshrc` file (create one if you don't have one):
 
         ```
-        export PATH="$HOME/Library/Python/3.8/bin:$PATH"
+        export PATH="$HOME/Library/Python/3.8/bin:/opt/homebrew/bin:$PATH"
         ```
 
      2. Source the new profile: `source ~/.zshrc`
