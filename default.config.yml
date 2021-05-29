@@ -129,3 +129,4 @@ sublime_package_control:
   - "SublimeLinter"
   - "SublimeLinter-contrib-yamllint"
   - "TrailingSpaces"
+  - "WordCount"
