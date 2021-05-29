@@ -3,12 +3,11 @@
 	"bootstrapped": true,
 	"in_process_packages":
 	[
-		"Package Control"
 	],
 	"installed_packages":
 	[
 {% for package in sublime_package_control %}
   "{{ package }}"{% if not loop.last %},{% endif %}
 {% endfor %}
-	]
+],
 }

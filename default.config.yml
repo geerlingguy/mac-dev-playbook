@@ -119,7 +119,6 @@ sublime_package_control:
   - "FileDiffs"
   - "GitHub Flavored Markdown Preview"
   - "Jinja2"
-  - "Markdown Preview"
   - "Package Control"
   - "PHP-Twig"
   - "Pretty JSON"
