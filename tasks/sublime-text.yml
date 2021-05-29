@@ -24,4 +24,6 @@
   loop:
     - "Cobalt (SL).tmTheme"
     - "Markdown.sublime-settings"
+    - "Plain text.sublime-settings"
     - "Preferences.sublime-settings"
+    - "WordCount.sublime-settings"
