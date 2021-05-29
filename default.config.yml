@@ -5,8 +5,6 @@ configure_dotfiles: true
 configure_terminal: true
 configure_osx: true
 
-configure_sublime: true
-
 # Set to 'true' to configure the Dock via dockutil.
 configure_dock: false
 dockitems_remove: []
@@ -113,16 +111,23 @@ pip_packages: []
 
 # Glob pattern to ansible task files to run after all other tasks are finished.
 post_provision_tasks: []
+
+# Set to 'true' to configure Sublime Text.
+configure_sublime: true
+sublime_base_path: '~/Library/Application Support/Sublime Text'
 sublime_config_path: "Packages/User"
-sublime_base_path: '~/Library/Application Support/Sublime Text 3'
 sublime_preferences:
   ignored_packages: []
 sublime_package_control:
-  - "Ansible"
-  - "Ansible Vault"
-  - "AnsibleSnippets"
+  - "DocBlockr"
+  - "Dockerfile Syntax Highlighting"
+  - "FileDiffs"
+  - "GitHub Flavored Markdown Preview"
+  - "Jinja2"
+  - "Markdown Preview"
   - "Package Control"
+  - "PHP-Twig"
+  - "Pretty JSON"
   - "SublimeLinter"
-  - "SublimeLinter-contrib-ansible-lint"
   - "SublimeLinter-contrib-yamllint"
   - "TrailingSpaces"
