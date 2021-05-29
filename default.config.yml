@@ -116,8 +116,6 @@ post_provision_tasks: []
 configure_sublime: true
 sublime_base_path: '~/Library/Application Support/Sublime Text'
 sublime_config_path: "Packages/User"
-sublime_preferences:
-  ignored_packages: []
 sublime_package_control:
   - "DocBlockr"
   - "Dockerfile Syntax Highlighting"
