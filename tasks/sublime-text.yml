@@ -22,5 +22,6 @@
     src: "files/sublime/{{ item }}"
     dest: "{{ sublime_base_path }}/{{ sublime_config_path }}/{{ item }}"
   loop:
-    - "Preferences.sublime-settings"
     - "Cobalt (SL).tmTheme"
+    - "Markdown.sublime-settings"
+    - "Preferences.sublime-settings"
