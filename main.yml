@@ -12,14 +12,18 @@
       tags: ['always']
 
   roles:
-    - role: geerlingguy.homebrew
+    - role: elliotweiser.osx-command-line-tools
+    - role: geerlingguy.mac.homebrew
       tags: ['homebrew']
     - role: geerlingguy.dotfiles
       when: configure_dotfiles
       tags: ['dotfiles']
-    - role: geerlingguy.mas
+    - role: geerlingguy.mac.mas
       when: mas_installed_apps or mas_installed_app_ids
       tags: ['mas']
+    - role: geerlingguy.mac.dock
+      when: configure_dock
+      tags: ['dock']
 
   tasks:
     - import_tasks: tasks/ansible-setup.yml
@@ -39,10 +43,6 @@
 
     - import_tasks: tasks/extra-packages.yml
       tags: ['extra-packages']
-
-    - import_tasks: tasks/dock.yml
-      when: configure_dock
-      tags: ['dock']
 
     - import_tasks: tasks/sublime-text.yml
       when: configure_sublime

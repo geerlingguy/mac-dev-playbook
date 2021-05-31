@@ -4,16 +4,7 @@
 
 [![CI][badge-gh-actions]][link-gh-actions]
 
-This playbook installs and configures most of the software I use on my Mac for web and software development. Some things in macOS are slightly difficult to automate, so I still have some manual installation steps, but at least it's all documented here.
-
-This is a work in progress, and is mostly a means for me to document my current Mac's setup. I'll be evolving this playbook over time.
-
-*See also*:
-
-  - [Boxen](https://github.com/boxen)
-  - [Battleschool](http://spencer.gibb.us/blog/2014/02/03/introducing-battleschool)
-  - [osxc](https://github.com/osxc)
-  - [MWGriffin/ansible-playbooks](https://github.com/MWGriffin/ansible-playbooks) (the original inspiration for this project)
+This playbook installs and configures most of the software I use on my Mac for web and software development. Some things in macOS are slightly difficult to automate, so I still have a few manual installation steps, but at least it's all documented here.
 
 ## Installation
 
