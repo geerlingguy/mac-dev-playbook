@@ -302,6 +302,7 @@
     "*.zip"
   ],
   "color_scheme": "Packages/User/Cobalt (SL).tmTheme",
+  "create_window_at_startup": false,
   "detect_indentation": true,
   "draw_minimap_border": false,
   "draw_white_space": "selection",
