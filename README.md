@@ -106,7 +106,7 @@ Applications (installed with Homebrew Cask):
   - [LimeChat](http://limechat.net/mac/)
   - [MacVim](http://macvim-dev.github.io/macvim/)
   - [nvALT](http://brettterpstra.com/projects/nvalt/)
-  - [Sequel Pro](https://www.sequelpro.com/) (MySQL client)
+  - [Sequel Ace](https://sequel-ace.com) (MySQL client)
   - [Skitch](https://evernote.com/skitch/)
   - [Slack](https://slack.com/)
   - [Sublime Text](https://www.sublimetext.com/)
