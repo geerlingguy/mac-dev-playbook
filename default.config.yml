@@ -45,8 +45,10 @@ homebrew_installed_packages:
   - github/gh/gh
   - go
   - gpg
+  - helm
   - httpie
   - iperf
+  - kubens
   - libevent
   - sqlite
   - mcrypt
@@ -59,6 +61,7 @@ homebrew_installed_packages:
   - readline
   - openssl
   - pv
+  - vips
   - wget
   - wrk
   - zsh-history-substring-search
@@ -72,6 +75,7 @@ homebrew_cask_apps:
   - firefox
   - google-chrome
   - handbrake
+  - obs
   - slack
   #- transmit
 
