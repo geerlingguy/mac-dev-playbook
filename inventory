@@ -1,2 +1,4 @@
 [localhost]
 127.0.0.1
+[UbuntuVM]
+192.168.1.155 ansible_connection=ssh ansible_ssh_user=freebox

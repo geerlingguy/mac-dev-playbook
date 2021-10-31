@@ -1,0 +1,29 @@
+---
+- name: Playbook fo UbuntuVM
+  hosts: UbuntuVM
+  become: true
+  tasks:
+    - name: Install Packages
+      apt:
+        pkg:
+        - sabnzbdplus
+        - zsh
+        - git
+        update_cache: yes
+        cache_valid_time: 3600
+    - name: Stop service sabnzbdplus
+      ansible.builtin.service:
+        name: sabnzbdplus
+        state: stopped
+    - name: copy configuration file sabnzbdplus
+      ansible.builtin.copy:
+        src: ./files/sabnzbdplus
+        dest: /etc/default/sabnzbdplus
+    - name: copy configuration file sabnzbd.ini
+      ansible.builtin.copy:
+        src:  ./files/sabnzbd.ini
+        dest: /home/freebox/.sabnzbd/sabnzbd.ini
+    - name: Start service sabnzbdplus
+      ansible.builtin.service:
+        name: sabnzbdplus
+        state: started

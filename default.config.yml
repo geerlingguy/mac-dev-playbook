@@ -53,13 +53,14 @@ homebrew_taps:
 homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
   - adobe-acrobat-reader
+  - anki
   - balenaetcher
-  - brave-browser
   - brave-browser
   - discord
   - docker
   - dropbox
   - electrum
+  - evernote
   - firefox
   - google-backup-and-sync
   - google-chrome
@@ -67,11 +68,13 @@ homebrew_cask_apps:
   - keybase
   - ledger-live
   - meld
+  - microsoft-teams
   - osxfuse
   - plex
   - plex-media-server
   - resilio-sync
   - sabnzbd
+  - sourcetree
   - shadow
   - simple-comic
   - skype
@@ -86,9 +89,9 @@ homebrew_cask_apps:
   - veracrypt
   - visual-studio-code
   - vlc
+  - whatsapp
   - xmind
   - zoom
-  - zoomus
   #- microsoft-office # tres long
 
 # See `geerlingguy.mas` role documentation for usage instructions.

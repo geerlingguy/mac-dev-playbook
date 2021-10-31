@@ -1,0 +1,24 @@
+# This file is sourced by /etc/init.d/sabnzbdplus
+#
+# When SABnzbd+ is started using the init script, the
+# --daemon option is always used, and the program is
+# started under the account of $USER, as set below.
+#
+# Each setting is marked either "required" or "optional";
+# leaving any required setting unconfigured will cause
+# the service to not start.
+
+# [required] user or uid of account to run the program as:
+USER=freebox
+
+# [optional] full path to the configuration file of your choice;
+#            otherwise, the default location (in $USER's home
+#            directory) is used:
+CONFIG=
+
+# [optional] hostname/ip and port number to listen on:
+HOST=0.0.0.0
+PORT=8081
+
+# [optional] extra command line options, if any:
+EXTRAOPTS=
