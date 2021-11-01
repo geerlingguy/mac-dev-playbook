@@ -9,8 +9,22 @@
         - sabnzbdplus
         - zsh
         - git
+        - smbclient
+        - cifs-utils
+        - ncdu
         update_cache: yes
         cache_valid_time: 3600
+    - name: Create a directory if it does not exist
+      ansible.builtin.file:
+        path: /mnt/freebox
+        state: directory
+    - name: mount share
+      mount:
+        state: mounted
+        fstype: cifs
+        name: /mnt/freebox
+        src: "//192.168.1.254/disque\ 1"
+        opts: "guest,vers=1.0,uid=1000,gid=1000"
     - name: Stop service sabnzbdplus
       ansible.builtin.service:
         name: sabnzbdplus
@@ -19,11 +33,38 @@
       ansible.builtin.copy:
         src: ./files/sabnzbdplus
         dest: /etc/default/sabnzbdplus
+        force: no
     - name: copy configuration file sabnzbd.ini
       ansible.builtin.copy:
         src:  ./files/sabnzbd.ini
         dest: /home/freebox/.sabnzbd/sabnzbd.ini
+        force: no
     - name: Start service sabnzbdplus
       ansible.builtin.service:
         name: sabnzbdplus
         state: started
+    - name: Install apt-transport-https
+      apt:
+        name: apt-transport-https
+        state: present
+    - name: Add Plex apt key (Ubuntu & Debian with systemd)
+      apt_key:
+        url: https://downloads.plex.tv/plex-keys/PlexSign.key
+        state: present
+    - name: Add Plex apt repo (Ubuntu & Debian with systemd)
+      apt_repository:
+        repo: deb https://downloads.plex.tv/repo/deb public main
+        state: present
+      changed_when: false
+    - name: Apt install Plex
+      apt:
+        name: plexmediaserver
+        state: present
+        update_cache: true
+    - name: Create a reboot job
+      ansible.builtin.cron:
+        name: "reboot"
+        minute: "0"
+        hour: "4"
+        user: root
+        job: "/sbin/shutdown -r +5"

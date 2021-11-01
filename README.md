@@ -9,6 +9,8 @@
     ansible-playbook main.yml -i inventory -K 
     Imprimante station F
     nvm install
+    ansible-playbook UbuntuVM.yml --ask-vault-pass
+
 
 # Mac Development Ansible Playbook
 
