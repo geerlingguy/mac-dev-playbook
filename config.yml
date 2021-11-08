@@ -12,7 +12,7 @@ homebrew_taps:
 homebrew_installed_packages:
   - brew-cask-completion
   - go
-  - { name: node, install_options: '--without-npm' }
+  - node
   - pyenv
   - pyenv-virtualenv
   - ccls
@@ -40,7 +40,7 @@ homebrew_installed_packages:
 homebrew_cask_apps:
   # sudo required
   - virtualbox
-  - adoptopenjdk8
+  - temurin8
   # fonts
   - font-source-code-pro
   - font-montserrat
@@ -58,6 +58,7 @@ homebrew_cask_apps:
   - alfred
   - { name: dropbox, install_options: '--no-quarantine' }
   - vlc
+  - openshot-video-editor
   - fantastical
   - google-chrome
   - firefox
@@ -72,7 +73,7 @@ homebrew_cask_apps:
   - the-unarchiver
   - bartender
   - appcleaner
-  - macs-fans-control
+  - macs-fan-control
   - transmission
   - veracrypt
   - steam
@@ -80,10 +81,7 @@ homebrew_cask_apps:
   - calibre
   - jdownloader
   - musicbrainz-picard
-  - quik
   - imageoptim
-  - parallels
-  - printopia
   - vuescan
   - handbrake
   # dev
@@ -96,6 +94,10 @@ homebrew_cask_apps:
   - genymotion
   - rstudio
   - mactex
+  # eliminate?
+  # - quik
+  # - parallels
+  # - printopia
 
 npm_packages:
   - prettier
@@ -119,6 +121,7 @@ npm_packages:
    - { id: 1435957248, name: "Drafts" }
    - { id: 1225570693, name: "Ulysses" }
    - { id: 904280696, name: "Things 3" }
+   - { id: 1346190318, name: "OmniFocus 3" }
 #   - { id: 451691288, name: "Contacts Sync for Google Gmail" }
 
 gem_packages:
