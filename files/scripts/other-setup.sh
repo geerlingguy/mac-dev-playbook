@@ -54,7 +54,7 @@ if [ ! -d "/Applications/Superhuman.app" ]; then
 fi
 
 # Go Setup
-go get -u github.com/nsf/gocode
+go install golang.org/x/tools/gopls@latest
 go get golang.org/x/tools/cmd/goimports
 go get -u github.com/uudashr/gopkgs/cmd/gopkgs
 
@@ -66,12 +66,12 @@ fi
 
 # Ocaml / Reason Setup
 # Already idempotent if you include -n
+# Eliminate, not necessary
 
-opam init -n
-opam update
-opam switch create 4.02.3+buckle-1
-
-eval $(opam env)
-opam install -y ocp-indent
-opam install -y merlin
-
+# opam init -n
+# opam update
+# opam switch create 4.02.3+buckle-1
+# 
+# eval $(opam env)
+# opam install -y ocp-indent
+# opam install -y merlin
