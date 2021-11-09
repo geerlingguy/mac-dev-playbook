@@ -11,18 +11,16 @@
       tags: ['always']
 
   roles:
-    - role: geerlingguy.homebrew
+    - role: geerlingguy.mac.homebrew
       tags: ['homebrew']
     - role: geerlingguy.dotfiles
       when: configure_dotfiles
       tags: ['dotfiles']
-    - role: geerlingguy.mas
+    - role: geerlingguy.mac.mas
       when: mas_installed_apps
       tags: ['mas']
 
   tasks:
-    - include_tasks: tasks/ansible-setup.yml
-
     - include_tasks: tasks/sudoers.yml
       when: configure_sudoers
 

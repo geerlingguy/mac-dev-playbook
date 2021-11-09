@@ -55,14 +55,27 @@ fi
 
 # Go Setup
 go install golang.org/x/tools/gopls@latest
-go get golang.org/x/tools/cmd/goimports
-go get -u github.com/uudashr/gopkgs/cmd/gopkgs
+go install golang.org/x/tools/cmd/goimports
+go install github.com/uudashr/gopkgs/cmd/gopkgs
 
-# Setup Pyenv default environment
-if [ ! -d "$(pyenv root)/versions/anaconda3-5.2.0" ]; then
-    pyenv install anaconda3-5.2.0
-    # pyenv global anaconda3-5.2.0  # unknown how this affects ansible, can turn on later
+# Default scientific environment
+if conda env list | grep -q "scientific3_9"
+then
+	echo "Environment done."
+else
+	conda create --name scientific3_9 python=3.9 -y
 fi
+
+conda init
+conda activate scientific3_9
+conda install -yq numpy
+conda install -yq pandas
+conda install -yq matplotlib
+conda install -yq plotly
+conda install -yq scikit-learn
+conda install -yq jupyter
+conda install -yq jupyterlab
+
 
 # Ocaml / Reason Setup
 # Already idempotent if you include -n

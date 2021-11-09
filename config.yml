@@ -13,8 +13,9 @@ homebrew_installed_packages:
   - brew-cask-completion
   - go
   - node
-  - pyenv
-  - pyenv-virtualenv
+  # - pyenv
+  # - pyenv-virtualenv
+  - miniconda
   - ccls
   - yarn
   - ag
@@ -25,8 +26,9 @@ homebrew_installed_packages:
   - zsh
   - zsh-completions
   - getantibody/tap/antibody
-  - { name: r, install_options: '--with-x11' }
-  - eddieantonio/eddieantonio/imgcat
+  - r
+  - tcl-tk
+  # - eddieantonio/eddieantonio/imgcat
   - libgit2
   - ffmpeg
   - themekit
@@ -39,21 +41,15 @@ homebrew_installed_packages:
 
 homebrew_cask_apps:
   # sudo required
-  - virtualbox
+  # - virtualbox
   - temurin8
+  - xquartz
   # fonts
   - font-source-code-pro
   - font-montserrat
   - font-roboto
   - font-roboto-mono
-  - font-roboto-condensed
-  - font-ionicons
   - font-ia-writer-duospace
-  - font-encodesans
-  - font-encodesans-semiexpanded
-  - font-encodesans-semicondensed
-  - font-encodesans-expanded
-  - font-encodesans-condensed
   # core apps
   - alfred
   - { name: dropbox, install_options: '--no-quarantine' }
@@ -91,7 +87,7 @@ homebrew_cask_apps:
   - iterm2
   - dash
   - coolterm
-  - genymotion
+  # - genymotion
   - rstudio
   - mactex
   # eliminate?
@@ -121,7 +117,7 @@ mas_installed_apps:
   - { id: 1435957248, name: "Drafts" }
   - { id: 1225570693, name: "Ulysses" }
   - { id: 904280696, name: "Things 3" }
-  - { id: 1346190318, name: "OmniFocus 3" }
+#   - { id: 1346190318, name: "OmniFocus" }
 #   - { id: 451691288, name: "Contacts Sync for Google Gmail" }
 
 gem_packages:
