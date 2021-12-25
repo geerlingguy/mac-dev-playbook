@@ -62,14 +62,14 @@ homebrew_cask_apps:
   - electrum
   - evernote
   - firefox
-  - google-backup-and-sync
+  - google-drive
   - google-chrome
   - grandperspective
   - keybase
   - ledger-live
   - meld
   - microsoft-teams
-  - osxfuse
+  - macfuse
   - plex
   - plex-media-server
   - resilio-sync
@@ -79,9 +79,6 @@ homebrew_cask_apps:
   - simple-comic
   - skype
   - slack
-  - sourcetree
-  - spotify
-  - station
   - steam
   - sublime-text
   - suspicious-package

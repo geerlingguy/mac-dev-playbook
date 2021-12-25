@@ -1,12 +1,13 @@
 # Personnal Command
 
     xcode-select --install
-    sudo easy_install pip
+    export PATH="$HOME/Library/Python/3.8/bin:/opt/homebrew/bin:$PATH"
     sudo pip install ansible 
     restart terminal
     git clone https://github.com/Desiderius42/mac-dev-playbook.git
     ansible-galaxy install -r requirements.yml
     ansible-playbook main.yml -i inventory -K 
+    ansible-playbook main.yml -K --tags "mas"
     Imprimante station F
     nvm install
     ansible-playbook UbuntuVM.yml --ask-vault-pass
