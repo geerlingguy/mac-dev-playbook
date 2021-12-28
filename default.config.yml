@@ -89,7 +89,8 @@ homebrew_cask_apps:
   - whatsapp
   - xmind
   - zoom
-  #- microsoft-office # tres long
+  - protonmail-bridge
+#  - microsoft-office # tres long
 
 # See `geerlingguy.mas` role documentation for usage instructions.
 mas_installed_apps: 
