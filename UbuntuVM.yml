@@ -33,7 +33,10 @@
       ansible.builtin.copy:
         src: ./files/sabnzbdplus
         dest: /etc/default/sabnzbdplus
-        force: no
+    - name: Create a directory if it does not exist
+      ansible.builtin.file:
+        path: /home/freebox/.sabnzbd
+        state: directory
     - name: copy configuration file sabnzbd.ini
       ansible.builtin.copy:
         src:  ./files/sabnzbd.ini

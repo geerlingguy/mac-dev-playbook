@@ -65,11 +65,12 @@ homebrew_cask_apps:
   - google-drive
   - google-chrome
   - grandperspective
-  - keybase
   - ledger-live
+  - ltspice
   - meld
   - microsoft-teams
   - macfuse
+  - notion
   - plex
   - plex-media-server
   - resilio-sync
@@ -96,7 +97,6 @@ homebrew_cask_apps:
 mas_installed_apps: 
   - { id: 552383089, name: "Dashlane - Password Manager" }
   - { id: 1176895641, name: "Spark - Email App by Readdle " }  
-  - { id: 406056744, name: "Evernote" }  
   - { id: 639968404, name: "parcel" }   
   #- { id: 497799835, name: "xcode"} 
 
