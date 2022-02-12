@@ -6,41 +6,66 @@ configure_sudoers: no
 configure_terminal: no
 configure_osx: yes
 
-dotfiles_repo: https://github.com/cristian04/dotfiles-1.git
+# Set to 'true' to configure the Dock via dockutil.
+configure_dock: false
+
+dotfiles_repo: https://github.com/cmarquezrusso/dotfiles.git
 dotfiles_repo_accept_hostkey: yes 
 dotfiles_repo_local_destination: ~/dotfiles-ansible
-dotfiles_files: []
+dotfiles_files:
+  - .ssh/config
+  - .zshrc
+  - .aliases
+  - .bash_profile
+  - .bash_prompt
+  - .bashrc
+  - .curlrc
+  - .dockerapps
+  - .editorconfig
+  - .exports
+  - .functions
+  - .gdbinit
+  - .git
+  - .gitattributes
+  - .gitcompletion
+  - .gitconfig
+  - .gitignore
+  - .gvimrc
+  - .hgignore
+  - .hushlogin
+  - .inputrc
+  - .kube.tmux
+  - .kubectl_aliases
+  - .macos
+  - .osx
+  - .screenrc
+  - .tmux.conf
+  - .vim
+  - .vimrc
+  - .wgetrc
+  - .zshrc
+
 homebrew_clear_cache: true
 homebrew_installed_packages:
 - asciinema
 - asdf
-- awscli
 - axel
-- cmatrix
 - coreutils
 - cowsay
-- docker-machine
-- docker-machine-driver-hyperkit
-- docker-machine-driver-xhyve
 - figlet
 - findutils
 - git
 - git-lfs
 - go
 - grep
-- helm@2
 - hostess
 - iftop
 - jq
-- kompose
-- kubernetes-cli
-- kubernetes-helm
-- kube-ps1
 - mas
 - midnight-commander
-- minikube
 - moreutils
 - node
+- nvm
 - p7zip
 - pandoc
 - screen
@@ -49,45 +74,63 @@ homebrew_installed_packages:
 - tcpflow
 - tree
 - tmux
-- unrar
-- velero
 - watch
 - wget
 - youtube-dl
-  
+
+homebrew_uninstalled_packages:
+- awscli
+- cmatrix
+- docker-machine
+- docker-machine-driver-hyperkit
+- docker-machine-driver-xhyve
+- helm@2
+- kompose
+- minikube
+- unrar
+- kubernetes-cli
+- kubernetes-helm
+- kube-ps1
+- velero
 
 homebrew_taps:
   - homebrew/core
   - homebrew/cask
+  - homebrew/cask-drivers
 
 homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
   - adobe-acrobat-reader
-  - brave-browser
-  - cakebrew
   - coconutbattery
-  - docker
-  - google-cloud-sdk
-  - gpg-suite
+  - github
+  - google-chrome
   - iina
   - iterm2
   - slack
-  - spotify
-  - spotify-notifications
-  - sublime-text
-  - vagrant
-  - virtualbox
+  - yubico-authenticator
+  - yubico-yubikey-manager
+  - yubico-yubikey-personalization-gui
   - visual-studio-code
   
-# See `geerlingguy.mas` role documentation for usage instructions.
+homebrew_cask_uninstalled_apps:
+  - gpg-suite
+  - bitwarden
+  - sublime-text
+  - google-cloud-sdk
+  - docker
+
 mas_installed_apps:
 - { id: 1147396723, name: "WhatsApp (0.4.316)" }
+- { id: 1352778147, name: "Bitwarden" }
 - { id: 682658836, name: "GarageBand (10.3.2)" }
 - { id: 408981434, name: "iMovie (10.1.14)" }
+- { id: 905953485, name: "NordVPN: VPN Fast & Secure" }
 - { id: 803453959, name: "Slack (4.2.0)" }
-- { id: 406825478, name: "Telephone (1.4)" }
 - { id: 497799835, name: "Xcode (11.3.1)" }
+
+mas_uninstalled_apps:
 - { id: 406056744, name: "Evernote (7.14)" }
+- { id: 406825478, name: "Telephone (1.4)" }
 
 mas_email: ""
 mas_password: ""
@@ -117,6 +160,23 @@ pip_packages: []
   #   state: present # present/absent/latest, default: present
   #   version: "0.16.3" # default: N/A
 
+# Set to 'true' to configure Sublime Text.
+configure_sublime: false
+sublime_base_path: '~/Library/Application Support/Sublime Text'
+sublime_config_path: "Packages/User"
+sublime_package_control:
+  - "DocBlockr"
+  - "Dockerfile Syntax Highlighting"
+  - "FileDiffs"
+  - "GitHub Flavored Markdown Preview"
+  - "Jinja2"
+  - "Package Control"
+  - "PHP-Twig"
+  - "Pretty JSON"
+  - "SublimeLinter"
+  - "SublimeLinter-contrib-yamllint"
+  - "TrailingSpaces"
+  - "WordCount"
 # Glob pattern to ansible task files to run after all other tasks are finished.
 post_provision_tasks: []
 
