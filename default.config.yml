@@ -25,7 +25,6 @@ dotfiles_files:
   - .exports
   - .functions
   - .gdbinit
-  - .git
   - .gitattributes
   - .gitcompletion
   - .gitconfig
@@ -39,6 +38,7 @@ dotfiles_files:
   - .macos
   - .osx
   - .screenrc
+  - .tool-versions
   - .tmux.conf
   - .vim
   - .vimrc
