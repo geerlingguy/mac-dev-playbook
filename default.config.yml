@@ -14,6 +14,8 @@ dotfiles_repo_accept_hostkey: yes
 dotfiles_repo_local_destination: ~/dotfiles-ansible
 dotfiles_files:
   - .ssh/config
+  - .oh-my-zsh
+  - .p10k.zsh
   - .zshrc
   - .aliases
   - .bash_profile
@@ -27,7 +29,6 @@ dotfiles_files:
   - .gdbinit
   - .gitattributes
   - .gitcompletion
-  - .gitconfig
   - .gitignore
   - .gvimrc
   - .hgignore
@@ -136,7 +137,8 @@ mas_email: ""
 mas_password: ""
 mas_signin_dialog: no
 
-osx_script: "~/dotfiles-ansible/.macos" #Just the hacker sensitive stuff
+#Just the hacker sensitive stuff
+osx_script: "~/dotfiles-ansible/.macos" 
 
 # Install packages from other package managers.
 # Note: You are responsible for making sure the required package managers are
