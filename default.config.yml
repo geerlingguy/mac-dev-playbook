@@ -29,6 +29,7 @@ dotfiles_files:
   - .gdbinit
   - .gitattributes
   - .gitcompletion
+  - .gitconfig
   - .gitignore
   - .gvimrc
   - .hgignore
