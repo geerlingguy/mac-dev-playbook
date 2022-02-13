@@ -106,6 +106,7 @@ homebrew_cask_apps:
   - coconutbattery
   - github
   - google-chrome
+  - gpg-suite
   - iina
   - iterm2
   - slack
@@ -115,7 +116,6 @@ homebrew_cask_apps:
   - visual-studio-code
   
 homebrew_cask_uninstalled_apps:
-  - gpg-suite
   - bitwarden
   - sublime-text
   - google-cloud-sdk
