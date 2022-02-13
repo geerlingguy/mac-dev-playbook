@@ -1,0 +1,175 @@
+---
+downloads: ~/.ansible-downloads/
+
+configure_dotfiles: true
+configure_iterm2: true
+configure_osx: true
+
+# Set to 'true' to configure the Dock via dockutil.
+configure_dock: true
+dockitems_remove:
+  - Finder
+  - Launchpad
+  - Mail
+  - Maps
+  - Photos
+  - Contacts
+  - TV
+  - Music
+  - News
+  - Keynote
+  - Numbers
+  - Pages
+  - "App Store"
+dockitems_persist:
+  - name: "Path Finder"
+    path: "/Applications/Setapp/Path Finder.app/"
+    pos: 1
+  - name: "Safari"
+    path: "/Applications/Safari.app/"
+    pos: 2
+  - name: "Spark"
+    path: "/Applications/Spark.app/"
+    pos: 3
+  - name: "Slack"
+    path: "/Applications/Slack.app/"
+    pos: 4
+  - name: "Visual Studio Code"
+    path: "/Applications/Visual Studio Code.app/"
+    pos: 5
+  - name: "Fork"
+    path: "/Applications/Fork.app/"
+    pos: 6
+  - name: "iTerm"
+    path: "/Applications/iTerm.app/"
+    pos: 7
+  - name: "Signal"
+    path: "/Applications/Signal.app/"
+    pos: 8
+  - name: "Spotify"
+    path: "/Applications/Spotify.app/"
+    pos: 9
+  - name: "Plexamp"
+    path: "/Applications/Plexamp.app"
+    pos: 10
+  - name: "Whatsapp"
+    path: "/Applications/Whatsapp.app/"
+    pos: 11
+
+configure_sudoers: false
+sudoers_custom_config: ""
+# Example:
+# sudoers_custom_config: |
+#   # Allow users in admin group to use sudo with no password.
+#   %admin ALL=(ALL) NOPASSWD: ALL
+
+dotfiles_repo: https://github.com/ianko/dotfiles.git
+dotfiles_repo_accept_hostkey: true
+dotfiles_repo_local_destination: ~/Workspace/personal/dotfiles
+dotfiles_files:
+  - .curlrc
+  - .gitconfig
+  - .gitignore
+  - .macos
+  - .p10k.zsh
+  - .zshrc
+
+homebrew_installed_packages:
+  # - ansible # Installed via Pip.
+  - asdf
+  - autoconf
+  - bat
+  - cocoapods
+  - dockutil
+  - firebase-cli
+  - fvm
+  - git
+  - gpg
+  - github/gh/gh
+  - kubectl
+  - kubectx
+  - node
+  - nvm
+  - mas
+  - openjdk
+  - openssl
+  - podman
+  - ssh-copy-id
+  - terraform
+  - tldr
+  - tree
+  - vim
+  - wget
+
+homebrew_taps:
+  - homebrew/core
+  - homebrew/cask
+  - homebrew/cask-fonts
+
+homebrew_cask_appdir: /Applications
+homebrew_cask_apps:
+  - android-studio
+  - balenaetcher
+  - brave-browser
+  - cakebrew
+  - docker
+  - font-fira-code
+  - font-meslo-lg-nerd-font
+  - fork
+  - handbrake
+  - insomnia
+  - iterm2
+  - little-snitch
+  - micro-snitch
+  - muzzle
+  - ngrok
+  - paw
+  - plex
+  - plexamp
+  - setapp
+  - signal
+  - spotify
+  - visual-studio-code
+  - zoom
+
+# See `geerlingguy.mas` role documentation for usage instructions.
+mas_installed_apps:
+  # Apple
+  - { id: 1037126344, name: "Apple Configurator 2" }
+  - { id: 409183694, name: "Keynote" }
+  - { id: 409203825, name: "Numbers" }
+  - { id: 409201541, name: "Pages" }
+  - { id: 1450874784, name: "Transporter" }
+  - { id: 497799835, name: "Xcode" }
+
+  # Others
+  - { id: 1333542190, name: "1Password" }
+  - { id: 937984704, name: "Amphetamine" }
+  - { id: 1509135075, name: "He3" }
+  - { id: 905953485, name: "NordVPN" }
+  - { id: 803453959, name: "Slack" }
+  - { id: 1176895641, name: "Spark" }
+  - { id: 425424353, name: "The Unarchiver" }
+  - { id: 1147396723, name: "WhatsApp" }
+mas_email: ""
+mas_password: ""
+
+osx_script: "~/.macos --no-restart"
+
+# Install packages from other package managers.
+# Note: You are responsible for making sure the required package managers are
+# installed, eg. through homebrew.
+gem_packages: []
+
+npm_packages: []
+
+pip_packages:
+  - name: setuptools
+    state: latest
+
+asdf_plugins:
+  - erlang
+  - elixir
+
+# Glob pattern to ansible task files to run after all other tasks are finished.
+post_provision_tasks: []
