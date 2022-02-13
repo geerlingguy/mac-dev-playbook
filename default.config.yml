@@ -100,6 +100,12 @@ pip_packages: []
 # - name: mkdocs
 #   state: present # present/absent/latest, default: present
 #   version: "0.16.3" # default: N/A
+asdf_plugins: []
+# - name: "terraform"    # a plugin name
+#   repository: ""       # a plugin repository, optional
+#   versions:            # a list of the package versions to install
+#     - "0.11.14"
+#   global: "0.11.14"    # set as a global version, optional
 
 # Glob pattern to ansible task files to run after all other tasks are finished.
 post_provision_tasks: []
