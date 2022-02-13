@@ -31,9 +31,9 @@
       when: configure_sudoers
       tags: ["sudoers"]
 
-    - import_tasks: tasks/terminal.yml
-      when: configure_terminal
-      tags: ["terminal"]
+    - import_tasks: tasks/iterm2.yml
+      when: configure_iterm2
+      tags: ["iterm2"]
 
     - import_tasks: tasks/osx.yml
       when: configure_osx

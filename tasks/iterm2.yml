@@ -1,0 +1,26 @@
+---
+# Custom iTerm2 theme.
+- name: Get current iTerms2 profile.
+  command: defaults read com.googlecode.iterm2 'Default Bookmark Guid'
+  register: terminal_theme
+  changed_when: false
+  check_mode: false
+
+- name: Copy iTerm2 dynamic profiles.
+  copy:
+    src: files/iterm2_profiles.json
+    dest: "~/Library/Application Support/iTerm2/DynamicProfiles"
+  changed_when: false
+  when: "'7D3B32DE-6E80-45EF-8120-E1F1409C64EF' not in terminal_theme.stdout"
+
+- name: Ensure custom iTerm2 dynamic profile is added.
+  command: "open ~/Library/Application Support/iTerm2/DynamicProfiles"
+  changed_when: false
+  when: "'7D3B32DE-6E80-45EF-8120-E1F1409C64EF' not in terminal_theme.stdout"
+
+- name: Ensure custom Terminal profile is set as default.
+  command: "{{ item }}"
+  with_items:
+    - defaults write com.googlecode.iterm2 'Default Bookmark Guid' -string '7D3B32DE-6E80-45EF-8120-E1F1409C64EF'
+  changed_when: false
+  when: "'7D3B32DE-6E80-45EF-8120-E1F1409C64EF' not in terminal_theme.stdout"
