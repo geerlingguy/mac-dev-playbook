@@ -1,0 +1,6 @@
+{
+  "cSpell.enableFiletypes": [
+    "!yaml"
+  ],
+  "yaml.format.singleQuote": false
+}

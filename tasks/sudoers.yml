@@ -17,5 +17,5 @@
     content: "{{ sudoers_custom_config }}"
     dest: /private/etc/sudoers.d/custom
     mode: 0440
-    validate: 'visudo -cf %s'
+    validate: "visudo -cf %s"
   become: true

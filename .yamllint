@@ -5,6 +5,9 @@ rules:
   line-length:
     max: 180
     level: warning
+  quoted-strings:
+    quote-type: double
+    required: false
 
 ignore: |
   .github/workflows/stale.yml
