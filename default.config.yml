@@ -12,11 +12,9 @@ configure_dock: false
 dotfiles_repo: https://github.com/cmarquezrusso/dotfiles.git
 dotfiles_repo_accept_hostkey: yes 
 dotfiles_repo_local_destination: ~/dotfiles-ansible
+dotfiles_repo_version: main
 dotfiles_files:
   - .ssh/config
-  - .oh-my-zsh
-  - .p10k.zsh
-  - .zshrc
   - .aliases
   - .bash_profile
   - .bash_prompt
@@ -45,7 +43,6 @@ dotfiles_files:
   - .vim
   - .vimrc
   - .wgetrc
-  - .zshrc
 
 homebrew_clear_cache: true
 homebrew_installed_packages:
