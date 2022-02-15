@@ -155,7 +155,7 @@ mas_installed_apps:
 mas_email: ""
 mas_password: ""
 
-osx_script: "~/.macos --no-restart"
+osx_script: "~/Workspace/personal/dotfiles/.macos --no-restart"
 
 # Install packages from other package managers.
 # Note: You are responsible for making sure the required package managers are
