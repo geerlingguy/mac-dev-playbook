@@ -43,18 +43,21 @@ dockitems_persist:
   - name: "iTerm"
     path: "/Applications/iTerm.app/"
     pos: 7
+  - name: "Messages"
+    path: "/System/Applications/Messages.app"
+    pos: 8
   - name: "Signal"
     path: "/Applications/Signal.app/"
-    pos: 8
+    pos: 9
   - name: "Spotify"
     path: "/Applications/Spotify.app/"
-    pos: 9
+    pos: 10
   - name: "Plexamp"
     path: "/Applications/Plexamp.app"
-    pos: 10
+    pos: 11
   - name: "Whatsapp"
     path: "/Applications/Whatsapp.app/"
-    pos: 11
+    pos: 12
 
 configure_sudoers: false
 sudoers_custom_config: ""
