@@ -72,6 +72,7 @@ dotfiles_files:
   - .gitignore
   - .macos
   - .p10k.zsh
+  - .zshenv
   - .zshrc
 
 homebrew_installed_packages:
