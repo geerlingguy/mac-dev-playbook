@@ -1,3 +1,4 @@
+---
 homebrew_installed_packages:
   - autoconf
   - bash-completion
@@ -12,4 +13,4 @@ homebrew_installed_packages:
 
 homebrew_cask_apps:
   - firefox
-  - macvim
+  - licecap
