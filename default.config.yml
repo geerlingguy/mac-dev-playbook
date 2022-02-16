@@ -14,7 +14,7 @@ dotfiles_repo_accept_hostkey: yes
 dotfiles_repo_local_destination: ~/dotfiles-ansible
 dotfiles_repo_version: main
 dotfiles_files:
-  - .ssh/config
+  - .ssh
   - .aliases
   - .bash_profile
   - .bash_prompt
@@ -180,3 +180,69 @@ sublime_package_control:
 # Glob pattern to ansible task files to run after all other tasks are finished.
 post_provision_tasks: []
 
+# Set to 'true' to configure p10k
+configure_p10k: true
+
+# Powerlevel10k Git repository url
+p10k_repository_url: 'https://github.com/romkatv/powerlevel10k.git'
+
+# Install p10k for the following linux users
+# Default: the linux user running Ansible
+p10k_users:
+  - "{{ ansible_user_id }}"
+
+# Zsh plugin used, zsh, ohmyzsh, prezto, Zim, etc..
+# All plugin names can be found here https://github.com/romkatv/powerlevel10k#installation
+# TODO: Change to OhMyZsh
+zsh_plugin: zsh
+
+
+# Setup p10k theme to use
+# Valid values: lean, classic, rainbow, pure
+p10k_prompt_style: "rainbow"
+
+# Show current time
+# Valid values: no, 24-hour, 12-hour
+p10k_prompt_time: "24-hour"
+
+# Prompt sperator
+# Valid values: angled, vertical, slanted, round
+p10k_prompt_separator: "angled"
+
+# Prompt heads
+# Valid values: sharp, blurred, slanted, round
+p10k_prompt_head: "sharp"
+
+# Prompt tails
+# Valid values: flat, blurred, sharp, slanted, round
+p10k_prompt_tails: flat
+
+# Terminal prompt height
+# Valid values: one-line, two-lines
+p10k_prompt_height: two-lines
+
+# Prompt connection, only used if "p10k_prompt_height" value is "two-lines"
+# Valid values: disconnected, dotted, solid
+p10k_prompt_connection: disconnected
+
+# Prompt connection color, only used if
+# "p10k_prompt_connection" value is "dotted" or "solid"
+# or "p10k_prompt_frame" is not "no"
+# Valid values: lightest, light, dark, darkest, black, white, green, blue
+p10k_prompt_connection_color: "dark"
+
+# Prompt frame connection
+# Valid values: no, left, right, full
+p10k_prompt_frame: left
+
+# Sparse prompt with an empty line before promp
+# Valid values: compact, sparse
+p10k_prompt_spacing: compact
+
+# Terminal flow
+# Valid values: concise, fluent
+p10k_prompt_flow: concise
+
+# Enable transient prompt
+# Valid values: yes, no
+p10k_transient_prompt: "no"

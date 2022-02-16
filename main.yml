@@ -24,6 +24,9 @@
     - role: geerlingguy.mac.dock
       when: configure_dock
       tags: ['dock']
+    - role: diodonfrost.p10k
+      when: configure_p10k
+      tags: ['p10k']
 
   tasks:
     - import_tasks: tasks/sudoers.yml

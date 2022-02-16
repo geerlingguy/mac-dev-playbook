@@ -2,6 +2,7 @@
 roles:
   - name: elliotweiser.osx-command-line-tools
   - name: geerlingguy.dotfiles
+  - name: diodonfrost.p10k
 
 collections:
   - name: geerlingguy.mac
