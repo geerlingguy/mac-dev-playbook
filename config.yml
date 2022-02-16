@@ -172,8 +172,12 @@ pip_packages:
     state: latest
 
 asdf_plugins:
-  - erlang
-  - elixir
+  - name: erlang
+    versions: ["latest"]
+    global: "latest"
+  - name: elixir
+    versions: ["latest"]
+    global: "latest"
 
 # Glob pattern to ansible task files to run after all other tasks are finished.
 post_provision_tasks: []
