@@ -10,10 +10,10 @@ dotfiles_repo: https://github.com/geerlingguy/dotfiles.git
 dotfiles_repo_accept_hostkey: yes
 dotfiles_repo_local_destination: ~/Dropbox/Development/GitHub/dotfiles
 dotfiles_files:
-  - .bash_profile
-  - .gitignore
-  - .inputrc
-  - .osx
+ # - .bash_profile
+ # - .gitignore
+ # - .inputrc
+ # - .osx
 # https://formulae.brew.sh/analytics/install/365d/
 homebrew_installed_packages:
   # - ansible # Installed via Pip.
@@ -27,6 +27,7 @@ homebrew_installed_packages:
   - exercism
   - gcc
   - git-lfs
+  - git-flow
   - gnupg
   - imagemagick
   - lcov
@@ -54,7 +55,6 @@ homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
   - adobe-acrobat-reader
   - anki
-  - balenaetcher
   - brave-browser
   - discord
   - docker
@@ -73,6 +73,7 @@ homebrew_cask_apps:
   - notion
   - plex
   - plex-media-server
+  - projectlibre
   - resilio-sync
   - sabnzbd
   - sourcetree
@@ -84,18 +85,16 @@ homebrew_cask_apps:
   - sublime-text
   - suspicious-package
   - transmission
-  - veracrypt
   - visual-studio-code
   - vlc
   - whatsapp
   - xmind
   - zoom
   - protonmail-bridge
-#  - microsoft-office # tres long
 
 # See `geerlingguy.mas` role documentation for usage instructions.
 mas_installed_apps: 
-  - { id: 552383089, name: "Dashlane - Password Manager" }
+  - { id: 517914548, name: "Dashlane" }
   - { id: 1176895641, name: "Spark - Email App by Readdle " }  
   - { id: 639968404, name: "parcel" }   
   #- { id: 497799835, name: "xcode"} 

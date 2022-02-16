@@ -1,15 +1,13 @@
 # Personnal Command
 
-    xcode-select --install
-    export PATH="$HOME/Library/Python/3.8/bin:/opt/homebrew/bin:$PATH"
-    sudo pip install ansible 
-    restart terminal
+    xcode-select --install // to install git
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)" // to install hombrew
+    brew install ansible // install ansible 
     git clone https://github.com/Desiderius42/mac-dev-playbook.git
     ansible-galaxy install -r requirements.yml
     ansible-playbook main.yml -i inventory -K 
     ansible-playbook main.yml -K --tags "mas"
-    Imprimante station F
-    nvm install
+
     ansible-playbook UbuntuVM.yml --ask-vault-pass
 
 
