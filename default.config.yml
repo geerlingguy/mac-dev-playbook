@@ -46,6 +46,7 @@ dotfiles_files:
 
 homebrew_clear_cache: true
 homebrew_installed_packages:
+- asdf
 - asciinema
 - axel
 - coreutils
@@ -78,7 +79,6 @@ homebrew_installed_packages:
 homebrew_uninstalled_packages:
 - awscli
 - cmatrix
-- asdf
 - docker-machine
 - docker-machine-driver-hyperkit
 - docker-machine-driver-xhyve
