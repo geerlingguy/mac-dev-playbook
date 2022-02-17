@@ -63,8 +63,7 @@ homebrew_installed_packages:
 - mas
 - midnight-commander
 - moreutils
-- node
-- nvm
+- nmap
 - p7zip
 - pandoc
 - screen
@@ -86,6 +85,8 @@ homebrew_uninstalled_packages:
 - helm@2
 - kompose
 - minikube
+- node
+- nvm
 - unrar
 - kubernetes-cli
 - kubernetes-helm
@@ -151,7 +152,7 @@ gem_packages: []
   #   version: "~> 1.15.1" # default: N/A
 npm_packages:
   - name: gtop
-    state: present # present/absent/latest, default: present
+    state: absent # present/absent/latest, default: present
   # - name: webpack
   #   state: present # present/absent/latest, default: present
   #   version: "^2.6" # default: N/A
@@ -179,70 +180,37 @@ sublime_package_control:
   - "WordCount"
 # Glob pattern to ansible task files to run after all other tasks are finished.
 post_provision_tasks: []
+nvm_default_node_version: "lts/*"
+nvm_node_versions:
+  - "{{ nvm_default_node_version }}"
+  - "stable"
+# Global NPM packages to install
+nvm_npm_global_packages:
+  - gtop
+  - yarn
+# Temp path
+nvm_tmp_path: /tmp/install_nvm
+# NVM version to install
+nvm_version: "v0.39.1"
+# sha256sum install.sh
+# yamllint disable-line rule:line-length
+nvm_install_checksum: "sha256:fabc489b39a5e9c999c7cab4d281cdbbcbad10ec2f8b9a7f7144ad701b6bfdc7"
 
-# Set to 'true' to configure p10k
 configure_p10k: true
-
-# Powerlevel10k Git repository url
 p10k_repository_url: 'https://github.com/romkatv/powerlevel10k.git'
-
-# Install p10k for the following linux users
-# Default: the linux user running Ansible
-p10k_users:
-  - "{{ ansible_user_id }}"
-
 # Zsh plugin used, zsh, ohmyzsh, prezto, Zim, etc..
 # All plugin names can be found here https://github.com/romkatv/powerlevel10k#installation
 # TODO: Change to OhMyZsh
 zsh_plugin: zsh
-
-
-# Setup p10k theme to use
-# Valid values: lean, classic, rainbow, pure
 p10k_prompt_style: "rainbow"
-
-# Show current time
-# Valid values: no, 24-hour, 12-hour
 p10k_prompt_time: "24-hour"
-
-# Prompt sperator
-# Valid values: angled, vertical, slanted, round
 p10k_prompt_separator: "angled"
-
-# Prompt heads
-# Valid values: sharp, blurred, slanted, round
 p10k_prompt_head: "sharp"
-
-# Prompt tails
-# Valid values: flat, blurred, sharp, slanted, round
 p10k_prompt_tails: flat
-
-# Terminal prompt height
-# Valid values: one-line, two-lines
 p10k_prompt_height: two-lines
-
-# Prompt connection, only used if "p10k_prompt_height" value is "two-lines"
-# Valid values: disconnected, dotted, solid
 p10k_prompt_connection: disconnected
-
-# Prompt connection color, only used if
-# "p10k_prompt_connection" value is "dotted" or "solid"
-# or "p10k_prompt_frame" is not "no"
-# Valid values: lightest, light, dark, darkest, black, white, green, blue
 p10k_prompt_connection_color: "dark"
-
-# Prompt frame connection
-# Valid values: no, left, right, full
 p10k_prompt_frame: left
-
-# Sparse prompt with an empty line before promp
-# Valid values: compact, sparse
 p10k_prompt_spacing: compact
-
-# Terminal flow
-# Valid values: concise, fluent
 p10k_prompt_flow: concise
-
-# Enable transient prompt
-# Valid values: yes, no
 p10k_transient_prompt: "no"
