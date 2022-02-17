@@ -26,9 +26,10 @@ jobs:
         run: pip3 install yamllint ansible ansible-lint
 
       - name: Lint code.
-        run: |
-          yamllint .
-          ansible-lint
+        run: yamllint .
+
+      - name:  ansible-lint code.
+        run: ansible-lint
 
   integration:
     name: Integration
