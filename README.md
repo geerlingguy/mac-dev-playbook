@@ -8,7 +8,7 @@
     ansible-playbook main.yml -i inventory -K 
     ansible-playbook main.yml -K --tags "mas"
 
-    ansible-playbook UbuntuVM.yml --ask-vault-pass
+    ansible-playbook UbuntuVM.yml --ask-vault-pass -v
 
 
 # Mac Development Ansible Playbook

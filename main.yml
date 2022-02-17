@@ -1,10 +1,6 @@
 ---
-<<<<<<< HEAD
 - hosts: localhost
   connection: local
-=======
-- hosts: all
->>>>>>> c42f8822dd7f82ad6ba3c95ca3a136279926c990
 
   vars_files:
     - default.config.yml
