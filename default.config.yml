@@ -23,7 +23,6 @@ sudoers_custom_config: ''
 # sudoers_custom_config: |
 #   # Allow users in admin group to use sudo with no password.
 #   %admin ALL=(ALL) NOPASSWD: ALL
-
  # dotfiles_repo: https://github.com/geerlingguy/dotfiles.git
  # dotfiles_repo_accept_hostkey: true
  # dotfiles_repo_local_destination: ~/Development/GitHub/dotfiles
@@ -75,6 +74,7 @@ homebrew_installed_packages:
   - vim
   - wget
   - wrk
+  - yamllint
   - zsh-history-substring-search
 
 homebrew_taps:
@@ -123,11 +123,10 @@ homebrew_cask_apps:
   - protonmail-bridge
 
 # See `geerlingguy.mas` role documentation for usage instructions.
-mas_installed_apps: 
-  - { id: 517914548, name: "Dashlane" }
-  - { id: 1176895641, name: "Spark - Email App by Readdle " }  
-  - { id: 639968404, name: "parcel" }   
-  #- { id: 497799835, name: "xcode"} 
+mas_installed_apps:
+  - {id: 517914548, name: "Dashlane"}
+  - {id: 1176895641, name: "Spark - Email App by Readdle "}
+  #- {id:1176895641, name:"xcode"}
 
 mas_email: ""
 mas_password: ""

@@ -61,7 +61,7 @@ jobs:
           ansible-galaxy install -r requirements.yml
 
       - name: Test the playbook's syntax.
-        run: ansible-playbook main.yml --syntax-check
+        run: ansible-playbook main.yml --syntax-check --tags "homebrew"
 
       - name: Test the playbook.
         run: ansible-playbook main.yml
