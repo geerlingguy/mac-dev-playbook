@@ -26,15 +26,13 @@
       tags: ['dock']
     - role: markosamuli.nvm
       tags: ['node']
+    - role: markosamuli.asdf
+      tags: ['asdf']
     - role: diodonfrost.p10k
       when: configure_p10k
       tags: ['p10k']
 
-      # TODO:
-      # Install ASDF Plugins
-      # Install ASDF tools versions
-      # Install NVM Node versions
-      # Install OMZ and set up plugins and Add scripts
+      # TODO Install OMZ and set up plugins and Add scripts
 
 
   tasks:
@@ -67,10 +65,7 @@
 
 
 
-# nvm install --tls
-# nvm install --current
-# nvm use --lts 
-# nvm alias default --lts
+
 # Load the shell dotfiles, and then some:
 # * ~/.path can be used to extend `$PATH`.
 # * ~/.extra can be used for other settings you don’t want to commit.

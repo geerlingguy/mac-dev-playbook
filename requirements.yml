@@ -3,6 +3,8 @@ roles:
   - name: elliotweiser.osx-command-line-tools
   - name: geerlingguy.dotfiles
   - name: diodonfrost.p10k
+  - name: markosamuli.nvm
+  - name: markosamuli.asdf
 
 collections:
   - name: geerlingguy.mac

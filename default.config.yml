@@ -47,7 +47,6 @@ dotfiles_files:
 homebrew_clear_cache: true
 homebrew_installed_packages:
 - asciinema
-- asdf
 - axel
 - coreutils
 - cowsay
@@ -79,6 +78,7 @@ homebrew_installed_packages:
 homebrew_uninstalled_packages:
 - awscli
 - cmatrix
+- asdf
 - docker-machine
 - docker-machine-driver-hyperkit
 - docker-machine-driver-xhyve
@@ -185,9 +185,7 @@ nvm_node_versions:
   - "{{ nvm_default_node_version }}"
   - "stable"
 # Global NPM packages to install
-nvm_npm_global_packages:
-  - gtop
-  - yarn
+nvm_npm_global_packages: [gtop, yarn]
 # Temp path
 nvm_tmp_path: /tmp/install_nvm
 # NVM version to install
@@ -195,6 +193,121 @@ nvm_version: "v0.39.1"
 # sha256sum install.sh
 # yamllint disable-line rule:line-length
 nvm_install_checksum: "sha256:fabc489b39a5e9c999c7cab4d281cdbbcbad10ec2f8b9a7f7144ad701b6bfdc7"
+
+# asdf version to install
+asdf_version: "v0.9.0"
+
+# see README.md for example configuration
+asdf_plugins:
+- name: "argo"
+  versions:
+    - "3.2.8"
+  global: "3.2.8"
+
+- name: "bat"
+
+- name: "cheat"
+  versions:
+    - "4.2.3"
+  global: "4.2.3"
+
+- name: "cloudflared"
+  versions:
+    - "2022.2.0"
+  global: "2022.2.0"
+
+- name: "helm"
+  versions:
+    - "3.8.0"
+  global: "3.8.0"
+
+- name: "helm-docs"
+  versions:
+    - "1.7.0"
+  global: "1.7.0"
+
+- name: "helmfile"
+
+- name: "helmsman"
+
+- name: "k3d"
+  versions:
+    - "5.3.0"
+  global: "5.3.0"
+
+- name: "k3sup"
+
+- name: "k9s"
+  versions:
+    - "0.25.18"
+  global: "0.25.18"
+
+- name: "krew"
+
+- name: "kube-capacity"
+  versions:
+    - "0.4.0"
+  global: "0.4.0"
+
+- name: "kubectl"
+  versions:
+    - "1.23.3"
+  global: "1.23.3"
+
+- name: "kubectx"
+  versions:
+    - "0.9.4"
+  global: "0.9.4"
+
+- name: "kubespy"
+  versions:
+    - "0.6.0"
+  global: "0.6.0"
+
+- name: "kubeval"
+  versions:
+    - "0.16.0"
+  global: "0.16.0"
+
+- name: "mitmproxy"
+  versions:
+    - "7.0.4"
+  global: "7.0.4"
+
+- name: "pluto"
+  versions:
+    - "5.3.4"
+  global: "5.3.4"
+
+- name: "popeye"
+  versions:
+    - "v0.9.8"
+  global: "v0.9.8"
+
+- name: "rbac-lookup"
+  versions:
+    - "0.8.1"
+  global: "0.8.1"
+
+- name: "terraform"
+  versions:
+    - "1.1.5"
+  global: "1.1.5"
+
+- name: "trivy"
+  versions:
+    - "0.23.0"
+  global: "0.23.0"
+
+- name: "vault"
+  versions:
+    - "1.9.3+ent"
+  global: "1.9.3+ent"
+
+- name: "velero"
+
+# Configure shell
+asdf_init_shell: false
 
 configure_p10k: true
 p10k_repository_url: 'https://github.com/romkatv/powerlevel10k.git'
