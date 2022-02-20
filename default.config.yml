@@ -38,7 +38,6 @@ dotfiles_files:
   - .macos
   - .osx
   - .screenrc
-  - .tool-versions
   - .tmux.conf
   - .vim
   - .vimrc
@@ -314,7 +313,7 @@ p10k_repository_url: 'https://github.com/romkatv/powerlevel10k.git'
 # Zsh plugin used, zsh, ohmyzsh, prezto, Zim, etc..
 # All plugin names can be found here https://github.com/romkatv/powerlevel10k#installation
 # TODO: Change to OhMyZsh
-zsh_plugin: zsh
+zsh_plugin: ohmyzsh
 p10k_prompt_style: "rainbow"
 p10k_prompt_time: "24-hour"
 p10k_prompt_separator: "angled"
