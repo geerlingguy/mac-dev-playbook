@@ -2,4 +2,3 @@
 .DS_Store
 *.retry
 roles*
-config.yml
