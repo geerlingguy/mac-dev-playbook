@@ -12,7 +12,7 @@ dockitems_remove:
  - TV
  - Podcasts
  - 'App Store'
-dockitems_persist: []
+dockitems_persist: 
  - name: "Slack"
    path: "/Applications/Slack.app/"
    pos: 5
