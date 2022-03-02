@@ -26,9 +26,9 @@
       tags: ['dock']
 
   tasks:
-    - import_tasks: tasks/sudoers.yml
-      when: configure_sudoers
-      tags: ['sudoers']
+#    - import_tasks: tasks/sudoers.yml
+#      when: configure_sudoers
+#      tags: ['sudoers']
 
     - import_tasks: tasks/terminal.yml
       when: configure_terminal
