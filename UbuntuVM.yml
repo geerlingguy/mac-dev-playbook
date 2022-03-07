@@ -44,3 +44,17 @@
       ansible.builtin.service:
         name: sabnzbdplus
         state: started
+    - name: plex key
+      ansible.builtin.apt_key:
+        url: https://downloads.plex.tv/plex-keys/PlexSign.key
+        state: present
+    - name: Add plex repository
+      ansible.builtin.apt_repository:
+        repo: deb https://downloads.plex.tv/repo/deb public main
+        state: present
+        filename: plexmediaserver.list
+    - name: install PLex
+      apt:
+        name: plexmediaserver
+        update_cache: yes
+
