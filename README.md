@@ -9,7 +9,7 @@
     ansible-playbook main.yml -K --tags "mas"
 
     ansible-playbook UbuntuVM.yml --ask-vault-pass -v
-
+    install freebox reboot https://github.com/PabloLec/freebox_reboot
 
 # Mac Development Ansible Playbook
 

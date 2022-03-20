@@ -9,8 +9,14 @@
           - sabnzbdplus
           - zsh
           - ncdu
+          - python3
+          - pip
+          - git
         update_cache: true
         cache_valid_time: 3600
+    - name: Set timezone to Europe/Paris
+      community.general.timezone:
+        name: Europe/Paris
     - name: Create a reboot job
       ansible.builtin.cron:
         name: "reboot"
@@ -18,6 +24,14 @@
         hour: "4"
         user: root
         job: "/sbin/shutdown -r +5"
+        state: absent
+    - name: Create a freebox reboot job
+      ansible.builtin.cron:
+        name: "reboot freebox"
+        minute: "50"
+        hour: "3"
+        user: freebox
+        job: "cd /home/freebox/x/freebox_reboot && python3 -m freebox_reboot"
         state: present
     - name: Stop service sabnzbdplus
       ansible.builtin.service:
