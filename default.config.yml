@@ -11,11 +11,30 @@ dockitems_remove:
 # - Launchpad
  - TV
  - Podcasts
+ - Podcast
  - 'App Store'
-dockitems_persist: 
- - name: "Slack"
-   path: "/Applications/Slack.app/"
-   pos: 5
+ - Safari
+ - Mail
+ - Message
+ - Maps
+ - Photos
+ - FaceTime
+ - Calendar
+ - Contacts
+ - Reminders
+ - Music
+ - Keynote
+ - Numbers
+ - Pages
+
+#dockitems_remove:                                                                                                   
+
+
+dockitems_persist: [] 
+#dockitems_persist: 
+# - name: "Slack"
+#   path: "/Applications/Slack.app/"
+#   pos: 5
 
 configure_sudoers: false
 sudoers_custom_config: ''
@@ -37,12 +56,14 @@ dotfiles_files:
 homebrew_installed_packages:
   # - ansible # Installed via Pip.
   # aws
-  - aws-sam-cli
+#  - aws-sam-cli
+  - awscli
   - aws-vault
   - eksctl
 
   # google cloud
-  - 
+  # Failed returned ansible. T.B.D.
+#  - google-cloud-sdk
 
   # docker
   - helm
@@ -67,10 +88,10 @@ homebrew_installed_packages:
   - tree
   - readline
   - sqlite
-  - speedtest
+#  - speedtest
   - terraform
   - terraformer
-  - tfenv
+#  - tfenv
   - yarn
   - jq
   - yq
@@ -83,19 +104,22 @@ homebrew_taps:
 homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
   - docker
-  - google-chrome
-  - slack
+# Installed at kitting.
+#  - google-chrome
+#  - slack
   - postman
   - asana
   - visual-studio-code
   - zoom
+  - skitch
 
-# See `geerlingguy.mas` role documentation for usage instructions.
-mas_installed_apps: 
-  - { id: 497799835, name: "Xcode" }
-  
-mas_email: ""
-mas_password: ""
+## See `geerlingguy.mas` role documentation for usage instructions.
+#mas_installed_apps: 
+mas_installed_apps: []
+#  - { id: 497799835, name: "Xcode" }
+#  
+#mas_email: ""
+#mas_password: ""
 
 osx_script: "~/.osx --no-restart"
 
