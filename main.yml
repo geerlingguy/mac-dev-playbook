@@ -46,9 +46,9 @@
       tags: ['sublime-text']
 
     - block:
-      - name: Run configured post-provision ansible task files.
-        include_tasks: "{{ outer_item }}"
-        loop_control:
-          loop_var: outer_item
-        with_fileglob: "{{ post_provision_tasks|default(omit) }}"
+        - name: Run configured post-provision ansible task files.
+          include_tasks: "{{ outer_item }}"
+          loop_control:
+            loop_var: outer_item
+          with_fileglob: "{{ post_provision_tasks|default(omit) }}"
       tags: ['post']
