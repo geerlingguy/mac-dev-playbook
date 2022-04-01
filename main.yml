@@ -10,6 +10,13 @@
       with_fileglob:
         - "{{ playbook_dir }}/config.yml"
       tags: ['always']
+    - name: Add temporary passwordless sudo permissions
+      ansible.builtin.copy:
+        content: "{{ ansible_user }} ALL=(ALL) NOPASSWD: ALL"
+        dest: "/private/etc/sudoers.d/99_tmp_ansible"
+        validate: /usr/sbin/visudo -csf %s
+        mode: 0644
+      become: true
 
   roles:
     - role: elliotweiser.osx-command-line-tools
@@ -52,3 +59,9 @@
             loop_var: outer_item
           with_fileglob: "{{ post_provision_tasks|default(omit) }}"
       tags: ['post']
+
+    - name: Remove temporary passwordless sudo permissions
+      ansible.builtin.file:
+        path: "/private/etc/sudoers.d/99_tmp_ansible"
+        state: absent
+      become: true
