@@ -13,15 +13,12 @@
 
   roles:
     - role: elliotweiser.osx-command-line-tools
-    - role: geerlingguy.mac.homebrew
+    - role: sculley.mac_setup.homebrew
       tags: ['homebrew']
     - role: geerlingguy.dotfiles
       when: configure_dotfiles
       tags: ['dotfiles']
-    - role: geerlingguy.mac.mas
-      when: mas_installed_apps or mas_installed_app_ids
-      tags: ['mas']
-    - role: geerlingguy.mac.dock
+    - role: sculley.mac_setup.dock
       when: configure_dock
       tags: ['dock']
 
@@ -40,10 +37,6 @@
 
     - import_tasks: tasks/extra-packages.yml
       tags: ['extra-packages']
-
-    - import_tasks: tasks/sublime-text.yml
-      when: configure_sublime
-      tags: ['sublime-text']
 
     - block:
         - name: Run configured post-provision ansible task files.
