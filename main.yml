@@ -17,7 +17,7 @@
     - role: sculley.mac_setup.homebrew
       tags: ['homebrew']
 
-    - role: geerlingguy.dotfiles
+    - role: sculley.mac_setup.dotfiles
       when: configure_dotfiles
       tags: ['dotfiles']
 
