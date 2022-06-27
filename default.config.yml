@@ -2,7 +2,6 @@
 downloads: ~/.ansible-downloads/
 
 configure_dotfiles: true
-configure_terminal: true
 configure_osx: true
 
 # Set to 'true' to configure the Dock via dockutil.
@@ -16,13 +15,6 @@ dockitems_persist: []
 # - name: "TextEdit"
 #   path: "/Applications/TextEdit.app/"
 #   pos: 5
-
-configure_sudoers: false
-sudoers_custom_config: ''
-# Example:
-# sudoers_custom_config: |
-#   # Allow users in admin group to use sudo with no password.
-#   %admin ALL=(ALL) NOPASSWD: ALL
 
 dotfiles_repo: https://github.com/sculley/dotfiles.git
 dotfiles_repo_accept_hostkey: true
@@ -52,6 +44,7 @@ homebrew_installed_packages:
 homebrew_taps:
   - homebrew/core
   - homebrew/cask
+  - sculley/cask
 
 homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
