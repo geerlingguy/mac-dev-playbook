@@ -17,13 +17,13 @@
     - role: sculley.mac_setup.homebrew
       tags: ['homebrew']
 
-    - role: sculley.mac_setup.dotfiles
-      when: configure_dotfiles
-      tags: ['dotfiles']
-
     - role: sculley.mac_setup.mas
       when: mas_installed_apps or mas_installed_app_ids
       tags: ['mas']
+
+    - role: sculley.mac_setup.dotfiles
+      when: configure_dotfiles
+      tags: ['dotfiles']
 
     - role: sculley.mac_setup.dock
       when: configure_dock
