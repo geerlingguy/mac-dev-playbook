@@ -32,7 +32,7 @@
     - role: sculley.mac_setup.iterm2
       when: iterm2_dynamic_profile_urls
       tags: ['iterm2']
-     
+
     - role: sculley.mac_setup.powerlevel10k
       when: configure_powerlevel10k
       tags: ['powerlevel10k']
