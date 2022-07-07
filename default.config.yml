@@ -1,9 +1,9 @@
 ---
 downloads: ~/.ansible-downloads/
 
-configure_dotfiles: true
+configure_dotfiles: false
 configure_terminal: true
-configure_osx: true
+configure_osx: false
 
 # Set to 'true' to configure the Dock via dockutil.
 configure_dock: false
@@ -54,7 +54,7 @@ homebrew_installed_packages:
   - markdown
   - mas
   - mercurial
-  - mono
+ # - mono
   - ninja
   - doxygen
   - gettext
@@ -71,6 +71,7 @@ homebrew_installed_packages:
   - qt
   - readline
   - ssh-copy-id
+  - todoist
   - vim
   - wget
   - wrk
@@ -85,22 +86,22 @@ homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
   - adobe-acrobat-reader
   - anki
-  - brave-browser
+# - brave-browser
   - discord
   - docker
   - dropbox
   - electrum
   - evernote
-  - firefox
+# - firefox
   - google-drive
-  - google-chrome
+# - google-chrome
   - grandperspective
   - ledger-live
   - ltspice
   - meld
   - microsoft-teams
   - macfuse
-  - notion
+# - notion
   - plex
   - plex-media-server
   - projectlibre
@@ -109,24 +110,24 @@ homebrew_cask_apps:
   - sourcetree
   - shadow
   - simple-comic
-  - skype
-  - slack
+# - skype
+# - slack
   - steam
-  - sublime-text
+#  - sublime-text
   - suspicious-package
   - transmission
-  - visual-studio-code
-  - vlc
+ # - visual-studio-code
+ # - vlc
   - whatsapp
   - xmind
-  - zoom
+ # - zoom
   - protonmail-bridge
 
 # See `geerlingguy.mas` role documentation for usage instructions.
 mas_installed_apps:
   - {id: 517914548, name: "Dashlane"}
   - {id: 1176895641, name: "Spark - Email App by Readdle "}
-  #- {id:1176895641, name:"xcode"}
+  - {id: 1176895641, name:"xcode"}
 
 mas_email: ""
 mas_password: ""
