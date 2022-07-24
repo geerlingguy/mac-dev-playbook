@@ -1,0 +1,102 @@
+---
+downloads: ~/.ansible-downloads/
+
+configure_dotfiles: true
+configure_terminal: false
+configure_osx: true
+configure_sudoers: false
+
+# Doc to be configured
+# Set to 'true' to configure the Dock via dockutil.
+configure_dock: false
+dockitems_remove: []
+dockitems_persist: []
+
+dotfiles_repo: https://github.com/kamil-baran/dotfiles.git
+dotfiles_repo_accept_hostkey: true
+dotfiles_repo_local_destination: ~/Personal/dotfiles
+# Would be easier to link just all files in dir
+dotfiles_files:
+  - .zshrc
+  - .vimrc
+  - .osx
+  - .gitconfig
+  - .gitconfig-work
+  - .aliases
+
+homebrew_installed_packages:
+  - avro-tools
+  - aws-iam-authenticator
+  - awscli
+  - bash-completion
+  - git 
+  - gradle
+  - htop
+  - jenv
+  - jq
+  - k9s
+  - kubectl
+  - kubectx
+  - node
+  - nvm
+  - parquet-tools
+  - protobuf
+  - sbt
+  - scala@2.13
+  - travis
+  - tree
+  - watch
+  - wget
+
+homebrew_taps:
+  - homebrew/core
+  - homebrew/cask
+
+homebrew_cask_appdir: /Applications
+homebrew_cask_apps:
+  - docker
+  - firefox
+  - google-chrome
+  - iterm2
+  - jetbrains-toolbox
+  - kindle
+  - messenger
+  - signal
+  - slack
+  - spotify
+  - visual-studio-code
+  - whatsapp
+
+# See `geerlingguy.mas` role documentation for usage instructions.
+mas_installed_apps: []
+mas_email: ""
+mas_password: ""
+
+osx_script: "~/.osx --no-restart"
+
+# Install packages from other package managers.
+# Note: You are responsible for making sure the required package managers are
+# installed, eg. through homebrew.
+composer_packages: []
+# - name: drush
+#   state: present # present/absent, default: present
+#   version: "^8.1" # default: N/A
+gem_packages: []
+# - name: bundler
+#   state: present # present/absent/latest, default: present
+#   version: "~> 1.15.1" # default: N/A
+npm_packages: []
+# - name: webpack
+#   state: present # present/absent/latest, default: present
+#   version: "^2.6" # default: N/A
+pip_packages: []
+# - name: mkdocs
+#   state: present # present/absent/latest, default: present
+#   version: "0.16.3" # default: N/A
+
+# Set to 'true' to configure Sublime Text.
+configure_sublime: false
+
+# Glob pattern to ansible task files to run after all other tasks are finished.
+post_provision_tasks: []
+
