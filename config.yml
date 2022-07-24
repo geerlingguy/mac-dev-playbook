@@ -39,6 +39,9 @@ homebrew_installed_packages:
   - kubectx
   - node
   - nvm
+  - openjdk@11
+  - openjdk@17
+  - openjdk@8
   - parquet-tools
   - protobuf
   - sbt
