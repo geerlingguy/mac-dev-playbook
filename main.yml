@@ -2,7 +2,7 @@
 - hosts: all
 
   vars_files:
-    - default.config.yml
+    - config.yml
 
   pre_tasks:
     - name: Include playbook configuration.

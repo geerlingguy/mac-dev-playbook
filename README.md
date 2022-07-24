@@ -83,6 +83,7 @@ configure_dock: true
 dockitems_remove:
   - Launchpad
   - TV
+  
 dockitems_persist:
   - name: "Sublime Text"
     path: "/Applications/Sublime Text.app/"
@@ -185,3 +186,11 @@ This project was created by [Jeff Geerling](https://www.jeffgeerling.com/) (orig
 
 [badge-gh-actions]: https://github.com/geerlingguy/mac-dev-playbook/workflows/CI/badge.svg?event=push
 [link-gh-actions]: https://github.com/geerlingguy/mac-dev-playbook/actions?query=workflow%3ACI
+
+
+## Notes to myself
+
+TODO:
+- generate ssh keys and setup keys in github/gitlab
+- install oh-my-zsh
+- configure dock
