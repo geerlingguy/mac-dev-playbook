@@ -24,3 +24,6 @@ mas_installed_apps:
   - {id: 512464723,  "AS Timer"}
   - {id: 1295203466, "Microsoft Remote Desktop"}
   - {id: 418778021, "MsgFiler"}
+
+# Set to 'true' to configure the Dock via dockutil.
+configure_dock: true
