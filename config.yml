@@ -1,0 +1,11 @@
+---
+dotfiles_repo: https://github.com/asterr/dotfiles.git
+dotfiles_repo_accept_hostkey: true
+dotfiles_repo_local_destination: ~/Development/GitHub/dotfiles
+dotfiles_files:
+  - .zshrc
+  - .gitignore
+  - .inputrc
+  - .osx
+  - .vimrc
+
