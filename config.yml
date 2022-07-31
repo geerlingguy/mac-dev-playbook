@@ -32,3 +32,21 @@ configure_sudoers: true
 sudoers_custom_config: |
   # Allow users in admin group to use sudo with no password.
   #%admin ALL=(ALL) NOPASSWD: ALL
+
+# Set to 'true' to configure Sublime Text.
+configure_sublime: true
+sublime_base_path: '~/Library/Application Support/Sublime Text'
+sublime_config_path: "Packages/User"
+sublime_package_control:
+  - "DocBlockr"
+  - "Dockerfile Syntax Highlighting"
+  - "FileDiffs"
+  - "GitHub Flavored Markdown Preview"
+  - "Jinja2"
+  - "Package Control"
+  - "PHP-Twig"
+  - "Pretty JSON"
+  - "SublimeLinter"
+  - "SublimeLinter-contrib-yamllint"
+  - "TrailingSpaces"
+  - "WordCount"
