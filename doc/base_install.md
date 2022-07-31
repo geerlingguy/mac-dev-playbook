@@ -1,9 +1,65 @@
-See: https://github.com/geerlingguy/mac-dev-playbook
-See: https://hvops.com/articles/ansible-mac-osx/
+# Initial Installation
 
-----
-Forks:
-- https://github.com/asterr/mac-dev-playbook
+This document describes how to perform a fresh installation
+
+---
+
+# Overview
+
+  * Factory Reset the Macbook
+  * Base Install (with Appled ID)
+  * Install Developer Tools
+  * Install Ansible
+  * Clone Repository
+  * Install Roles
+  * Run Ansible
+
+
+---
+
+# References
+
+  * See: https://github.com/geerlingguy/mac-dev-playbook
+  * See: https://hvops.com/articles/ansible-mac-osx/
+
+*Forks*
+
+  * https://github.com/asterr/mac-dev-playbook
+  * https://github.com/asterr/dotfiles
+  * https://github.com/asterr/ansible-role-mac-rosetta
+
+---
+
+# Procedures
+
+---
+
+## Factory Reset the Macbook
+
+  * Shutdown
+  * Boot with Options
+    * Hold power button until Options appear
+  * Use Disk Utility to wipe disk
+    * Select Volume "Macintosh HD"
+    * Erase the volume group
+    * Might be prompted to activate Macbook with Apple ID.
+  * Exit Disk Utility
+
+---
+
+## Base Install (Reinstall OS)
+
+  * Shutdown
+  * Boot with Options
+    * Hold power button until Options appear
+  * Select "Reinstall OS"
+  * Need a Wifi Password
+
+
+---
+
+**REVIEW AFTER HERE**
+
 
 
 ----
