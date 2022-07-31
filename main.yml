@@ -13,6 +13,7 @@
 
   roles:
     - role: elliotweiser.osx-command-line-tools
+    - role: asterr.mac-rosetta
     - role: geerlingguy.mac.homebrew
       tags: ['homebrew']
     - role: geerlingguy.dotfiles
