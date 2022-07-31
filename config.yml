@@ -1,0 +1,52 @@
+---
+dotfiles_repo: https://github.com/asterr/dotfiles.git
+dotfiles_repo_accept_hostkey: true
+dotfiles_repo_local_destination: ~/Development/GitHub/dotfiles
+dotfiles_files:
+  - .zshrc
+  - .gitignore
+  - .inputrc
+  - .osx
+  - .vimrc
+
+mas_installed_apps:
+  - {id: 1193539993, "Brother iPrint&Scan"}
+  - {id: 405399194, "Kindle"}
+  - {id: 1536132004, "JsonHelper"}
+  - {id: 747648890, "Telegram"}
+  - {id: 408981381, "iPhoto"}
+  - {id: 693443591, "Free MP4 Converter"}
+  - {id: 425424353, "The Unarchiver"}
+  - {id: 600925318, "Parallels Client"}
+  - {id: 442160987, "Flycut"}
+  - {id: 408981434, "iMovie"}
+  - {id: 1088779979, "Mini Calendar"}
+  - {id: 512464723,  "AS Timer"}
+  - {id: 1295203466, "Microsoft Remote Desktop"}
+  - {id: 418778021, "MsgFiler"}
+
+# Set to 'true' to configure the Dock via dockutil.
+configure_dock: true
+
+configure_sudoers: true
+sudoers_custom_config: |
+  # Allow users in admin group to use sudo with no password.
+  #%admin ALL=(ALL) NOPASSWD: ALL
+
+# Set to 'true' to configure Sublime Text.
+configure_sublime: true
+sublime_base_path: '~/Library/Application Support/Sublime Text'
+sublime_config_path: "Packages/User"
+sublime_package_control:
+  - "DocBlockr"
+  - "Dockerfile Syntax Highlighting"
+  - "FileDiffs"
+  - "GitHub Flavored Markdown Preview"
+  - "Jinja2"
+  - "Package Control"
+  - "PHP-Twig"
+  - "Pretty JSON"
+  - "SublimeLinter"
+  - "SublimeLinter-contrib-yamllint"
+  - "TrailingSpaces"
+  - "WordCount"
