@@ -54,7 +54,6 @@ homebrew_cask_apps:
   - alfred
   - { name: dropbox, install_options: '--no-quarantine' }
   - vlc
-  - openshot-video-editor
   - fantastical
   - google-chrome
   - firefox
@@ -116,9 +115,8 @@ mas_installed_apps:
 #   - { id: 641027709, name: "Color Picker" }
   - { id: 1435957248, name: "Drafts" }
   - { id: 1225570693, name: "Ulysses" }
-  - { id: 904280696, name: "Things 3" }
-#   - { id: 1346190318, name: "OmniFocus" }
-#   - { id: 451691288, name: "Contacts Sync for Google Gmail" }
+#  - { id: 904280696, name: "Things 3" }
+  - { id: 1346190318, name: "OmniFocus" }
 
 gem_packages:
   - cocoapods
