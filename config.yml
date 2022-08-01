@@ -27,6 +27,17 @@ mas_installed_apps:
 
 # Set to 'true' to configure the Dock via dockutil.
 configure_dock: true
+dockitems_remove:
+  - Maps
+  - FaceTime
+  - TV
+  - Music
+dockitems_persist:
+  - name: "Google Chrome"
+    path: "/Applications/Google Chrome.app/"
+    pos: 3
+  - name: "Activity Monitor"
+    path: "/System/Applications/Utilities/Activity Monitor.app/"
 
 configure_sudoers: true
 sudoers_custom_config: |
