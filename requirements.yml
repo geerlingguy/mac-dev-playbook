@@ -7,3 +7,5 @@ roles:
 
 collections:
   - name: geerlingguy.mac
+  - name: https://github.com/asterr/ansible-collection-macbook.git
+    type: git
