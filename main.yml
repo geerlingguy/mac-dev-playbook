@@ -38,8 +38,8 @@
       when: configure_osx
       tags: ['osx']
 
-    - import_tasks: tasks/other-setup.yml
-      tags: ['other']
+#    - import_tasks: tasks/other-setup.yml
+#      tags: ['other']
 
     - import_tasks: tasks/extra-packages.yml
       tags: ['extra-packages']

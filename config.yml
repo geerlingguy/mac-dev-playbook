@@ -1,6 +1,38 @@
 ---
-configure_dotfiles: no
-configure_osx: no
+downloads: ~/.ansible-downloads/
+
+configure_dotfiles: false
+configure_terminal: true
+configure_osx: true
+
+# Set to 'true' to configure the Dock via dockutil.
+configure_dock: true
+dockitems_remove:
+- Launchpad
+- TV
+- Podcasts
+- 'App Store'
+- Calendar
+- Mail
+- Contacts
+- Pages
+- Keynote
+- Numbers
+- Photos
+- iMovie
+dockitems_persist:
+- name: Superhuman
+  path: "/Applications/Superhuman.app/"
+  pos: 1
+- name: Fantastical
+  path: "/Applications/Fantastical.app/"
+  pos: 2
+- name: iTerm
+  path: "/Applications/iTerm.app/"
+  pos: 3
+- name: Slack
+  path: "/Applications/Slack.app/"
+  pos: 4
 
 homebrew_taps:
   - homebrew/core
@@ -13,8 +45,6 @@ homebrew_installed_packages:
   - brew-cask-completion
   - go
   - node
-  # - pyenv
-  # - pyenv-virtualenv
   - miniconda
   - ccls
   - yarn
@@ -28,7 +58,6 @@ homebrew_installed_packages:
   - getantibody/tap/antibody
   - r
   - tcl-tk
-  # - eddieantonio/eddieantonio/imgcat
   - libgit2
   - ffmpeg
   - themekit
@@ -39,6 +68,7 @@ homebrew_installed_packages:
   - ispell
   - arm-none-eabi-gcc
 
+homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
   # sudo required
   # - virtualbox
@@ -52,7 +82,7 @@ homebrew_cask_apps:
   - font-ia-writer-duospace
   # core apps
   - alfred
-  - { name: dropbox, install_options: '--no-quarantine' }
+  - dropbox
   - vlc
   - fantastical
   - google-chrome
@@ -94,6 +124,24 @@ homebrew_cask_apps:
   # - parallels
   # - printopia
 
+mas_installed_apps:
+  - { id: 1055511498, name: "Day One" }
+#   - { id: 775737590, name: "iA Writer" }
+  - { id: 497799835, name: "XCode" }
+#   - { id: 641027709, name: "Color Picker" }
+  - { id: 1435957248, name: "Drafts" }
+  - { id: 1225570693, name: "Ulysses" }
+#  - { id: 904280696, name: "Things 3" }
+  - { id: 1346190318, name: "OmniFocus" }
+mas_email: ""
+mas_password: ""
+
+gem_packages:
+  - cocoapods
+
+pip_packages:
+  - awscli
+
 npm_packages:
   - prettier
   - tern
@@ -105,18 +153,8 @@ npm_packages:
   - tslint
   - javascript-typescript-langserver
 
-# pip_packages:
-#   - awscli
+configure_sublime: false
 
-mas_installed_apps:
-  - { id: 1055511498, name: "Day One" }
-#   - { id: 775737590, name: "iA Writer" }
-  - { id: 497799835, name: "XCode" }
-#   - { id: 641027709, name: "Color Picker" }
-  - { id: 1435957248, name: "Drafts" }
-  - { id: 1225570693, name: "Ulysses" }
-#  - { id: 904280696, name: "Things 3" }
-  - { id: 1346190318, name: "OmniFocus" }
-
-gem_packages:
-  - cocoapods
+# Glob pattern to ansible task files to run after all other tasks are finished.
+post_provision_tasks:
+  - "./tasks/other-setup.yml"
