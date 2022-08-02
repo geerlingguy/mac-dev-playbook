@@ -19,4 +19,6 @@ curl -sL ${DLURL} -o /tmp/dockutil.pkg
 sudo installer -pkg "/tmp/dockutil.pkg" -target /
 rm /tmp/dockutil.pkg
 
+brew install svn
+
 sudo softwareupdate --install-rosetta
