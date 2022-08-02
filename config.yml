@@ -45,7 +45,6 @@ homebrew_installed_packages:
   - brew-cask-completion
   - go
   - node
-  - miniconda
   - ccls
   - yarn
   - ag
@@ -55,7 +54,7 @@ homebrew_installed_packages:
   - exa
   - zsh
   - zsh-completions
-  - getantibody/tap/antibody
+  - antibody
   - r
   - tcl-tk
   - libgit2
@@ -119,6 +118,7 @@ homebrew_cask_apps:
   # - genymotion
   - rstudio
   - mactex
+  - miniforge
   # eliminate?
   # - quik
   # - parallels
@@ -132,8 +132,8 @@ mas_installed_apps:
   - { id: 1435957248, name: "Drafts" }
   - { id: 1225570693, name: "Ulysses" }
 #  - { id: 904280696, name: "Things 3" }
-  - { id: 1346190318, name: "OmniFocus" }
-  - { id: 443987910, name: "1Password" }
+#  - { id: 1346203938, name: "OmniFocus 3" }
+  - { id: 1333542190, name: "1Password 7 - Password Manager" }
 mas_email: ""
 mas_password: ""
 
