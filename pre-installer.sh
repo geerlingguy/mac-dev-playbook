@@ -4,7 +4,7 @@ xcode-select --install
 
 if ! command -v brew &> /dev/null
 then
-  curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 
 export PATH="$HOME/Library/Python/3.8/bin:/opt/homebrew/bin:$PATH"
