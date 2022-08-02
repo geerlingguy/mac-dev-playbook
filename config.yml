@@ -63,6 +63,7 @@ homebrew_installed_packages:
   - go
   - node
   - ruby  # required for gems to work correctly
+  - svn   # required for fonts to work correctly
   - ccls
   - yarn
   - ag
