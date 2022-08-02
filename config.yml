@@ -1,9 +1,9 @@
 ---
 downloads: ~/.ansible-downloads/
 
-configure_dotfiles: false
+configure_dotfiles: no
 configure_terminal: true
-configure_osx: true
+configure_osx: no
 
 # Set to 'true' to configure the Dock via dockutil.
 configure_dock: true
@@ -24,15 +24,24 @@ dockitems_persist:
 - name: Superhuman
   path: "/Applications/Superhuman.app/"
   pos: 1
+- name: Safari
+  path: "/Applications/Safari.app/"
+  pos: 2
 - name: Fantastical
   path: "/Applications/Fantastical.app/"
-  pos: 2
+  pos: 3
 - name: iTerm
   path: "/Applications/iTerm.app/"
-  pos: 3
+  pos: 4
 - name: Slack
   path: "/Applications/Slack.app/"
-  pos: 4
+  pos: 5
+- name: Messages
+  path: "/Applications/Messages.app/"
+  pos: 6
+- name: OmniFocus
+  path: "/Applications/OmniFocus.app/"
+  pos: 7
 
 homebrew_taps:
   - homebrew/core
@@ -45,6 +54,7 @@ homebrew_installed_packages:
   - brew-cask-completion
   - go
   - node
+  - ruby  # required for gems to work correctly
   - ccls
   - yarn
   - ag
@@ -132,8 +142,8 @@ mas_installed_apps:
   - { id: 1435957248, name: "Drafts" }
   - { id: 1225570693, name: "Ulysses" }
 #  - { id: 904280696, name: "Things 3" }
-#  - { id: 1346203938, name: "OmniFocus 3" }
-  - { id: 1333542190, name: "1Password 7 - Password Manager" }
+  - { id: 1346203938, name: "OmniFocus" }
+#  - { id: 1333542190, name: "1Password 7 - Password Manager" }
 mas_email: ""
 mas_password: ""
 
