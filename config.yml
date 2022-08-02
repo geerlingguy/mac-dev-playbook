@@ -133,6 +133,7 @@ mas_installed_apps:
   - { id: 1225570693, name: "Ulysses" }
 #  - { id: 904280696, name: "Things 3" }
   - { id: 1346190318, name: "OmniFocus" }
+  - { id: 443987910, name: "1Password" }
 mas_email: ""
 mas_password: ""
 
