@@ -20,6 +20,14 @@ dockitems_remove:
 - Numbers
 - Photos
 - iMovie
+- Maps
+- FaceTime
+- Reminders
+- Notes
+- Music
+- Podcasts
+- News
+- 'System Preferences'
 dockitems_persist:
 - name: Superhuman
   path: "/Applications/Superhuman.app/"
