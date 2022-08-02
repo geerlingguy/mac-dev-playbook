@@ -151,6 +151,7 @@ mas_installed_apps:
 #   - { id: 641027709, name: "Color Picker" }
   - { id: 1435957248, name: "Drafts" }
   - { id: 1225570693, name: "Ulysses" }
+  - { id: 1451685025, name: "WireGuard" }
 #  - { id: 904280696, name: "Things 3" }
   - { id: 1346203938, name: "OmniFocus" }
   - { id: 1333542190, name: "1Password 7 - Password Manager" }
