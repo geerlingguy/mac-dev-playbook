@@ -27,13 +27,6 @@ ln -s /Applications/VeraCrypt.app/Contents/MacOS/Veracrypt /usr/local/bin/veracr
 
 defaults write -g AppleKeyboardUIMode -int 2 
 
-# Installing NPM seperately from Node (which should already exist)
-
-if [ ! -x "$(which npm)" ]; then
-    echo prefix=~/.npm-packages >> ~/.npmrc && \
-        curl -L https://www.npmjs.com/install.sh | sh
-fi
-
 # Install powerline fonts and Spacemacs
 
 if [ ! -f "$HOME/.emacs.d/spacemacs.mk" ]; then
