@@ -102,6 +102,7 @@ homebrew_cask_apps:
   - alfred
   - obsidian
   - dropbox
+  - box-drive
   - vlc
   - fantastical
   - google-chrome
