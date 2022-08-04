@@ -60,3 +60,19 @@ be useful, especially mail and virtual machine related._
 ## Additional Bits
 
   [ ] Printer (Manual)
+
+
+---
+
+# Procedures and Notes
+
+## Base Install
+
+See the base_install.md
+
+---
+Manual steps below here.
+
+## Printers
+
+  * Add printers manually as needed.
