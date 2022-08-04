@@ -21,6 +21,7 @@ This document describes how to perform a fresh installation
 
   * See: https://github.com/geerlingguy/mac-dev-playbook
   * See: https://hvops.com/articles/ansible-mac-osx/
+  * See: https://opensource.com/article/22/6/install-software-macos-ansible-homebrew
 
 *Forks*
 
@@ -114,5 +115,4 @@ ansible-playbook main.yml --ask-become-pass -vv --step
 Manual Steps:
 
 - Need to sign in manually to the Apple Store (mas signin doesn't work)
-- Create ~/.vault_pass -- super secure secret, protecting vault
-
+- Create `~/.vault_pass` -- super secure secret, protecting vault
