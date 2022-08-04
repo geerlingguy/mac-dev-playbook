@@ -76,3 +76,25 @@ Manual steps below here.
 ## Printers
 
   * Add printers manually as needed.
+
+## Pulse Connections
+
+  * Add connections
+    * us-access
+      * type: Policy Secure (UAC)
+      * server: us-access.tradingscreen.com
+      * settings prompted at login:
+        * Realm: Two-Factor
+        * User Name: {{ short username }}
+    * eu-access
+      * type: Policy Secure (UAC)
+      * server: eu-access.tradingscreen.com
+      * settings prompted at login:
+        * Realm: Two-Factor
+        * User Name: {{ short username }}
+    * ap-access
+      * type: Policy Secure (UAC)
+      * server: ap-access.tradingscreen.com
+      * settings prompted at login:
+        * Realm: Two-Factor
+        * User Name: {{ short username }}
