@@ -77,7 +77,11 @@ Manual steps below here.
 
   * Add printers manually as needed.
 
+---
+
 ## Pulse Connections
+
+_Note: Pulse is installed by ansible._
 
   * Add connections
     * us-access
@@ -98,3 +102,33 @@ Manual steps below here.
       * settings prompted at login:
         * Realm: Two-Factor
         * User Name: {{ short username }}
+
+---
+
+## Chrome Accounts
+
+_Note: Chrome is installed by ansible._
+
+  * Create a profile:
+    * Primary login: {{ personal e-mail }}
+    * This should synchronize bookmarks, passwords, etc.
+  * Add a secondary account: {{ work e-mail }}
+
+---
+
+## Slack Accounts
+
+_Note: Slack is installed by ansible._
+
+  * Sign-in to Slack
+    * First workspace:
+      * Work e-mail
+      * Need e-mail confirmation code
+      * Need 2FA code for this workspace.
+    * Second workspace:
+      * Work e-mail
+      * Need e-mail confirmation code
+      * Need 2FA code for this workspace.
+    * Third workspace:
+      * Personal e-mail
+      * Need e-mail confirmation code
