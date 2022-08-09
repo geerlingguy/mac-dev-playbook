@@ -132,3 +132,26 @@ _Note: Slack is installed by ansible._
     * Third workspace:
       * Personal e-mail
       * Need e-mail confirmation code
+
+---
+
+## VIP Access Token
+
+_Note: VIP Access is installed by ansible._
+
+_Note: Unless the token is registered, it can not be used for logins._
+
+_Reference: https://imaginesoftware.atlassian.net/wiki/spaces/INFRATS/pages/24010175174/HowToVIPToken_
+
+  * Connect to the VPN (or inside a physical office)
+  * Register the new token (on each reinstall):
+    * Open: {{ VIP Self Service URL }}
+    * Login with standard work credentials.
+    * Provide one-time code from an existing token installation.
+  * Click on "register"
+  * Open New VIP Access
+  * Credential Registration:
+    * Name: MacBook 2022 Example
+    * Credential ID (from token)
+    * Security code (from token)
+    * Submit
