@@ -38,6 +38,8 @@ dockitems_persist:
     pos: 3
   - name: "Activity Monitor"
     path: "/System/Applications/Utilities/Activity Monitor.app/"
+  - name: "VIP Access"
+    path: "/Applications/VIP Access.app/"
 
 configure_sudoers: true
 sudoers_custom_config: |

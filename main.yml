@@ -27,6 +27,8 @@
       tags: ['dock']
     - role: asterr.macbook.pulse
       tags: ['pulse']
+    - role: asterr.macbook.vipaccess
+      tags: ['vipaccess']
 
   tasks:
     - import_tasks: tasks/sudoers.yml

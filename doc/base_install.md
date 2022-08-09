@@ -116,3 +116,15 @@ Manual Steps:
 
 - Need to sign in manually to the Apple Store (mas signin doesn't work)
 - Create `~/.vault_pass` -- super secure secret, protecting vault
+- Convenience feature to provide ansible_become_password:
+
+    ```
+    mkdir host_vars
+    ansible-vault create host_vars/127.0.0.1.yml
+    ```
+    ```
+    $ ansible-vault view host_vars/127.0.0.1.yml | sed -e 's/: .*/: REDACTED/'
+    ---
+    ansible_become_password: REDACTED
+    ```
+    
