@@ -29,6 +29,8 @@
       tags: ['pulse']
     - role: asterr.macbook.vipaccess
       tags: ['vipaccess']
+    - role: asterr.macbook.msoffice
+      tags: ['msoffice']
 
   tasks:
     - import_tasks: tasks/sudoers.yml
