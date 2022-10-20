@@ -67,11 +67,11 @@ homebrew_installed_packages:
   - node
   - nvm
   - openssl
-  - pyenv
+  - preform
+#  - pyenv
   - qt
   - readline
   - ssh-copy-id
-  - todoist
   - vim
   - wget
   - wrk
@@ -115,6 +115,7 @@ homebrew_cask_apps:
   - steam
 #  - sublime-text
   - suspicious-package
+  - todoist
   - transmission
  # - visual-studio-code
  # - vlc
