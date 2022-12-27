@@ -1,6 +1,6 @@
 ---
 - name: Install global Composer packages.
-  composer:
+  community.general.composer:
     command: "{{ (item.state | default('present') == 'absent') | ternary('remove', 'require') }}"
     arguments: "{{ item.name | default(item) }} {{ item.version | default('@stable') }}"
     # Ansible 2.4 supports `global_command` making `working_dir` optional.
@@ -8,7 +8,7 @@
   loop: "{{ composer_packages }}"
 
 - name: Install global NPM packages.
-  npm:
+  community.general.npm:
     name: "{{ item.name | default(item) }}"
     state: "{{ item.state | default('present') }}"
     version: "{{ item.version | default(omit) }}"
@@ -17,7 +17,7 @@
   loop: "{{ npm_packages }}"
 
 - name: Install global Pip packages.
-  pip:
+  ansible.builtin.pip:
     name: "{{ item.name | default(item) }}"
     state: "{{ item.state | default('present') }}"
     version: "{{ item.version | default(omit) }}"
@@ -25,7 +25,7 @@
   loop: "{{ pip_packages }}"
 
 - name: Install global Ruby gems.
-  gem:
+  community.general.gem:
     name: "{{ item.name | default(item) }}"
     state: "{{ item.state | default('present') }}"
     version: "{{ item.version | default(omit) }}"

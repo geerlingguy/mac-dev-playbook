@@ -20,7 +20,7 @@ dotfiles_repo: https://github.com/sculley/dotfiles.git
 dotfiles_repo_accept_hostkey: true
 dotfiles_repo_local_destination: ~/Development/GitHub/dotfiles
 dotfiles_files:
-  - .zshrc
+  # - .zshrc
   - .gitignore
   - .inputrc
   - .macos
@@ -44,7 +44,6 @@ homebrew_installed_packages:
 homebrew_taps:
   - homebrew/core
   - homebrew/cask
-  - sculley/cask
 
 homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
@@ -76,3 +75,20 @@ pip_packages: []
 
 # Glob pattern to ansible task files to run after all other tasks are finished.
 post_provision_tasks: []
+
+# hostname
+hostname: mac
+
+# powerlevel10k
+configure_powerlevel10k: true
+
+p10k_config_file_url: "https://raw.githubusercontent.com/sculley/iterm2-setup/main/.p10k.zsh"
+
+# iterm2
+iterm2_font_urls:
+  - https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf
+iterm2_dynamic_profile_urls:
+  - https://raw.githubusercontent.com/sculley/iterm2-setup/main/MacOS-iTerm2.json
+iterm2_shell_integration: true
+iterm2_set_dynamic_default_profile_script_url: "https://raw.githubusercontent.com/sculley/iterm2-setup/main/set-dynamic-default-profile.py"
+iterm2_set_dynamic_default_profile_script_name: "set-dynamic-default-profile.py"
