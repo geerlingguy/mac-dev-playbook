@@ -1,8 +1,6 @@
 ---
-downloads: ~/.ansible-downloads/
-
-configure_dotfiles: true
-configure_osx: true
+# hostname
+hostname: mac
 
 # Set to 'true' to configure the Dock via dockutil.
 configure_dock: false
@@ -16,16 +14,18 @@ dockitems_persist: []
 #   path: "/Applications/TextEdit.app/"
 #   pos: 5
 
-dotfiles_repo: https://github.com/sculley/dotfiles.git
-dotfiles_repo_accept_hostkey: true
-dotfiles_repo_local_destination: ~/Development/GitHub/dotfiles
-dotfiles_files:
+# dotfiles
+configure_dotfiles: true
+dotfiles_repo_raw_path: "https://raw.githubusercontent.com/sculley/dotfiles"
+dotfiles_files: []
   # - .zshrc
-  - .gitignore
-  - .inputrc
-  - .macos
-  - .vimrc
+  # - .aliases
+  # - .gitconfig
+  # - .inputrc
+  # - .macos
+  # - .vimrc
 
+# homebrew
 homebrew_installed_packages:
   - autoconf
   - bash-completion
@@ -40,17 +40,22 @@ homebrew_installed_packages:
   - openssl
   - wget
   - zsh-history-substring-search
-
 homebrew_taps:
   - homebrew/core
   - homebrew/cask
-
 homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
   - chromedriver
   - firefox
   - google-chrome
 
+# mas (Mac App Store)
+mas_enabled: false
+mas_installed_apps: []
+  # - {id: 1448916662, name: "Step Two (3.1.1)"}
+
+# osx scripts
+configure_osx: true
 osx_script: "~/.macos --no-restart"
 
 # Install packages from other package managers.
@@ -73,18 +78,15 @@ pip_packages: []
 #   state: present # present/absent/latest, default: present
 #   version: "0.16.3" # default: N/A
 
-# Glob pattern to ansible task files to run after all other tasks are finished.
+# post provision tasks
 post_provision_tasks: []
-
-# hostname
-hostname: mac
 
 # powerlevel10k
 configure_powerlevel10k: true
-
 p10k_config_file_url: "https://raw.githubusercontent.com/sculley/iterm2-setup/main/.p10k.zsh"
 
 # iterm2
+configure_iterm2: true
 iterm2_font_urls:
   - https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf
 iterm2_dynamic_profile_urls:
@@ -92,3 +94,7 @@ iterm2_dynamic_profile_urls:
 iterm2_shell_integration: true
 iterm2_set_dynamic_default_profile_script_url: "https://raw.githubusercontent.com/sculley/iterm2-setup/main/set-dynamic-default-profile.py"
 iterm2_set_dynamic_default_profile_script_name: "set-dynamic-default-profile.py"
+
+# vscode
+configure_vscode_extensions: false
+vscode_extensions: []

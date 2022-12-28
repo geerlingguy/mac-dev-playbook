@@ -4,3 +4,4 @@ roles:
 
 collections:
   - name: sculley.mac_setup
+    version: 1.2.2
