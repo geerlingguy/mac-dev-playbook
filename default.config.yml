@@ -1,67 +1,54 @@
 ---
-downloads: ~/.ansible-downloads/
+# downloads: ~/.ansible-downloads/
 
-configure_dotfiles: true
-configure_terminal: true
-configure_osx: true
+# configure_dotfiles: true
+# configure_terminal: true
+# configure_osx: true
 
-# Set to 'true' to configure the Dock via dockutil.
-configure_dock: false
-dockitems_remove: []
-# - Launchpad
-# - TV
-# - Podcasts
-# - 'App Store'
-dockitems_persist: []
-# - name: "Sublime Text"
-#   path: "/Applications/Sublime Text.app/"
-#   pos: 5
+# # Set to 'true' to configure the Dock via dockutil.
+# configure_dock: false
+# dockitems_remove: []
+# # - Launchpad
+# # - TV
+# # - Podcasts
+# # - 'App Store'
+# dockitems_persist: []
+# # - name: "Sublime Text"
+# #   path: "/Applications/Sublime Text.app/"
+# #   pos: 5
 
-configure_sudoers: false
-sudoers_custom_config: ''
-# Example:
-# sudoers_custom_config: |
-#   # Allow users in admin group to use sudo with no password.
-#   %admin ALL=(ALL) NOPASSWD: ALL
+# configure_sudoers: false
+# sudoers_custom_config: ''
+# # Example:
+# # sudoers_custom_config: |
+# #   # Allow users in admin group to use sudo with no password.
+# #   %admin ALL=(ALL) NOPASSWD: ALL
 
-dotfiles_repo: https://github.com/geerlingguy/dotfiles.git
-dotfiles_repo_accept_hostkey: true
-dotfiles_repo_local_destination: ~/Development/GitHub/dotfiles
-dotfiles_files:
-  - .zshrc
-  - .gitignore
-  - .inputrc
-  - .osx
-  - .vimrc
+# dotfiles_repo: https://github.com/geerlingguy/dotfiles.git
+# dotfiles_repo_accept_hostkey: true
+# dotfiles_repo_local_destination: ~/Development/GitHub/dotfiles
+# dotfiles_files:
+#   - .zshrc
+#   - .gitignore
+#   - .inputrc
+#   - .osx
+#   - .vimrc
 
 homebrew_installed_packages:
   # - ansible # Installed via Pip.
-  - autoconf
   - bash-completion
-  - doxygen
-  - gettext
-  - gifsicle
   - git
-  - github/gh/gh
-  - go
-  - gpg
-  - httpie
-  - iperf
-  - libevent
-  - sqlite
-  - mcrypt
-  - nmap
-  - node
-  - nvm
-  - php
   - ssh-copy-id
-  - cowsay
-  - readline
   - openssl
   - pv
   - wget
-  - wrk
-  - zsh-history-substring-search
+  - awscli
+  - podman
+  - ca-certificates
+  - terraform
+  - certbot
+  - virtualenv
+  - kubernetes-cli
 
 homebrew_taps:
   - homebrew/core
@@ -69,17 +56,34 @@ homebrew_taps:
 
 homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
-  - chromedriver
-  - docker
+  - whatsapp
+  - podman-desktop
   - dropbox
-  - firefox
-  - google-chrome
-  - handbrake
-  - licecap
-  - sequel-ace
+  - brave-browser
+  - visual-studio-code
+  - spotify
+  - webex
+  - microsoft-teams
+  - zoom
   - slack
-  - sublime-text
-  - transmit
+  - google-chrome
+  - google-chat
+  - asana
+  - ao #Elegant Microsoft To-Do app
+  - postman
+  - adobe-acrobat-pro
+  - expressvpn
+  - tunnelblick
+  - calibre
+  
+
+
+
+  # - firefox
+  # - handbrake
+  # - licecap
+  # - sublime-text
+  # - transmit
 
 # See `geerlingguy.mas` role documentation for usage instructions.
 mas_installed_apps: []
