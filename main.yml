@@ -26,6 +26,8 @@
     - role: geerlingguy.mac.dock
       when: configure_dock
       tags: ['dock']
+      environment:
+        PATH: "/usr/local/bin/:{{ ansible_env.PATH }}"
 
   tasks:
     - debug:
