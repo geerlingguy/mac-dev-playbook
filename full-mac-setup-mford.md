@@ -39,7 +39,9 @@ Before starting, I completed Apple's mandatory macOS setup wizard (creating a lo
       - ExpressVPN
       - CleanmyMac
       - Al Dente
-    Add 
+    Add configurations for:
+     - awscli
+     - git
 
 
 ## To Wrap in Post-provision automation
