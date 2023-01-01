@@ -12,8 +12,14 @@ Before starting, I completed Apple's mandatory macOS setup wizard (creating a lo
     - Manually copy any shared SSH keys that are needed from Dropbox
   - Turn on remote SSH access on Mac
   - Ensure that the approprpiate SSH Private key is populated in ~/.ssh/authorized_keys
+  - Sign into:
+    - iCloud
+    - iMessage
+    - Mac App Store
   - Run the playbook remotely with `--tags homebrew`.
     - If there are errors, you may need to finish up other tasks like installing 'old-fashioned' apps first
+  - TODO: Ensure that the homebrew binary directory is assed to the PATH:
+    - `export PATH=/opt/homebrew/bin:$PATH`
   - Install old-fashioned apps:
     - Install [Insta360 Link](https://www.insta360.com/download/insta360-link)
   - Run the playbook remotely with `--skip-tags homebrew,post`.
