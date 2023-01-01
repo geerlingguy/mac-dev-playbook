@@ -1,4 +1,8 @@
 ---
-- name: Test Message
-  debug:
-    msg: "This is the post provision playbook, and it is running properly."
+- name: Create venvs directory
+  ansible.builtin.file:
+    path: ~/venvs
+    state: directory
+
+- name: Create ansible 2.14 Virtual Environment
+  command: python3 -m venv ~/venvs/ansible0214

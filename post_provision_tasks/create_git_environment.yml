@@ -1,4 +1,5 @@
 ---
-- name: Test Message
-  debug:
-    msg: "This is the post provision playbook, and it is running properly."
+- name: Create git-workspace directory
+  ansible.builtin.file:
+    path: ~/git-workspace
+    state: directory
