@@ -1,6 +1,4 @@
 ---
-- hosts: all
-
-  tasks:
-      - debug:
-          msg: "This is the post provision playbook, and it is running properly."
+- name: Test Message
+  debug:
+    msg: "This is the post provision playbook, and it is running properly."
