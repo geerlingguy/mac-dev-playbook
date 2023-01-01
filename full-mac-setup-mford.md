@@ -22,7 +22,8 @@ Before starting, I completed Apple's mandatory macOS setup wizard (creating a lo
     - `export PATH=/opt/homebrew/bin:$PATH`
   - Install old-fashioned apps:
     - Install [Insta360 Link](https://www.insta360.com/download/insta360-link)
-  - Run the playbook remotely with `--skip-tags homebrew,post`.
+    - Install [Google Chat](https://chat.google.com/download/)
+   - Run the playbook remotely with `--skip-tags homebrew,post`.
   - System Settings
     - Set Wireless SSID and DNS Server to Pihole
     - Add Screen Sharing Rights to the following Apps (Security & Privacy --> Screen Recording):
