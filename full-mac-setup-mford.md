@@ -73,6 +73,11 @@ The following tasks have to wait for the initial Dropbox sync to complete before
 # git settings
 - Add Git credentials
 
+#Install Ansible in Virtual Environment
+`$ source ~/venvs/ansible/bin/activate`
+`(ansible)$ pip install --upgrade pip`
+`(ansible)$ pip install ansible-core==2.14.1` (as of this writing; see a list of ansible core releases [here](https://pypi.org/project/ansible-core/#history))
+
 ```
 
 ## When formatting old Mac
