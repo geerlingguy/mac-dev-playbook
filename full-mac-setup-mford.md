@@ -16,10 +16,10 @@ Before starting, I completed Apple's mandatory macOS setup wizard (creating a lo
     - iCloud
     - iMessage
     - Mac App Store
-  - `sudo softwareupdate --install-rosetta`
+  - `sudo softwareupdate --install-rosetta` (required to install adobe acrobat)
   - Run the playbook remotely with `--tags homebrew`.
     - If there are errors, you may need to finish up other tasks like installing 'old-fashioned' apps first
-  - TODO: Ensure that the homebrew binary directory is assed to the PATH:
+  - Ensure that the homebrew binary directory is assed to the PATH:
     - `export PATH=/opt/homebrew/bin:$PATH`
   - Install old-fashioned apps:
     - Install [Insta360 Link](https://www.insta360.com/download/insta360-link)
@@ -52,15 +52,15 @@ Before starting, I completed Apple's mandatory macOS setup wizard (creating a lo
       - Set Brave Browser default search engine to Google
     - Dock:
       - Add Downloads folder
-    - Install Wireguard from App Store and add configuration (if needed)
+    - Configure Wireguard
     - Sign into Slack workspaces (list in DropBox)
     - Apps to Authenticate:
       - ExpressVPN
       - CleanmyMac
       - Al Dente
-    Add configurations for:
-     - awscli
-     - git
+    - Add configurations for:
+      - awscli
+      - git
 
 
 ## To Wrap in Post-provision automation
