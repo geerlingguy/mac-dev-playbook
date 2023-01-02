@@ -20,7 +20,7 @@ Before starting, I completed Apple's mandatory macOS setup wizard (creating a lo
   - Run the playbook remotely with `--tags homebrew, sudoers`.
     - If there are errors, you may need to finish up other tasks like installing 'old-fashioned' apps first
   - Ensure that the homebrew binary directory is assed to the PATH:
-    - `export PATH=/opt/homebrew/bin:$PATH`
+    - `$ export PATH=/opt/homebrew/bin:$PATH`
   - Install old-fashioned apps:
     - Install [Insta360 Link](https://www.insta360.com/download/insta360-link)
     - Install [Google Chat](https://chat.google.com/download/) from within Brave Browser
@@ -38,6 +38,8 @@ Before starting, I completed Apple's mandatory macOS setup wizard (creating a lo
       - Tap to Click: `Enabled`
         - Tap with one finger
       - App Exposé: `Swipe Down with Four Fingers`
+    - Internet Accounts
+      - Set up Google Account and sync contacts with Mac
     - Add Screen Sharing Rights to the following Apps (Security & Privacy --> Screen Recording):
       - Zoom
       - BlueJeans
@@ -45,6 +47,27 @@ Before starting, I completed Apple's mandatory macOS setup wizard (creating a lo
       - FaceTime
       - Google Chrome
   - Manual settings to automate someday:
+    - System Settings
+    - Set Wireless SSID and DNS Server to Pihole
+    - Desktop & Dock
+      - Show recent applications in dock: `disabled`
+    - Hot Corners
+      - Upper Left: `-`
+      - Lower Left: `Lock Screen`
+      - Upper Right: `-`
+      - Lower Right: `Put Display to Sleep`
+    - Trackpad
+      - Tap to Click: `Enabled`
+        - Tap with one finger
+      - App Exposé: `Swipe Down with Four Fingers`
+    - Internet Accounts
+      - Set up Google Account and sync contacts with Mac
+    - Add Screen Sharing Rights to the following Apps (Security & Privacy --> Screen Recording):
+      - Zoom
+      - BlueJeans
+      - Microsoft Teams
+      - FaceTime
+      - Google Chrome
     - Google Chrome/Brave Browser:
       - Install Google Chrome/Brave Browser extensions (list in DropBox)
       - Import Google Chrome/Brave Browser bookmarks from Dropbox
@@ -68,9 +91,14 @@ Before starting, I completed Apple's mandatory macOS setup wizard (creating a lo
 The following tasks have to wait for the initial Dropbox sync to complete before they'll succeed. So ideally I'll stick this all in a post-provision script but somehow flag it not to run on first provision.
 
 ```
+# git settings
+
+mkdir ~/git-workspace
+
+
 
 # Ansible setup.
-sudo mkdir -p /etc/ansible
+sudo mkdir -p /venvs/ansible
 sudo ln -s /Users/jgeerling/Dropbox/Apps/Config/ansible/ansible.cfg /etc/ansible/ansible.cfg
 sudo ln -s /Users/jgeerling/Dropbox/Apps/Config/ansible/hosts /etc/ansible/hosts
 sudo ln -s /Users/jgeerling/Dropbox/VMs/roles /etc/ansible/roles

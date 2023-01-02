@@ -1,0 +1,18 @@
+---
+- name: Ensure ~/.aws directory exists
+  ansible.builtin.file:
+    path: ~/.aws
+    state: directory
+
+- name: Create a symbolic link for awscli config from dropbox
+  ansible.builtin.file:
+    src: ~/Dropbox/apps/config/awscli/config
+    dest: ~/.aws/config
+    state: link
+
+- name: Create a symbolic link for awscli credentials from dropbox
+  ansible.builtin.file:
+    src: ~/Dropbox/apps/config/awscli/credentials
+    dest: ~/.aws/credentials
+    state: link
+
