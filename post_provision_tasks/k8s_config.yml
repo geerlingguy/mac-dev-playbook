@@ -1,0 +1,12 @@
+---
+- name: Ensure ~/.kube directory exists
+  ansible.builtin.file:
+    path: ~/.kube
+    state: directory
+
+- name: Create a symbolic link for awscli config from dropbox
+  ansible.builtin.file:
+    src: ~/Dropbox/apps/config/k8s/config
+    dest: ~/.kube/config
+    state: link
+
