@@ -4,14 +4,16 @@ There are some things in life that just can't be automated... or aren't 100% wor
 
 This document covers that, at least in terms of setting up a brand new Mac out of the box.
 
+These instructions assume that the playbook and ansible are installed on a remote linux machine.
+
 ## Initial configuration of a brand new Mac
 
 Before starting, I completed Apple's mandatory macOS setup wizard (creating a local user account, and optionally signing into my iCloud account). Once on the macOS desktop, I do the following (in order):
 
   - SSH setup.
-    - Manually copy any shared SSH keys that are needed from Dropbox
+    - Manually copy any shared SSH keys that are needed to log into the remote Ansible machine, from Dropbox (via Airdrop or Web GUI)
   - Turn on remote SSH access on Mac
-  - Ensure that the approprpiate SSH Private key is populated in ~/.ssh/authorized_keys
+  - Ensure that the approprpiate SSH Private key that allows remote access is populated in ~/.ssh/authorized_keys
   - Sign into:
     - iCloud
     - iMessage
@@ -24,28 +26,8 @@ Before starting, I completed Apple's mandatory macOS setup wizard (creating a lo
   - Install old-fashioned apps:
     - Install [Insta360 Link](https://www.insta360.com/download/insta360-link)
     - Install [Google Chat](https://chat.google.com/download/) from within Brave Browser
-   - Run the playbook remotely with `--skip-tags homebrew,post`.
-  - System Settings
-    - Set Wireless SSID and DNS Server to Pihole
-    - Desktop & Dock
-      - Show recent applications in dock: `disabled`
-    - Hot Corners
-      - Upper Left: `-`
-      - Lower Left: `Lock Screen`
-      - Upper Right: `-`
-      - Lower Right: `Put Display to Sleep`
-    - Trackpad
-      - Tap to Click: `Enabled`
-        - Tap with one finger
-      - App Exposé: `Swipe Down with Four Fingers`
-    - Internet Accounts
-      - Set up Google Account and sync contacts with Mac
-    - Add Screen Sharing Rights to the following Apps (Security & Privacy --> Screen Recording):
-      - Zoom
-      - BlueJeans
-      - Microsoft Teams
-      - FaceTime
-      - Google Chrome
+  - Set up Dropbox and sync app config folder (`/Dropbox/apps/config/`)
+  - Run the playbook remotely with `--skip-tags homebrew`.
   - Manual settings to automate someday:
     - System Settings
     - Set Wireless SSID and DNS Server to Pihole
@@ -82,7 +64,6 @@ Before starting, I completed Apple's mandatory macOS setup wizard (creating a lo
       - CleanmyMac
       - Al Dente
     - Add configurations for:
-      - awscli
       - git
 
 
