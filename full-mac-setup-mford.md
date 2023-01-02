@@ -30,9 +30,14 @@ Before starting, I completed Apple's mandatory macOS setup wizard (creating a lo
     - Desktop & Dock
       - Show recent applications in dock: `disabled`
     - Hot Corners
-      - TODO
+      - Upper Left: `-`
+      - Lower Left: `Lock Screen`
+      - Upper Right: `-`
+      - Lower Right: `Put Display to Sleep`
     - Trackpad
-      - TODO
+      - Tap to Click: `Enabled`
+        - Tap with one finger
+      - App Exposé: `Swipe Down with Four Fingers`
     - Add Screen Sharing Rights to the following Apps (Security & Privacy --> Screen Recording):
       - Zoom
       - BlueJeans
