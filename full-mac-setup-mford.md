@@ -63,8 +63,6 @@ Before starting, I completed Apple's mandatory macOS setup wizard (creating a lo
       - ExpressVPN
       - CleanmyMac
       - Al Dente
-    - Add configurations for:
-      - git
 
 
 ## To Wrap in Post-provision automation
@@ -73,21 +71,7 @@ The following tasks have to wait for the initial Dropbox sync to complete before
 
 ```
 # git settings
-
-mkdir ~/git-workspace
-
-
-
-# Ansible setup.
-sudo mkdir -p /venvs/ansible
-sudo ln -s /Users/jgeerling/Dropbox/Apps/Config/ansible/ansible.cfg /etc/ansible/ansible.cfg
-sudo ln -s /Users/jgeerling/Dropbox/Apps/Config/ansible/hosts /etc/ansible/hosts
-sudo ln -s /Users/jgeerling/Dropbox/VMs/roles /etc/ansible/roles
-mkdir -p /Users/jgeerling/.ansible
-ln -s /Users/jgeerling/Dropbox/Apps/Config/ansible/galaxy_token /Users/jgeerling/.ansible/galaxy_token
-ln -s /Users/jgeerling/Dropbox/Apps/Config/ansible/mm-vault-password.txt /Users/jgeerling/.ansible/mm-vault-password.txt
-ln -s /Users/jgeerling/Dropbox/VMs/ /Users/jgeerling/.ansible/collections
-
+- Add Git credentials
 
 ```
 
