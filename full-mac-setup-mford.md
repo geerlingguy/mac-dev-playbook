@@ -17,7 +17,7 @@ Before starting, I completed Apple's mandatory macOS setup wizard (creating a lo
     - iMessage
     - Mac App Store
   - `sudo softwareupdate --install-rosetta` (required to install adobe acrobat)
-  - Run the playbook remotely with `--tags homebrew`.
+  - Run the playbook remotely with `--tags homebrew, sudoers`.
     - If there are errors, you may need to finish up other tasks like installing 'old-fashioned' apps first
   - Ensure that the homebrew binary directory is assed to the PATH:
     - `export PATH=/opt/homebrew/bin:$PATH`
