@@ -16,16 +16,23 @@ Before starting, I completed Apple's mandatory macOS setup wizard (creating a lo
     - iCloud
     - iMessage
     - Mac App Store
+  - `sudo softwareupdate --install-rosetta`
   - Run the playbook remotely with `--tags homebrew`.
     - If there are errors, you may need to finish up other tasks like installing 'old-fashioned' apps first
   - TODO: Ensure that the homebrew binary directory is assed to the PATH:
     - `export PATH=/opt/homebrew/bin:$PATH`
   - Install old-fashioned apps:
     - Install [Insta360 Link](https://www.insta360.com/download/insta360-link)
-    - Install [Google Chat](https://chat.google.com/download/)
+    - Install [Google Chat](https://chat.google.com/download/) from within Brave Browser
    - Run the playbook remotely with `--skip-tags homebrew,post`.
   - System Settings
     - Set Wireless SSID and DNS Server to Pihole
+    - Desktop & Dock
+      - Show recent applications in dock: `disabled`
+    - Hot Corners
+      - TODO
+    - Trackpad
+      - TODO
     - Add Screen Sharing Rights to the following Apps (Security & Privacy --> Screen Recording):
       - Zoom
       - BlueJeans
