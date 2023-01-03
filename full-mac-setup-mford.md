@@ -30,36 +30,44 @@ Before starting, I completed Apple's mandatory macOS setup wizard (creating a lo
   - Run the playbook remotely with `--skip-tags homebrew`.
   - Manual settings to automate someday:
     - System Settings
-    - Set Wireless SSID and DNS Server to Pihole
-    - Desktop & Dock
-      - Show recent applications in dock: `disabled`
-    - Hot Corners
-      - Upper Left: `Notification Center`
-      - Lower Left: `Lock Screen`
-      - Upper Right: `-`
-      - Lower Right: `Put Display to Sleep`
-    - Trackpad
-      - Tap to Click: `Enabled`
-        - Tap with one finger
-      - App Exposé: `Swipe Down with Four Fingers`
-    - Internet Accounts
-      - Set up Google Account and sync contacts with Mac
-    - Add Screen Sharing Rights to the following Apps (Security & Privacy --> Screen Recording):
-      - Zoom
-      - BlueJeans
-      - Microsoft Teams
-      - FaceTime
-      - Google Chrome
+      - Wi-Fi
+        - Set Wireless SSID and DNS Server to Pihole
+      - Privacy & Security
+        - Privacy
+          - Screen Recording
+            - Give the following apps permissions
+              - Amazon Chime
+              - BlueJeans
+              - Brave Browser
+              - FaceTime
+              - Google Chrome
+              - Microsoft Teams
+              - WebEx
+              - zoom.us
+      - Desktop & Dock
+        - Show recent applications in dock: `disabled`
+        - Hot Corners
+          - Upper Left: `Notification Center`
+          - Lower Left: `Lock Screen`
+          - Upper Right: `-`
+          - Lower Right: `Put Display to Sleep` 
+      - Touch ID & Password
+        - Add Fingerprints for TouchID
+        - Allow Apple Watch to Unlock Mac   
+      - Internet Accounts
+        - Set up Google Account and sync contacts with Mac
+      - Trackpad
+        - Tap to Click: `Enabled`
+          - Tap with one finger
+        - App Exposé: `Swipe Down with Four Fingers`
     - Google Chrome/Brave Browser:
       - Install Google Chrome/Brave Browser extensions (list in DropBox)
       - Import Google Chrome/Brave Browser bookmarks from Dropbox
       - Set Brave Browser to default
       - Set Brave Browser default search engine to Google
-    - Dock:
-      - Add Downloads folder
     - Configure Wireguard
     - Sign into Slack workspaces (list in DropBox)
-    - Apps to Authenticate:
+    - Apps to Authenticate with License Keys (list in DropBox):
       - ExpressVPN
       - CleanmyMac
       - Al Dente
