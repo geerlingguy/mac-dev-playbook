@@ -34,7 +34,7 @@ Before starting, I completed Apple's mandatory macOS setup wizard (creating a lo
     - Desktop & Dock
       - Show recent applications in dock: `disabled`
     - Hot Corners
-      - Upper Left: `-`
+      - Upper Left: `Notification Center`
       - Lower Left: `Lock Screen`
       - Upper Right: `-`
       - Lower Right: `Put Display to Sleep`
