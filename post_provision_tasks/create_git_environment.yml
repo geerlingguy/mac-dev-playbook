@@ -18,7 +18,7 @@
 
 - name: clone git-workspace directory
   ansible.builtin.git:
-    repo: ' https://github.com/michaelford85/mac-dev-playbook.git'
+    repo: 'https://github.com/michaelford85/mac-dev-playbook.git'
     dest: ~/git-workspace/mac-dev-playbook
   when: mac_directory.stat.exists
 
