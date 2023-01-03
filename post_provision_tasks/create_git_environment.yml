@@ -3,12 +3,12 @@
 - name: Determine whether the git-workspace directory exists
   ansible.builtin.stat:
     path: ~/git-workspace
-    register: git_directory
+  register: git_directory
 
 - name: Determine whether the mac-dev-playbook directory exists
   ansible.builtin.stat:
     path: ~/git-workspace/mac-dev-playbook
-    register: mac_directory
+  register: mac_directory
 
 - name: Create git-workspace directory
   ansible.builtin.file:
