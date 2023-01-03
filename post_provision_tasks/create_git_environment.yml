@@ -14,17 +14,17 @@
   ansible.builtin.file:
     path: ~/git-workspace
     state: directory
-  when: git_directory.stat.exists
+  when: not git_directory.stat.exists
 
 - name: clone git-workspace directory
   ansible.builtin.git:
     repo: 'https://github.com/michaelford85/mac-dev-playbook.git'
     dest: ~/git-workspace/mac-dev-playbook
-  when: mac_directory.stat.exists
+  when: not mac_directory.stat.exists
 
 - name: create a hard link for config.yml
   ansible.builtin.file:
     src: "/Dropbox/My Documents/Macbook Ansible Restore/config.yml"
     dest: "~/git-workspace/mac-dev-playbook/config.yml"
     state: hard
-  when: mac_directory.stat.exists
+  when: not mac_directory.stat.exists
