@@ -41,10 +41,6 @@
     - import_tasks: tasks/extra-packages.yml
       tags: ['extra-packages']
 
-    - import_tasks: tasks/sublime-text.yml
-      when: configure_sublime
-      tags: ['sublime-text']
-
     - block:
         - name: Run configured post-provision ansible task files.
           include_tasks: "{{ outer_item }}"

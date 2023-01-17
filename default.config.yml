@@ -6,25 +6,23 @@ configure_terminal: true
 configure_osx: true
 
 # Set to 'true' to configure the Dock via dockutil.
-configure_dock: false
-dockitems_remove: []
-# - Launchpad
-# - TV
-# - Podcasts
-# - 'App Store'
+configure_dock: true
+dockitems_remove:
+  - Launchpad
+  - TV
+  - Podcasts
+  - 'App Store'
 dockitems_persist: []
 # - name: "Sublime Text"
 #   path: "/Applications/Sublime Text.app/"
 #   pos: 5
 
-configure_sudoers: false
-sudoers_custom_config: ''
-# Example:
-# sudoers_custom_config: |
-#   # Allow users in admin group to use sudo with no password.
-#   %admin ALL=(ALL) NOPASSWD: ALL
+configure_sudoers: true
+sudoers_custom_config: |
+  # Allow users in admin group to use sudo with no password.
+  %admin ALL=(ALL) NOPASSWD: ALL
 
-dotfiles_repo: https://github.com/geerlingguy/dotfiles.git
+dotfiles_repo: https://github.com/CallumKerson/dotfiles.git
 dotfiles_repo_accept_hostkey: true
 dotfiles_repo_local_destination: ~/Development/GitHub/dotfiles
 dotfiles_files:
@@ -38,7 +36,10 @@ homebrew_installed_packages:
   # - ansible # Installed via Pip.
   - autoconf
   - bash-completion
+  - colima
   - doxygen
+  - easy-tag
+  - eye-d3
   - gettext
   - gifsicle
   - git
@@ -46,14 +47,19 @@ homebrew_installed_packages:
   - go
   - gpg
   - httpie
-  - iperf
+  - iperf3
+  - jq
+  - lame
   - libevent
-  - sqlite
   - mcrypt
+  - mkvtoolnix
+  - mp4v2
   - nmap
   - node
   - nvm
   - php
+  - pyenv
+  - pyenv-virtualenv
   - ssh-copy-id
   - cowsay
   - readline
@@ -61,6 +67,7 @@ homebrew_installed_packages:
   - pv
   - wget
   - wrk
+  - youtube-dl
   - zsh-history-substring-search
 
 homebrew_taps:
@@ -69,20 +76,23 @@ homebrew_taps:
 
 homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
-  - chromedriver
-  - docker
-  - dropbox
+  - alfred
+  - bartender
+  - bbedit
+  - daisydisk
   - firefox
   - google-chrome
   - handbrake
-  - licecap
-  - sequel-ace
-  - slack
-  - sublime-text
+  - superduper
   - transmit
+  - visual-studio-code
+
 
 # See `geerlingguy.mas` role documentation for usage instructions.
-mas_installed_apps: []
+mas_installed_apps:
+  - { id: 1160435653, name AutoMounter }
+  - { id: 1055511498, name: Day One }
+  - { id: 563131976, name: mChapters }
 mas_email: ""
 mas_password: ""
 
@@ -107,24 +117,6 @@ pip_packages: []
 # - name: mkdocs
 #   state: present # present/absent/latest, default: present
 #   version: "0.16.3" # default: N/A
-
-# Set to 'true' to configure Sublime Text.
-configure_sublime: false
-sublime_base_path: '~/Library/Application Support/Sublime Text'
-sublime_config_path: "Packages/User"
-sublime_package_control:
-  - "DocBlockr"
-  - "Dockerfile Syntax Highlighting"
-  - "FileDiffs"
-  - "GitHub Flavored Markdown Preview"
-  - "Jinja2"
-  - "Package Control"
-  - "PHP-Twig"
-  - "Pretty JSON"
-  - "SublimeLinter"
-  - "SublimeLinter-contrib-yamllint"
-  - "TrailingSpaces"
-  - "WordCount"
 
 # Glob pattern to ansible task files to run after all other tasks are finished.
 post_provision_tasks: []
