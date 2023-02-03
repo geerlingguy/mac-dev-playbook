@@ -27,6 +27,8 @@ dockitems_persist:
     path: "/Applications/Bitwarden.app/"
   - name: "Discord"
     path: "/Applications/Discord.app/"
+  - name: "Signal"
+    path: "/Applications/Signal.app/"
 
 configure_sudoers: true
 sudoers_custom_config: |
@@ -61,6 +63,7 @@ homebrew_cask_apps:
   - discord
   - spotify
   - bitwarden
+  - signal
 
 # See `geerlingguy.mas` role documentation for usage instructions.
 mas_installed_apps: []
