@@ -1,0 +1,76 @@
+---
+# Set to 'true' to configure the Dock via dockutil.
+configure_dock: true
+dockitems_remove:
+  - Launchpad
+  - TV
+  - Podcasts
+  - Notes
+  - Maps
+  - Photos
+  - Music
+  - Numbers
+  - Pages
+  - Keynote
+  - Contacts
+  - Calendar
+  - Reminders
+  - Mail
+dockitems_persist:
+  - name: "Microsoft Edge"
+    path: "/Applications/Microsoft Edge.app/"
+  - name: "Visual Studio Code"
+    path: "/Applications/Visual Studio Code.app/"
+  - name: "Spotify"
+    path: "/Applications/Spotify.app/"
+  - name: "Bitwarden"
+    path: "/Applications/Bitwarden.app/"
+  - name: "Discord"
+    path: "/Applications/Discord.app/"
+
+configure_sudoers: true
+sudoers_custom_config: |
+  # Allow users in admin group to use sudo with no password.
+  %admin ALL=(ALL) NOPASSWD: ALL
+
+homebrew_installed_packages:
+  # - ansible # Installed via Pip.
+  - git
+  - gh
+  - gpg
+  - httpie
+  - nmap
+  - cowsay
+  - wget
+  - tree
+  - terraform
+  - hcloud
+  - jq
+  - yq
+  - skopeo
+  - podman
+
+homebrew_taps:
+  - homebrew/core
+  - homebrew/cask
+
+homebrew_cask_appdir: /Applications
+homebrew_cask_apps:
+  - microsoft-edge
+  - visual-studio-code
+  - discord
+  - spotify
+  - bitwarden
+
+# See `geerlingguy.mas` role documentation for usage instructions.
+mas_installed_apps: []
+mas_email: ""
+mas_password: ""
+
+pip_packages: []
+# - name: mkdocs
+#   state: present # present/absent/latest, default: present
+#   version: "0.16.3" # default: N/A
+
+# Glob pattern to ansible task files to run after all other tasks are finished.
+post_provision_tasks: []
