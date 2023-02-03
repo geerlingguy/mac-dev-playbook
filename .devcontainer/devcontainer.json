@@ -1,0 +1,14 @@
+{
+    "image": "ghcr.io/ansible/creator-ee:v0.13.0",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "streetsidesoftware.code-spell-checker",
+                "redhat.ansible",
+                "github.copilot",
+                "yzhang.markdown-all-in-one",
+                "eamodio.gitlens"
+            ]
+        }
+    }
+}

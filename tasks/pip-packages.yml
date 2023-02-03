@@ -1,0 +1,8 @@
+---
+- name: Install global Pip packages.
+  ansible.builtin.pip:
+    name: "{{ item.name | default(item) }}"
+    state: "{{ item.state | default('present') }}"
+    version: "{{ item.version | default(omit) }}"
+    executable: "{{ item.executable | default('pip3') }}"
+  loop: "{{ pip_packages }}"

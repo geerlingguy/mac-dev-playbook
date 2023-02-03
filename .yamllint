@@ -5,6 +5,3 @@ rules:
   line-length:
     max: 180
     level: warning
-
-ignore: |
-  .github/stale.yml
