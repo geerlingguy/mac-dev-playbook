@@ -2,8 +2,6 @@
 
 # Mac Development Ansible Playbook
 
-[![CI][badge-gh-actions]][link-gh-actions]
-
 This Ansible playbook installs and configures most of the software I use on my Mac for web and software development. This repository is a fork of [Jeff Geerling's](https://www.jeffgeerling.com) original [mac-dev-playbook](https://github.com/geerlingguy/mac-dev-playbook) project.
 
 ## Installation
@@ -40,7 +38,7 @@ This Ansible playbook installs and configures most of the software I use on my M
 
 ### Running a specific set of tagged tasks
 
-You can filter which part of the provisioning process to run by specifying a set of tags using `ansible-playbook`'s `--tags` flag. The tags available are `homebrew`, `mas`.
+You can filter which part of the provisioning process to run by specifying a set of tags using `ansible-playbook`'s `--tags` flag. The tags available are `homebrew`, `mas`, `dock`, `sudoers`, `terminal`, `pip-packages`, `post`.
 
     ansible-playbook main.yml -K --tags "homebrew"
 
