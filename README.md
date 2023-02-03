@@ -53,6 +53,7 @@ Applications (installed with Homebrew Cask):
   - [Microsoft Edge](https://formulae.brew.sh/cask/microsoft-edge#default)
   - [Visual Studio Code](https://formulae.brew.sh/cask/visual-studio-code#default)
   - [Spotify](https://formulae.brew.sh/cask/spotify#default)
+  - [Signal](https://formulae.brew.sh/cask/signal#default)
 
 Packages (installed with Homebrew):
 
