@@ -69,6 +69,10 @@ Packages (installed with Homebrew):
   - yq
   - terraform
   - hcloud
+  - podman
+  - tree
+  - zsh-autosuggestions
+  - zsh-syntax-highlighting
 
 ## Testing the Playbook
 
