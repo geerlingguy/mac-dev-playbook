@@ -14,15 +14,18 @@
     - role: geerlingguy.mac.dock
       when: configure_dock
       tags: ['dock']
+    - role: gantsign.oh-my-zsh
+      when: configure_oh_my_zsh
+      tags: ['oh_my_zsh']
 
   tasks:
     - ansible.builtin.import_tasks: tasks/sudoers.yml
       when: configure_sudoers
       tags: ['sudoers']
 
-    - ansible.builtin.import_tasks: tasks/terminal.yml
-      when: configure_terminal
-      tags: ['terminal']
+    - ansible.builtin.import_tasks: tasks/oh-my-zsh.yml
+      when: configure_oh_my_zsh
+      tags: ['oh_my_zsh']
 
     - ansible.builtin.import_tasks: tasks/pip-packages.yml
       tags: ['pip-packages']

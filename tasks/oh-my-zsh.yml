@@ -1,0 +1,12 @@
+---
+- name: Enable zsh-autosuggestions plugin
+  ansible.builtin.lineinfile:
+    path: ~/.zshrc
+    line: source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+    state: present
+
+- name: Enable zsh-syntax-highlighting plugin
+  ansible.builtin.lineinfile:
+    path: ~/.zshrc
+    line: source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+    state: present

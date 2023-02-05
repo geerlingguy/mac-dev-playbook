@@ -38,7 +38,7 @@ This Ansible playbook installs and configures most of the software I use on my M
 
 ### Running a specific set of tagged tasks
 
-You can filter which part of the provisioning process to run by specifying a set of tags using `ansible-playbook`'s `--tags` flag. The tags available are `homebrew`, `mas`, `dock`, `sudoers`, `terminal`, `pip-packages`, `post`.
+You can filter which part of the provisioning process to run by specifying a set of tags using `ansible-playbook`'s `--tags` flag. The tags available are `homebrew`, `mas`, `dock`, `sudoers`, `oh-my-zsh`, `pip-packages`, `post`.
 
     ansible-playbook main.yml -K --tags "homebrew"
 

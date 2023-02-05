@@ -35,6 +35,17 @@ sudoers_custom_config: |
   # Allow users in admin group to use sudo with no password.
   %admin ALL=(ALL) NOPASSWD: ALL
 
+configure_oh_my_zsh: true
+# https://github.com/gantsign/ansible-role-oh-my-zsh#role-variables
+users:
+  - username: "{{ ansible_user }}"
+    oh_my_zsh:
+      theme: robbyrussell
+      plugins:
+        - git
+      update_mode: auto
+      update_frequency: 10
+
 homebrew_installed_packages:
   # - ansible # Installed via Pip.
   - git
@@ -51,6 +62,8 @@ homebrew_installed_packages:
   - yq
   - skopeo
   - podman
+  - zsh-autosuggestions
+  - zsh-syntax-highlighting
 
 homebrew_taps:
   - homebrew/core
