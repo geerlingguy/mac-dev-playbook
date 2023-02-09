@@ -26,6 +26,7 @@ Before starting, I completed Apple's mandatory macOS setup wizard (creating a lo
   - Install old-fashioned apps:
     - Install [Insta360 Link](https://www.insta360.com/download/insta360-link)
     - Install [Google Chat](https://chat.google.com/download/) from within Brave Browser
+    - Install [VMWare Fusion Player](https://customerconnect.vmware.com/en/evalcenter?p=fusion-player-personal-13) (dmg file and licence are in DropBox)
   - Set up Dropbox and sync the following folders:
     - `/Dropbox/apps/config/`
     - `/Dropbox/My Documents/Macbook Ansible Restore/`
