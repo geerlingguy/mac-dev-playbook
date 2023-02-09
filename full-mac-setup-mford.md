@@ -40,7 +40,6 @@ Before starting, I completed Apple's mandatory macOS setup wizard (creating a lo
           - Screen Recording
             - Give the following apps permissions
               - Amazon Chime
-              - BlueJeans
               - Brave Browser
               - FaceTime
               - Google Chrome
