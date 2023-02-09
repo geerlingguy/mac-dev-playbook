@@ -29,7 +29,7 @@ Before starting, I completed Apple's mandatory macOS setup wizard (creating a lo
     - Install [Google Chat](https://chat.google.com/download/) from within Brave Browser
     - Install [VMWare Fusion Player](https://customerconnect.vmware.com/en/evalcenter?p=fusion-player-personal-13) (dmg file and licence are in DropBox)
   - Set up Dropbox and sync the following folders:
-    - `/Dropbox/apps/config/`
+    - `/Dropbox/apps/`
     - `/Dropbox/My Documents/Macbook Ansible Restore/`
   - Run the playbook remotely with `--skip-tags homebrew, post`.
   - Manual settings to automate someday:
@@ -41,7 +41,6 @@ Before starting, I completed Apple's mandatory macOS setup wizard (creating a lo
           - Screen Recording
             - Give the following apps permissions
               - Amazon Chime
-              - BlueJeans
               - Brave Browser
               - FaceTime
               - Google Chrome
