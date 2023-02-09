@@ -1,3 +1,8 @@
 [all]
 #127.0.0.1  ansible_connection=local
+#
+[macbook]
 10.0.30.21  ansible_user=mford ansible_ssh_private_key_file=~/.ssh/fordlab.pem
+
+[macmini]
+10.0.30.96  ansible_user=mford ansible_ssh_private_key_file=~/.ssh/fordlab.pem
