@@ -22,6 +22,7 @@ Before starting, I completed Apple's mandatory macOS setup wizard (creating a lo
     - Mac App Store
   - `sudo softwareupdate --install-rosetta` (required to install adobe acrobat)
   - Ensure Apple's command line tools are installed (`xcode-select --install` to launch the installer)
+  - Ensure that config.yml is in the cloned repository, sourced from Dropbox.
   - Run the playbook remotely with `--tags homebrew, sudoers`.
     - `$ ansible-playbook main.yml  --tags "homebrew,sudoers" --ask-become-pass`
     - If there are errors, you may need to finish up other tasks like installing 'old-fashioned' apps first
