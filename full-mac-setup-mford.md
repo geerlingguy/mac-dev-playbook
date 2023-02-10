@@ -6,6 +6,8 @@ This document covers that, at least in terms of setting up a brand new Mac out o
 
 These instructions assume that the playbook and ansible are installed on a remote linux machine.
 
+the default location for all necessary files in Dropbox is: `/Dropbox/My Documents/Mac Ansible Restore`
+
 ## Initial configuration of a brand new Mac
 
 Before starting, I completed Apple's mandatory macOS setup wizard (creating a local user account, and optionally signing into my iCloud account). Once on the macOS desktop, I do the following (in order):
@@ -33,6 +35,10 @@ Before starting, I completed Apple's mandatory macOS setup wizard (creating a lo
     - `/Dropbox/My Documents/Macbook Ansible Restore/`
   - Run the playbook remotely with `--skip-tags homebrew, post`.
   - Manual settings to automate someday:
+    - Use the Terminal to permanently set hidden files to show in Finder
+      - `$ defaults write com.apple.Finder AppleShowAllFiles true`
+      - `$ killall Finder`
+    - In Finder settings, check the box `Show all filename extensions`
     - System Settings
       - Wi-Fi
         - Set Wireless SSID and DNS Server to Pihole
