@@ -23,6 +23,7 @@ Before starting, I completed Apple's mandatory macOS setup wizard (creating a lo
   - `sudo softwareupdate --install-rosetta` (required to install adobe acrobat)
   - Ensure Apple's command line tools are installed (`xcode-select --install` to launch the installer)
   - Run the playbook remotely with `--tags homebrew, sudoers`.
+    - `$ ansible-playbook main.yml  --tags "homebrew,sudoers" --ask-become-pass`
     - If there are errors, you may need to finish up other tasks like installing 'old-fashioned' apps first
   - Ensure that the homebrew binary directory is assed to the PATH:
     - `$ export PATH=/opt/homebrew/bin:$PATH`
@@ -34,6 +35,7 @@ Before starting, I completed Apple's mandatory macOS setup wizard (creating a lo
     - `/Dropbox/apps/`
     - `/Dropbox/My Documents/Macbook Ansible Restore/`
   - Run the playbook remotely with `--skip-tags homebrew, post`.
+    - `$ ansible-playbook main.yml  --skip-tags "homebrew,post" --ask-become-pass`
   - Manual settings to automate someday:
     - Use the Terminal to permanently set hidden files to show in Finder
       - `$ defaults write com.apple.Finder AppleShowAllFiles true`
@@ -80,7 +82,8 @@ Before starting, I completed Apple's mandatory macOS setup wizard (creating a lo
       - ExpressVPN
       - CleanmyMac
       - Al Dente
-
+  - Run the playbook remotely with `--tags post`.
+    - `$ ansible-playbook main.yml  --tags "post" --ask-become-pass`
 
 ## To Wrap in Post-provision automation
 
