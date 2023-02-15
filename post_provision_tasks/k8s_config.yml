@@ -6,7 +6,7 @@
 
 - name: Create a symbolic link for awscli config from dropbox
   ansible.builtin.file:
-    src: ~/Dropbox/apps/config/k8s/kubeconfig/config
+    src: ~/Library/CloudStorage/Dropbox/apps/config/k8s/kubeconfig/config
     dest: ~/.kube/config
     state: link
 

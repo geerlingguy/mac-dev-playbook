@@ -24,7 +24,7 @@
 
 - name: create a hard link for config.yml
   ansible.builtin.file:
-    src: "~/Dropbox/My Documents/Macbook Ansible Restore/config.yml"
+    src: "~/Library/CloudStorage/Dropbox/My Documents/Macbook Ansible Restore/config.yml"
     dest: "~/git-workspace/mac-dev-playbook/config.yml"
     state: hard
   when: not mac_directory.stat.exists

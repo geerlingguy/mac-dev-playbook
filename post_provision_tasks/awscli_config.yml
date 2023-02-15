@@ -6,13 +6,13 @@
 
 - name: Create a symbolic link for awscli config from dropbox
   ansible.builtin.file:
-    src: ~/Dropbox/apps/config/awscli/config
+    src: ~/Library/CloudStorage/Dropbox/apps/config/awscli/config
     dest: ~/.aws/config
     state: link
 
 - name: Create a symbolic link for awscli credentials from dropbox
   ansible.builtin.file:
-    src: ~/Dropbox/apps/config/awscli/credentials
+    src: ~/Library/CloudStorage/Dropbox/apps/config/awscli/credentials
     dest: ~/.aws/credentials
     state: link
 
