@@ -3,7 +3,7 @@
   hosts: all
 
   vars_files:
-    - default.config.yml
+    - megan.config.yml
 
   pre_tasks:
     - name: Include playbook configuration.

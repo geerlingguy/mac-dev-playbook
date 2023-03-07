@@ -26,7 +26,7 @@ sudoers_custom_config: ''
 
 dotfiles_repo: https://github.com/geerlingguy/dotfiles.git
 dotfiles_repo_accept_hostkey: true
-dotfiles_repo_local_destination: ~/Development/GitHub/dotfiles
+dotfiles_repo_local_destination: ~/git/GitHub/dotfiles
 dotfiles_files:
   - .zshrc
   - .gitignore
@@ -69,17 +69,17 @@ homebrew_taps:
 
 homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
-  - chromedriver
+#  - chromedriver
   - docker
-  - dropbox
-  - firefox
-  - google-chrome
-  - handbrake
-  - licecap
-  - sequel-ace
-  - slack
-  - sublime-text
-  - transmit
+#  - dropbox
+#  - firefox
+#  - google-chrome
+#  - handbrake
+#  - licecap
+#  - sequel-ace
+#  - slack
+#  - sublime-text
+#  - transmit
 
 # See `geerlingguy.mas` role documentation for usage instructions.
 mas_installed_apps: []
