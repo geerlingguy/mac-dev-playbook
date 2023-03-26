@@ -1,2 +1,2 @@
-[local]
-localhost ansible_connection=local
+[all]
+admins-Virtual-Machine.local ansible_user=admin
