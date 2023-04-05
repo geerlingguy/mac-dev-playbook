@@ -8,7 +8,6 @@ configure_osx: true
 # Set to 'true' to configure the Dock via dockutil.
 configure_dock: true
 dockitems_remove:
-  - Finder
   - Launchpad
   - Mail
   - Maps
