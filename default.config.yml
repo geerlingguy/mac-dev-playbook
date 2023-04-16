@@ -45,52 +45,114 @@ dotfiles_files:
 
 homebrew_clear_cache: true
 homebrew_installed_packages:
-- asdf
-- asciinema
-- axel
-- coreutils
-- cowsay
-- figlet
-- findutils
-- git
-- git-lfs
-- go
-- grep
-- hostess
-- iftop
-- jq
-- mas
-- midnight-commander
-- moreutils
-- nmap
-- p7zip
-- pandoc
-- screen
-- ssh-copy-id
-- sshuttle
-- tcpflow
-- tree
-- tmux
-- watch
-- wget
-- youtube-dl
-
+  - ansible  # Automate deployment, configuration, and upgrading
+  - argocd  # GitOps Continuous Delivery for Kubernetes
+  - asciinema  # Record and share terminal sessions
+  - asdf  # Extendable version manager with support for Ruby, Node.js, Erlang & more
+  - autoconf  # Automatic configure script builder
+  - automake  # Tool for generating GNU Standards-compliant Makefiles
+  - awscli  # Official Amazon AWS command-line interface
+  - axel  # Light UNIX download accelerator
+  - binwalk  # Searches a binary image for embedded files and executable code
+  - bitwarden-cli  # Secure and free password manager for all of your devices
+  - ca-certificates  # Mozilla CA certificate store
+  - coreutils  # GNU File, Shell, and Text utilities
+  - cowsay  # Configurable talking characters in ASCII art
+  - curl  # Get a file from an HTTP, HTTPS or FTP server
+  - dav1d  # AV1 decoder targeted to be small and fast
+  - dbus  # Message bus system, providing inter-application communication
+  - dialog  # Display user-friendly message boxes from shell scripts
+  - docutils  # Text processing system for reStructuredText
+  - esphome  # Make creating custom firmwares for ESP32/ESP8266 super easy
+  - fdupes  # Identify or delete duplicate files
+  - ffmpeg  # Play, record, convert, and stream audio and video
+  - figlet  # Banner-like program prints strings as ASCII art
+  - findutils  # Collection of GNU find, xargs, and locate
+  - fmt  # Open-source formatting library for C++
+  - fontconfig  # XML-based font configuration API for X Windows
+  - freetype  # Software library to render fonts
+  - gcc  # GNU compiler collection
+  - git  # Distributed revision control system
+  - git-lfs  # Git extension for versioning large files
+  - gnu-getopt  # Command-line option parsing utility
+  - gnuplot  # Command-driven, interactive function plotting
+  - gnutls  # GNU Transport Layer Security (TLS) Library
+  - go  # Open source programming language to build simple/reliable/efficient software
+  - gpac  # Multimedia framework for research and academic purposes
+  - graphite2  # Smart font renderer for non-Roman scripts
+  - grep  # GNU grep, egrep and fgrep
+  - guile  # GNU Ubiquitous Intelligent Language for Extensions
+  - handbrake  # Open-source video transcoder available for Linux, Mac, and Windows
+  - harfbuzz  # OpenType text shaping engine
+  - hdf5  # File format designed to store large amounts of data
+  - highway  # Performance-portable, length-agnostic SIMD with runtime dispatch
+  - hostess  # Idempotent command-line utility for managing your /etc/hosts file
+  - hunspell  # Spell checker and morphological analyzer
+  - hydra  # Network logon cracker which supports many services
+  - icu4c  # C/C++ and Java libraries for Unicode and globalization
+  - iftop  # Display an interface's bandwidth usage
+  - imagemagick  # Tools and libraries to manipulate images in many formats
+  - imath  # Library of 2D and 3D vector, matrix, and math operations
+  - imlib2  # Image loading and rendering library
+  - iperf3  # Update of iperf: measures TCP, UDP, and SCTP bandwidth
+  - isl  # Integer Set Library for the polyhedral model
+  - jansson  # C library for encoding, decoding, and manipulating JSON
+  - jasper  # Library for manipulating JPEG-2000 images
+  - jbig2dec  # JBIG2 decoder and library (for monochrome documents)
+  - john  # Featureful UNIX password cracker
+  - jpeg  # Image manipulation library
+  - jpeg-turbo  # JPEG image codec that aids compression and decompression
+  - jpeg-xl  # New file format for still image compression
+  - jq  # Lightweight and flexible command-line JSON processor
+  - kompose  # Tool to move from `docker-compose` to Kubernetes
+  - kube-ps1  # Kubernetes prompt info for bash and zsh
+  - kubernetes-cli  # Kubernetes command-line interface
+  - logstalgia  # Web server access log visualizer with retro style
+  - mas  # Mac App Store command-line interface
+  - mbedtls  # Cryptographic & SSL/TLS library
+  - midnight-commander  # Terminal-based visual file manager
+  - minicom  # Menu-driven communications program
+  - minikube  # Run a Kubernetes cluster locally
+  - miniupnpc  # UPnP IGD client library and daemon
+  - moreutils  # Collection of tools that nobody wrote when UNIX was young
+  - mplayer  # UNIX movie player
+  - mtr  # 'traceroute' and 'ping' in a single tool
+  - ncurses  # Text-based UI library
+  - nettle  # Low-level cryptographic library
+  - nmap  # Port scanning utility for large networks
+  - node  # Platform built on V8 to build network applications
+  - nvm  # Manage multiple Node.js versions
+  - p7zip  # 7-Zip (high compression file archiver) implementation
+  - pandoc  # Swiss-army knife of markup format conversion
+  - pillow  # Friendly PIL fork (Python Imaging Library)
+  - protobuf  # Protocol buffers (Google's data interchange format)
+  - putty  # Implementation of Telnet and SSH
+  - pv  # Monitor data's progress through a pipe
+  - pyyaml  # YAML framework for Python
+  - screen  # Terminal multiplexer with VT100/ANSI terminal emulation
+  - socat  # SOcket CAT: netcat on steroids
+  - ssh-copy-id  # Add a public key to a remote machine's authorized_keys file
+  - sshuttle  # Proxy server that works as a poor man's VPN
+  - tcpflow  # TCP/IP packet demultiplexer
+  - telnet  # User interface to the TELNET protocol
+  - tesseract  # OCR (Optical Character Recognition) engine
+  - theora  # Open video compression format
+  - tmux  # Terminal multiplexer
+  - tree  # Display directories as trees (with optional color/HTML output)
+  - unzip  # Extraction utility for .zip compressed archives
+  - velero  # Disaster recovery for Kubernetes resources and persistent volumes
+  - wakeonlan  # Sends magic packets to wake up network-devices
+  - watch  # Executes a program periodically, showing output fullscreen
+  - websocat  # Command-line client for WebSockets
+  - wget  # Internet file retriever
+  - youtube-dl  # Download YouTube videos from the command-line
 homebrew_uninstalled_packages:
-- awscli
-- cmatrix
-- docker-machine
-- docker-machine-driver-hyperkit
-- docker-machine-driver-xhyve
-- helm@2
-- kompose
-- minikube
-- node
-- nvm
-- unrar
-- kubernetes-cli
-- kubernetes-helm
-- kube-ps1
-- velero
+  - docker-machine  # Create Docker hosts locally and on cloud providers
+  - docker-machine-driver-hyperkit  # Docker Machine driver for hyperkit
+  - docker-machine-driver-xhyve  # Docker Machine driver for xhyve
+  - helm@2  # Kubernetes package manager
+  - kubernetes-helm  # Kubernetes package manager
+
 
 homebrew_taps:
   - homebrew/core
@@ -99,25 +161,45 @@ homebrew_taps:
 
 homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
-  - adobe-acrobat-reader
-  - coconutbattery
-  - github
-  - google-chrome
-  - gpg-suite
-  - iina
-  - iterm2
-  - slack
-  - yubico-authenticator
-  - yubico-yubikey-manager
-  - yubico-yubikey-personalization-gui
-  - visual-studio-code
-  
-homebrew_cask_uninstalled_apps:
-  - bitwarden
-  - sublime-text
-  - google-cloud-sdk
-  - docker
+  - adobe-acrobat-reader  # https://acrobat.adobe.com/us/en/acrobat/pdf-reader.html
+  - arduino  # https://www.arduino.cc/
+  - bitwarden  # https://bitwarden.com/
+  - coconutbattery  # https://www.coconut-flavour.com/coconutbattery/
+  - discord  # https://discord.com/
+  - docker  # Pack, ship and run any application as a lightweight container
+  - google-chrome  # https://www.google.com/chrome/
+  - google-cloud-sdk  # https://cloud.google.com/sdk/
+  - gpg-suite  # https://gpgtools.org/
+  - iina  # https://iina.io/
+  - iterm2  # https://www.iterm2.com/
+  - lens  # https://k8slens.dev/
+  - slack  # https://slack.com/
+  - sourcetree  # https://www.sourcetreeapp.com/
+  - spotify  # https://www.spotify.com/
+  - visual-studio-code  # https://code.visualstudio.com/
+  - vlc  # https://www.videolan.org/vlc/
+  - yubico-authenticator  # https://developers.yubico.com/yubioath-flutter/
+  - yubico-yubikey-manager  # https://developers.yubico.com/yubikey-manager-qt/
+  - yubico-yubikey-personalization-gui  # https://www.yubico.com/products/services-software/personalization-tools/use/
 
+homebrew_cask_uninstalled_apps:
+  - brave-browser  # https://brave.com/
+  - chromedriver  # https://sites.google.com/chromium.org/driver/  
+  - dropbox  # https://www.dropbox.com/
+  - firefox  # https://www.mozilla.org/firefox/  
+  - transmission  # Lightweight BitTorrent client
+  - github  # https://desktop.github.com/
+  - mp4tools  # https://www.emmgunn.com/mp4tools-home/
+  - openemu  # https://openemu.org/
+  - perforce  # https://www.perforce.com/
+  - phantomjs  # https://phantomjs.org/  
+  - sqlitemanager  # https://www.sqlabs.com/sqlitemanager.php
+  - sqlitestudio  # https://sqlitestudio.pl/
+  - sublime-text  # https://www.sublimetext.com/  
+  - unity  # https://unity.com/products
+  - unity-hub  # https://unity3d.com/get-unity/download
+  
+  
 mas_installed_apps:
 - { id: 1147396723, name: "WhatsApp (0.4.316)" }
 - { id: 1352778147, name: "Bitwarden" }

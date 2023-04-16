@@ -61,15 +61,3 @@
         loop_var: outer_item
       with_fileglob: "{{ post_provision_tasks|default(omit) }}"
       tags: ['post']
-
-
-
-
-
-# Load the shell dotfiles, and then some:
-# * ~/.path can be used to extend `$PATH`.
-# * ~/.extra can be used for other settings you don’t want to commit.
-# for file in ~/.{path,bash_prompt,exports,aliases,functions,extra,dockerapps,kubectl_aliases}; do
-#[ -r "$file" ] && [ -f "$file" ] && source "$file";
-# done;
-# plugins=(git ansible brew asdf ssh-agent kubectl nvm battery github gitignore gnu-utils history iterm2 kube-ps1 kubectx lighthouse macos vscode tmux nmap)
