@@ -1,4 +1,4 @@
-# Full Mac Setup Process (for Jeff Geerling)
+# Full Mac Setup Process (for me)
 
 There are some things in life that just can't be automated... or aren't 100% worth the time :(
 
