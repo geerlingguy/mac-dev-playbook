@@ -1,5 +1,6 @@
 ---
-- hosts: all
+- name: Configure host.
+  hosts: all
 
   vars_files:
     - default.config.yml
@@ -45,10 +46,11 @@
       when: configure_sublime
       tags: ['sublime-text']
 
-    - block:
+    - name: Run post-provision task files in a block.
+      tags: ['post']
+      block:
         - name: Run configured post-provision ansible task files.
           include_tasks: "{{ outer_item }}"
           loop_control:
             loop_var: outer_item
-          with_fileglob: "{{ post_provision_tasks|default(omit) }}"
-      tags: ['post']
+          with_fileglob: "{{ post_provision_tasks | default(omit) }}"

@@ -109,4 +109,4 @@ git clone git://github.com/scrooloose/nerdtree.git
     - Motion Plugins from ~/Movies/Motion
     - Final Cut Pro Text Styles in ~/Library/Application Support/Motion/Library/Text Styles
     - Sequel Ace shortcuts from ~/Library/Containers/com.sequel-ace.sequel-ace/Data/Library/Application\ Support/Sequel\ Ace/Data/Favorites.plist
-  - Follow Apple's guide (TODO)
+  - Follow Apple's guide [here](https://support.apple.com/en-au/HT212749)
