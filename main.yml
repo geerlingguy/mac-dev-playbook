@@ -1,5 +1,5 @@
 ---
-- hosts: all
+- hosts: macmini
 
   vars_files:
     - default.config.yml
