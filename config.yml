@@ -47,9 +47,6 @@ dockitems_persist:
 - name: Messages
   path: "/Applications/Messages.app/"
   pos: 6
-- name: OmniFocus
-  path: "/Applications/OmniFocus.app/"
-  pos: 7
 
 homebrew_taps:
   - homebrew/core
@@ -100,7 +97,6 @@ homebrew_cask_apps:
   - font-ia-writer-duospace
   # core apps
   - alfred
-  - obsidian
   - dropbox
   - box-drive
   - vlc
@@ -154,7 +150,7 @@ mas_installed_apps:
   - { id: 1225570693, name: "Ulysses" }
   - { id: 1451685025, name: "WireGuard" }
 #  - { id: 904280696, name: "Things 3" }
-  - { id: 1346203938, name: "OmniFocus" }
+# - { id: 1346203938, name: "OmniFocus" }
   - { id: 1333542190, name: "1Password 7 - Password Manager" }
 mas_email: ""
 mas_password: ""
