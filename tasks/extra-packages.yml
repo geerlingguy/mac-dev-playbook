@@ -24,6 +24,14 @@
     executable: "{{ item.executable | default(omit) }}"
   loop: "{{ pip_packages }}"
 
+- name: Install global Pipx packages.
+  community.general.pipx:
+    name: "{{ item.name | default(item) }}"
+    state: "{{ item.state | default('present') }}"
+    version: "{{ item.version | default(omit) }}"
+    executable: "{{ item.executable | default(omit) }}"
+  loop: "{{ pipx_packages }}"
+
 - name: Install global Ruby gems.
   gem:
     name: "{{ item.name | default(item) }}"
