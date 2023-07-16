@@ -108,6 +108,11 @@ pip_packages: []
 # - name: mkdocs
 #   state: present # present/absent/latest, default: present
 #   version: "0.16.3" # default: N/A
+pipx_packages: []
+# - name: mkdocs
+#   state: present # present/absent/latest, default: present
+#   version: "0.16.3" # default: N/A
+
 
 # Set to 'true' to configure Sublime Text.
 configure_sublime: false
