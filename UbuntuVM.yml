@@ -17,14 +17,6 @@
     - name: Set timezone to Europe/Paris
       community.general.timezone:
         name: Europe/Paris
-    - name: Create a reboot job
-      ansible.builtin.cron:
-        name: "reboot"
-        minute: "0"
-        hour: "4"
-        user: root
-        job: "/sbin/shutdown -r +5"
-        state: absent
     - name: Create a freebox reboot job
       ansible.builtin.cron:
         name: "reboot freebox"

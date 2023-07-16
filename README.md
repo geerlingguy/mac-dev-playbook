@@ -8,8 +8,13 @@
     ansible-playbook main.yml -i inventory -K 
     ansible-playbook main.yml -K --tags "mas"
 
+for home freebox
+    change the IP in inventory file
     ansible-playbook UbuntuVM.yml --ask-vault-pass -v
     install freebox reboot https://github.com/PabloLec/freebox_reboot
+
+# plex
+  Go to <IP>:32400/web to configure new server
 
 # Mac Development Ansible Playbook
 
