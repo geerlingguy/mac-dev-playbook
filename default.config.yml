@@ -19,6 +19,7 @@ dotfiles_files:
   - .bash_profile
   - .bash_prompt
   - .bashrc
+  - .cobra
   - .curlrc
   - .dockerapps
   - .editorconfig
