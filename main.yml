@@ -29,6 +29,9 @@
       tags: ['node']
     - role: markosamuli.asdf
       tags: ['asdf']
+    - role: diodonfrost.ohmyzsh
+      when: configure_p10k
+      tags: ['p10k']
     - role: diodonfrost.p10k
       when: configure_p10k
       tags: ['p10k']

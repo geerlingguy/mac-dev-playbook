@@ -5,6 +5,8 @@ roles:
   - name: diodonfrost.p10k
   - name: markosamuli.nvm
   - name: markosamuli.asdf
+  - name: diodonfrost.ohmyzsh
+
 
 collections:
   - name: geerlingguy.mac

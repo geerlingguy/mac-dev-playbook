@@ -19,7 +19,7 @@ dotfiles_files:
   - .bash_profile
   - .bash_prompt
   - .bashrc
-  - .cobra
+  - .cobra.yaml
   - .curlrc
   - .dockerapps
   - .editorconfig
@@ -414,3 +414,7 @@ p10k_prompt_frame: left
 p10k_prompt_spacing: compact
 p10k_prompt_flow: concise
 p10k_transient_prompt: "no"
+# Setup the ohmyzsh plugins to used
+ohmyzsh_plugins:
+  - git
+  - asdf
