@@ -297,6 +297,11 @@ asdf_plugins:
     - "2022.2.0"
   global: "2022.2.0"
 
+- name: "golang"
+  versions:
+    - "1.20.6"
+  global: "1.20.6"
+  
 - name: "helm"
   versions:
     - "3.8.0"

@@ -10,20 +10,21 @@
       with_fileglob:
         - "{{ playbook_dir }}/config.yml"
       tags: ['always']
-
+  
   roles:
     - role: elliotweiser.osx-command-line-tools
+      tags: ['osx']
     - role: geerlingguy.mac.homebrew
-      tags: ['homebrew']
+      tags: ['homebrew','osx']
     - role: geerlingguy.dotfiles
       when: configure_dotfiles
       tags: ['dotfiles']
     - role: geerlingguy.mac.mas
       when: mas_installed_apps or mas_installed_app_ids
-      tags: ['mas']
+      tags: ['mas','osx']
     - role: geerlingguy.mac.dock
       when: configure_dock
-      tags: ['dock']
+      tags: ['dock','osx']
     - role: markosamuli.nvm
       tags: ['node']
     - role: markosamuli.asdf
@@ -32,7 +33,8 @@
       when: configure_p10k
       tags: ['p10k']
 
-      # TODO Install OMZ and set up plugins and Add scripts
+      # TODO Install ZSH, OMZ, P10k and set up plugins and Add scripts
+      # Fix issue with golang path 
 
 
   tasks:
