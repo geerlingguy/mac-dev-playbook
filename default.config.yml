@@ -278,7 +278,7 @@ nvm_version: "v0.39.1"
 nvm_install_checksum: "sha256:fabc489b39a5e9c999c7cab4d281cdbbcbad10ec2f8b9a7f7144ad701b6bfdc7"
 
 # asdf version to install
-asdf_version: "v0.9.0"
+asdf_version: "v0.12.0"
 
 # see README.md for example configuration
 asdf_plugins:
@@ -400,7 +400,15 @@ asdf_init_shell: false
 install_ohmyzsh: true
 ohmyzsh_theme: powerlevel10k/powerlevel10k
 ohmyzsh_plugins:
-  - git
+  - ansible
   - asdf
-configure_p10k: true
+  - git
+  - helm
+  - kube-ps1
+  - kubectx
+  - kubectl
+  - nmap
+  - python
+  - ssh-agent
+configure_p10k: false
 zsh_plugin: ohmyzsh
