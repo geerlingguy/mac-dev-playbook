@@ -30,16 +30,12 @@
     - role: markosamuli.asdf
       tags: ['asdf']
     - role: diodonfrost.ohmyzsh
-      when: configure_p10k
-      tags: ['p10k']
+      when: install_ohmyzsh
+      tags: ['ohmyzsh']
+      become: yes
     - role: diodonfrost.p10k
       when: configure_p10k
       tags: ['p10k']
-
-      # TODO Install ZSH, OMZ, P10k and set up plugins and Add scripts
-      # Fix issue with golang path 
-
-
   tasks:
     - import_tasks: tasks/sudoers.yml
       when: configure_sudoers

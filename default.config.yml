@@ -38,6 +38,7 @@ dotfiles_files:
   - .kubectl_aliases
   - .macos
   - .osx
+  - .path
   - .screenrc
   - .tmux.conf
   - .vim
@@ -396,25 +397,10 @@ asdf_plugins:
 # Configure shell
 asdf_init_shell: false
 
-configure_p10k: true
-p10k_repository_url: 'https://github.com/romkatv/powerlevel10k.git'
-# Zsh plugin used, zsh, ohmyzsh, prezto, Zim, etc..
-# All plugin names can be found here https://github.com/romkatv/powerlevel10k#installation
-# TODO: Change to OhMyZsh
-zsh_plugin: ohmyzsh
-p10k_prompt_style: "rainbow"
-p10k_prompt_time: "24-hour"
-p10k_prompt_separator: "angled"
-p10k_prompt_head: "sharp"
-p10k_prompt_tails: flat
-p10k_prompt_height: two-lines
-p10k_prompt_connection: disconnected
-p10k_prompt_connection_color: "dark"
-p10k_prompt_frame: left
-p10k_prompt_spacing: compact
-p10k_prompt_flow: concise
-p10k_transient_prompt: "no"
-# Setup the ohmyzsh plugins to used
+install_ohmyzsh: true
+ohmyzsh_theme: powerlevel10k/powerlevel10k
 ohmyzsh_plugins:
   - git
   - asdf
+configure_p10k: true
+zsh_plugin: ohmyzsh
