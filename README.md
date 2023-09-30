@@ -117,7 +117,7 @@ Packages (installed with Homebrew):
   - gettext
   - gifsicle
   - git
-  - github/gh/gh
+  - gh
   - go
   - gpg
   - httpie
