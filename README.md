@@ -12,6 +12,8 @@ for home freebox
     change the IP in inventory file
     ansible-playbook UbuntuVM.yml --ask-vault-pass -v
     install freebox reboot https://github.com/PabloLec/freebox_reboot
+    Reinstall Newgroup password
+    Reinstall plex server http://192.168.1.XXX:32400/web
 
 # plex
   Go to <IP>:32400/web to configure new server

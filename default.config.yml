@@ -67,7 +67,7 @@ homebrew_installed_packages:
   - node
   - nvm
   - openssl
-  - preform
+#  - preform
 #  - pyenv
   - qt
   - readline
@@ -94,14 +94,14 @@ homebrew_cask_apps:
   - evernote
 # - firefox
   - google-drive
-# - google-chrome
+  - google-chrome
   - grandperspective
   - ledger-live
   - ltspice
   - meld
   - microsoft-teams
   - macfuse
-# - notion
+  - notion
   - plex
   - plex-media-server
   - projectlibre
@@ -111,17 +111,17 @@ homebrew_cask_apps:
   - shadow
   - simple-comic
 # - skype
-# - slack
+  - slack
   - steam
-#  - sublime-text
+  - sublime-text
   - suspicious-package
   - todoist
   - transmission
  # - visual-studio-code
- # - vlc
+  - vlc
   - whatsapp
   - xmind
- # - zoom
+  - zoom
   - protonmail-bridge
 
 # See `geerlingguy.mas` role documentation for usage instructions.
