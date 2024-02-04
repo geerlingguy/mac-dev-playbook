@@ -124,7 +124,6 @@ Packages (installed with Homebrew):
   - iperf
   - libevent
   - sqlite
-  - mcrypt
   - nmap
   - node
   - nvm
