@@ -20,7 +20,7 @@
 # @see: http://secrets.blacktree.com/?showapp=com.apple.finder
 # @see: https://github.com/herrbischoff/awesome-macos-command-line
 #
-# @author Jeff Geerling
+# @author Jeff Geerling, modified by ThatNerdNoah
 
 # Warn that some commands will not be run if the script is not run as root.
 if [[ $EUID -ne 0 ]]; then
