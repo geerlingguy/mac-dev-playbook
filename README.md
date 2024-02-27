@@ -1,5 +1,13 @@
 **This is a fork of Jeff Geerling's Mac Dev Playbook. Information about the original project are below.**
 
+## Changes in this fork
+* Edited homebrew installed apps
+* Added mas apps
+* Boolean flag added for mas app installation (false by default)
+   * If set to true, mas will install listed default apps from Mac App Store   
+* Modified osx script for default settings
+* dockutil utilized for installed apps
+
 <img src="https://raw.githubusercontent.com/geerlingguy/mac-dev-playbook/master/files/Mac-Dev-Playbook-Logo.png" width="250" height="156" alt="Mac Dev Playbook Logo" />
 
 # Mac Development Ansible Playbook
