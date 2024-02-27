@@ -2,55 +2,23 @@
 downloads: ~/.ansible-downloads/
 
 configure_dotfiles: true
-configure_terminal: false
+configure_terminal: true
 configure_osx: true
 
 # Set to 'true' to configure the Dock via dockutil.
-# configure_dock: true
-# dockitems_remove:
-#   - Launchpad
-#   - TV
-#   - Podcasts
-#   - "App Store"
-
-configure_dock: true
-dockitems_remove:
-  - Launchpad
-  - Mail
-  - Maps
-  - Photos
-  - TV
-  - FaceTime
-  - "App Store"
-  - Reminders
-  - Calendar
-  - Contacts
-  - Freeform
-  - Notes
-  - News
-  - Music
-dockitems_persist:
-  - name: "Google Chrome"
-    path: "/Applications/Google\ Chrome.app/"
-    pos: 1
-  - name: "Safari"
-    path: "/Applications/Safari.app"
-    pos: 2
-  - name: "Messages"
-    path: "/Applications/Messages.app"
-    pos: 3
-  - name: "Discord"
-    path: "/Applications/Discord.app"
-    pos: 4
-  - name: "Steam"
-    path: "/Applications/Steam.app"
-    pos: 5
-  - name: "System Settings"
-    path: "/Applications/System\ Settings.app"
-    pos: 6
+configure_dock: false
+dockitems_remove: []
+# - Launchpad
+# - TV
+# - Podcasts
+# - 'App Store'
+dockitems_persist: []
+# - name: "Sublime Text"
+#   path: "/Applications/Sublime Text.app/"
+#   pos: 5
 
 configure_sudoers: false
-sudoers_custom_config: ""
+sudoers_custom_config: ''
 # Example:
 # sudoers_custom_config: |
 #   # Allow users in admin group to use sudo with no password.
@@ -77,7 +45,6 @@ homebrew_installed_packages:
   - gh
   - go
   - gpg
-  - mas
   - httpie
   - iperf
   - libevent
@@ -94,35 +61,29 @@ homebrew_installed_packages:
   - wget
   - wrk
   - zsh-history-substring-search
-  - tart
 
 homebrew_taps: []
 
 homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
   - chromedriver
-  - microsoft-edge
-  - webex
+  - docker
+  - dropbox
   - firefox
   - google-chrome
-  - discord
-  - raspberry-pi-imager
-  - steam
-  - obs
-  - visual-studio-code
+  - handbrake
+  - licecap
+  - sequel-ace
+  - slack
+  - sublime-text
+  - transmit
 
 # See `geerlingguy.mas` role documentation for usage instructions.
-configure_mas_apps: false
-mas_installed_apps:
-  - { id: 497799835, name: "Xcode" }
-  - { id: 1295203466, name: "Microsoft Remote Desktop" }
-  - { id: 1352778147, name: "Bitwarden" }
-  - { id: 1451685025, name: "WireGuard" }
-  - { id: 310633997, name: "WhatsApp" }
+mas_installed_apps: []
 mas_email: ""
 mas_password: ""
 
-osx_script: "{{ playbook_dir }}/.osx --no-restart"
+osx_script: "~/.osx --no-restart"
 
 # Install packages from other package managers.
 # Note: You are responsible for making sure the required package managers are
@@ -146,7 +107,7 @@ pip_packages: []
 
 # Set to 'true' to configure Sublime Text.
 configure_sublime: false
-sublime_base_path: "~/Library/Application Support/Sublime Text"
+sublime_base_path: '~/Library/Application Support/Sublime Text'
 sublime_config_path: "Packages/User"
 sublime_package_control:
   - "DocBlockr"
