@@ -63,7 +63,7 @@ defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
 # osascript -e 'tell application "Finder" to set desktop picture to POSIX file "/System/Library/Desktop Pictures/Solid Colors/Stone.png"'
 
 # Enable macOS Dark Mode
-osascript -e 'tell app "System Events" to tell appearance preferences to set dark mode to not dark mode'
+osascript -e 'tell application "System Events" to tell appearance preferences to set dark mode to true'
 
 ###############################################################################
 # Trackpad, mouse, keyboard, Bluetooth accessories, and input                 #
