@@ -1,7 +1,7 @@
 ---
 downloads: ~/.ansible-downloads/
 
-configure_dotfiles: true
+configure_dotfiles: false
 configure_terminal: false
 configure_osx: true
 
@@ -15,7 +15,6 @@ configure_osx: true
 
 configure_dock: true
 dockitems_remove:
-  - Launchpad
   - Mail
   - Maps
   - Photos
@@ -112,7 +111,7 @@ homebrew_cask_apps:
   - visual-studio-code
 
 # See `geerlingguy.mas` role documentation for usage instructions.
-configure_mas_apps: false
+configure_mas_apps: true
 mas_installed_apps:
   - { id: 497799835, name: "Xcode" }
   - { id: 1295203466, name: "Microsoft Remote Desktop" }
