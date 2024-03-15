@@ -29,24 +29,27 @@ dockitems_remove:
   - News
   - Music
 dockitems_persist:
+  - name: "Launchpad"
+    path: "/Applications/Launchpad.app"
+    pos: 1
   - name: "Google Chrome"
     path: "/Applications/Google\ Chrome.app/"
-    pos: 1
+    pos: 2
   - name: "Safari"
     path: "/Applications/Safari.app"
-    pos: 2
+    pos: 3
   - name: "Messages"
     path: "/Applications/Messages.app"
-    pos: 3
+    pos: 4
   - name: "Discord"
     path: "/Applications/Discord.app"
-    pos: 4
+    pos: 5
   - name: "Steam"
     path: "/Applications/Steam.app"
-    pos: 5
+    pos: 6
   - name: "System Settings"
     path: "/Applications/System\ Settings.app"
-    pos: 6
+    pos: 7
 
 configure_sudoers: false
 sudoers_custom_config: ""
