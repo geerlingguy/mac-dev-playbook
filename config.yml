@@ -49,7 +49,6 @@ dockitems_persist:
   pos: 6
 
 homebrew_taps:
-  - homebrew/core
   - homebrew/cask-versions
   - homebrew/cask-fonts
   - shopify/shopify
