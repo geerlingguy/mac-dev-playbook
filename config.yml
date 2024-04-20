@@ -151,7 +151,6 @@ mas_installed_apps:
   - { id: 1451685025, name: "WireGuard" }
   - { id: 904280696, name: "Things 3" }
 # - { id: 1346203938, name: "OmniFocus" }
-  - { id: 1511601750, name: "1Password - Password Manager" }
   - { id: 1435957248, name: "Drafts" }
 mas_email: ""
 mas_password: ""
