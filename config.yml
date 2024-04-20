@@ -86,7 +86,6 @@ homebrew_installed_packages:
 homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
   # sudo required
-  # - virtualbox
   - temurin17  # new, for newer Android
   - xquartz
   # fonts
@@ -106,8 +105,7 @@ homebrew_cask_apps:
   - skype
   - 1password
   - rectangle
-  - tunnelblick
-  - flux
+  - tunnelblick  # maybe retire for Wireguard soon
   - hammerspoon
   - devonthink
   - slack
@@ -119,13 +117,12 @@ homebrew_cask_apps:
   - icloud-control
   - calibre
   - jdownloader
-  - musicbrainz-picard
   - imageoptim
-  - vuescan
   - handbrake
   - darktable
   - name-mangler
   - bambu-studio
+  - microsoft-office
   # dev
   - emacs
   - docker
@@ -140,6 +137,8 @@ homebrew_cask_apps:
   # - quik
   # - parallels
   # - printopia
+  # - musicbrainz-picard  # streaming services took over
+  # - flux  # mac has its own temperature setting now
 
 mas_installed_apps:
   - { id: 1055511498, name: "Day One" }
@@ -152,6 +151,7 @@ mas_installed_apps:
   - { id: 904280696, name: "Things 3" }
 # - { id: 1346203938, name: "OmniFocus" }
   - { id: 1511601750, name: "1Password - Password Manager" }
+  - { id: 1435957248, name: "Drafts" }
 mas_email: ""
 mas_password: ""
 
