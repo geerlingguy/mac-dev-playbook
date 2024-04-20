@@ -92,6 +92,7 @@ homebrew_cask_apps:
   - font-roboto
   - font-roboto-mono
   - font-ia-writer-duospace
+  - font-hack-nerd-font
   # core apps
   - alfred
   - dropbox
