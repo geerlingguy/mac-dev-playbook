@@ -114,7 +114,6 @@ homebrew_cask_apps:
   - veracrypt
   - steam
   - icloud-control
-  - calibre
   - jdownloader
   - imageoptim
   - handbrake
