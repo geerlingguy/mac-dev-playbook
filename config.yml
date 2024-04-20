@@ -87,7 +87,7 @@ homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
   # sudo required
   # - virtualbox
-  - temurin8
+  - temurin17  # new, for newer Android
   - xquartz
   # fonts
   - font-source-code-pro
@@ -113,8 +113,6 @@ homebrew_cask_apps:
   - slack
   - the-unarchiver
   - bartender
-  - appcleaner
-  - macs-fan-control
   - transmission
   - veracrypt
   - steam
@@ -125,6 +123,9 @@ homebrew_cask_apps:
   - imageoptim
   - vuescan
   - handbrake
+  - darktable
+  - name-mangler
+  - bambu-studio
   # dev
   - emacs
   - docker
@@ -132,7 +133,6 @@ homebrew_cask_apps:
   - iterm2
   - dash
   - coolterm
-  # - genymotion
   - rstudio
   - mactex
   - miniforge
@@ -149,9 +149,9 @@ mas_installed_apps:
   - { id: 1435957248, name: "Drafts" }
   - { id: 1225570693, name: "Ulysses" }
   - { id: 1451685025, name: "WireGuard" }
-#  - { id: 904280696, name: "Things 3" }
+  - { id: 904280696, name: "Things 3" }
 # - { id: 1346203938, name: "OmniFocus" }
-  - { id: 1333542190, name: "1Password 7 - Password Manager" }
+  - { id: 1511601750, name: "1Password - Password Manager" }
 mas_email: ""
 mas_password: ""
 

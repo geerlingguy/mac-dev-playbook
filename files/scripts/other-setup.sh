@@ -50,19 +50,20 @@ fi
 
 # Go Setup
 go install golang.org/x/tools/gopls@latest
-go install golang.org/x/tools/cmd/goimports
-go install github.com/uudashr/gopkgs/cmd/gopkgs
+go install golang.org/x/tools/cmd/goimports@latest
+go install github.com/uudashr/gopkgs/cmd/gopkgs@latest
 
 # Default scientific environment
-if conda env list | grep -q "scientific3_9"
-then
-	echo "Environment done."
-else
-	conda create --name scientific3_9 python=3.9 -y
-fi
+# if conda env list | grep -q "scientific3_9"
+# then
+# 	echo "Environment done."
+# else
+# 	conda create --name scientific3_9 python=3.9 -y
+# fi
 
 conda init
-conda activate scientific3_9
+# conda activate scientific3_9
+conda activate  # install into base
 conda install -yq numpy
 conda install -yq pandas
 conda install -yq matplotlib
