@@ -123,6 +123,8 @@ homebrew_cask_apps:
   - name-mangler
   - bambu-studio
   - microsoft-office
+  - jump
+  - jump-desktop-connect
   # dev
   - emacs
   - docker
