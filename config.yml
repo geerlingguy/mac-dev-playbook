@@ -66,11 +66,10 @@ homebrew_installed_packages:
   - tree
   - opam
   - vim
-  - exa
+  - lsd  # exa no longer maintained
+  - antidote  # antibody no longer maintained
   - zsh
   - zsh-completions
-  - antibody
-  - r
   - tcl-tk
   - libgit2
   - ffmpeg
@@ -131,6 +130,7 @@ homebrew_cask_apps:
   - iterm2
   - dash
   - coolterm
+  - r
   - rstudio
   - mactex
   - miniforge
