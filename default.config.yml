@@ -116,6 +116,10 @@ homebrew_cask_apps:
   - steam
   - obs
   - visual-studio-code
+  - kdenlive
+  - audacity
+  - blender
+  - godot
 
 # See `geerlingguy.mas` role documentation for usage instructions.
 configure_mas_apps: true
