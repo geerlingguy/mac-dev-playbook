@@ -41,15 +41,18 @@ dockitems_persist:
   - name: "Messages"
     path: "/Applications/Messages.app"
     pos: 4
+  - name: "WhatsApp"
+    path: "/Applications/WhatsApp.app"
+    pos: 5
   - name: "Discord"
     path: "/Applications/Discord.app"
-    pos: 5
+    pos: 6
   - name: "Steam"
     path: "/Applications/Steam.app"
-    pos: 6
+    pos: 7
   - name: "System Settings"
     path: "/Applications/System\ Settings.app"
-    pos: 7
+    pos: 8
 
 configure_sudoers: false
 sudoers_custom_config: ""
