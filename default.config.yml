@@ -1,6 +1,4 @@
 ---
-downloads: ~/.ansible-downloads/
-
 configure_dotfiles: true
 configure_terminal: true
 configure_osx: true
