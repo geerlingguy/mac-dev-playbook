@@ -1,0 +1,46 @@
+
+vault-login() {
+    #default to non-prod
+    local token_file=$HOME/.vault-token
+
+    VAULT_ENVIRONMENT="${1:-non-prod}"
+
+    if [ "$VAULT_ENVIRONMENT" = "help" ]; then
+        echo "$(basename "$0") [prod]"
+        return 0
+    fi
+        
+    export VAULT_ADDR="https://vault.${VAULT_ENVIRONMENT}.thescore.is"
+
+    if [ -f $token_file ]; then
+        echo "** Loading existing token file in $token_file"
+        export VAULT_TOKEN=$(cat $token_file)
+    fi
+
+    if vault token lookup > /dev/null 2>&1; then
+        echo "** Already logged in to $VAULT_ADDR"
+    else
+        unset VAULT_TOKEN
+        if vault login -method=oidc -format=json; then
+            export VAULT_TOKEN=$(cat $token_file)
+            echo "** Logged in to $VAULT_ADDR"
+        else
+            echo "** vault login failed"
+            unset VAULT_ADDR
+            unset VAULT_TOKEN
+            unset VAULT_ENVIRONMENT
+            return 1
+        fi
+    fi
+
+    export VAULT_ENVIRONMENT
+    return 0
+}
+
+docker-login() {
+    echo $(security find-generic-password -w -s 'artifactory_docker_token' -a "{{ user_email }}") | docker login thescore.jfrog.io --password-stdin --username "{{ user_email }}"
+}
+
+reload-shell() {
+    source ~/.zshrc
+}

@@ -1,0 +1,3 @@
+export HOMEBREW_ARTIFACT_DOMAIN="{{ homebrew_artifact_domain }}"
+export HOMEBREW_DOCKER_REGISTRY_TOKEN="$(security find-generic-password -w -s 'artifactory_homebrew_token' -a "{{ user_email }}")"
+eval "$(/opt/homebrew/bin/brew shellenv)"

@@ -1,0 +1,35 @@
+- name: Ensure Git Config globally values set for GPG Signing
+  git_config:
+    name: "{{ item.name }}"
+    value: "{{ item.value }}"
+    scope: global
+  with_items:
+    - name: gpg.format
+      value: ssh
+    - name: user.signingkey
+      value: "{{ ssh_key_path }}"
+    - name: commit.gpgsign
+      value: true
+
+- name: Ensure Git Name is set to {{ user_full_name }}
+  git_config:
+    name: user.name
+    value: "{{ user_full_name }}"
+    scope: global
+
+- name: Ensure Git Email is set to {{ user_email }}
+  git_config:
+    name: user.email
+    value: "{{ user_email }}"
+    scope: global
+
+- name: Ensure Git global configs for better DX
+  git_config:
+    name: "{{ item.name }}"
+    value: "{{ item.value }}"
+    scope: global
+  with_items:
+    - name: init.defaultBranch
+      value: main
+    - name: push.autoSetupRemote
+      value: true

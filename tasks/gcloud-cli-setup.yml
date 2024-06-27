@@ -1,0 +1,22 @@
+- name: Run gcloud auth login
+  ansible.builtin.command:
+    cmd: gcloud auth login
+    creates: "{{ '~/.config/gcloud/configurations/config_default' | expanduser }}"
+
+- name: Run gcloud auth application-default login
+  ansible.builtin.command:
+    cmd: gcloud auth application-default login
+    creates: "{{ '~/.config/gcloud/application_default_credentials.json' | expanduser }}"
+
+- name: Test gcloud cli account config
+  ansible.builtin.command: gcloud config get-value account
+  register: gcloud_cli_account_config
+  changed_when: false
+
+- name: Fail if account config value does not match
+  ansible.builtin.fail:
+    msg: |
+      Output value of command "gcloud cli account config" does not match {{ user_email }}
+      Its possible you need to run:
+        gcloud auth login && gcloud auth application-default login
+  when: user_email not in gcloud_cli_account_config.stdout

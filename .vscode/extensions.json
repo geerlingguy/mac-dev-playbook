@@ -1,0 +1,7 @@
+{
+  "recommendations": [
+    "redhat.ansible",
+    "esbenp.prettier-vscode",
+    "tyriar.sort-lines"
+  ]
+}

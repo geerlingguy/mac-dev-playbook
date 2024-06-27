@@ -1,0 +1,57 @@
+- name: Verify GitHub authentication
+  ansible.builtin.command: gh auth status
+  register: gh_auth_status1
+  ignore_errors: true
+  changed_when: false
+
+- name: Prompt user to run `gh auth login`
+  when:
+    - "'Logged in to github.com account' not in gh_auth_status1.stdout"
+    - "'Active account: true' not in gh_auth_status1.stdout"
+    - "'Git operations protocol: ssh' not in gh_auth_status1.stdout"
+    - "'admin:ssh_signing_key' not in gh_auth_status1.stdout"
+  ansible.builtin.pause:
+    prompt: |
+
+      ================================================================================================
+      ** Please open a new terminal window and run the following command to authenticate with GitHub**
+
+      gh auth login --git-protocol ssh --web {{ "--scopes admin:ssh_signing_key" if github_add_ssh_signing_key else "" }}
+
+      ** Make sure to select the SSH Key {{ ssh_key_path }} to upload to GitHub
+      ** Give the key a useful name eg. thescore-laptop. The default GitHub CLI is not useful.
+
+      Once you have completed the authentication process, press ENTER to continue.
+
+- name: Verify GitHub authentication after user action
+  ansible.builtin.command: gh auth status
+  register: gh_auth_status
+  ignore_errors: true
+  changed_when: false
+  when: gh_auth_status1.rc != 0
+
+- name: Fail if GitHub authentication status is not correct
+  ansible.builtin.fail:
+    msg: |
+      GitHub authentication failed. Please ensure you have authenticated successfully using the GitHub CLI.
+  when:
+    - gh_auth_status2 is defined # we don't perform this check if we did not verify the auth status again which won't happen unless the first one failed
+    - gh_auth_status2.rc != 0
+    - "'Logged in to github.com account' not in gh_auth_status2.stdout"
+    - "'Active account: true' not in gh_auth_status2.stdout"
+    - "'Git operations protocol: ssh' not in gh_auth_status2.stdout"
+
+- name: Fail if GitHub authentication key scope is not correct and github_add_ssh_signing_key is true
+  ansible.builtin.fail:
+    msg: |
+      GitHub authentication failed. Please ensure you have authenticated successfully using the GitHub CLI.
+  when:
+    - gh_auth_status2 is defined # we don't perform this check if we did not verify the auth status again which won't happen unless the first one failed
+    - github_add_ssh_signing_key
+    - "'admin:ssh_signing_key' not in gh_auth_status2.stdout"
+# - name: Get a list of SSH keys used for signing
+#   ansible.builtin.command: gh ssh-key list | grep signing
+#   register: gh_ssh_key_list
+#   when: github_add_ssh_signing_key
+# - name: Load the public SSH Key used for signing
+#   when: github_add_ssh_signing_key

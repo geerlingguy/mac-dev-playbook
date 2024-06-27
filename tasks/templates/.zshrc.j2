@@ -1,0 +1,24 @@
+# {{ ansible_managed }}
+# Please place all your custom zshrc files in ~/.zshrc.d/
+# They will be loaded in the alphabetical order.
+# You can use numbers to denoate precedence ex 1-global-stuff 2-mystuff
+
+ZSHRC_DIR={{ zshrc_zshrc_d_path }}
+
+# load the Ansible distributed .zshrc files
+for FILE in "$ZSHRC_DIR"/ansible-managed/*; do
+    if [ -f "$FILE" ]; then
+        source "$FILE"
+    fi
+done
+
+# Check if the directory is empty
+if [ -n "$(ls -A "$ZSHRC_DIR" 2>/dev/null)" ]; then
+    for FILE in "$ZSHRC_DIR"/*; do
+        if [ -f "$FILE" ]; then
+            source "$FILE"
+        fi
+    done
+else
+    echo "No custom zshrc files to load in $ZSHRC_DIR"
+fi

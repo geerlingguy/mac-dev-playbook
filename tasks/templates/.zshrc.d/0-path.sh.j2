@@ -1,0 +1,8 @@
+{% if 'libpq' in homebrew_installed_packages %}
+export PATH="$PATH:/opt/homebrew/opt/libpq/bin"
+{% endif %}
+
+export PATH="{{ managed_user_script_dir }}:$PATH"
+
+# Add Visual Studio Code (code)
+export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"

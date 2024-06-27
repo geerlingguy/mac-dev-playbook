@@ -1,0 +1,25 @@
+- name: Check homebrew jfrog API key is stored in Apple Keychain
+  ansible.builtin.command: security find-generic-password -w -s 'artifactory_homebrew_token' -a "{{ user_email }}"
+  register: homebrew_token_lookup
+  changed_when: false
+  failed_when: false
+
+- name: Prompt for jfrog API key for homebrew if its not stored
+  pause:
+    prompt: Please enter your jfrog API key for homebrew
+    echo: false
+  when: homebrew_token_lookup.rc != 0
+  register: homebrew_token_user_input
+
+- name: Store homebrew jfrog API key in Apple Keychain
+  ansible.builtin.command: security add-generic-password -s 'artifactory_homebrew_token' -a "{{ user_email }}" -w '{{ homebrew_token_user_input.user_input }}'
+  when: homebrew_token_lookup.rc != 0
+
+- name: Retrive homebrew jfrog API key from Apple Keychain
+  ansible.builtin.command: security find-generic-password -w -s 'artifactory_homebrew_token' -a "{{ user_email }}"
+  register: homebrew_token_lookup
+  changed_when: false
+
+- name: Set fact homebrew token
+  ansible.builtin.set_fact:
+    homebrew_jfrog_token: "{{ homebrew_token_lookup.stdout_lines[0] }}"

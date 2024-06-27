@@ -1,0 +1,46 @@
+- name: SRERE Laptop Setup
+  hosts: all
+  gather_facts: true
+  environment:
+    # Setting this so any homebrew action points to the internal brew repo
+    HOMEBREW_ARTIFACT_DOMAIN: "{{ homebrew_artifact_domain }}"
+
+  vars_files:
+    - ../vars_files/default.srere-laptop-setup.yml
+
+  pre_tasks:
+    - import_tasks: ../tasks/homebrew-repo-setup.yml
+      tags:
+        - homebrew
+        - homebrew-repo-setup
+
+  roles:
+    - role: geerlingguy.mac.homebrew
+      tags: ["homebrew"]
+      environment:
+        HOMEBREW_DOCKER_REGISTRY_TOKEN: "{{ homebrew_jfrog_token }}"
+
+  tasks:
+    - import_tasks: ../tasks/zshrc-setup.yml
+      when: zshrc_setup
+      tags: ["zshrc-setup"]
+    - import_tasks: ../tasks/managed-user-scripts-setup.yml
+      when: managed_user_scripts
+      tags: ["managed-user-scripts-setup"]
+    - import_tasks: ../tasks/ssh-key-setup.yml
+      when: ssh_key_setup
+      tags: ["ssh-key-setup"]
+    - import_tasks: ../tasks/ssh-config-setup.yml
+      when: ssh_config_setup
+      tags: ["ssh-config-setup"]
+    - import_tasks: ../tasks/git-config.yml
+      when: git_config
+      tags: ["git-config"]
+    - import_tasks: ../tasks/github-setup.yml
+      when: github_setup
+      tags: ["github-setup"]
+    - import_tasks: ../tasks/helm-repo-setup.yml
+      tags: ["helm-repo-setup"]
+    - import_tasks: ../tasks/gcloud-cli-setup.yml
+      when: gcloud_cli_setup
+      tags: ["gcloud-cli-setup"]

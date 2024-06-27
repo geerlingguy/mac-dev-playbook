@@ -1,0 +1,13 @@
+- name: Ensure {{ managed_user_script_dir }} exists and all permissions are set to 0700
+  ansible.builtin.file:
+    path: "{{ managed_user_script_dir }}"
+    state: directory
+    mode: "0700"
+    recurse: yes
+
+- name: Ensure the templated files in .zshrc.d are up to date
+  ansible.builtin.template:
+    src: "templates/user_home/.local/managed_bin/{{ item }}.j2"
+    dest: "{{ managed_user_script_dir }}/{{ item }}"
+    mode: "0700"
+  with_items: "{{ managed_user_script_files }}"

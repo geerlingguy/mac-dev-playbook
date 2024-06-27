@@ -1,0 +1,40 @@
+# Setup the helm repo that points to https://thescore.jfrog.io/artifactory/api/helm/thescore-helm
+- name: Check helm jfrog Helm API key is stored in Apple Keychain
+  ansible.builtin.command: security find-generic-password -w -s 'artifactory_helm_token' -a "{{ user_email }}"
+  register: helm_token_lookup
+  changed_when: false
+  failed_when: false
+
+- name: Prompt for jfrog API key for Helm if its not stored
+  pause:
+    prompt: Please enter your jfrog API key for Helm
+    echo: false
+  when: helm_token_lookup.rc != 0
+  register: helm_token_user_input
+
+- name: Store helm jfrog API key in Apple Keychain
+  ansible.builtin.command: security add-generic-password -s 'artifactory_helm_token' -a "{{ user_email }}" -w '{{ helm_token_user_input.user_input }}'
+  when: helm_token_lookup.rc != 0
+
+- name: Retrive helm jfrog Helm API key from Apple Keychain
+  ansible.builtin.command: security find-generic-password -w -s 'artifactory_helm_token' -a "{{ user_email }}"
+  register: helm_token_lookup
+  changed_when: false
+
+- name: Add helm thescore-helm repository
+  kubernetes.core.helm_repository:
+    name: thescore-helm
+    repo_url: https://thescore.jfrog.io/artifactory/api/helm/thescore-helm
+    repo_username: "{{ user_email }}"
+    repo_password: "{{ helm_token_lookup.stdout_lines[0] }}"
+
+- name: Confirm helm repository access is working
+  ansible.builtin.command: helm search repo thescore-helm -l
+  failed_when: false
+  changed_when: false
+  register: helm_thescore_repo_test
+
+- name: Fail if the helm repo search fails
+  ansible.builtin.fail:
+    msg: Unable to list repository thescore-helm. Its possible you don't have proper access or internet is down. You can run the command helm search repo thescore-helm -l to try this out
+  when: helm_thescore_repo_test.rc != 0

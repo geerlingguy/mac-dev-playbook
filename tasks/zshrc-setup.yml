@@ -1,0 +1,35 @@
+- name: Ensure the templated file .zshrc is up to date
+  ansible.builtin.template:
+    src: .zshrc.j2
+    dest: "~/.zshrc"
+    backup: true
+
+- name: Ensure {{ zshrc_zshrc_d_path }} exists and all permissions are set to 0700
+  ansible.builtin.file:
+    path: "{{ zshrc_zshrc_d_path }}"
+    state: directory
+    mode: "0700"
+    recurse: yes
+
+- name: Ensure {{ zshrc_zshrc_d_path }}/ansible-managed exists and all permissions are set to 0700
+  ansible.builtin.file:
+    path: "{{ zshrc_zshrc_d_path }}/ansible-managed"
+    state: directory
+    mode: "0700"
+    recurse: yes
+
+- name: Ensure the templated files in .zshrc.d are up to date
+  ansible.builtin.template:
+    src: "templates/.zshrc.d/{{ item }}.j2"
+    dest: "{{ zshrc_zshrc_d_path }}/ansible-managed/{{ item }}"
+  with_items:
+    - 0-functions.sh
+    - 0-homebrew.sh
+    - 0-path.sh
+
+- name: Ensure the templated files in .zshrc.d are absent
+  ansible.builtin.file:
+    path: "{{ zshrc_zshrc_d_path }}/ansible-managed/{{ item }}"
+    state: absent
+  with_items:
+    - 0-ssh-key-agent.sh

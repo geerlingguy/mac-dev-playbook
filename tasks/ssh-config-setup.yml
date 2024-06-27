@@ -1,0 +1,5 @@
+- name: Ensure the templated file ~/.ssh/config is placed
+  ansible.builtin.template:
+    src: user_home/.ssh/config.j2
+    dest: "~/.ssh/config"
+    backup: true

@@ -1,0 +1,50 @@
+configure_terminal: false
+configure_osx: false
+configure_dock: false
+homebrew_installed_packages:
+  - ansible
+  - gh
+  - git
+  - hashicorp/tap/vault
+  - helm
+  - k9s
+  - kubectl
+  - kubectx
+  - libpq #pgsql toolset - lightweight than full postgres
+  - python
+  - terraform
+  - terragrunt
+
+homebrew_uninstalled_packages: []
+
+homebrew_cask_apps:
+  - google-cloud-sdk
+
+homebrew_taps:
+  - hashicorp/tap
+
+homebrew_artifact_domain: https://thescore.jfrog.io/artifactory/homebrew
+
+dotfiles_files: []
+
+gcloud_cli_setup: true
+
+git_config: true
+
+github_add_ssh_signing_key: true
+github_setup: true
+
+managed_user_script_dir: "{{ '~/.local/managed_bin' | expanduser }}"
+managed_user_script_files: []
+managed_user_scripts: true
+
+ssh_config_setup: true
+
+ssh_key_path: "{{ '~/.ssh/id_rsa' | expanduser }}"
+ssh_key_setup: true
+
+user_email: "{{ ansible_user_id + '@thescore.com' }}"
+user_full_name: "{{ ansible_user_id.split('.')[0] | capitalize }} {{ ansible_user_id.split('.')[-1] | capitalize }}"
+
+zshrc_setup: true
+zshrc_zshrc_d_path: "~/.zshrc.d"

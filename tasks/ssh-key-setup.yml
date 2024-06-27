@@ -1,0 +1,17 @@
+- name: Check if the SSH key exists in "{{ ssh_key_path }}"
+  ansible.builtin.stat:
+    path: "{{ ssh_key_path }}"
+  register: ssh_key_file_stat
+
+- name: Error if the SSH Key is not a file if it exists
+  ansible.builtin.fail:
+    msg: The ssh key file that already exists is not a file {{ ssh_key_path }}
+  when:
+    - ssh_key_file_stat.stat.exists
+    - ssh_key_path is not file
+
+- name: Generate SSH Key
+  ansible.builtin.command:
+    cmd: ssh-keygen -t rsa -b 4096 -f "{{ ssh_key_path }}"
+    creates: "{{ ssh_key_path }}"
+  when: not ssh_key_file_stat.stat.exists

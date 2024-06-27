@@ -1,0 +1,17 @@
+{
+    "[python]": {
+      "editor.defaultFormatter": "ms-python.black-formatter",
+      "editor.codeActionsOnSave": {
+        "source.organizeImports": "explicit"
+      }
+    },
+    "[markdown]": {
+      "editor.rulers": [400],
+      "editor.wordWrap": "off"
+    },
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "isort.args": ["--profile", "black"],
+    "editor.formatOnSave": true,
+    "files.insertFinalNewline": true,
+    "ansible.python.interpreterPath": "/usr/bin/python3"
+  }
