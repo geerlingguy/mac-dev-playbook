@@ -21,9 +21,9 @@ Before starting, I completed Apple's mandatory macOS setup wizard (creating a lo
     - iMessage
     - Mac App Store
   - `$ sudo softwareupdate --install-rosetta` (required to install adobe acrobat)
+  - Ensure Apple's command line tools are installed (`xcode-select --install` to launch the installer)
   - Install homebrew:
     - `$ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
-  - Ensure Apple's command line tools are installed (`xcode-select --install` to launch the installer)
   - Ensure that config.yml is in the cloned repository, sourced from Dropbox.
   - Run the playbook remotely with `--tags homebrew, sudoers`.
     - `$ ansible-playbook main.yml  --tags "homebrew,sudoers" --ask-become-pass`
@@ -48,16 +48,19 @@ Before starting, I completed Apple's mandatory macOS setup wizard (creating a lo
       - This command will terminate the Dock process, and macOS will automatically restart it. Any changes applied to the Dock should be resolved after this command.
   - Manual settings to automate someday:
     - TODO:
-      
+      - Set Logi Options Mouse Settings
 
 
 
-
-
-    - Use the Terminal to permanently set hidden files to show in Finder
-      - `$ defaults write com.apple.Finder AppleShowAllFiles true`
-      - `$ killall Finder`
-    - In Finder settings, check the box `Show all filename extensions`
+    - Finder Settings:
+      - Use the Terminal to permanently set hidden files to show in Finder
+        - `$ defaults write com.apple.Finder AppleShowAllFiles true`
+        - `$ killall Finder`
+      - Remove Recent from Finder sidebar
+      - In Finder settings, check the box `Show all filename extensions` and set `New Finder windows show` to the home folder.
+        - ![Finder Settings](./images/finder_settings.png)
+    - Logi Options:
+      - Complete all settings for the MX 3S Mouse. All the images that show desired settings can be found [here](./images/logi_options/)
     - System Settings
       - Wi-Fi
         - Set Wireless SSID and DNS Server to Pihole
