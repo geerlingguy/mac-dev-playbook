@@ -14,7 +14,7 @@ Before starting, I completed Apple's mandatory macOS setup wizard (creating a lo
 
   - SSH setup.
     - Manually copy any shared SSH keys that are needed to log into the remote Ansible machine, from Dropbox (via Airdrop or Web GUI)
-  - Turn on 'Remote Login` and `Screen Sharing` in Settings on Target Mac
+  - Turn on `Remote Login` and `Screen Sharing` in Settings on Target Mac
   - Ensure that the approprpiate SSH Private key that allows remote access is populated in ~/.ssh/authorized_keys
   - Sign into:
     - iCloud
@@ -31,10 +31,8 @@ Before starting, I completed Apple's mandatory macOS setup wizard (creating a lo
     - If you are running this for a second time, you may run into an issue when ansible.builtin.git is called, as the default behavior is not to force a clone if the destination directory already exists and has content. You can override this in two locations:
       - **<repository root>/roles/geerlingguy.dotfiles/tasks/main.yml**:
         - For the task `Ensure dotfiles repository is cloned locally`, add `force: true` to the git module arguments.
-      - **<repository root>/collections/geerlingguy/mac/roles/homebrew/tasks/main.yml**:
-        - For the task `Ensure Homebrew is installed`, add `force: true` to the git module arguments.
 
-  - Ensure that the homebrew binary directory is assed to the PATH:
+  - Ensure that the homebrew binary directory is added to the PATH:
     - `$ export PATH=/opt/homebrew/bin:$PATH`
   - Install old-fashioned apps:
     - Install [Insta360 Link](https://www.insta360.com/download/insta360-link)
@@ -49,6 +47,13 @@ Before starting, I completed Apple's mandatory macOS setup wizard (creating a lo
       - `killall Dock`
       - This command will terminate the Dock process, and macOS will automatically restart it. Any changes applied to the Dock should be resolved after this command.
   - Manual settings to automate someday:
+    - TODO:
+      
+
+
+
+
+
     - Use the Terminal to permanently set hidden files to show in Finder
       - `$ defaults write com.apple.Finder AppleShowAllFiles true`
       - `$ killall Finder`
@@ -89,11 +94,22 @@ Before starting, I completed Apple's mandatory macOS setup wizard (creating a lo
       - Set Brave Browser to default
       - Set Brave Browser default search engine to Google
     - Configure Wireguard
+      - retrieve peer files from Shared Google Drive folder "Wireguard Clients"
     - Sign into Slack workspaces (list in DropBox)
     - Apps to Authenticate with License Keys (list in DropBox):
       - ExpressVPN
       - CleanmyMac
       - Al Dente
+  - Add folders to sidebar in Finder:
+    - ~/Dropbox
+    - ~/.ssh
+    - ~/git-workspace
+    - ~/.kube
+    - ~/Library/Caches
+  - Add remote machine information for vscode (from Dropbox)
+    - Destination: ~/.ssh/remote-hosts/config
+  - Change Optical Drive Settings:
+    - ![Blu Ray and DVD Settings](./images/dvd_blu_ray.png)
   - Run the playbook remotely with `--tags post`.
     - `$ ansible-playbook main.yml  --tags "post" --ask-become-pass`
 
