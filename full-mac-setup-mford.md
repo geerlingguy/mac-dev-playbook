@@ -14,18 +14,26 @@ Before starting, I completed Apple's mandatory macOS setup wizard (creating a lo
 
   - SSH setup.
     - Manually copy any shared SSH keys that are needed to log into the remote Ansible machine, from Dropbox (via Airdrop or Web GUI)
-  - Turn on remote SSH access on Mac
+  - Turn on 'Remote Login` and `Screen Sharing` in Settings on Target Mac
   - Ensure that the approprpiate SSH Private key that allows remote access is populated in ~/.ssh/authorized_keys
   - Sign into:
     - iCloud
     - iMessage
     - Mac App Store
-  - `sudo softwareupdate --install-rosetta` (required to install adobe acrobat)
+  - `$ sudo softwareupdate --install-rosetta` (required to install adobe acrobat)
+  - Install homebrew:
+    - `$ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
   - Ensure Apple's command line tools are installed (`xcode-select --install` to launch the installer)
   - Ensure that config.yml is in the cloned repository, sourced from Dropbox.
   - Run the playbook remotely with `--tags homebrew, sudoers`.
     - `$ ansible-playbook main.yml  --tags "homebrew,sudoers" --ask-become-pass`
     - If there are errors, you may need to finish up other tasks like installing 'old-fashioned' apps first
+    - If you are running this for a second time, you may run into an issue when ansible.builtin.git is called, as the default behavior is not to force a clone if the destination directory already exists and has content. You can override this in two locations:
+      - **<repository root>/roles/geerlingguy.dotfiles/tasks/main.yml**:
+        - For the task `Ensure dotfiles repository is cloned locally`, add `force: true` to the git module arguments.
+      - **<repository root>/collections/geerlingguy/mac/roles/homebrew/tasks/main.yml**:
+        - For the task `Ensure Homebrew is installed`, add `force: true` to the git module arguments.
+
   - Ensure that the homebrew binary directory is assed to the PATH:
     - `$ export PATH=/opt/homebrew/bin:$PATH`
   - Install old-fashioned apps:
@@ -37,6 +45,9 @@ Before starting, I completed Apple's mandatory macOS setup wizard (creating a lo
     - `/Dropbox/My Documents/Macbook Ansible Restore/`
   - Run the playbook remotely with `--skip-tags homebrew, post`.
     - `$ ansible-playbook main.yml  --skip-tags "homebrew,post" --ask-become-pass`
+    - NOTE: The Dock may not show updates after this; in order to show the changes, run the following command in the Mac Terminal:
+      - `killall Dock`
+      - This command will terminate the Dock process, and macOS will automatically restart it. Any changes applied to the Dock should be resolved after this command.
   - Manual settings to automate someday:
     - Use the Terminal to permanently set hidden files to show in Finder
       - `$ defaults write com.apple.Finder AppleShowAllFiles true`
