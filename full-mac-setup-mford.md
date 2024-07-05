@@ -48,7 +48,7 @@ Before starting, I completed Apple's mandatory macOS setup wizard (creating a lo
       - This command will terminate the Dock process, and macOS will automatically restart it. Any changes applied to the Dock should be resolved after this command.
   - Manual settings to automate someday:
     - TODO:
-      - Set Logi Options Mouse Settings
+      - Turn off sound for iMessage
 
 
 
@@ -86,11 +86,29 @@ Before starting, I completed Apple's mandatory macOS setup wizard (creating a lo
         - Add Fingerprints for TouchID
         - Allow Apple Watch to Unlock Mac   
       - Internet Accounts
-        - Set up Google Account and sync contacts with Mac
+        - Set up Google Account and sync contacts and calendar with Mac
       - Trackpad
         - Tap to Click: `Enabled`
           - Tap with one finger
         - App Exposé: `Swipe Down with Four Fingers`
+      - Open at Login:
+        - Open at Login:
+          - AlDente.app (if a laptop)
+          - Dropbox.app
+          - Rectangle.app
+        - Allow in the Background:
+          - 1Password.app
+          - AlDente
+          - Docker.app
+          - Dropbox
+          - ExpressVPN
+          - Logi Options+
+          - Microsoft Office Licensing
+          - Spotify.app
+          - Wireguard.app
+          - zoom.us.app
+    - iMessage
+      - Turn off sound for iMessage
     - Google Chrome/Brave Browser:
       - Install Google Chrome/Brave Browser extensions (list in DropBox)
       - Import Google Chrome/Brave Browser bookmarks from Dropbox
