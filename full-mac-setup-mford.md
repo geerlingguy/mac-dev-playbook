@@ -129,6 +129,9 @@ Before starting, I completed Apple's mandatory macOS setup wizard (creating a lo
           - Spotify.app
           - Wireguard.app
           - zoom.us.app
+      - Notifications
+        - Home
+          - Play Sound for notification: `disable`
     - iMessage
       - Turn off sound for iMessage
     - Google Chrome/Brave Browser:

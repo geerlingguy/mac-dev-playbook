@@ -5,26 +5,8 @@
     path: ~/git-workspace
   register: git_directory
 
-- name: Determine whether the mac-dev-playbook directory exists
-  ansible.builtin.stat:
-    path: ~/git-workspace/mac-dev-playbook
-  register: mac_directory
-
 - name: Create git-workspace directory
   ansible.builtin.file:
     path: ~/git-workspace
     state: directory
   when: not git_directory.stat.exists
-
-- name: clone git-workspace directory
-  ansible.builtin.git:
-    repo: 'https://github.com/michaelford85/mac-dev-playbook.git'
-    dest: ~/git-workspace/mac-dev-playbook
-  when: not mac_directory.stat.exists
-
-- name: create a hard link for config.yml
-  ansible.builtin.file:
-    src: "~/Library/CloudStorage/Dropbox/My Documents/Macbook Ansible Restore/config.yml"
-    dest: "~/git-workspace/mac-dev-playbook/config.yml"
-    state: hard
-  when: not mac_directory.stat.exists
