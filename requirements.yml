@@ -2,6 +2,9 @@
 roles:
   - name: elliotweiser.osx-command-line-tools
   - name: geerlingguy.dotfiles
+  - name: ansible-role-dock
+    src: https://github.com/wayofdev/ansible-role-dock
+    version: v2.3.0
 
 collections:
   - name: geerlingguy.mac
