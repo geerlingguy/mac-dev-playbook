@@ -1,5 +1,6 @@
 *.vagrant
 .DS_Store
 *.retry
+roles*
 collections*
 config.yml
