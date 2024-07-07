@@ -10,6 +10,7 @@ the default location for all necessary files in Dropbox is: `/Dropbox/My Documen
 
 ## Initial configuration of a brand new Mac
 
+### Pre-automation Tasks
 Before starting, I completed Apple's mandatory macOS setup wizard (creating a local user account, and optionally signing into my iCloud account). Once on the macOS desktop, I do the following (in order):
 
   - SSH setup.
@@ -20,20 +21,45 @@ Before starting, I completed Apple's mandatory macOS setup wizard (creating a lo
     - iCloud
     - iMessage
     - Mac App Store
-  - `$ sudo softwareupdate --install-rosetta` (required to install adobe acrobat)
   - Ensure Apple's command line tools are installed (`xcode-select --install` to launch the installer)
   - Install homebrew:
     - `$ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
+  - Install the ansible collections and roles required:
+    - `$ ansible-galaxy install -r <repository root>/requirements.yml`
+  - Make the following role tweaks:
+    - **<repository root>/roles/geerlingguy.dotfiles/tasks/main.yml**:
+      - For the task `Ensure dotfiles repository is cloned locally`, add `force: true` to the git module arguments.
+        - 
+            ```
+            - name: Ensure dotfiles repository is cloned locally.
+              git:
+                repo: "{{ dotfiles_repo }}"
+                dest: "{{ dotfiles_repo_local_destination }}"
+                version: "{{ dotfiles_repo_version }}"
+                accept_hostkey: "{{ dotfiles_repo_accept_hostkey }}"
+                force: true
+              become: false
+            ```
+    - **<repository root>/roles/ansible-role-dock/tasks/remove.yml**:
+      - Comment out the task `Dockutil | Removing items`.
+        - 
+            ```
+            # - name: Dockutil | Removing items
+            #   ansible.builtin.shell: "{{ lookup('template', './templates/remove.j2') | replace('\n', '') | trim }}"
+            #   loop_control:
+            #     label: "{{ item.item }}"
+            #   changed_when: false
+            #   when: dock_dockitems_to_remove is defined and (dock_dockitems_to_remove | length > 0)
+            #   tags:
+            #     - dock-remove
+            ```
+
+### Automated Installations
+
   - Ensure that config.yml is in the cloned repository, sourced from Dropbox.
   - Run the playbook remotely with `--tags homebrew, sudoers`.
-    - `$ ansible-playbook main.yml  --tags "homebrew,sudoers" --ask-become-pass`
+    - `$ ansible-playbook main.yml  --tags "homebrew,sudoers"`
     - If there are errors, you may need to finish up other tasks like installing 'old-fashioned' apps first
-    - If you are running this for a second time, you may run into an issue when ansible.builtin.git is called, as the default behavior is not to force a clone if the destination directory already exists and has content. You can override this in two locations:
-      - **<repository root>/roles/geerlingguy.dotfiles/tasks/main.yml**:
-        - For the task `Ensure dotfiles repository is cloned locally`, add `force: true` to the git module arguments.
-
-  - Ensure that the homebrew binary directory is added to the PATH:
-    - `$ export PATH=/opt/homebrew/bin:$PATH`
   - Install old-fashioned apps:
     - Install [Insta360 Link](https://www.insta360.com/download/insta360-link)
     - Install [Google Chat](https://chat.google.com/download/) from within Brave Browser
@@ -42,16 +68,12 @@ Before starting, I completed Apple's mandatory macOS setup wizard (creating a lo
     - `/Dropbox/apps/`
     - `/Dropbox/My Documents/Macbook Ansible Restore/`
   - Run the playbook remotely with `--skip-tags homebrew, post`.
-    - `$ ansible-playbook main.yml  --skip-tags "homebrew,post" --ask-become-pass`
+    - `$ ansible-playbook main.yml  --skip-tags "homebrew,post"`
     - NOTE: The Dock may not show updates after this; in order to show the changes, run the following command in the Mac Terminal:
       - `killall Dock`
       - This command will terminate the Dock process, and macOS will automatically restart it. Any changes applied to the Dock should be resolved after this command.
-  - Manual settings to automate someday:
-    - TODO:
-      - Turn off sound for iMessage
 
-
-
+  ### Post Automation Manual Processes
     - Finder Settings:
       - Use the Terminal to permanently set hidden files to show in Finder
         - `$ defaults write com.apple.Finder AppleShowAllFiles true`
@@ -119,8 +141,9 @@ Before starting, I completed Apple's mandatory macOS setup wizard (creating a lo
     - Sign into Slack workspaces (list in DropBox)
     - Apps to Authenticate with License Keys (list in DropBox):
       - ExpressVPN
-      - CleanmyMac
+      - DaisyDisk
       - Al Dente
+      - makemkv
   - Add folders to sidebar in Finder:
     - ~/Dropbox
     - ~/.ssh
@@ -132,7 +155,15 @@ Before starting, I completed Apple's mandatory macOS setup wizard (creating a lo
   - Change Optical Drive Settings:
     - ![Blu Ray and DVD Settings](./images/dvd_blu_ray.png)
   - Run the playbook remotely with `--tags post`.
-    - `$ ansible-playbook main.yml  --tags "post" --ask-become-pass`
+    - `$ ansible-playbook main.yml  --tags "post"
+
+### Macbook-specific manual configuration
+- AlDente:
+  - Settings --> Charge:
+    - Stop Charging when sleeping: `Enabled`
+    - Hardware Battery Percentage: `Enabled`
+  - Settings --> Features:
+    - Menubar Right Click: `Do Nothing`
 
 ## To Wrap in Post-provision automation
 
@@ -154,3 +185,6 @@ The following tasks have to wait for the initial Dropbox sync to complete before
   - Deauthorize ExpressVPN
   - Deauthorize CleanMyMac
   - Follow Apple's guide (TODO)
+
+## Todo list for post provision automation
+- Add SSH keys to ~/.ssh and change permissions to 0600
