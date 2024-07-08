@@ -30,7 +30,7 @@ Before starting, I completed Apple's mandatory macOS setup wizard (creating a lo
     - **<repository root>/roles/geerlingguy.dotfiles/tasks/main.yml**:
       - For the task `Ensure dotfiles repository is cloned locally`, add `force: true` to the git module arguments.
         - 
-            ```
+            <!-- ```
               - name: Ensure dotfiles repository is cloned locally.
                 git:
                   repo: "{{ dotfiles_repo }}"
@@ -39,11 +39,11 @@ Before starting, I completed Apple's mandatory macOS setup wizard (creating a lo
                   accept_hostkey: "{{ dotfiles_repo_accept_hostkey }}"
                   force: true
                 become: false
-            ```
+            ``` -->
     - **<repository root>/roles/ansible-role-dock/tasks/remove.yml**:
       - Comment out the task `Dockutil | Removing items`.
         - 
-            ```
+            <!-- ```
               # - name: Dockutil | Removing items
               #   ansible.builtin.shell: "{{ lookup('template', './templates/remove.j2') | replace('\n', '') | trim }}"
               #   loop_control:
@@ -52,7 +52,7 @@ Before starting, I completed Apple's mandatory macOS setup wizard (creating a lo
               #   when: dock_dockitems_to_remove is defined and (dock_dockitems_to_remove | length > 0)
               #   tags:
               #     - dock-remove
-            ```
+            ``` -->
 
 ### Automated Installations
 
