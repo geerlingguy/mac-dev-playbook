@@ -29,8 +29,8 @@ Before starting, I completed Apple's mandatory macOS setup wizard (creating a lo
   - Make the following role tweaks:
     - **<repository root>/roles/geerlingguy.dotfiles/tasks/main.yml**:
       - For the task `Ensure dotfiles repository is cloned locally`, add `force: true` to the git module arguments.
-        - 
-            <!-- ```
+        - ```
+            
               - name: Ensure dotfiles repository is cloned locally.
                 git:
                   repo: "{{ dotfiles_repo }}"
@@ -39,11 +39,10 @@ Before starting, I completed Apple's mandatory macOS setup wizard (creating a lo
                   accept_hostkey: "{{ dotfiles_repo_accept_hostkey }}"
                   force: true
                 become: false
-            ``` -->
+          ```
     - **<repository root>/roles/ansible-role-dock/tasks/remove.yml**:
       - Comment out the task `Dockutil | Removing items`.
-        - 
-            <!-- ```
+        - ```
               # - name: Dockutil | Removing items
               #   ansible.builtin.shell: "{{ lookup('template', './templates/remove.j2') | replace('\n', '') | trim }}"
               #   loop_control:
@@ -52,140 +51,127 @@ Before starting, I completed Apple's mandatory macOS setup wizard (creating a lo
               #   when: dock_dockitems_to_remove is defined and (dock_dockitems_to_remove | length > 0)
               #   tags:
               #     - dock-remove
-            ``` -->
+          ``` 
+            
 
 ### Automated Installations
 
-  - Ensure that config.yml is in the cloned repository, sourced from Dropbox.
-  - Run the playbook remotely with `--tags homebrew, sudoers`.
-    - `$ ansible-playbook main.yml  --tags "homebrew,sudoers"`
-    - If there are errors, you may need to finish up other tasks like installing 'old-fashioned' apps first
-  - Install old-fashioned apps:
-    - Install [Insta360 Link](https://www.insta360.com/download/insta360-link)
-    - Install [Google Chat](https://chat.google.com/download/) from within Brave Browser
-    - Install [VMWare Fusion Player](https://customerconnect.vmware.com/en/evalcenter?p=fusion-player-personal-13) (dmg file and licence are in DropBox)
-  - Set up Dropbox and sync the following folders:
-    - `/Dropbox/apps/`
-    - `/Dropbox/My Documents/Macbook Ansible Restore/`
-  - Run the playbook remotely with `--skip-tags homebrew, post`.
-    - `$ ansible-playbook main.yml  --skip-tags "homebrew,post"`
-    - NOTE: The Dock may not show updates after this; in order to show the changes, run the following command in the Mac Terminal:
-      - `killall Dock`
-      - This command will terminate the Dock process, and macOS will automatically restart it. Any changes applied to the Dock should be resolved after this command.
+- Ensure that config.yml is in the cloned repository, sourced from Dropbox.
+- Run the playbook remotely with `--tags homebrew, sudoers`.
+  - `$ ansible-playbook main.yml  --tags "homebrew,sudoers"`
+  - If there are errors, you may need to finish up other tasks like installing 'old-fashioned' apps first
+- Install old-fashioned apps:
+  - Install [Insta360 Link](https://www.insta360.com/download/insta360-link)
+  - Install [Google Chat](https://chat.google.com/download/) from within Brave Browser
+  - Install [VMWare Fusion Player](https://customerconnect.vmware.com/en/evalcenter?p=fusion-player-personal-13) (dmg file and licence are in DropBox)
+- Set up Dropbox and sync the following folders:
+  - `/Dropbox/apps/`
+  - `/Dropbox/My Documents/Macbook Ansible Restore/`
+- Run the playbook remotely with `--skip-tags homebrew, post`.
+  - `$ ansible-playbook main.yml  --skip-tags "homebrew,post"`
+  - NOTE: The Dock may not show updates after this; in order to show the changes, run the following command in the Mac Terminal:
+    - `killall Dock`
+    - This command will terminate the Dock process, and macOS will automatically restart it. Any changes applied to the Dock should be resolved after this command.
 
-  ### Post Automation Manual Processes
-    - Finder Settings:
-      - Use the Terminal to permanently set hidden files to show in Finder
-        - `$ defaults write com.apple.Finder AppleShowAllFiles true`
-        - `$ killall Finder`
-      - Remove Recent from Finder sidebar
-      - In Finder settings, check the box `Show all filename extensions` and set `New Finder windows show` to the home folder.
-        - ![Finder Settings](./images/finder_settings.png)
-    - Logi Options:
-      - Complete all settings for the MX 3S Mouse. All the images that show desired settings can be found [here](./images/logi_options/)
-    - System Settings
-      - Wi-Fi
-        - Set Wireless SSID and DNS Server to Pihole
-      - Privacy & Security
-        - Privacy
-          - Screen Recording
-            - Give the following apps permissions
-              - Amazon Chime
-              - Brave Browser
-              - FaceTime
-              - Google Chrome
-              - Microsoft Teams
-              - WebEx
-              - zoom.us
-      - Desktop & Dock
-        - Show recent applications in dock: `disabled`
-        - Hot Corners
-          - Upper Left: `Notification Center`
-          - Lower Left: `Lock Screen`
-          - Upper Right: `-`
-          - Lower Right: `Put Display to Sleep` 
-      - Touch ID & Password
-        - Add Fingerprints for TouchID
-        - Allow Apple Watch to Unlock Mac   
-      - Internet Accounts
-        - Set up Google Account and sync contacts and calendar with Mac
-      - Trackpad
-        - Tap to Click: `Enabled`
-          - Tap with one finger
-        - App Exposé: `Swipe Down with Four Fingers`
-      - Open at Login:
-        - Open at Login:
-          - AlDente.app (if a laptop)
-          - Dropbox.app
-          - Rectangle.app
-        - Allow in the Background:
-          - 1Password.app
-          - AlDente
-          - Docker.app
-          - Dropbox
-          - ExpressVPN
-          - Logi Options+
-          - Microsoft Office Licensing
-          - Spotify.app
-          - Wireguard.app
-          - zoom.us.app
-      - Notifications
-        - Home
-          - Play Sound for notification: `disable`
-    - iMessage
-      - Turn off sound for iMessage
-    - Google Chrome/Brave Browser:
-      - Install Google Chrome/Brave Browser extensions (list in DropBox)
-      - Import Google Chrome/Brave Browser bookmarks from Dropbox
-      - Set Brave Browser to default
-      - Set Brave Browser default search engine to Google
-    - Configure Wireguard
-      - retrieve peer files from Shared Google Drive folder "Wireguard Clients"
-    - Sign into Slack workspaces (list in DropBox)
-    - Apps to Authenticate with License Keys (list in DropBox):
+
+### Post Automation Manual Processes
+- Finder Settings:
+  - Use the Terminal to permanently set hidden files to show in Finder
+    - `$ defaults write com.apple.Finder AppleShowAllFiles true`
+    - `$ killall Finder`
+  - Remove Recent from Finder sidebar
+  - In Finder settings, check the box `Show all filename extensions` and set `New Finder windows show` to the home folder.
+    - ![Finder Settings](./images/finder_settings.png)
+- Logi Options:
+  - Complete all settings for the MX 3S Mouse. All the images that show desired settings can be found [here](./images/logi_options/)
+- System Settings
+  - Wi-Fi
+    - Set Wireless SSID and DNS Server to Pihole
+  - Privacy & Security
+    - Privacy
+      - Screen Recording
+        - Give the following apps permissions
+          - Amazon Chime
+          - Brave Browser
+          - FaceTime
+          - Google Chrome
+          - Microsoft Teams
+          - WebEx
+          - zoom.us
+  - Desktop & Dock
+    - Show recent applications in dock: `disabled`
+    - Hot Corners
+      - Upper Left: `Notification Center`
+      - Lower Left: `Lock Screen`
+      - Upper Right: `-`
+      - Lower Right: `Put Display to Sleep` 
+  - Touch ID & Password
+    - Add Fingerprints for TouchID
+    - Allow Apple Watch to Unlock Mac   
+  - Internet Accounts
+    - Set up Google Account and sync contacts and calendar with Mac
+  - Trackpad
+    - Tap to Click: `Enabled`
+    - Tap with one finger
+    - App Exposé: `Swipe Down with Four Fingers`
+  - Open at Login:
+    - Open at Login:
+      - AlDente.app (if a laptop)
+      - Dropbox.app
+      - Rectangle.app
+    - Allow in the Background:
+      - 1Password.app
+      - AlDente
+      - Docker.app
+      - Dropbox
       - ExpressVPN
-      - DaisyDisk
-      - Al Dente
-      - makemkv
-  - Add folders to sidebar in Finder:
-    - ~/Dropbox
-    - ~/.ssh
-    - ~/git-workspace
-    - ~/.kube
-    - ~/Library/Caches
-  - Add remote machine information for vscode (from Dropbox)
-    - Destination: ~/.ssh/remote-hosts/config
-  - Change Optical Drive Settings:
-    - ![Blu Ray and DVD Settings](./images/dvd_blu_ray.png)
-  - Run the playbook remotely with `--tags post`.
-    - `$ ansible-playbook main.yml  --tags "post"
+      - Logi Options+
+      - Microsoft Office Licensing
+      - Spotify.app
+      - Wireguard.app
+      - zoom.us.app
+  - Notifications
+    - Home
+      - Play Sound for notification: `disable`
+- iMessage
+  - Turn off sound for iMessage
+- Google Chrome/Brave Browser:
+  - Install Google Chrome/Brave Browser extensions (list in DropBox)
+  - Import Google Chrome/Brave Browser bookmarks from Dropbox
+  - Set Brave Browser to default
+  - Set Brave Browser default search engine to Google
+- Configure Wireguard
+  - retrieve peer files from Shared Google Drive folder "Wireguard Clients"
+- Sign into Slack workspaces (list in DropBox)
+- Apps to Authenticate with License Keys (list in DropBox):
+  - ExpressVPN
+  - DaisyDisk
+  - Al Dente
+  - makemkv
+- Add folders to sidebar in Finder:
+  - ~/Dropbox
+  - ~/.ssh
+  - ~/git-workspace
+  - ~/.kube
+  - ~/Library/Caches
+- Add remote machine information for vscode (from Dropbox)
+  - Destination: ~/.ssh/remote-hosts/config
+- Change Optical Drive Settings:
+  - ![Blu Ray and DVD Settings](./images/dvd_blu_ray.png)
+- Run the playbook remotely with `--tags post`.
+  - `$ ansible-playbook main.yml  --tags "post" 
+
 
 ### Macbook-specific manual configuration
 - AlDente:
-  - Settings --> Charge:
+  - Settings -> Charge:
     - Stop Charging when sleeping: `Enabled`
     - Hardware Battery Percentage: `Enabled`
-  - Settings --> Features:
+  - Settings -> Features:
     - Menubar Right Click: `Do Nothing`
 
-## To Wrap in Post-provision automation
-
-The following tasks have to wait for the initial Dropbox sync to complete before they'll succeed. So ideally I'll stick this all in a post-provision script but somehow flag it not to run on first provision.
-
-```
-# git settings
-- Add Git credentials
-
-#Install Ansible in Virtual Environment
-`$ source ~/venvs/ansible/bin/activate`
-`(ansible)$ pip install --upgrade pip`
-`(ansible)$ pip install ansible-core==2.14.1` (as of this writing; see a list of ansible core releases [here](https://pypi.org/project/ansible-core/#history))
-
-```
 
 ## When formatting old Mac
-  - Deauthorize Apple Music in iTunes/Music App
-  - Deauthorize ExpressVPN
   - Deauthorize CleanMyMac
   - Follow Apple's guide (TODO)
 
