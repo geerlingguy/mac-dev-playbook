@@ -10,3 +10,15 @@
     path: ~/git-workspace
     state: directory
   when: not git_directory.stat.exists
+
+- name: Determine whether the mac-dev-playbook directory exists
+  ansible.builtin.stat:
+    path: ~/git-workspace/mac-dev-playbook
+  register: mac_directory
+
+- name: clone git-workspace directory
+  ansible.builtin.git:
+    repo: 'https://github.com/michaelford85/mac-dev-playbook.git'
+    version: master
+    dest: ~/git-workspace/mac-dev-playbook
+  when: not mac_directory.stat.exists
