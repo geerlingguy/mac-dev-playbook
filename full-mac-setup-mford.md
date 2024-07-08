@@ -31,27 +31,27 @@ Before starting, I completed Apple's mandatory macOS setup wizard (creating a lo
       - For the task `Ensure dotfiles repository is cloned locally`, add `force: true` to the git module arguments.
         - 
             ```
-            - name: Ensure dotfiles repository is cloned locally.
-              git:
-                repo: "{{ dotfiles_repo }}"
-                dest: "{{ dotfiles_repo_local_destination }}"
-                version: "{{ dotfiles_repo_version }}"
-                accept_hostkey: "{{ dotfiles_repo_accept_hostkey }}"
-                force: true
-              become: false
+              - name: Ensure dotfiles repository is cloned locally.
+                git:
+                  repo: "{{ dotfiles_repo }}"
+                  dest: "{{ dotfiles_repo_local_destination }}"
+                  version: "{{ dotfiles_repo_version }}"
+                  accept_hostkey: "{{ dotfiles_repo_accept_hostkey }}"
+                  force: true
+                become: false
             ```
     - **<repository root>/roles/ansible-role-dock/tasks/remove.yml**:
       - Comment out the task `Dockutil | Removing items`.
         - 
             ```
-            # - name: Dockutil | Removing items
-            #   ansible.builtin.shell: "{{ lookup('template', './templates/remove.j2') | replace('\n', '') | trim }}"
-            #   loop_control:
-            #     label: "{{ item.item }}"
-            #   changed_when: false
-            #   when: dock_dockitems_to_remove is defined and (dock_dockitems_to_remove | length > 0)
-            #   tags:
-            #     - dock-remove
+              # - name: Dockutil | Removing items
+              #   ansible.builtin.shell: "{{ lookup('template', './templates/remove.j2') | replace('\n', '') | trim }}"
+              #   loop_control:
+              #     label: "{{ item.item }}"
+              #   changed_when: false
+              #   when: dock_dockitems_to_remove is defined and (dock_dockitems_to_remove | length > 0)
+              #   tags:
+              #     - dock-remove
             ```
 
 ### Automated Installations
