@@ -50,9 +50,7 @@ homebrew_installed_packages:
   - virtualenv
   - kubernetes-cli
 
-homebrew_taps:
-  - homebrew/core
-  - homebrew/cask
+homebrew_taps: []
 
 homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
