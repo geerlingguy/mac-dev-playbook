@@ -5,6 +5,20 @@ rules:
   line-length:
     max: 180
     level: warning
+  truthy:
+    allowed-values:
+      - 'true'
+      - 'false'
+      - 'yes'
+      - 'no'
 
-ignore: |
-  .github/workflows/stale.yml
+  # Required for ansible-lint
+  comments-indentation: false
+  comments:
+    min-spaces-from-content: 1
+  braces:
+    min-spaces-inside: 0
+    max-spaces-inside: 1
+  octal-values:
+    forbid-implicit-octal: true
+    forbid-explicit-octal: true

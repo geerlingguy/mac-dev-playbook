@@ -1,5 +1,3 @@
-<img src="https://raw.githubusercontent.com/geerlingguy/mac-dev-playbook/master/files/Mac-Dev-Playbook-Logo.png" width="250" height="156" alt="Mac Dev Playbook Logo" />
-
 # Mac Development Ansible Playbook
 
 [![CI][badge-gh-actions]][link-gh-actions]
@@ -156,13 +154,9 @@ You can also run macOS itself inside a VM, for at least some of the required tes
   - [UTM](https://mac.getutm.app)
   - [Tart](https://github.com/cirruslabs/tart)
 
-## Ansible for DevOps
-
-Check out [Ansible for DevOps](https://www.ansiblefordevops.com/), which teaches you how to automate almost anything with Ansible.
-
 ## Author
 
-This project was created by [Jeff Geerling](https://www.jeffgeerling.com/) (originally inspired by [MWGriffin/ansible-playbooks](https://github.com/MWGriffin/ansible-playbooks)).
-
-[badge-gh-actions]: https://github.com/geerlingguy/mac-dev-playbook/workflows/CI/badge.svg?event=push
-[link-gh-actions]: https://github.com/geerlingguy/mac-dev-playbook/actions?query=workflow%3ACI
+This project is customized by Kian Kasad, and based on
+[Jeff Geerling's mac-dev-playbook](https://github.com/geerlingguy/mac-dev-playbook),
+which itself was inspired by
+[MWGriffin/ansible-playbooks](https://github.com/MWGriffin/ansible-playbooks).
