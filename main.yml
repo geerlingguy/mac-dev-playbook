@@ -3,14 +3,7 @@
   hosts: all
 
   vars_files:
-    - default.config.yml
-
-  pre_tasks:
-    - name: Include playbook configuration.
-      include_vars: "{{ item }}"
-      with_fileglob:
-        - "{{ playbook_dir }}/config.yml"
-      tags: ['always']
+    - config.yml
 
   roles:
     - name: Install MacOS command-line tools.
