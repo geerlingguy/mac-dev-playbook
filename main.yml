@@ -24,6 +24,9 @@
       role: dotfiles
       tags: ['dotfiles']
 
+    - name: Customize sudoers configuration
+      role: sudoers
+
     - name: Install App Store apps
       role: geerlingguy.mac.mas
       when: mas_installed_apps or mas_installed_app_ids
@@ -34,10 +37,6 @@
       tags: ['dock']
 
   tasks:
-    - import_tasks: tasks/sudoers.yml
-      when: configure_sudoers
-      tags: ['sudoers']
-
     - import_tasks: tasks/terminal.yml
       when: configure_terminal
       tags: ['terminal']
