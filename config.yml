@@ -1,5 +1,4 @@
 ---
-configure_terminal: true
 configure_osx: true
 
 # Set to 'true' to configure the Dock via dockutil.
@@ -31,6 +30,8 @@ dotfiles_exclude:
   - .inputrc
   - .osx
   - .vimrc
+
+iterm2_settings_dir: "~/.config/iterm2/my-settings"
 
 homebrew_installed_packages:
   # - ansible # Installed via Pip.

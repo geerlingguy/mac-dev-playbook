@@ -30,9 +30,17 @@
       tags: ['dock']
 
   tasks:
-    - import_tasks: tasks/terminal.yml
-      when: configure_terminal
-      tags: ['terminal']
+    - name: Configure iTerm2 to load settings from filesystem
+      community.general.osx_defaults:
+        state: present
+        domain: com.googlecode.iterm2
+        key: "{{ item.0 }}"
+        type: "{{ item.1 }}"
+        value: "{{ item.2 }}"
+      loop:
+        - ['PrefsCustomFolder', 'string', '{{ iterm2_settings_dir }}']  # Set directory to load settings from
+        - ['LoadPrefsFromCustomFolder', 'bool', true]  # Enable loading settings from directory
+        - ['NoSyncNeverRemindPrefsChangesLostForFile_selection', 'int', 2]  # Automatically save changes to settings
 
     - import_tasks: tasks/osx.yml
       when: configure_osx
