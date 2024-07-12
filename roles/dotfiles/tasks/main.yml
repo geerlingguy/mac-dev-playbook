@@ -1,0 +1,38 @@
+---
+
+##
+## Clone and deploy dotfiles from a Git repository
+##
+## Copyright (C) 2024 Kian Kasad
+## MIT License. See LICENSE file for details.
+##
+
+# I've written this role instead of using geerlingguy.dotfiles because I don't
+# want to explicitly specify which files to copy.
+
+- name: Clone repository
+  ansible.builtin.git:
+    repo: "{{ dotfiles_repo }}"
+    dest: "{{ dotfiles_repo_local_path }}"
+    version: "{{ dotfiles_repo_ref }}"
+    accept_newhostkey: yes
+
+- name: Enumerate dotfiles  # noqa command-instead-of-module
+  ansible.builtin.command:
+    cmd: git ls-files --cached --deduplicate --exclude-standard --full-name
+    chdir: "{{ dotfiles_repo_local_path }}"
+  register: dotfiles
+  changed_when: false
+
+- name: Create destination directory
+  ansible.builtin.file:
+    path: "{{ dotfiles_destination }}"
+    state: directory
+
+- name: Link dotfiles into home directory
+  ansible.builtin.file:
+    src: "{{ (dotfiles_repo_local_path, item) | path_join }}"
+    dest: "{{ (dotfiles_destination, item) | path_join }}"
+    state: link
+    force: yes
+  loop: "{{ dotfiles.stdout_lines | reject('in', dotfiles_exclude) }}"
