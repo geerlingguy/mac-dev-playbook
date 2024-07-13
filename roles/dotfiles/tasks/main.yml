@@ -24,12 +24,13 @@
   register: dotfiles
   changed_when: false
 
-- name: Create destination directory
+- name: Create destination directories
   ansible.builtin.file:
-    path: "{{ dotfiles_destination }}"
+    path: "{{ (dotfiles_destination, item) | path_join | dirname }}"
     state: directory
+  loop: "{{ dotfiles.stdout_lines | reject('in', dotfiles_exclude) }}"
 
-- name: Link dotfiles into home directory
+- name: Link dotfiles into destination
   ansible.builtin.file:
     src: "{{ (dotfiles_repo_local_path, item) | path_join }}"
     dest: "{{ (dotfiles_destination, item) | path_join }}"
