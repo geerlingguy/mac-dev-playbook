@@ -42,17 +42,6 @@
         - ['LoadPrefsFromCustomFolder', 'bool', true]  # Enable loading settings from directory
         - ['NoSyncNeverRemindPrefsChangesLostForFile_selection', 'int', 2]  # Automatically save changes to settings
 
-    - import_tasks: tasks/osx.yml
-      when: configure_osx
-      tags: ['osx']
-
-    - import_tasks: tasks/extra-packages.yml
-      tags: ['extra-packages']
-
-    - import_tasks: tasks/sublime-text.yml
-      when: configure_sublime
-      tags: ['sublime-text']
-
     - name: Run post-provision task files in a block.
       tags: ['post']
       block:
