@@ -16,11 +16,9 @@
         name: elliotweiser.osx-command-line-tools
 
     - name: Install Rosetta
-      ansible.builtin.command:
-        cmd: softwareupdate --install-rosetta
-        stdin: A
-        stdin_add_newline: yes
-      when: ansible_machine == 'arm64'
+      ansible.builtin.include_role:
+        name: rosetta
+      when: install_rosetta is true and ansible_machine == 'arm64'
 
     - name: Install Homebrew & packages
       ansible.builtin.include_role:
