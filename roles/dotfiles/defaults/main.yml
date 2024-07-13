@@ -4,10 +4,10 @@ dotfiles_repo: https://github.com/kdkasad/dotfiles.git
 dotfiles_repo_ref: master
 
 # Local path to clone the dotfiles repository to.
-dotfiles_repo_local_path: ~/.config/dotfiles
+dotfiles_repo_local_path: "~/.config/dotfiles"
 
 # Destination directory in which dotfiles will be linked.
-dotfiles_destination: ~
+dotfiles_destination: "~"
 
 # Files to exclude from the dotfiles repository. Matches the exact path of the
 # file relative to the root of the repository.
