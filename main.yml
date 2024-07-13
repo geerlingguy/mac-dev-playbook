@@ -10,34 +10,48 @@
       prompt: "Enter your Apple ID email address"
       private: false
 
-  roles:
+  tasks:
     - name: Install MacOS command-line tools.
-      role: elliotweiser.osx-command-line-tools
+      ansible.builtin.include_role:
+        name: elliotweiser.osx-command-line-tools
+
+    - name: Install Rosetta
+      ansible.builtin.command:
+        cmd: softwareupdate --install-rosetta
+        stdin: A
+        stdin_add_newline: yes
+      when: ansible_machine == 'arm64'
 
     - name: Install Homebrew & packages
-      role: geerlingguy.mac.homebrew
+      ansible.builtin.include_role:
+        name: geerlingguy.mac.homebrew
       tags: ['homebrew']
 
     - name: Install dotfiles
-      role: dotfiles
+      ansible.builtin.include_role:
+        name: dotfiles
       tags: ['dotfiles']
 
     - name: Customize sudoers configuration
-      role: sudoers
+      ansible.builtin.include_role:
+        name: sudoers
 
     - name: Install App Store apps
-      role: geerlingguy.mac.mas
+      ansible.builtin.include_role:
+        name: geerlingguy.mac.mas
       when: mas_installed_apps or mas_installed_app_ids
       tags: ['mas']
 
-    - role: geerlingguy.mac.dock
+    - name: Configure dock
+      ansible.builtin.include_role:
+        name: geerlingguy.mac.dock
       when: configure_dock
       tags: ['dock']
 
     - name: Install VSCodium extensions
-      role: vscodium_extensions
+      ansible.builtin.include_role:
+        name: vscodium_extensions
 
-  tasks:
     - name: Configure iTerm2 to load settings from filesystem
       community.general.osx_defaults:
         state: present
