@@ -1,0 +1,31 @@
+---
+- name: Get desired extension list
+  ansible.builtin.slurp:
+    path: "{{ vscodium_extensions_list_path }}"
+  register: extensions_b64
+  changed_when: false
+
+- name: Get currently installed extensions
+  ansible.builtin.command:
+    cmd: codium --list-extensions
+  register: installed_extensions
+  changed_when: false
+
+- name: Set fact with extension list
+  ansible.builtin.set_fact:
+    have_extensions: "{{ installed_extensions.stdout_lines | map('lower') | reject('eq', '') }}"
+    want_extensions: "{{ (extensions_b64['content'] | b64decode | lower).splitlines() | reject('eq', '') }}"
+  changed_when: false
+
+- name: Attempt to install extensions
+  ansible.builtin.command:
+    cmd: codium --install-extension "{{ item }}"
+  loop: "{{ want_extensions }}"
+  loop_control:
+    index_var: index
+  when: item not in have_extensions
+  register: install_results
+  changed_when: install_results.rc == 0
+  # Installation will often fail because many extensions are only available in
+  # Microsoft's extension repository and not in OpenVSX.
+  failed_when: false

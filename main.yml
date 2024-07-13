@@ -34,6 +34,9 @@
       when: configure_dock
       tags: ['dock']
 
+    - name: Install VSCodium extensions
+      role: vscodium_extensions
+
   tasks:
     - name: Configure iTerm2 to load settings from filesystem
       community.general.osx_defaults:
