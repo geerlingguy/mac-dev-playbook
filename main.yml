@@ -30,6 +30,11 @@
         name: dotfiles
       tags: ['dotfiles']
 
+    - name: Set defaults
+      ansible.builtin.include_role:
+        name: defaults_settings
+      when: defaults_settings_file
+
     - name: Customize sudoers configuration
       ansible.builtin.include_role:
         name: sudoers

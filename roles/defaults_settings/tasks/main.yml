@@ -1,0 +1,14 @@
+---
+- name: Read settings from file
+  ansible.builtin.command:
+    cmd: ['grep', '-v', '-e', '^#', '-e', '^$', "{{ defaults_settings_file }}"]
+  register: read_settings
+  changed_when: false
+
+- name: Set settings
+  community.general.osx_defaults:
+    domain: "{{ item.0 }}"
+    key: "{{ item.1 }}"
+    type: "{{ item.2 }}"
+    value: "{{ item.3 | ansible.builtin.expandvars }}"
+  loop: "{{ read_settings.stdout_lines | map('split', '\t') }}"
