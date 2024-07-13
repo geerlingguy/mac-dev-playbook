@@ -5,6 +5,11 @@
   vars_files:
     - config.yml
 
+  vars_prompt:
+    - name: mas_email
+      prompt: "Enter your Apple ID email address"
+      private: false
+
   roles:
     - name: Install MacOS command-line tools.
       role: elliotweiser.osx-command-line-tools
