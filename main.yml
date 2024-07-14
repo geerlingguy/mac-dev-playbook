@@ -44,6 +44,15 @@
       ansible.builtin.import_role:
         name: sudoers
 
+    - name: Enable Touch ID for sudo(1)
+      ansible.builtin.lineinfile:
+        path: /private/etc/pam.d/sudo_local
+        create: yes
+        owner: root
+        mode: '0644'
+        line: auth sufficient pam_tid.so
+      become: yes
+
     - name: Install App Store apps
       ansible.builtin.import_role:
         name: geerlingguy.mac.mas
