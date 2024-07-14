@@ -31,6 +31,9 @@ info Creating Python virtual environment...
 python3 -m venv ./venv
 source venv/bin/activate
 
+info Updating pip...
+python3 -m pip install --upgrade pip
+
 info Installing Ansible...
 python3 -m pip install ansible
 
