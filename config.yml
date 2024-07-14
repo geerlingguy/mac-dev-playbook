@@ -4,14 +4,10 @@ install_rosetta: true
 
 # File from which to read dock items.
 # File should be in the format output by "dockutil --list"
-dock_list_file: "~/.config/dock-items.tsv"
+dock_list_file: "~/.config/setup/dock-items.tsv"
 
-configure_sudoers: false
-sudoers_custom_config: ''
-# Example:
-# sudoers_custom_config: |
-#   # Allow users in admin group to use sudo with no password.
-#   %admin ALL=(ALL) NOPASSWD: ALL
+# File containing custom sudoers(5) configuration to add as a drop-in file
+sudoers_custom_config_file: "{{ undef }}"
 
 dotfiles_repo: https://github.com/kdkasad/dotfiles.git
 dotfiles_repo_ref: master
@@ -23,118 +19,25 @@ dotfiles_exclude:
 
 iterm2_settings_dir: "~/.config/iterm2/my-settings"
 
-homebrew_installed_packages:
-  - act
-  - ansible
-  - ansible-lint
-  - autoconf
-  - automake
-  - autopep8
-  - bear
-  - binutils
-  - borgbackup
-  - cmake
-  - coreutils
-  - ffmpeg
-  - findutils
-  - fzf
-  - gawk
-  - gcc
-  - gh
-  - git
-  - git-filter-repo
-  - git-lfs
-  - gitleaks
-  - glow
-  - gnu-sed
-  - gnupg
-  - htop
-  - hugo
-  - imagemagick
-  - iproute2mac
-  - ipython
-  - jq
-  - make
-  - minio-mc
-  - moreutils
-  - neovim
-  - netcat
-  - nmap
-  - nvm
-  - openjdk
-  - pfetch
-  - pipx
-  - pnpm
-  - pstree
-  - pv
-  - pwgen
-  - rsync
-  - rustup-init
-  - shellcheck
-  - socat
-  - sqlite
-  - starship
-  - texlab
-  - tmux
-  - tree
-  - typst
-  - typstfmt
-  - watch
-  - yamllint
-  - yq
-  - yt-dlp
-  - zoxide
-  - zsh-completions
-  - zsh-syntax-highlighting
-  - zsh-vi-mode
-
+# Homebrew settings. See geerlingguy.mac.homebrew documentation.
 homebrew_taps: []
-
 homebrew_cask_appdir: /Applications
-homebrew_cask_apps:
-  - basictex
-  - bitwarden
-  - bluesnooze
-  - docker
-  - firefox
-  - gimp
-  - github
-  - gnucash
-  - hiddenbar
-  - iina
-  - iterm2
-  - karabiner-elements
-  - modrinth
-  - notion
-  - notunes
-  - raycast
-  - shottr
-  - signal
-  - slack
-  - syncthing
-  - tailscale
-  - tor-browser
-  - transmission
-  - utm
-  - vscodium
-  - wireshark
-  - xquartz
-  - yubico-authenticator
-  - yubico-yubikey-manager
-  - zenmap
-  - zoom
+homebrew_installed_packages_file: ~/.config/setup/homebrew/packages
+homebrew_cask_apps_file: ~/.config/setup/homebrew/casks
 
-# See `geerlingguy.mas` role documentation for usage instructions.
 # mas_email is set using vars_prompt in main.yml
 mas_signin_dialog: true
-mas_installed_apps:
-  - { id: 937984704, name: "Amphetamine" }
-  - { id: 1355679052, name: "Dropover" }
-  - { id: 975890633, name: "HotKey App" }
+# File containing list to assign to mas_installed_apps variable.
+# See geerlingguy.mac.mas role documentation for more information.
+mas_installed_apps_file: "~/.config/setup/mas-apps.yml"
 
 # Glob pattern to ansible task files to run after all other tasks are finished.
 post_provision_tasks: []
 
 # File containing settings to set via defaults(1).
 # Each line should contain domain, key, type, value in that order, separated by tabs.
-defaults_settings_file: ~/.config/defaults
+defaults_settings_file: ~/.config/setup/defaults
+
+# File containing VSCodium extensions to install. Can be generated using:
+# codium --list-extensions
+vscodium_extensions_list_path: ~/.config/setup/vscode-extensions.txt
