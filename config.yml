@@ -29,13 +29,11 @@ homebrew_cask_appdir: /Applications
 homebrew_installed_packages_file: ~/.config/setup/homebrew/packages
 homebrew_cask_apps_file: ~/.config/setup/homebrew/casks
 
-# See `geerlingguy.mas` role documentation for usage instructions.
 # mas_email is set using vars_prompt in main.yml
 mas_signin_dialog: true
-mas_installed_apps:
-  - { id: 937984704, name: "Amphetamine" }
-  - { id: 1355679052, name: "Dropover" }
-  - { id: 975890633, name: "HotKey App" }
+# File containing list to assign to mas_installed_apps variable.
+# See geerlingguy.mac.mas role documentation for more information.
+mas_installed_apps_file: "~/.config/setup/mas-apps.yml"
 
 # Glob pattern to ansible task files to run after all other tasks are finished.
 post_provision_tasks: []

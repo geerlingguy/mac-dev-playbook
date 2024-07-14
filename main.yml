@@ -46,10 +46,10 @@
 
     - name: Install App Store apps
       ansible.builtin.import_role:
-        name: geerlingguy.mac.mas
+        name: mas
       environment:
         PATH: "{{ new_path }}"
-      when: mas_installed_apps or mas_installed_app_ids
+      when: mas_installed_apps_file
       tags: ['mas']
 
     - name: Configure dock
