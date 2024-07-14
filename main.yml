@@ -21,7 +21,6 @@
       when: install_rosetta is true and ansible_machine == 'arm64'
 
     - name: Install Homebrew & packages
-      become: true
       ansible.builtin.import_role:
         name: homebrew
       tags: ['homebrew']

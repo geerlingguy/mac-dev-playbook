@@ -1,19 +1,26 @@
 ---
 - name: Read packages list
-  ansible.builtin.slurp:
-    path: "{{ homebrew_installed_packages_file }}"
-  register: cat_packages
-  changed_when: false
+  when: homebrew_installed_packages is undefined
+  block:
+    - ansible.builtin.slurp:
+        path: "{{ homebrew_installed_packages_file }}"
+      register: cat_packages
+      changed_when: false
+    - ansible.builtin.set_fact:
+        homebrew_installed_packages: >-
+          {{ (cat_packages.content | b64decode).splitlines() | reject('eq', '') }}
 
-- name: Read casks list
-  ansible.builtin.slurp:
-    path: "{{ homebrew_cask_apps_file }}"
-  register: cat_casks
-  changed_when: false
+- name: Read cask apps list
+  when: homebrew_cask_apps is undefined
+  block:
+    - ansible.builtin.slurp:
+        path: "{{ homebrew_cask_apps_file }}"
+      register: cat_casks
+      changed_when: false
+    - ansible.builtin.set_fact:
+        homebrew_cask_apps: >-
+          {{ (cat_casks.content | b64decode).splitlines() | reject('eq', '') }}
 
 - name: Install Homebrew & listed packages
-  ansible.builtin.import_role:
+  ansible.builtin.include_role:
     name: geerlingguy.mac.homebrew
-  vars:
-    homebrew_installed_packages: "{{ (cat_packages.content | b64decode).splitlines() | reject('eq', '') }}"
-    homebrew_cask_apps: "{{ (cat_casks.content | b64decode).splitlines() | reject('eq', '') }}"
