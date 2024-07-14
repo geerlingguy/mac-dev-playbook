@@ -6,12 +6,8 @@ install_rosetta: true
 # File should be in the format output by "dockutil --list"
 dock_list_file: "~/.config/dock-items.tsv"
 
-configure_sudoers: false
-sudoers_custom_config: ''
-# Example:
-# sudoers_custom_config: |
-#   # Allow users in admin group to use sudo with no password.
-#   %admin ALL=(ALL) NOPASSWD: ALL
+# File containing custom sudoers(5) configuration to add as a drop-in file
+sudoers_custom_config_file: "{{ undef }}"
 
 dotfiles_repo: https://github.com/kdkasad/dotfiles.git
 dotfiles_repo_ref: master

@@ -1,7 +1,8 @@
 ---
 - name: Render sudoers drop-in configuration file
   ansible.builtin.copy:
-    content: "{{ sudoers_custom_config }}"
+    remote_src: true
+    src: "{{ sudoers_custom_config_file }}"
     dest: /private/etc/sudoers.d/custom
     mode: '0440'
     validate: 'visudo -c -f %s'

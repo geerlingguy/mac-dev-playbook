@@ -43,6 +43,7 @@
     - name: Customize sudoers configuration
       ansible.builtin.import_role:
         name: sudoers
+      when: sudoers_custom_config_file
 
     - name: Install App Store apps
       ansible.builtin.import_role:
