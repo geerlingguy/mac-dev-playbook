@@ -26,6 +26,10 @@
         name: geerlingguy.mac.homebrew
       tags: ['homebrew']
 
+    - name: Create new PATH including Homebrew packages
+      ansible.builtin.set_fact:
+        new_path: /opt/homebrew/bin:{{ ansible_env['PATH'] | default('') }}
+
     - name: Install dotfiles
       ansible.builtin.import_role:
         name: dotfiles
@@ -43,6 +47,8 @@
     - name: Install App Store apps
       ansible.builtin.import_role:
         name: geerlingguy.mac.mas
+      environment:
+        PATH: "{{ new_path }}"
       when: mas_installed_apps or mas_installed_app_ids
       tags: ['mas']
 
@@ -67,6 +73,8 @@
     - name: Install VSCodium extensions
       ansible.builtin.import_role:
         name: vscodium_extensions
+      environment:
+        PATH: "{{ new_path }}"
 
     - name: Run post-provision task files in a block.
       tags: ['post']
