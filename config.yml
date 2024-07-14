@@ -107,6 +107,7 @@ homebrew_cask_apps:
   - bitwarden
   - bluesnooze
   - docker
+  - firefox
   - gimp
   - github
   - gnucash
