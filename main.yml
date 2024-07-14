@@ -51,10 +51,6 @@
       when: configure_dock
       tags: ['dock']
 
-    - name: Install VSCodium extensions
-      ansible.builtin.include_role:
-        name: vscodium_extensions
-
     - name: Configure iTerm2 to load settings from filesystem
       community.general.osx_defaults:
         state: present
@@ -66,6 +62,10 @@
         - ['PrefsCustomFolder', 'string', '{{ iterm2_settings_dir }}']  # Set directory to load settings from
         - ['LoadPrefsFromCustomFolder', 'bool', true]  # Enable loading settings from directory
         - ['NoSyncNeverRemindPrefsChangesLostForFile_selection', 'int', 2]  # Automatically save changes to settings
+
+    - name: Install VSCodium extensions
+      ansible.builtin.include_role:
+        name: vscodium_extensions
 
     - name: Run post-provision task files in a block.
       tags: ['post']
