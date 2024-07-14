@@ -54,8 +54,8 @@
 
     - name: Configure dock
       ansible.builtin.import_role:
-        name: geerlingguy.mac.dock
-      when: configure_dock
+        name: dock
+      when: dock_list_file
       tags: ['dock']
 
     - name: Configure iTerm2 to load settings from filesystem

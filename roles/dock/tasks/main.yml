@@ -1,0 +1,41 @@
+---
+- name: Ensure dockutil is installed
+  community.general.homebrew:
+    pkg: dockutil
+    state: present
+
+- name: Read dock list file contents
+  ansible.builtin.slurp:
+    path: "{{ dock_list_file }}"
+  register: read_list_file
+  changed_when: false
+
+- name: Set variable with dock entries
+  ansible.builtin.set_fact:
+    # Take the contents, base64 decode it, split it into lines, split each line on tabs,
+    # then take the first two elements of each line by batching into sub-lists of 2 elements
+    # and taking the first sub-list.
+    dock_items: "{{ (read_list_file.content | b64decode).splitlines() | map('split', '\t') | map('batch', 2) | map('first') }}"
+
+# TODO: Make this process idempotent
+- name: Remove all dock items
+  ansible.builtin.command:
+    cmd: dockutil --remove all --no-restart
+
+- name: Add dock item
+  ansible.builtin.command:
+    # Take the argumment list, and add "--no-restart" for all but the last item
+    argv: "{{ argv + (ansible_loop.last | ternary([], ['--no-restart'])) }}"
+  vars:
+    argv:
+      - dockutil
+      - --add
+      - "{{ item.1 }}"
+      - --label
+      - "{{ item.0 }}"
+      - --position
+      - "{{ ansible_loop.index }}"
+  loop: "{{ dock_items }}"
+  loop_control:
+    extended: true
+    extended_allitems: false
