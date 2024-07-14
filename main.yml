@@ -12,41 +12,41 @@
 
   tasks:
     - name: Install MacOS command-line tools.
-      ansible.builtin.include_role:
+      ansible.builtin.import_role:
         name: elliotweiser.osx-command-line-tools
 
     - name: Install Rosetta
-      ansible.builtin.include_role:
+      ansible.builtin.import_role:
         name: rosetta
       when: install_rosetta is true and ansible_machine == 'arm64'
 
     - name: Install Homebrew & packages
-      ansible.builtin.include_role:
+      ansible.builtin.import_role:
         name: geerlingguy.mac.homebrew
       tags: ['homebrew']
 
     - name: Install dotfiles
-      ansible.builtin.include_role:
+      ansible.builtin.import_role:
         name: dotfiles
       tags: ['dotfiles']
 
     - name: Set defaults
-      ansible.builtin.include_role:
+      ansible.builtin.import_role:
         name: defaults_settings
       when: defaults_settings_file
 
     - name: Customize sudoers configuration
-      ansible.builtin.include_role:
+      ansible.builtin.import_role:
         name: sudoers
 
     - name: Install App Store apps
-      ansible.builtin.include_role:
+      ansible.builtin.import_role:
         name: geerlingguy.mac.mas
       when: mas_installed_apps or mas_installed_app_ids
       tags: ['mas']
 
     - name: Configure dock
-      ansible.builtin.include_role:
+      ansible.builtin.import_role:
         name: geerlingguy.mac.dock
       when: configure_dock
       tags: ['dock']
@@ -64,7 +64,7 @@
         - ['NoSyncNeverRemindPrefsChangesLostForFile_selection', 'int', 2]  # Automatically save changes to settings
 
     - name: Install VSCodium extensions
-      ansible.builtin.include_role:
+      ansible.builtin.import_role:
         name: vscodium_extensions
 
     - name: Run post-provision task files in a block.
