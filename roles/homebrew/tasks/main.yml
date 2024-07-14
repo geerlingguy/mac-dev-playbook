@@ -1,0 +1,19 @@
+---
+- name: Read packages list
+  ansible.builtin.slurp:
+    path: "{{ homebrew_installed_packages_file }}"
+  register: cat_packages
+  changed_when: false
+
+- name: Read casks list
+  ansible.builtin.slurp:
+    path: "{{ homebrew_cask_apps_file }}"
+  register: cat_casks
+  changed_when: false
+
+- name: Install Homebrew & listed packages
+  ansible.builtin.import_role:
+    name: geerlingguy.mac.homebrew
+  vars:
+    homebrew_installed_packages: "{{ (cat_packages.content | b64decode).splitlines() | reject('eq', '') }}"
+    homebrew_cask_apps: "{{ (cat_casks.content | b64decode).splitlines() | reject('eq', '') }}"

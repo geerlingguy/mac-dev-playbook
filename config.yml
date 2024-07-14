@@ -23,106 +23,11 @@ dotfiles_exclude:
 
 iterm2_settings_dir: "~/.config/iterm2/my-settings"
 
-homebrew_installed_packages:
-  - act
-  - ansible
-  - ansible-lint
-  - autoconf
-  - automake
-  - autopep8
-  - bear
-  - binutils
-  - borgbackup
-  - cmake
-  - coreutils
-  - ffmpeg
-  - findutils
-  - fzf
-  - gawk
-  - gcc
-  - gh
-  - git
-  - git-filter-repo
-  - git-lfs
-  - gitleaks
-  - glow
-  - gnu-sed
-  - gnupg
-  - htop
-  - hugo
-  - imagemagick
-  - iproute2mac
-  - ipython
-  - jq
-  - make
-  - minio-mc
-  - moreutils
-  - neovim
-  - netcat
-  - nmap
-  - nvm
-  - openjdk
-  - pfetch
-  - pipx
-  - pnpm
-  - pstree
-  - pv
-  - pwgen
-  - rsync
-  - rustup-init
-  - shellcheck
-  - socat
-  - sqlite
-  - starship
-  - texlab
-  - tmux
-  - tree
-  - typst
-  - typstfmt
-  - watch
-  - yamllint
-  - yq
-  - yt-dlp
-  - zoxide
-  - zsh-completions
-  - zsh-syntax-highlighting
-  - zsh-vi-mode
-
+# Homebrew settings. See geerlingguy.mac.homebrew documentation.
 homebrew_taps: []
-
 homebrew_cask_appdir: /Applications
-homebrew_cask_apps:
-  - basictex
-  - bitwarden
-  - bluesnooze
-  - docker
-  - firefox
-  - gimp
-  - github
-  - gnucash
-  - hiddenbar
-  - iina
-  - iterm2
-  - karabiner-elements
-  - modrinth
-  - notion
-  - notunes
-  - raycast
-  - shottr
-  - signal
-  - slack
-  - syncthing
-  - tailscale
-  - tor-browser
-  - transmission
-  - utm
-  - vscodium
-  - wireshark
-  - xquartz
-  - yubico-authenticator
-  - yubico-yubikey-manager
-  - zenmap
-  - zoom
+homebrew_installed_packages_file: ~/.config/setup/homebrew/packages
+homebrew_cask_apps_file: ~/.config/setup/homebrew/casks
 
 # See `geerlingguy.mas` role documentation for usage instructions.
 # mas_email is set using vars_prompt in main.yml

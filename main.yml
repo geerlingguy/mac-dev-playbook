@@ -23,7 +23,7 @@
     - name: Install Homebrew & packages
       become: true
       ansible.builtin.import_role:
-        name: geerlingguy.mac.homebrew
+        name: homebrew
       tags: ['homebrew']
 
     - name: Create new PATH including Homebrew packages
