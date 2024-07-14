@@ -7,8 +7,10 @@ This playbook installs and configures most of the software I use on my Mac for w
 ## Installation
 
   1. Clone or download this repository to your local drive.
-  4. Run `./install.sh` inside this directory. The script will install the required tools and run the playbook.
-  5. Enter your MacOS account password (i.e. what you'd use for `sudo`) when prompted for the 'BECOME' password.
+  2. Run `./install.sh` inside this directory. The script will install the required tools and run the playbook.
+  3. At the beginning of the playbook, you will be prompted to enter two credentials:
+     1. Your MacOS account password (i.e. what you'd use for `sudo`), called the "BECOME" password by Ansible.
+     2. Your Apple ID email address.
 
 > [!NOTE]
 > If some Homebrew commands fail, you might need to agree to Xcode's license or fix some other Brew issue. Run `brew doctor` to see if this is the case.
