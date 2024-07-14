@@ -4,7 +4,7 @@ install_rosetta: true
 
 # File from which to read dock items.
 # File should be in the format output by "dockutil --list"
-dock_list_file: "~/.config/dock-items.tsv"
+dock_list_file: "~/.config/setup/dock-items.tsv"
 
 # File containing custom sudoers(5) configuration to add as a drop-in file
 sudoers_custom_config_file: "{{ undef }}"
@@ -36,4 +36,8 @@ post_provision_tasks: []
 
 # File containing settings to set via defaults(1).
 # Each line should contain domain, key, type, value in that order, separated by tabs.
-defaults_settings_file: ~/.config/defaults
+defaults_settings_file: ~/.config/setup/defaults
+
+# File containing VSCodium extensions to install. Can be generated using:
+# codium --list-extensions
+vscodium_extensions_list_path: ~/.config/setup/vscode-extensions.txt
