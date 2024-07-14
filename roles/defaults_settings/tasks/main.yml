@@ -1,7 +1,7 @@
 ---
 - name: Read settings from file
   ansible.builtin.command:
-    cmd: ['grep', '-v', '-e', '^#', '-e', '^$', "{{ defaults_settings_file }}"]
+    argv: ['grep', '-v', '-e', '^#', '-e', '^$', "{{ defaults_settings_file }}"]
   register: read_settings
   changed_when: false
 
