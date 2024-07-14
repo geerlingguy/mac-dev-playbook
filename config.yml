@@ -20,9 +20,6 @@ dotfiles_exclude:
   - README.md
   - LICENSE
   - .gitignore
-  - .inputrc
-  - .osx
-  - .vimrc
 
 iterm2_settings_dir: "~/.config/iterm2/my-settings"
 
