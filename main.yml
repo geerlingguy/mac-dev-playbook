@@ -20,6 +20,11 @@
         name: rosetta
       when: install_rosetta is true and ansible_machine == 'arm64'
 
+    - name: Install dotfiles
+      ansible.builtin.import_role:
+        name: dotfiles
+      tags: ['dotfiles']
+
     - name: Install Homebrew & packages
       ansible.builtin.import_role:
         name: homebrew
@@ -28,11 +33,6 @@
     - name: Create new PATH including Homebrew packages
       ansible.builtin.set_fact:
         new_path: /opt/homebrew/bin:{{ ansible_env['PATH'] | default('') }}
-
-    - name: Install dotfiles
-      ansible.builtin.import_role:
-        name: dotfiles
-      tags: ['dotfiles']
 
     - name: Set defaults
       ansible.builtin.import_role:
