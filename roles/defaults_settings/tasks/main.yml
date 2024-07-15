@@ -11,4 +11,5 @@
     key: "{{ item.1 }}"
     type: "{{ item.2 }}"
     value: "{{ item.3 | ansible.builtin.expandvars }}"
+    check_type: no
   loop: "{{ read_settings.stdout_lines | map('split', '\t') }}"

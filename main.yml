@@ -45,7 +45,7 @@
     - name: Customize sudoers configuration
       ansible.builtin.import_role:
         name: sudoers
-      when: sudoers_custom_config_file
+      when: (sudoers_custom_config_file is defined) and sudoers_custom_config_file
 
     - name: Enable Touch ID for sudo(1)
       ansible.builtin.lineinfile:
@@ -54,6 +54,7 @@
         owner: root
         mode: '0644'
         line: auth sufficient pam_tid.so
+        regexp: 'auth\s+sufficient\s+pam_tid\.so'
       become: yes
 
     - name: Install App Store apps
