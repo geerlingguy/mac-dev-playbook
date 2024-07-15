@@ -18,3 +18,4 @@ curl -fsSL 'https://raw.githubusercontent.com/Homebrew/install/master/uninstall.
 rm -rf /usr/local/Homebrew
 rm -rf /usr/local/Caskroom
 rm -rf /usr/local/bin/brew
+rm -rf /opt/homebrew
