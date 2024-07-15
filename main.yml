@@ -58,7 +58,7 @@
         name: mas
       environment:
         PATH: "{{ new_path }}"
-      when: mas_installed_apps_file
+      when: mas_installed_apps or mas_installed_apps_file
       tags: ['mas']
 
     - name: Configure dock
