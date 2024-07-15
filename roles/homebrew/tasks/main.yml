@@ -1,6 +1,9 @@
 ---
 - name: Read packages list
-  when: homebrew_installed_packages is undefined
+  when: >-
+    (homebrew_installed_packages is undefined)
+    and (homebrew_installed_packages_file is defined)
+    and homebrew_installed_packages_file
   block:
     - name: Read file
       ansible.builtin.slurp:
@@ -14,7 +17,10 @@
           {{ (cat_packages.content | b64decode).splitlines() | reject('eq', '') }}
 
 - name: Read cask apps list
-  when: homebrew_cask_apps is undefined
+  when: >-
+    (homebrew_cask_apps is undefined)
+    and (homebrew_cask_apps_file is defined)
+    and homebrew_cask_apps_file
   block:
     - name: Read file
       ansible.builtin.slurp:

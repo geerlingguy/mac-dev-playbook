@@ -1,6 +1,9 @@
 ---
 - name: Read installed apps list
-  when: mas_installed_apps is undefined
+  when: >-
+    (mas_installed_apps is undefined)
+    and (mas_installed_apps_file is defined)
+    and mas_installed_apps_file
   block:
     - name: Read file
       ansible.builtin.slurp:

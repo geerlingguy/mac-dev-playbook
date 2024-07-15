@@ -35,7 +35,7 @@
     - name: Set defaults
       ansible.builtin.import_role:
         name: defaults_settings
-      when: defaults_settings_file
+      when: (defaults_settings_file is defined) and defaults_settings_file
 
     - name: Customize sudoers configuration
       ansible.builtin.import_role:
@@ -57,13 +57,15 @@
         name: mas
       environment:
         PATH: "{{ new_path }}"
-      when: mas_installed_apps or mas_installed_apps_file
+      when: >-
+        ((mas_installed_apps is defined) and mas_installed_apps)
+        or ((mas_installed_apps_file is defined) and mas_installed_apps_file)
       tags: ['mas']
 
     - name: Configure dock
       ansible.builtin.import_role:
         name: dock
-      when: dock_list_file
+      when: (dock_list_file is defined) and dock_list_file
       tags: ['dock']
 
     - name: Configure iTerm2 to load settings from filesystem
