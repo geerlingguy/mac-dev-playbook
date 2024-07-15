@@ -31,9 +31,6 @@ mas_signin_dialog: true
 # See geerlingguy.mac.mas role documentation for more information.
 mas_installed_apps_file: "~/.config/setup/mas-apps.yml"
 
-# Glob pattern to ansible task files to run after all other tasks are finished.
-post_provision_tasks: []
-
 # File containing settings to set via defaults(1).
 # Each line should contain domain, key, type, value in that order, separated by tabs.
 defaults_settings_file: ~/.config/setup/defaults
