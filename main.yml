@@ -16,9 +16,12 @@
         name: elliotweiser.osx-command-line-tools
 
     - name: Install Rosetta
-      ansible.builtin.import_role:
-        name: rosetta
-      when: install_rosetta is true and ansible_machine == 'arm64'
+      ansible.builtin.command:
+        cmd: softwareupdate --install-rosetta
+        stdin: A
+        stdin_add_newline: yes
+        creates: /usr/libexec/rosetta/oahd
+      when: ansible_machine == 'arm64'
 
     - name: Install dotfiles
       ansible.builtin.import_role:
