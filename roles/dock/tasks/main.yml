@@ -10,32 +10,48 @@
   register: read_list_file
   changed_when: false
 
-- name: Set variable with dock entries
+- name: Set variable with desired dock entries
   ansible.builtin.set_fact:
     # Take the contents, base64 decode it, split it into lines, split each line on tabs,
     # then take the first two elements of each line by batching into sub-lists of 2 elements
     # and taking the first sub-list.
-    dock_items: "{{ (read_list_file.content | b64decode).splitlines() | map('split', '\t') | map('batch', 2) | map('first') }}"
+    want_items: "{{ (read_list_file.content | b64decode).splitlines() | map('split', '\t') | map('batch', 2) | map('first') }}"
 
-# TODO: Make this process idempotent
-- name: Remove all dock items  # noqa no-changed-when
+# List current dock items, turning URI (e.g. file:///Applications/Firefox.app/)
+# into path (e.g. /Applications/Firefox.app).
+- name: List current dock items
   ansible.builtin.command:
-    cmd: dockutil --remove all --no-restart
+    cmd: dockutil --list
+  register: dockutil_list
+  changed_when: false
 
-- name: Add dock item  # noqa no-changed-when
-  ansible.builtin.command:
-    # Take the argumment list, and add "--no-restart" for all but the last item
-    argv: "{{ argv + (ansible_loop.last | ternary([], ['--no-restart'])) }}"
-  vars:
-    argv:
-      - dockutil
-      - --add
-      - "{{ item.1 }}"
-      - --label
-      - "{{ item.0 }}"
-      - --position
-      - "{{ ansible_loop.index }}"
-  loop: "{{ dock_items }}"
-  loop_control:
-    extended: true
-    extended_allitems: false
+- name: Set variable with currently present dock entries
+  ansible.builtin.set_fact:
+    have_items: "{{ dockutil_list.stdout_lines | map('split', '\t') | map('batch', 2) | map('first') }}"
+
+- name: Set dock items
+  when: want_items != have_items
+  block:
+    - name: Remove all dock items
+      ansible.builtin.command:
+        cmd: dockutil --remove all --no-restart
+      changed_when: true
+
+    - name: Add dock items
+      ansible.builtin.command:
+        # Take the argumment list and add "--no-restart" for all but the last item
+        argv: "{{ argv + (ansible_loop.last | ternary([], ['--no-restart'])) }}"
+      vars:
+        argv:
+          - dockutil
+          - --add
+          - "{{ item.1 }}"
+          - --label
+          - "{{ item.0 }}"
+          - --position
+          - "{{ ansible_loop.index }}"
+      loop: "{{ want_items }}"
+      loop_control:
+        extended: true
+        extended_allitems: false
+      changed_when: true
