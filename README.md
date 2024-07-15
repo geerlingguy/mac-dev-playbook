@@ -1,6 +1,9 @@
 # Mac Development Ansible Playbook
 
-<!-- [![CI][badge-gh-actions]][link-gh-actions] -->
+[![CI](https://github.com/kdkasad/mac-dev-playbook/actions/workflows/ci.yml/badge.svg)](https://github.com/kdkasad/mac-dev-playbook/actions/workflows/ci.yml)  
+<img src="https://forthebadge.com/images/badges/gluten-free.svg" alt="Gluten Free badge" height=30 />
+<img src="https://forthebadge.com/images/badges/uses-badges.svg" alt="Uses Badges badge" height=30 />
+
 
 This playbook installs and configures most of the software I use on my Mac for
 web and software development. Some things in macOS are slightly difficult to
