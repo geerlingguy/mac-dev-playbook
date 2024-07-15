@@ -6,7 +6,7 @@ mas_installed_apps_file: "{{ undef() }}"
 # Only install a few Homebrew packages (for speed)
 homebrew_installed_packages_file: "{{ undef() }}"
 homebrew_installed_packages:
-  - ansible
+  - tree
   - zsh-syntax-highlighting
 
 # Only install cask apps which are later used for setup
