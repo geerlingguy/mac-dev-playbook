@@ -1,0 +1,14 @@
+---
+# Don't attempt to use App Store, since that requires manual interaction
+mas_installed_apps: "{{ undef() }}"
+mas_installed_apps_file: "{{ undef() }}"
+
+# Only install a few Homebrew packages (for speed)
+homebrew_installed_packages:
+  - ansible
+  - zsh-syntax-highlighting
+
+# Only install cask apps which are later used for setup
+homebrew_cask_apps:
+  - iterm2
+  - vscodium

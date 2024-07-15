@@ -1,0 +1,90 @@
+---
+name: Continuous Integration
+
+'on':
+  pull_request: {}
+  push:
+    branches:
+      - master
+
+concurrency:
+  group: ${{ github.workflow }}
+  cancel-in-progress: true
+
+jobs:
+  lint:
+    name: Lint code
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out sources
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: pip3 install -r requirements.txt
+
+      - name: Install Ansible Galaxy dependencies
+        run: ansible-galaxy install -r requirements.yml
+
+      - name: Run YAML linter
+        run: yamllint .
+
+      - name: Run Ansible syntax check
+        run: ansible-playbook main.yml --syntax-check
+
+      - name: Run Ansible linter
+        run: ansible-lint
+
+  run-playbook:
+    name: Run playbook
+    runs-on: macos-latest
+    env:
+      ANSIBLE_FORCE_COLOR: '1'
+      ANSIBLE_CONFIG: ci/ansible.cfg
+    steps:
+      - name: Check out sources
+        uses: actions/checkout@v4
+
+      - name: Uninstall Homebrew
+        run: sudo ./ci/uninstall-homebrew.sh
+
+      # I'm leaving this step disabled because we don't really need to test installation of browsers.
+      # Removing these directories will just slow down the workflow.
+      # - name: Uninstall built-in browsers
+      #   run: >-
+      #     sudo rm -rf
+      #     /Applications/Firefox.app
+      #     '/Applications/Google Chrome.app'
+      #     /usr/local/bin/firefox
+
+      - name: Run playbook (first run)
+        run: ./install.sh --extra-vars '@ci/config_overrides.yml'
+
+      - name: Run playbook (second run)
+        run: ./install.sh --extra-vars '@ci/config_overrides.yml' | tee /tmp/secondrun.log
+
+      - name: Upload second run output as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: second-run-output
+          path: /tmp/secondrun.log
+
+  idempotence:
+    name: Check idempotence
+    runs-on: ubuntu-latest
+    needs: run-playbook
+    steps:
+      - name: Download second run output artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: second-run-output
+
+      - name: Check idempotence
+        run: >-
+          grep -A1 -e 'PLAY RECAP' secondrun.log| grep -q -e 'changed=0.*failed=0'
+          && (echo 'Idempotence test: pass' && exit 0)
+          || (echo 'Idempotence test: fail' && exit 1)

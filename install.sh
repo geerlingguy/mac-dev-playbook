@@ -41,4 +41,4 @@ info Installing Ansible dependencies...
 ansible-galaxy install -r requirements.yml
 
 info Running playbook
-ansible-playbook -K main.yml
+ansible-playbook -K main.yml "$@"

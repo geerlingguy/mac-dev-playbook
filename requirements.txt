@@ -1,2 +1,3 @@
 yamllint
 ansible-lint
+ansible
