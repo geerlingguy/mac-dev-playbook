@@ -5,11 +5,6 @@
   vars_files:
     - config.yml
 
-  vars_prompt:
-    - name: mas_email
-      prompt: "Enter your Apple ID email address"
-      private: false
-
   tasks:
     - name: Install MacOS command-line tools.
       ansible.builtin.import_role:

@@ -5,10 +5,7 @@
 <img src="https://forthebadge.com/images/badges/uses-badges.svg" alt="Uses Badges badge" height=30 />
 
 
-This playbook installs and configures most of the software I use on my Mac for
-web and software development. Some things in macOS are slightly difficult to
-automate, so I still have a few manual installation steps, but at least it's all
-documented here.
+This playbook installs and configures most of the software I use on my Mac.
 
 This playbook defines *how* to install and set up a machine,
 but most of the information on *what* to install and set up is stored in
@@ -21,11 +18,9 @@ default settings, etc. are all stored as dotfiles.
   1. Clone or download this repository to your local drive.
   2. Run `./install.sh` inside this directory. The script will install the
      required tools and run the playbook.
-  3. At the beginning of the playbook, you will be prompted to enter two
-     credentials:
-     1. Your MacOS account password (i.e. what you'd use for `sudo`),
-        called the "BECOME" password by Ansible.
-     2. Your Apple ID email address.
+  3. At the beginning of the playbook, you will be prompted to enter your MacOS
+     account password (i.e. what you'd use for `sudo`), called the "BECOME"
+     password by Ansible.
   4. You may be prompted for your account password again when installation of
      Homebrew cask apps begins. This is because Homebrew uses `sudo`. You can
      set the `ansible_become_password` variable to avoid this.

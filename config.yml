@@ -25,7 +25,8 @@ homebrew_cask_appdir: /Applications
 homebrew_installed_packages_file: ~/.config/setup/homebrew/packages
 homebrew_cask_apps_file: ~/.config/setup/homebrew/casks
 
-# mas_email is set using vars_prompt in main.yml
+# I base64-encode my email here so scrapers have a harder time finding it.
+mas_email: "{{ 'a2RrYXNhZEBnbWFpbC5jb20=' | b64decode }}"
 mas_signin_dialog: true
 # File containing list to assign to mas_installed_apps variable.
 # See geerlingguy.mac.mas role documentation for more information.
