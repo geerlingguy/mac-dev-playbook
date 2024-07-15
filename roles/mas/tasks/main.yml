@@ -2,10 +2,13 @@
 - name: Read installed apps list
   when: mas_installed_apps is undefined
   block:
-    - ansible.builtin.slurp:
+    - name: Read file
+      ansible.builtin.slurp:
         path: "{{ mas_installed_apps_file }}"
       register: slurp
-    - ansible.builtin.set_fact:
+
+    - name: Set variable with list contents
+      ansible.builtin.set_fact:
         mas_installed_apps: "{{ slurp.content | b64decode | from_yaml }}"
 
 - name: Install App Store apps

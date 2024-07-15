@@ -2,22 +2,28 @@
 - name: Read packages list
   when: homebrew_installed_packages is undefined
   block:
-    - ansible.builtin.slurp:
+    - name: Read file
+      ansible.builtin.slurp:
         path: "{{ homebrew_installed_packages_file }}"
       register: cat_packages
       changed_when: false
-    - ansible.builtin.set_fact:
+
+    - name: Set variable with list contents
+      ansible.builtin.set_fact:
         homebrew_installed_packages: >-
           {{ (cat_packages.content | b64decode).splitlines() | reject('eq', '') }}
 
 - name: Read cask apps list
   when: homebrew_cask_apps is undefined
   block:
-    - ansible.builtin.slurp:
+    - name: Read file
+      ansible.builtin.slurp:
         path: "{{ homebrew_cask_apps_file }}"
       register: cat_casks
       changed_when: false
-    - ansible.builtin.set_fact:
+
+    - name: Set variable with list contents
+      ansible.builtin.set_fact:
         homebrew_cask_apps: >-
           {{ (cat_casks.content | b64decode).splitlines() | reject('eq', '') }}
 

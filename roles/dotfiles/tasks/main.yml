@@ -28,6 +28,8 @@
   ansible.builtin.file:
     path: "{{ (dotfiles_destination, item) | path_join | dirname }}"
     state: directory
+    owner: "{{ ansible_user_id }}"
+    mode: '0750'
   loop: "{{ dotfiles.stdout_lines | reject('in', dotfiles_exclude) }}"
 
 - name: Link dotfiles into destination

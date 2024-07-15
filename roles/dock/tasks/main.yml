@@ -18,11 +18,11 @@
     dock_items: "{{ (read_list_file.content | b64decode).splitlines() | map('split', '\t') | map('batch', 2) | map('first') }}"
 
 # TODO: Make this process idempotent
-- name: Remove all dock items
+- name: Remove all dock items  # noqa no-changed-when
   ansible.builtin.command:
     cmd: dockutil --remove all --no-restart
 
-- name: Add dock item
+- name: Add dock item  # noqa no-changed-when
   ansible.builtin.command:
     # Take the argumment list, and add "--no-restart" for all but the last item
     argv: "{{ argv + (ansible_loop.last | ternary([], ['--no-restart'])) }}"
