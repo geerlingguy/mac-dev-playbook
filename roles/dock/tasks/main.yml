@@ -30,7 +30,13 @@
     have_items: "{{ dockutil_list.stdout_lines | map('split', '\t') | map('batch', 2) | map('first') }}"
 
 - name: Set dock items
-  when: want_items != have_items
+  # Compares list of names and the list of paths mapped from the list of URIs
+  when: >-
+    ((want_items | map(attribute=0)) != (have_items | map(attribute=0)))
+    or (
+      (want_items | map(attribute=1) | map('urlsplit', 'path') | map('regex_replace', '/$', ''))
+      != (have_items | map(attribute=1) | map('urlsplit', 'path') | map('regex_replace', '/$', ''))
+    )
   block:
     - name: Remove all dock items
       ansible.builtin.command:
