@@ -16,6 +16,7 @@ dotfiles_exclude:
   - README.md
   - LICENSE
   - .gitignore
+  - install.sh
 
 iterm2_settings_dir: "~/.config/iterm2/my-settings"
 
