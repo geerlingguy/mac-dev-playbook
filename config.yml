@@ -7,7 +7,7 @@ install_rosetta: true
 dock_list_file: "~/.config/setup/dock-items.tsv"
 
 # File containing custom sudoers(5) configuration to add as a drop-in file
-sudoers_custom_config_file: "{{ undef() }}"
+sudoers_custom_config_file: "~/.config/setup/sudoers"
 
 dotfiles_repo: https://github.com/kdkasad/dotfiles.git
 dotfiles_repo_ref: master
