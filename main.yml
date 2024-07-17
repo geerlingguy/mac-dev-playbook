@@ -95,3 +95,12 @@
         PATH: "{{ new_path }}"
       tags:
         - nvm
+
+    - name: Build & install Iosevka font
+      when: iosevka_enabled
+      ansible.builtin.import_role:
+        name: iosevka
+      environment:
+        PATH: "{{ new_path }}"
+      tags:
+        - iosevka

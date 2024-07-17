@@ -44,3 +44,12 @@ vscodium_extensions_list_path: ~/.config/setup/vscode-extensions.txt
 # Don't modify ~/.*shrc to include NVM, since I already do that in the .zshrc
 # file installed by my dotfiles.
 nvm_modify_shellrc: no
+
+# Iosevka settings
+iosevka_repo_ref: v30.3.2
+iosevka_local_repo_path: ~/Miscellaneous/Iosevka
+iosevka_private_build_plan: ~/.config/setup/iosevka-build-plan.toml
+iosevka_targets:
+  - iosevka
+  - iosevka-term
+  - iosevka-fixed

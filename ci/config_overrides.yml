@@ -14,3 +14,6 @@ homebrew_cask_apps_file: "{{ undef() }}"
 homebrew_cask_apps:
   - iterm2
   - vscodium
+
+# Don't build Iosevka fonts
+iosevka_enabled: false

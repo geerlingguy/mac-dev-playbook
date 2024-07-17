@@ -1,0 +1,18 @@
+---
+# Whether or not to build Iosevka
+iosevka_enabled: yes
+
+# Iosevka Git repo information
+iosevka_repo_url: https://github.com/be5invis/Iosevka.git
+iosevka_repo_ref: main
+iosevka_local_repo_path: ~/Downloads/Iosevka
+
+# Build configuration
+iosevka_private_build_plan: ~/.config/setup/iosevka-build-plan.toml
+iosevka_targets:
+  - iosevka
+  - iosevka-term
+  - iosevka-fixed
+
+# Installation configuration
+iosevka_install_dir: ~/Library/Fonts

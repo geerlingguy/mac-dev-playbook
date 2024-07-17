@@ -1,0 +1,79 @@
+---
+
+# In this role, I use ansible.builtin.shell in several places where
+# ansible.builtin.command would normally be preferred. However, using npm
+# requires nvm to be initialized, which my dotfiles only set up for zsh. Thus we
+# need to use zsh to execute the npm commands, which cannot be done with
+# ansible.builtin.command.
+
+- name: Ensure fontconfig is installed
+  community.general.homebrew:
+    name: fontconfig
+    state: present
+
+- name: Check if Iosevka font exists
+  ansible.builtin.command:
+    cmd: fc-list -q Iosevka
+  register: fc_list
+  changed_when: false
+  failed_when: fc_list.rc not in [0, 1]
+
+- name: Build & install Iosevka
+  when: fc_list.rc != 0
+  block:
+    - name: Ensure NPM is found
+      ansible.builtin.shell:
+        cmd: npm --version
+        executable: /bin/zsh
+      changed_when: false
+
+    - name: Clone Iosevka sources
+      ansible.builtin.git:
+        repo: "{{ iosevka_repo_url }}"
+        version: "{{ iosevka_repo_ref }}"
+        dest: "{{ iosevka_local_repo_path }}"
+        depth: 1
+        recursive: no
+
+    - name: Install build dependencies
+      ansible.builtin.shell:
+        cmd: npm ci
+        chdir: "{{ iosevka_local_repo_path }}"
+        executable: /bin/zsh
+      changed_when: true
+
+    - name: Copy build plans
+      ansible.builtin.copy:
+        src: "{{ iosevka_private_build_plan }}"
+        dest: "{{ [iosevka_local_repo_path, 'private-build-plans.toml'] | path_join }}"
+        remote_src: yes
+        mode: '0644'
+
+    - name: Compile Iosevka
+      ansible.builtin.shell:
+        cmd: "{{ (['npm', 'run', 'build'] + (iosevka_targets | map('regex_replace', '^', 'ttf::'))) | map('quote') | join(' ') }}"
+        chdir: "{{ iosevka_local_repo_path }}"
+        executable: /bin/zsh
+      changed_when: true
+
+    - name: Find compiled font files
+      ansible.builtin.find:
+        paths: "{{ [] | zip_longest(subdirs, fillvalue=distdir) | map('path_join') }}"
+        file_type: file
+        pattern: "*.ttf"
+        use_regex: no
+      # ansible.builtin.debug:
+        # msg: "{{ [] | zip_longest(subdirs, fillvalue=distdir) | map('path_join') }}"
+      vars:
+        subdirs: "{{ iosevka_targets | zip_longest([], fillvalue='ttf') | map('path_join') }}"
+        distdir: "{{ [iosevka_local_repo_path, 'dist'] | path_join }}"
+      changed_when: false
+      register: find_compiled_fonts
+
+    - name: Install compiled font files
+      ansible.builtin.copy:
+        remote_src: yes
+        src: "{{ item }}"
+        dest: "{{ [iosevka_install_dir, (item | basename)] | path_join }}"
+        mode: '0644'
+      loop: "{{ find_compiled_fonts.files | map(attribute='path') }}"
