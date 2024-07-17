@@ -1,0 +1,29 @@
+---
+- name: Install NVM
+  ansible.builtin.git:
+    repo: "{{ nvm_repo_url }}"
+    version: "{{ nvm_repo_ref }}"
+    dest: "{{ nvm_dir }}"
+    accept_newhostkey: yes
+    depth: 1
+    single_branch: yes
+
+- name: Ensure a Node.js runtime is installed
+  ansible.builtin.shell:
+    cmd: source {{ [nvm_dir, 'nvm.sh'] | path_join | expanduser | quote }} && nvm install node
+    executable: /bin/bash
+    creates: "{{ nvm_dir }}/alias/default"
+  environment:
+    NVM_DIR: "{{ nvm_dir | expanduser }}"
+
+- name: Modify shell RC files
+  when: nvm_modify_shellrc
+  ansible.builtin.blockinfile:
+    block: |
+      NVM_DIR={{ nvm_dir | expanduser | quote }}
+      export NVM_DIR
+      [ -e "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+    path: "{{ item }}"
+    create: yes
+    mode: '0644'
+  loop: "{{ nvm_shellrc_list }}"

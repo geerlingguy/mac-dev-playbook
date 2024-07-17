@@ -40,3 +40,7 @@ defaults_settings_file: ~/.config/setup/defaults
 # File containing VSCodium extensions to install. Can be generated using:
 # codium --list-extensions
 vscodium_extensions_list_path: ~/.config/setup/vscode-extensions.txt
+
+# Don't modify ~/.*shrc to include NVM, since I already do that in the .zshrc
+# file installed by my dotfiles.
+nvm_modify_shellrc: no

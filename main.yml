@@ -31,6 +31,8 @@
     - name: Create new PATH including Homebrew packages
       ansible.builtin.set_fact:
         new_path: /opt/homebrew/bin:{{ ansible_env['PATH'] | default('') }}
+      tags:
+        - always
 
     - name: Set defaults
       ansible.builtin.import_role:
@@ -85,3 +87,11 @@
         name: vscodium_extensions
       environment:
         PATH: "{{ new_path }}"
+
+    - name: Install NVM & Node.js
+      ansible.builtin.import_role:
+        name: nvm
+      environment:
+        PATH: "{{ new_path }}"
+      tags:
+        - nvm

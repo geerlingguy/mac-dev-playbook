@@ -1,0 +1,13 @@
+---
+# NVM Git repository
+nvm_repo_url: https://github.com/nvm-sh/nvm.git
+nvm_repo_ref: master
+
+# Directory into which NVM will be installed
+nvm_dir: ~/.nvm
+
+# Whether to add a line to ~/.*shrc to source NVM on startup
+nvm_modify_shellrc: yes
+nvm_shellrc_list:
+  - ~/.bashrc
+  - ~/.zshrc
