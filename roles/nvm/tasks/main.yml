@@ -7,6 +7,7 @@
     accept_newhostkey: yes
     depth: 1
     single_branch: yes
+    recursive: no
 
 - name: Ensure a Node.js runtime is installed
   ansible.builtin.shell:
