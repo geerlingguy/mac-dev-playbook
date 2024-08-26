@@ -50,9 +50,12 @@ dockitems_persist:
   - name: "Steam"
     path: "/Applications/Steam.app"
     pos: 7
+  - name: "Screenshot"
+    path: "Applications/Utilities/Screenshot.app"
+    pos: 8
   - name: "System Settings"
     path: "/Applications/System\ Settings.app"
-    pos: 8
+    pos: 9
 
 configure_sudoers: false
 sudoers_custom_config: ""
