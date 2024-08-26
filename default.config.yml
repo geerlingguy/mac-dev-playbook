@@ -51,7 +51,7 @@ dockitems_persist:
     path: "/Applications/Steam.app"
     pos: 7
   - name: "Screenshot"
-    path: "Applications/Utilities/Screenshot.app"
+    path: "/Applications/Utilities/Screenshot.app"
     pos: 8
   - name: "System Settings"
     path: "/Applications/System\ Settings.app"
