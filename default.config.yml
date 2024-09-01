@@ -41,21 +41,21 @@ dockitems_persist:
   - name: "Messages"
     path: "/Applications/Messages.app"
     pos: 4
-  - name: "WhatsApp"
-    path: "/Applications/WhatsApp.app"
-    pos: 5
+  # - name: "WhatsApp"
+  #   path: "/Applications/WhatsApp.app"
+  #   pos: 5
   - name: "Discord"
     path: "/Applications/Discord.app"
-    pos: 6
+    pos: 5
   - name: "Steam"
     path: "/Applications/Steam.app"
-    pos: 7
+    pos: 6
   - name: "Screenshot"
     path: "/Applications/Utilities/Screenshot.app"
-    pos: 8
+    pos: 7
   - name: "System Settings"
     path: "/Applications/System\ Settings.app"
-    pos: 9
+    pos: 8
 
 configure_sudoers: false
 sudoers_custom_config: ""
@@ -131,7 +131,7 @@ mas_installed_apps:
   - { id: 1295203466, name: "Microsoft Remote Desktop" }
   - { id: 1352778147, name: "Bitwarden" }
   - { id: 1451685025, name: "WireGuard" }
-  - { id: 310633997, name: "WhatsApp" }
+  # - { id: 310633997, name: "WhatsApp" }
 mas_email: ""
 mas_password: ""
 
