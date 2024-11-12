@@ -11,3 +11,4 @@ sudo ./uninstall.sh --force
 sudo rm -rf /usr/local/Homebrew
 sudo rm -rf /usr/local/Caskroom
 sudo rm -rf /usr/local/bin/brew
+sudo rm -rf /opt/homebrew
