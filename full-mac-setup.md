@@ -33,7 +33,9 @@ Before starting, I completed Apple's mandatory macOS setup wizard (creating a lo
     - Go to settings, go to the setup page for macOS Mail
     - Download the profile and double click to install
     - Head to the 'Profiles' System Preference pane and click install
-  - Open Calendar and enable personal  Google CalDAV account (you have to manually sign in).
+  - Open Calendar and sign into Google Accounts (have to manually sign in):
+    - Personal
+    - Work
   - Manually copy `~/Development` folder from another Mac (to save time).
   - Manual settings to automate someday:
     - System Preferences:
@@ -51,7 +53,7 @@ Before starting, I completed Apple's mandatory macOS setup wizard (creating a lo
   - _After Dropbox Sync completes_: Run the playbook with `--tags post` to complete setup.
   - Symlink the synchronized `config.yml` into the playbook dir: `ln -s /Users/jgeerling/Dropbox/Apps/Config/mac-dev-playbook/config.yml /Users/jgeerling/Development/mac-dev-playbook/config.yml`
   - These things might be automatable, but I do them manually right now:
-    - Configure Time Machine backup drive and [Time Machine Editor](https://tclementdev.com/timemachineeditor/) (if needed)
+    - Configure Time Machine backup drive and set Time Machine backups to daily instead of hourly
     - Install Wireguard from App Store and add configuration (if needed)
 
 ## To Wrap in Post-provision automation
