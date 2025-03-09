@@ -36,7 +36,8 @@ jobs:
     strategy:
       matrix:
         os:
-          - macos-10.15
+          - macos-15
+          - macos-14
 
     steps:
       - name: Check out the codebase.
@@ -49,9 +50,12 @@ jobs:
         run: |
           sudo rm -rf /Applications/Firefox.app
           sudo rm -rf /Applications/Google\ Chrome.app
+          sudo rm -rf /usr/local/bin/firefox
 
       - name: Install test dependencies.
-        run: sudo pip3 install ansible
+        run: |
+          sudo pip3 install --upgrade pip
+          sudo pip3 install ansible
 
       - name: Set up the test environment.
         run: |

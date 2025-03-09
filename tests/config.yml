@@ -5,7 +5,6 @@ homebrew_installed_packages:
   - gettext
   - sqlite
   - ssh-copy-id
-  - cowsay
   - readline
   - pv
   - wget

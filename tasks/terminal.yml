@@ -4,6 +4,7 @@
   command: defaults read com.apple.terminal 'Default Window Settings'
   register: terminal_theme
   changed_when: false
+  failed_when: false
   check_mode: false
 
 - name: Ensure custom Terminal profile is added.

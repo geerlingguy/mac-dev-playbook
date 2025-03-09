@@ -1,5 +1,6 @@
 *.vagrant
 .DS_Store
+.ansible
 *.retry
 roles*
 config.yml

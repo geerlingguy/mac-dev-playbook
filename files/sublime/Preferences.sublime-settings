@@ -301,6 +301,7 @@
     "*.jar",
     "*.zip"
   ],
+  "close_windows_when_empty": true,
   "color_scheme": "Packages/User/Cobalt (SL).tmTheme",
   "create_window_at_startup": false,
   "detect_indentation": true,
