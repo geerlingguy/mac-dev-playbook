@@ -9,10 +9,10 @@ This document covers that, at least in terms of setting up a brand new Mac out o
 Before starting, I completed Apple's mandatory macOS setup wizard (creating a local user account, and optionally signing into my iCloud account). Once on the macOS desktop, I do the following (in order):
 
   - Install Ansible (following the guide in [README.md](README.md))
-  - **Sign in in App Store** (since `mas` can't sign in automatically)
+  - **Sign in to App Store** (since `mas` can't sign in automatically)
   - Clone mac-dev-playbook to the Mac: `git clone git@github.com:geerlingguy/mac-dev-playbook.git`
   - Drop `config.yml` from `~/Dropbox/Apps/Config` to the playbook (copy over the network or using a USB flash drive).
-  - Run the playbook with `--skip-tags post`.
+  - Run the playbook.
     - If there are errors, you may need to finish up other tasks like installing 'old-fashioned' apps first (since I try to place Photoshop in the Dock and it can't be installed automatically). Then, run the playbook again ;)
   - Start Synchronization tasks:
     - Open Photos and make sure iCloud sync options are correct
@@ -30,31 +30,32 @@ Before starting, I completed Apple's mandatory macOS setup wizard (creating a lo
       - Install [Fritzing](https://fritzing.org/download/)
   - Configure FastMail account:
     - Log into Fastmail
-    - Go to settings, go to the setup page for macOS Mail
-    - Download the profile and double click to install
-    - Head to the 'Profiles' System Preference pane and click install
-  - Open Calendar and sign into Google Accounts (have to manually sign in):
-    - Personal
-    - Work
+    - Go to settings, then Privacy & Security
+    - Create a new app password, and on that page, download the configuration file
+    - Open the downloaded profile, then go to System Preferences, and Device Management
+    - Double-click on the Fastmail profile
+    - Click 'Install...' and install it
+    - Configure which accounts are enabled in the 'Internet Accounts' System Preferences pane
+  - Open Calendar and enable personal Google CalDAV account (you have to manually sign in).
   - Manually copy `~/Development` folder from another Mac (to save time).
   - Manual settings to automate someday:
+    - Finder:
+      - Disable click-to-show Desktop: `defaults write com.apple.WindowManager EnableStandardClickToShowDesktop -bool false`
     - System Preferences:
       - Accessibility > Display > Reduce transparency
       - Keyboard > Keyboard Shortcuts... > Modifier Keys... > Caps Lock to Esc
+      - Keyboard > Key repeat rate to 'Fast', Delay until repeat to 'Short'
+      - Privacy & Security > Full Disk Access > enable "Terminal"
     - Safari:
       - View > Show Status Bar
       - Preferences > Advanced > "Show full website address"
       - Preferences > Advanced > "Show features for web developers"
       - Install the 'Return YouTube Dislike' Userscript in Userscripts
     - Dock:
-      - Add jgeerling, Downloads, and Applications folders
-    - Terminal:
-      - Preferences > Profiles > Set JJG-Term as the default theme
-  - _After Dropbox Sync completes_: Run the playbook with `--tags post` to complete setup.
-  - Symlink the synchronized `config.yml` into the playbook dir: `ln -s /Users/jgeerling/Dropbox/Apps/Config/mac-dev-playbook/config.yml /Users/jgeerling/Development/mac-dev-playbook/config.yml`
+      - Add jgeerling, Downloads, Applications, and shared "mercury" folders
   - These things might be automatable, but I do them manually right now:
-    - Configure Time Machine backup drive and set Time Machine backups to daily instead of hourly
-    - Install Wireguard from App Store and add configuration (if needed)
+    - Configure Time Machine backup drive
+    - Install Wireguard VPN configurations (if needed)
 
 ## To Wrap in Post-provision automation
 
