@@ -65,7 +65,7 @@ The following tasks have to wait for the initial Dropbox sync to complete before
 # ZSH Aliases.
 ln -s /Users/jgeerling/Dropbox/Apps/Config/.aliases /Users/jgeerling/.aliases
 
-# Electrum BTC Wallet.
+# Electrum BTC Wallet (open Electrum first).
 ln -s /Users/jgeerling/Dropbox/Apps/Electrum/default_wallet /Users/jgeerling/.electrum/wallets/default_wallet
 
 # SSH setup.
@@ -99,7 +99,7 @@ mkdir -p ~/.vim/bundle
 cd ~/.vim/autoload
 curl https://raw.githubusercontent.com/tpope/vim-pathogen/master/autoload/pathogen.vim > pathogen.vim
 cd ~/.vim/bundle
-git clone git://github.com/scrooloose/nerdtree.git
+git clone https://github.com/preservim/nerdtree.git
 ```
 
 ## When formatting old Mac
