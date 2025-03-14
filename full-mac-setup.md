@@ -53,6 +53,9 @@ Before starting, I completed Apple's mandatory macOS setup wizard (creating a lo
       - Install the 'Return YouTube Dislike' Userscript in Userscripts
     - Dock:
       - Add jgeerling, Downloads, Applications, and shared "mercury" folders
+  - Final Cut Pro
+    - Install FxFactory and sign in: https://fxfactory.com
+    - Copy contents of `~/Development/youtube/fcpx` into respective directories
   - These things might be automatable, but I do them manually right now:
     - Configure Time Machine backup drive
     - Install Wireguard VPN configurations (if needed)
