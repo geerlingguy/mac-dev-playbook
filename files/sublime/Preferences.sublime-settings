@@ -302,7 +302,7 @@
     "*.zip"
   ],
   "close_windows_when_empty": true,
-  "color_scheme": "Packages/User/Cobalt (SL).tmTheme",
+  "color_scheme": "Packages/Theme - Cobalt2/cobalt2.tmTheme",
   "create_window_at_startup": false,
   "detect_indentation": true,
   "draw_minimap_border": false,
@@ -388,6 +388,13 @@
     "varname",
     "vg"
   ],
+  "indent_guide_options": ["draw_normal", "draw_active"],
+  "hide_tab_scrolling_buttons": true,
+  "highlight_modified_tabs": true,
+  "line_padding_bottom": 1,
+  "line_padding_top": 1,
+  "caret_style": "blink",
+  "bold_folder_labels": false,
   "line_numbers": true,
   "margin": 4,
   "match_brackets": true,
@@ -399,8 +406,9 @@
   "smart_indent": true,
   "spell_check": false,
   "tab_size": 2,
-  "theme": "auto",
+  "theme": "Cobalt2.sublime-theme",
   "translate_tabs_to_spaces": true,
   "trim_automatic_white_space": false,
   "trim_trailing_white_space_on_save": false,
+  "index_files": true,
 }

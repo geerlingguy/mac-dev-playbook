@@ -119,6 +119,7 @@ sublime_package_control:
   - "Pretty JSON"
   - "SublimeLinter"
   - "SublimeLinter-contrib-yamllint"
+  - "Theme - Cobalt2"
   - "TrailingSpaces"
   - "WordCount"
 
