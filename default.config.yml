@@ -115,13 +115,12 @@ sublime_package_control:
   - "GitHub Flavored Markdown Preview"
   - "Jinja2"
   - "Package Control"
-  - "PHP-Twig"
   - "Pretty JSON"
   - "SublimeLinter"
   - "SublimeLinter-contrib-yamllint"
   - "Theme - Cobalt2"
   - "TrailingSpaces"
-  - "WordCount"
+  - "WordingStatus"
 
 # Glob pattern to ansible task files to run after all other tasks are finished.
 post_provision_tasks: []
