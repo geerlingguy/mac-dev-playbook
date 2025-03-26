@@ -84,7 +84,7 @@ sudo ln -s /Users/jgeerling/Dropbox/VMs/roles /etc/ansible/roles
 mkdir -p /Users/jgeerling/.ansible
 ln -s /Users/jgeerling/Dropbox/Apps/Config/ansible/galaxy_token /Users/jgeerling/.ansible/galaxy_token
 ln -s /Users/jgeerling/Dropbox/Apps/Config/ansible/mm-vault-password.txt /Users/jgeerling/.ansible/mm-vault-password.txt
-ln -s /Users/jgeerling/Dropbox/VMs/ /Users/jgeerling/.ansible/collections
+ln -s /Users/jgeerling/Dropbox/VMs/ansible_collections /Users/jgeerling/.ansible/collections
 
 # Final Cut Pro setup. (Open Motion first)
 cp -r /Users/jgeerling/Dropbox/Apps/Config/Motion/Motion\ Templates.localized/ /Users/jgeerling/Movies/Motion\ Templates.localized/
