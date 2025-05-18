@@ -1,6 +1,7 @@
 #!/bin/bash
 
 xcode-select --install
+xcodebuild -license accept
 
 if ! command -v brew &> /dev/null
 then
@@ -9,7 +10,9 @@ fi
 
 export PATH="$HOME/Library/Python/3.8/bin:/opt/homebrew/bin:$PATH"
 sudo pip3 install --upgrade pip
-pip3 install ansible
+# pip3 install ansible
+
+brew install ansible  # this seems to work better
 
 ansible-galaxy install -r requirements.yml
 

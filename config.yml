@@ -49,8 +49,6 @@ dockitems_persist:
   pos: 6
 
 homebrew_taps:
-  - homebrew/cask-versions
-  - homebrew/cask-fonts
   - shopify/shopify
   - ArmMbed/homebrew-formulae
 
@@ -85,27 +83,23 @@ homebrew_installed_packages:
 homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
   # sudo required
-  - temurin17  # new, for newer Android
+  - temurin@17  # new, for newer Android
   - xquartz
   # fonts
   - font-source-code-pro
   - font-montserrat
   - font-roboto
   - font-roboto-mono
-  - font-ia-writer-duospace
   - font-hack-nerd-font
   # core apps
   - alfred
-  - dropbox
   - box-drive
   - vlc
   - fantastical
   - google-chrome
   - firefox
-  - skype
   - 1password
   - rectangle
-  - tunnelblick  # maybe retire for Wireguard soon
   - hammerspoon
   - devonthink
   - slack
@@ -114,7 +108,6 @@ homebrew_cask_apps:
   - transmission
   - veracrypt
   - steam
-  - icloud-control
   - jdownloader
   - imageoptim
   - handbrake
@@ -144,15 +137,11 @@ homebrew_cask_apps:
 
 mas_installed_apps:
   - { id: 1055511498, name: "Day One" }
-#   - { id: 775737590, name: "iA Writer" }
   - { id: 497799835, name: "XCode" }
-#   - { id: 641027709, name: "Color Picker" }
   - { id: 1435957248, name: "Drafts" }
   - { id: 1225570693, name: "Ulysses" }
   - { id: 1451685025, name: "WireGuard" }
-  - { id: 904280696, name: "Things 3" }
-# - { id: 1346203938, name: "OmniFocus" }
-  - { id: 1435957248, name: "Drafts" }
+  - { id: 1447330651, name: "Copilot" }
 mas_email: ""
 mas_password: ""
 
@@ -163,9 +152,6 @@ npm_packages:
   - prettier
   - tern
   - eslint
-  - react-native-cli
-  - bs-platform
-  - reason-cli@latest-macos
   - typescript
   - tslint
   - javascript-typescript-langserver
