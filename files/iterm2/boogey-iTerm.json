@@ -1,4 +1,6 @@
 {
+"Profiles": [
+{
   "Ansi 7 Color (Light)" : {
     "Green Component" : 0.73333334922790527,
     "Red Component" : 0.73333334922790527,
@@ -533,4 +535,6 @@
     "Red Component" : 0,
     "Blue Component" : 0
   }
+}
+]
 }

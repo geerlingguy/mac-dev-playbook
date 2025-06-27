@@ -17,7 +17,8 @@ This playbook installs and configures most of the software I use on my Mac for w
 
   3. Clone or download this repository to your local drive.
   4. Run `ansible-galaxy install -r requirements.yml` inside this directory to install required Ansible roles.
-  5. Run `ansible-playbook main.yml --ask-become-pass` inside this directory. Enter your macOS account password when prompted for the 'BECOME' password.
+  5. Update the `~` for the actual full home directory path: `HOME_DIR=$(echo $HOME) && echo "Home directory: $HOME_DIR" && sed -i.bak "s|~|$HOME_DIR|g" default.config.yml`
+  6. Run `ansible-playbook main.yml --ask-become-pass` inside this directory. Enter your macOS account password when prompted for the 'BECOME' password.
 
 > Note: If some Homebrew commands fail, you might need to agree to Xcode's license or fix some other Brew issue. Run `brew doctor` to see if this is the case.
 
@@ -34,7 +35,7 @@ You can use this playbook to manage other Macs as well; the playbook doesn't eve
 
 Then edit the `inventory` file in this repository and change the line that starts with `127.0.0.1` to:
 
-```
+```toml
 [ip address or hostname of mac]  ansible_user=[mac ssh username]
 ```
 

@@ -9,6 +9,10 @@ dotfiles_home: "~"
 dotfiles_stow_modules:
   - name: "zsh configuration" # Descriptive name for logging
     package: "zsh"        # The subdirectory in your dotfiles repo to link (e.g., /Users/anthony_marquez/dotfiles/zsh)
-    target_dir: "{{ dotfiles_home }}" # The destination directory (e.g., /Users/anthony_marquez)
+    target_dir: "{{ dotfiles_home }}"
     package_dir: "{{ dotfiles_repo_local_destination }}/zsh" # The full path to the module directory
-    package_state: "latest"
+    package_state: "supress"
+
+zgenom_repo: "https://github.com/jandamm/zgenom.git"
+zgenom_branch: "master"
+zgenom_dest: "{{ dotfiles_home }}/.zgenom"

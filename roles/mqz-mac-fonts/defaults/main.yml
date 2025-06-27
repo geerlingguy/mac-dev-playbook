@@ -1,7 +1,7 @@
 fonts_to_install:
   - name: "MesloLGS NF" # A human-readable name for the font
-    zip_url: "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/Meslo.zip"
-    checksum: "sha256:4d603a11634b8c9d4b6b6f9e31d32483d2a02b115a31a965d1d64098f98d79a2"
+    zip_url: "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/Meslo.zip"
+    checksum: "sha256:13b502ac8c2bd9d3161018064560e23cd42b175bb730780a270975265a19ad57"
     # Optional overrides:
     # install_path: "/custom/font/path" # Override default_font_install_path if needed
     # extract_pattern: "*.ttf,*.otf"     # Override default find pattern if needed

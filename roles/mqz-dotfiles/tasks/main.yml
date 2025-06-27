@@ -1,4 +1,7 @@
 ---
+- name: Setup Zgenom
+  include_tasks: setup-zgenom.yml
+
 - name: Ensure dotfiles repository is cloned locally.
   ansible.builtin.git:
     repo: "{{ dotfiles_repo }}"

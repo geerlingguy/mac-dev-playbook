@@ -36,6 +36,7 @@ STOW_CONFLICTS_MESSAGE_REGEX_BY_VERSION = {
     '2.3.1': r'^\* existing target is neither a link nor a directory: (?P<link_path>.+)$',
     # pylint: disable-next=line-too-long
     '2.4.0': r'^\* cannot stow (?P<package_path>.+) over existing target (?P<link_path>.+) since neither a link nor a directory and --adopt not specified$',
+    '2.4.1': r'^\* cannot stow (?P<package_path>.+) over existing target (?P<link_path>.+) since neither a link nor a directory and --adopt not specified$',
 }
 
 SUPPORTED_STOW_VERSIONS = list(STOW_CONFLICTS_MESSAGE_REGEX_BY_VERSION.keys())

@@ -1,0 +1,32 @@
+---
+- name: Install Zsh (if not present)
+  package:
+    name: zsh
+    state: present
+  become: true
+  when: ansible_os_family != 'Darwin'
+
+- name: Clone zgenom
+  ansible.builtin.git:
+    repo: "{{ zgenom_repo }}"
+    version: "{{ zgenom_branch }}"
+    dest: "{{ zgenom_dest }}"
+    clone: yes
+    update: yes
+  become: false
+  register: zgenom_operation
+  retries: 3
+  delay: 5
+  until: zgenom_operation is succeeded
+  
+- name: Show what would happen in check mode
+  debug:
+    msg: "Would clone zgenom to {{ zgenom_dest }}"
+  when: ansible_check_mode and zgenom_operation.changed
+
+- name: Verify zgenom installation
+  stat:
+    path: "{{ zgenom_dest }}/zgenom.zsh"
+  register: zgenom_verify
+  failed_when: not zgenom_verify.stat.exists
+  when: ansible_check_mode == false
