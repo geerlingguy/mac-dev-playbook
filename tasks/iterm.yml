@@ -1,0 +1,32 @@
+---
+- name: Ensure the iTerm2 DynamicProfiles directory exists.
+  ansible.builtin.file:
+    path: "{{ iterm2_dynamic_profiles_dest_dir }}"
+    state: directory
+    mode: '0755'
+  become: false
+
+- name: Copy iTerm2 profile JSON files to the DynamicProfiles directory.
+  ansible.builtin.copy:
+    src: "{{ iterm2_profiles_source_dir }}/" # The trailing slash copies contents of the directory
+    dest: "{{ iterm2_dynamic_profiles_dest_dir }}"
+    mode: '0644' # Standard permissions for config files
+  become: false
+  # Consider adding a handler here to restart iTerm2 or notify the user
+  # if we want immediate effect, though iTerm2 usually picks up changes quickly.
+
+- name: Find existing dynamic profile files not in source.
+  ansible.builtin.find:
+    paths: "{{ iterm2_dynamic_profiles_dest_dir }}"
+    patterns: "*.json" # Look for JSON files
+    use_regex: true
+  register: existing_dynamic_profiles
+  become: false
+
+- name: Remove old iTerm2 dynamic profile files not present in source.
+  ansible.builtin.file:
+    path: "{{ item.path }}"
+    state: absent
+  when: item.path | basename not in (lookup('fileglob', iterm2_profiles_source_dir + '/*.json') | map('basename') | list)
+  loop: "{{ existing_dynamic_profiles.files }}"
+  become: false

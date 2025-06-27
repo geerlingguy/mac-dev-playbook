@@ -16,7 +16,10 @@
     - role: elliotweiser.osx-command-line-tools
     - role: geerlingguy.mac.homebrew
       tags: ['homebrew']
-    - role: geerlingguy.dotfiles
+    - role: mqz-mac-fonts
+      when: configure_fonts
+      tags: ['fonts']
+    - role: mqz-dotfiles
       when: configure_dotfiles
       tags: ['dotfiles']
     - role: geerlingguy.mac.mas
@@ -31,7 +34,7 @@
       when: configure_sudoers
       tags: ['sudoers']
 
-    - import_tasks: tasks/terminal.yml
+    - import_tasks: tasks/iterm.yml
       when: configure_terminal
       tags: ['terminal']
 

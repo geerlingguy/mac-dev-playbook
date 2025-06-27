@@ -2,5 +2,5 @@
 .DS_Store
 .ansible
 *.retry
-roles*
 config.yml
+galaxy_roles

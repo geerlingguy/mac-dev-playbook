@@ -1,4 +1,5 @@
 ---
+configure_fonts: true
 configure_dotfiles: true
 configure_terminal: true
 configure_osx: true
@@ -22,60 +23,65 @@ sudoers_custom_config: ""
 #   # Allow users in admin group to use sudo with no password.
 #   %admin ALL=(ALL) NOPASSWD: ALL
 
-dotfiles_repo: https://github.com/geerlingguy/dotfiles.git
+dotfiles_repo: https://github.com/armarquez/dotfiles.git
 dotfiles_repo_accept_hostkey: true
-dotfiles_repo_local_destination: ~/Development/GitHub/dotfiles
-dotfiles_repo_version: master # Replace with your default branch
-dotfiles_files:
-  - .zshrc
-  - .gitignore
-  - .inputrc
-  - .osx
-  - .vimrc
+dotfiles_repo_local_destination: ~/dotfiles
+dotfiles_repo_version: master 
 
 homebrew_installed_packages:
   # - ansible # Installed via Pip.
   - autoconf
-  - bash-completion
-  - doxygen
-  - gettext
-  - gifsicle
+  - bazelisk
+  # - bash-completion
+  # - doxygen
+  # - gettext
+  # - gifsicle
   - git
   - gh
   - go
   - gpg
   - httpie
+  - ical-buddy
   - iperf
   - libevent
   - sqlite
   - nmap
-  - node
+  # - node
   - nvm
-  - php
-  - pngpaste
+  # - php
+  # - pngpaste
+  - podman
   - ssh-copy-id
   - readline
   - openssl
   - pv
+  - stow
   - wget
-  - wrk
+  # - wrk
   - zsh-history-substring-search
 
 homebrew_taps: []
 
 homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
-  - chromedriver
-  - docker
-  - dropbox
+  - 1password
+  - alfred
+  - bettertouchtool
+  # - chromedriver
+  # - docker
+  # - dropbox
   - firefox
   - google-chrome
-  - handbrake
-  - licecap
-  - sequel-ace
+  # - handbrake
+  - helpwire-operator
+  - iterm2
+  # - licecap
+  # - sequel-ace
   - slack
-  - sublime-text
+  # - sublime-text
+  - tailscale-app
   - transmit
+  - visual-studio-code
 
 # See `geerlingguy.mac.mas` role documentation for usage instructions.
 mas_installed_apps: []
@@ -124,3 +130,11 @@ sublime_package_control:
 
 # Glob pattern to ansible task files to run after all other tasks are finished.
 post_provision_tasks: []
+
+# iTerm2 configuration
+iterm2_profiles_source_dir: "{{ playbook_dir }}/files/iterm2"
+iterm2_dynamic_profiles_dest_dir: "~/Library/Application Support/iTerm2/DynamicProfiles"
+
+# OSX configuration
+osx_script_source: "{{ playbook_dir }}/files/scripts/.osx"
+osx_script_dest: "~/.osx"

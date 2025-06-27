@@ -1,0 +1,14 @@
+---
+dotfiles_repo: "https://github.com/armarquez/dotfiles.git"
+dotfiles_repo_version: master
+dotfiles_repo_accept_hostkey: false
+dotfiles_repo_local_destination: "~/dotfiles"
+
+dotfiles_home: "~"
+
+dotfiles_stow_modules:
+  - name: "zsh configuration" # Descriptive name for logging
+    package: "zsh"        # The subdirectory in your dotfiles repo to link (e.g., /Users/anthony_marquez/dotfiles/zsh)
+    target_dir: "{{ dotfiles_home }}" # The destination directory (e.g., /Users/anthony_marquez)
+    package_dir: "{{ dotfiles_repo_local_destination }}/zsh" # The full path to the module directory
+    package_state: "latest"

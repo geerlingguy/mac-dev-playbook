@@ -1,0 +1,110 @@
+---
+- name: Set font-specific variables for {{ font_item.name }}.
+  ansible.builtin.set_fact:
+    current_font_download_path: "{{ ansible_env.HOME }}/Downloads/{{ font_item.name | replace(' ', '_') | lower }}_font.zip"
+    current_font_extract_path: "{{ ansible_env.HOME }}/Downloads/{{ font_item.name | replace(' ', '_') | lower }}_extracted_font"
+    current_font_install_path: "{{ font_item.install_path | default(default_font_install_path) | trim }}"
+    current_font_extract_pattern: "{{ font_item.extract_pattern | default('*.ttf,*.otf') }}"
+
+- name: Ensure the specific font's target installation directory exists (if it differs from the default).
+  ansible.builtin.file:
+    path: "{{ current_font_install_path }}"
+    state: directory
+    mode: '0755'
+  when: current_font_install_path != (default_font_install_path | trim)
+  become: false
+
+- name: Download {{ font_item.name }} font zip file.
+  ansible.builtin.get_url:
+    url: "{{ font_item.zip_url }}"
+    dest: "{{ current_font_download_path }}"
+    mode: '0644'
+    checksum: "{{ font_item.checksum }}"
+  become: false
+
+- name: Ensure extraction directory for {{ font_item.name }} is clean.
+  ansible.builtin.file:
+    path: "{{ current_font_extract_path }}"
+    state: absent
+  become: false
+  changed_when: false
+
+- name: Create fresh extraction directory for {{ font_item.name }}.
+  ansible.builtin.file:
+    path: "{{ current_font_extract_path }}"
+    state: directory
+    mode: '0755'
+  become: false
+
+- name: Handle font extraction based on mode
+  block:
+    - name: Unarchive the {{ font_item.name }} zip file (normal mode).
+      ansible.builtin.unarchive:
+        src: "{{ current_font_download_path }}"
+        dest: "{{ current_font_extract_path }}"
+        remote_src: true
+      become: false
+      when: not ansible_check_mode
+
+    - name: Simulate extraction in check mode
+      ansible.builtin.debug:
+        msg: |
+          CHECK MODE: Would extract {{ font_item.name }}
+          Source: {{ current_font_download_path }}
+          Destination: {{ current_font_extract_path }}
+      when: ansible_check_mode
+
+- name: Find font files or simulate in check mode
+  block:
+    - name: Find font files ({{ current_font_extract_pattern }}) in the extracted directory for {{ font_item.name }}.
+      ansible.builtin.find:
+        paths: "{{ current_font_extract_path }}"
+        patterns: "{{ current_font_extract_pattern }}"
+        recurse: true
+      register: found_font_files_for_item
+      become: false
+      when: not ansible_check_mode
+
+    - name: Create mock font file list for check mode
+      ansible.builtin.set_fact:
+        found_font_files_for_item:
+          files:
+            - path: "{{ current_font_extract_path }}/{{ font_item.name | replace(' ', '') }}-Regular.ttf"
+            - path: "{{ current_font_extract_path }}/{{ font_item.name | replace(' ', '') }}-Bold.ttf"
+            - path: "{{ current_font_extract_path }}/{{ font_item.name | replace(' ', '') }}-Italic.ttf"
+      when: ansible_check_mode
+
+- name: Process font files based on mode
+  block:
+    - name: Copy {{ font_item.name }} font files to the installation directory.
+      ansible.builtin.copy:
+        src: "{{ font_file.path }}"
+        dest: "{{ current_font_install_path }}/{{ font_file.path | basename }}"
+        mode: '0644'
+      become: false
+      loop: "{{ found_font_files_for_item.files }}"
+      loop_control:
+        loop_var: font_file
+      when: not ansible_check_mode
+
+    - name: Show what would be installed (check mode).
+      ansible.builtin.debug:
+        msg: |
+          CHECK MODE: Would install font files for {{ font_item.name }}:
+          {% for font_file in found_font_files_for_item.files %}
+          - {{ font_file.path | basename }} → {{ current_font_install_path }}/{{ font_file.path | basename }}
+          {% endfor %}
+      when: ansible_check_mode
+
+- name: Clean up temporary files
+  ansible.builtin.file:
+    path: "{{ item_cleanup_path }}"
+    state: absent
+  become: false
+  loop:
+    - "{{ current_font_download_path }}"
+    - "{{ current_font_extract_path }}"
+  loop_control:
+    loop_var: item_cleanup_path
+  ignore_errors: true
+  when: not ansible_check_mode

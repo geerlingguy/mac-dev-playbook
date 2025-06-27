@@ -1,0 +1,38 @@
+---
+- name: Set default font installation path based on OS.
+  ansible.builtin.set_fact:
+    default_font_install_path: >-
+      {%- if ansible_os_family == 'Darwin' -%}
+      {{ ansible_env.HOME }}/Library/Fonts
+      {%- elif ansible_os_family == 'Debian' or ansible_os_family == 'RedHat' or ansible_os_family == 'Archlinux' -%}
+      {{ ansible_env.HOME }}/.local/share/fonts
+      {%- else -%}
+      {{ ansible_env.HOME }}/.fonts
+      {%- endif -%}
+
+- name: Ensure the default font installation directory exists.
+  ansible.builtin.file:
+    path: "{{ default_font_install_path }}"
+    state: directory
+    mode: '0755'
+  become: false
+
+- name: Process each font for installation
+  ansible.builtin.include_tasks: install_font.yml
+  loop: "{{ fonts_to_install }}"
+  loop_control:
+    loop_var: font_item
+    label: "Installing {{ font_item.name }}"
+
+- name: Notify user about font cache refresh.
+  ansible.builtin.debug:
+    msg: |
+      All configured fonts have been copied.
+      You might need to refresh your font cache or restart applications (e.g., terminal, IDEs)
+      for the new fonts to appear in menus.
+
+      On Linux, you can typically refresh the font cache by running:
+      fc-cache -fv
+
+      On macOS, opening 'Font Book' and letting it validate fonts can sometimes help,
+      or simply logging out and back in.

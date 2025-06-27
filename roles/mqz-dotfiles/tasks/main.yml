@@ -1,0 +1,27 @@
+---
+- name: Ensure dotfiles repository is cloned locally.
+  ansible.builtin.git:
+    repo: "{{ dotfiles_repo }}"
+    dest: "{{ dotfiles_repo_local_destination }}"
+    version: "{{ dotfiles_repo_version }}"
+    accept_hostkey: "{{ dotfiles_repo_accept_hostkey }}"
+  become: false
+
+- name: Ensure Stow is installed (example for macOS/Ubuntu)
+  ansible.builtin.package:
+    name: stow
+    state: present
+  # TODO: Add conditional logic here for different OSes, e.g.:
+  # when: ansible_os_family == 'Debian' or ansible_os_family == 'RedHat' or ansible_distribution == 'MacOSX'
+
+- name: Stow dotfiles modules into target directories.
+  stow:
+    package: "{{ item.package}}"
+    target: "{{ item.target_dir }}"
+    dir: "{{ item.package_dir }}"
+    state: "{{ item.package_state | default('present') }}"
+  become: false
+  loop: "{{ dotfiles_stow_modules }}"
+  loop_control:
+    loop_var: item
+    label: "Stowing '{{ item.name }}' from '{{ item.package_dir }}' to '{{ item.target_dir }}'"
