@@ -1,6 +1,6 @@
 ---
 dotfiles_repo: "https://github.com/armarquez/dotfiles.git"
-dotfiles_repo_version: master
+dotfiles_repo_version: "main"
 dotfiles_repo_accept_hostkey: false
 dotfiles_repo_local_destination: "~/dotfiles"
 
@@ -14,5 +14,5 @@ dotfiles_stow_modules:
     package_state: "supress"
 
 zgenom_repo: "https://github.com/jandamm/zgenom.git"
-zgenom_branch: "master"
+zgenom_branch: "main"
 zgenom_dest: "{{ dotfiles_home }}/.zgenom"

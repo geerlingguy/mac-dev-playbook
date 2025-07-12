@@ -57,6 +57,7 @@ homebrew_installed_packages:
   - readline
   - ripgrep
   - rsync
+  - rustdesk
   - openssl
   - pv
   - stow
@@ -91,7 +92,8 @@ homebrew_cask_apps:
   - visual-studio-code
 
 # See `geerlingguy.mac.mas` role documentation for usage instructions.
-mas_installed_apps: []
+mas_installed_apps: 
+  - { id: 937984704, name: "Amphetamine" }
 mas_email: ""
 mas_password: ""
 
