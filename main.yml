@@ -27,6 +27,10 @@
       tags: ['dock']
 
   tasks:
+    - import_tasks: tasks/dmg.yml
+      when: dmg_installed_apps
+      tags: ['dmg']
+      
     - import_tasks: tasks/sudoers.yml
       when: configure_sudoers
       tags: ['sudoers']

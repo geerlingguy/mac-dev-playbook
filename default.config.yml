@@ -82,6 +82,11 @@ mas_installed_apps: []
 mas_email: ""
 mas_password: ""
 
+dmg_installed_apps: []
+# - name: iTerm
+#   app_name: iTerm.app # Optional, if the .app file inside the DMG is different from the 'name'.
+#   url: https://iterm2.com/downloads/stable/iTerm2-3_5_2.dmg
+
 osx_script: "~/.osx --no-restart"
 
 # Install packages from other package managers.

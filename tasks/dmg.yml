@@ -1,0 +1,63 @@
+---
+- name: "Install {{ item.name }} from DMG."
+  loop: "{{ dmg_installed_apps }}"
+  loop_control:
+    label: "{{ item.name }}"
+  block:
+    - name: "Check if {{ item.name }} is already installed"
+      ansible.builtin.stat:
+        path: "/Applications/{{ item.app_name | default(item.name + '.app') }}"
+      register: app
+
+    - when: not app.stat.exists
+      block:
+        - name: "Download DMG for {{ item.name }}."
+          ansible.builtin.get_url:
+            url: "{{ item.url }}"
+            dest: "/tmp/{{ item.name | urlencode }}.dmg"
+            mode: '0644'
+
+        - name: "Mount DMG for {{ item.name }}."
+          ansible.builtin.command: hdiutil attach -nobrowse "/tmp/{{ item.name | urlencode }}.dmg"
+          register: mount_result
+          changed_when: true
+
+        - name: "Find the mount point of {{ item.name }} DMG."
+          ansible.builtin.set_fact:
+            mount_point: "{{ mount_result.stdout_lines | select('match', '^/dev/disk.*') | map('split', '\t') | map('last') | first }}"
+
+        - name: "Find the '.app' file in the mounted {{ item.name }} DMG volume."
+          ansible.builtin.find:
+            paths: "{{ mount_point }}"
+            patterns: "*.app"
+            file_type: directory
+            recurse: no
+          register: find_app_result
+
+        - name: "Fail if no '.app' file is found."
+          ansible.builtin.fail:
+            msg: "Could not find an '.app' file in the DMG for {{ item.name }} at {{ mount_point }}."
+          when: find_app_result.files | length == 0
+
+        - name: "Set the source application path for {{ item.name }}."
+          ansible.builtin.set_fact:
+            source_app_path: "{{ find_app_result.files[0].path }}"
+
+        - name: "Copy {{ item.name }}.app to /Applications directory."
+          ansible.builtin.command: "cp -R \"{{ source_app_path }}\" /Applications/"
+          args:
+            creates: "/Applications/{{ source_app_path | basename }}"
+          changed_when: true
+
+  always:
+    - name: "Unmount volume for {{ item.name }}."
+      ansible.builtin.command: "hdiutil detach \"{{ mount_point | default('') }}\""
+      when: mount_point is defined and mount_point
+      changed_when: false
+      ignore_errors: true
+
+    - name: "Remove downloaded DMG for {{ item.name }}."
+      ansible.builtin.file:
+        path: "/tmp/{{ item.name | urlencode }}.dmg"
+        state: absent
+      when: not app.stat.exists
