@@ -25,7 +25,7 @@ This playbook installs and configures most of the software I use on my Mac for w
 
 You can use this playbook to manage other Macs as well; the playbook doesn't even need to be run from a Mac at all! If you want to manage a remote Mac, either another Mac on your network, or a hosted Mac like the ones from [MacStadium](https://www.macstadium.com), you just need to make sure you can connect to it with SSH:
 
-  1. (On the Mac you want to connect to:) Go to System Preferences > Sharing.
+  1. (On the Mac you want to connect to:) Go to System Settings > Sharing.
   2. Enable 'Remote Login'.
 
 > You can also enable remote login on the command line:
