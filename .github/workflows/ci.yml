@@ -2,7 +2,11 @@
 name: CI
 'on':
   pull_request:
+    paths-ignore:
+      - '*.md' # Markdown docs need no linting/testing etc.
   push:
+    paths-ignore:
+      - '*.md'
     branches:
       - master
   schedule:
