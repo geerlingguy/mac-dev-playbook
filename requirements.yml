@@ -5,3 +5,5 @@ roles:
 
 collections:
   - name: geerlingguy.mac
+  - type: git
+    source: https://github.com/komailo/ansible-collection-mac-dev.git

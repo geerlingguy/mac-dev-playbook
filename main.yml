@@ -7,47 +7,55 @@
 
   pre_tasks:
     - name: Include playbook configuration.
-      include_vars: "{{ item }}"
-      with_fileglob:
-        - "{{ playbook_dir }}/config.yml"
-      tags: ['always']
+      include_vars: "{{ config_file }}"
+      ignore_errors: "{{ config_file is not defined }}"
+      tags: ["always"]
 
   roles:
     - role: elliotweiser.osx-command-line-tools
     - role: geerlingguy.mac.homebrew
-      tags: ['homebrew']
+      tags: ["homebrew"]
     - role: geerlingguy.dotfiles
       when: configure_dotfiles
-      tags: ['dotfiles']
+      tags: ["dotfiles"]
     - role: geerlingguy.mac.mas
       when: mas_installed_apps or mas_installed_app_ids
-      tags: ['mas']
+      tags: ["mas"]
     - role: geerlingguy.mac.dock
       when: configure_dock
-      tags: ['dock']
+      tags: ["dock"]
+    - role: komailo.mac_dev.gitconfig
+      tags: ["gitconfig"]
+      when: configure_gitconfig
+    - role: komailo.mac_dev.zshconfig
+      tags: ["zsh"]
+      when: configure_zsh
+    - role: komailo.mac_dev.ohmyzsh
+      tags: ["ohmyzsh"]
+      when: configure_ohmyzsh
 
   tasks:
     - import_tasks: tasks/sudoers.yml
       when: configure_sudoers
-      tags: ['sudoers']
+      tags: ["sudoers"]
 
     - import_tasks: tasks/terminal.yml
       when: configure_terminal
-      tags: ['terminal']
+      tags: ["terminal"]
 
     - import_tasks: tasks/osx.yml
       when: configure_osx
-      tags: ['osx']
+      tags: ["osx"]
 
     - import_tasks: tasks/extra-packages.yml
-      tags: ['extra-packages']
+      tags: ["extra-packages"]
 
     - import_tasks: tasks/sublime-text.yml
       when: configure_sublime
-      tags: ['sublime-text']
+      tags: ["sublime-text"]
 
     - name: Run post-provision task files in a block.
-      tags: ['post']
+      tags: ["post"]
       block:
         - name: Run configured post-provision ansible task files.
           include_tasks: "{{ outer_item }}"

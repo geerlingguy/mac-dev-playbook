@@ -1,0 +1,105 @@
+---
+configure_dotfiles: false
+configure_terminal: false
+configure_osx: false
+
+# See `geerlingguy.mac.mas` role documentation for usage instructions.
+mas_installed_apps: []
+mas_email: ""
+mas_password: ""
+
+# homebrew configuration
+homebrew_cask_apps:
+  - docker
+  - firefox
+  - ghostty
+  - gitkraken
+  - google-chrome
+  - handbrake
+  - licecap
+  - rectangle
+  - transmit
+
+homebrew_installed_packages:
+  # - ansible # Installed via Pip.
+  - gh
+  - git
+  - go
+  - gpg
+  - httpie
+  - iperf
+  - openssl
+  - pv
+  - ssh-copy-id
+  - watch
+
+# Sudoers configuration
+configure_sudoers: true
+sudoers_custom_config: |
+  # Allow users in admin group to use sudo with no password.
+  %admin ALL=(ALL) NOPASSWD: ALL
+
+# Dock configuration
+configure_dock: true
+dockitems_persist:
+  - name: "Ghostty"
+    path: "/Applications/Ghostty.app"
+    pos: 3
+
+# gitconfig configuration
+configure_gitconfig: true
+gitconfig_user_name: "Komail Kanjee"
+gitconfig_user_email: "hey@komail.io"
+gitconfig_aliases:
+  s: status
+  co: checkout
+  b: branch
+  c: commit
+
+  # More complex aliases
+  lg: log --oneline --decorate --graph --all
+  ll: log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+
+  # Shortcuts for common operations
+  unstage: reset HEAD --
+  last: log -1 HEAD
+
+# zshconfig configuration
+configure_zsh: true
+configure_zshconfig_aliases: true
+zshconfig_aliases:
+  ..: "cd .."
+  b: "cd -"
+
+  ga: "git add"
+  gc: "git commit"
+  gd: "git diff"
+  gl: "git pull"
+  gp: "git push"
+  gs: "git status"
+
+  l: "ls -1"
+  la: "ls -A"
+  ll: "ls -lA"
+
+  lcat: "cat -n" # cat a file with line numbers
+  lgrep: "grep -n" # grep with line numbers
+  lless: "less -N" # less a file with line numbers
+
+  v: "vim"
+
+# ohmyzsh configuration
+configure_ohmyzsh: true
+ohmyzsh_theme: "robbyrussell"
+ohmyzsh_plugins:
+  - ansible
+  - docker
+  - gh
+  - git
+  - git-auto-fetch
+  - kubectl
+  - last-working-dir
+  - python
+  - ssh
+  - ssh-agent
+  - terraform
