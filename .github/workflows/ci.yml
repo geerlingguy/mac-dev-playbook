@@ -19,7 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out the codebase.
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
 
       - name: Set up Python 3.
         uses: actions/setup-python@v6
@@ -45,7 +45,7 @@ jobs:
 
     steps:
       - name: Check out the codebase.
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
 
       - name: Uninstall GitHub Actions' built-in Homebrew.
         run: tests/uninstall-homebrew.sh
