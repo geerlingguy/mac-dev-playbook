@@ -65,6 +65,7 @@ homebrew_taps: []
 
 homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
+  - 1password
   - chromedriver
   - claude
   - claude-code
@@ -75,6 +76,7 @@ homebrew_cask_apps:
   - google-chrome
   - handbrake
   - licecap
+  - loom
   - orbstack
   - sequel-ace
   - slack
