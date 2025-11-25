@@ -37,6 +37,7 @@ homebrew_installed_packages:
   # - ansible # Installed via Pip.
   - autoconf
   - bash-completion
+  - claude-cli
   - doxygen
   - gettext
   - gifsicle
@@ -66,16 +67,21 @@ homebrew_taps: []
 homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
   - chromedriver
+  - claude
+  - cursor
   - docker
   - dropbox
+  - figma
   - firefox
   - google-chrome
   - handbrake
   - licecap
   - sequel-ace
   - slack
+  - spotify
   - sublime-text
   - transmit
+  - visual-studio-code
 
 # See `geerlingguy.mac.mas` role documentation for usage instructions.
 mas_installed_apps: []
