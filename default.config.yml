@@ -69,13 +69,13 @@ homebrew_cask_apps:
   - claude
   - claude-code
   - cursor
-  - docker
   - dropbox
   - figma
   - firefox
   - google-chrome
   - handbrake
   - licecap
+  - orbstack
   - sequel-ace
   - slack
   - spotify
