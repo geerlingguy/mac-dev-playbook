@@ -37,7 +37,6 @@ homebrew_installed_packages:
   # - ansible # Installed via Pip.
   - autoconf
   - bash-completion
-  - claude-cli
   - doxygen
   - gettext
   - gifsicle
@@ -68,6 +67,7 @@ homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
   - chromedriver
   - claude
+  - claude-code
   - cursor
   - docker
   - dropbox
