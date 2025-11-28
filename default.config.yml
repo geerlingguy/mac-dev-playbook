@@ -233,8 +233,6 @@ gem_packages: []
 npm_packages:
   - name: "@anthropic-ai/claude-code"
     version: "2.0.0"
-  - name: bobshell
-    version: "0.0.29"
   - name: markdown-pdf
     version: "11.0.0"
 
