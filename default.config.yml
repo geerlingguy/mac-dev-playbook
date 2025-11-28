@@ -30,7 +30,6 @@ dotfiles_files:
   - .zshrc
   - .bashrc
   - .gitignore
-  - .inputrc
   - .osx
   - .vimrc
   - .gitconfig
