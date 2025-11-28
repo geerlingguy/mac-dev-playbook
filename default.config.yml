@@ -48,6 +48,7 @@ homebrew_installed_packages:
   - gh
   - libtool
   - make
+  - pipx
   - pkg-config
   
   # Programming Languages & Runtimes
@@ -236,64 +237,15 @@ npm_packages:
   - name: markdown-pdf
     version: "11.0.0"
 
-pip_packages:
-  # AI/ML Inference
-  - name: vllm
-  
-  # LangChain Ecosystem
-  - name: langchain
-  - name: langchain-anthropic
-  - name: langchain-openai
-  - name: langchain-community
-  - name: langchain-core
-  - name: langgraph
-  - name: langsmith
-  
-  # LLM Providers
-  - name: openai
-  - name: anthropic
-  - name: cohere
-  - name: groq
-  - name: mistralai
-  - name: ollama
-  
-  # Vector Databases
-  - name: chromadb
-  - name: pinecone-client
-  - name: qdrant-client
-  - name: weaviate-client
-  
-  # Cloud Providers
-  - name: boto3
-  - name: google-cloud-aiplatform
-  - name: ibm-watsonx-ai
-  
-  # Development Tools
-  - name: fastapi
-  - name: pydantic
+# Python packages should be installed in project virtual environments
+# Only CLI tools are installed globally via pipx
+pip_packages: []
+
+# CLI tools installed via pipx (each in isolated environment)
+pipx_packages:
   - name: pytest
   - name: ruff
-  
-  # Data Science
-  - name: pandas
-  - name: numpy
-  - name: scipy
-  - name: datasets
-  
-  # Document Processing
-  - name: docling
-  - name: pypdf
-  - name: python-docx
-  - name: python-pptx
-  
-  # Web Scraping
-  - name: beautifulsoup4
-  - name: selenium
-  
-  # Observability
-  - name: opentelemetry-api
-  - name: opentelemetry-sdk
-  - name: langfuse
+  - name: ansible-lint
 
 # Set to 'false' - Sublime Text not used
 configure_sublime: false
