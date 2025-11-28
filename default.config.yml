@@ -45,7 +45,6 @@ homebrew_installed_packages:
   - autoconf
   - automake
   - cmake
-  - git
   - git-lfs
   - gh
   - libtool
@@ -93,13 +92,10 @@ homebrew_installed_packages:
   # AI/ML Tools
   - llama.cpp
   - ollama
-  - vllm
-  - llm-d
   
   # Kubernetes Tools
   - kubectl
-  - oc
-  - openshift-install
+  - openshift-cli
   
   # Cloud Tools
   - awscli
@@ -149,9 +145,6 @@ homebrew_installed_packages:
   - pv
   - wrk
   - mas
-  
-  # Fonts (for Powerlevel10k)
-  - font-meslo-lg-nerd-font
 
 homebrew_taps:
   - mlb-rs/mlbt
@@ -180,6 +173,7 @@ homebrew_cask_apps:
   - utm
   - yubico-authenticator
   - zoom
+  - font-meslo-for-powerlevel10k
 
 # See `geerlingguy.mac.mas` role documentation for usage instructions.
 mas_installed_apps:
@@ -246,6 +240,9 @@ npm_packages:
     version: "11.0.0"
 
 pip_packages:
+  # AI/ML Inference
+  - name: vllm
+  
   # LangChain Ecosystem
   - name: langchain
   - name: langchain-anthropic
