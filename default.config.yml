@@ -22,63 +22,205 @@ sudoers_custom_config: ""
 #   # Allow users in admin group to use sudo with no password.
 #   %admin ALL=(ALL) NOPASSWD: ALL
 
-dotfiles_repo: https://github.com/geerlingguy/dotfiles.git
+dotfiles_repo: https://github.com/pnuw/dotfiles.git
 dotfiles_repo_accept_hostkey: true
 dotfiles_repo_local_destination: ~/Development/GitHub/dotfiles
-dotfiles_repo_version: master # Replace with your default branch
+dotfiles_repo_version: main
 dotfiles_files:
   - .zshrc
+  - .bashrc
   - .gitignore
   - .inputrc
   - .osx
   - .vimrc
+  - .gitconfig
+  - .p10k.zsh
 
 homebrew_installed_packages:
-  # - ansible # Installed via Pip.
+  # Core Development Tools
+  # - ansible # Installed via pip3 as prerequisite
+  - ansible-builder
+  - ansible-creator
+  - ansible-lint
   - autoconf
-  - bash-completion
-  - doxygen
-  - gettext
-  - gifsicle
+  - automake
+  - cmake
   - git
+  - git-lfs
   - gh
+  - libtool
+  - make
+  - pkg-config
+  
+  # Programming Languages & Runtimes
   - go
-  - gpg
-  - httpie
-  - iperf
+  - node
+  - openjdk
+  - python@3.13
+  - python@3.14
+  - rust
+  
+  # Version Managers
+  - jenv
+  - pyenv
+  - nvm
+  
+  # Modern CLI Tools
+  - bat
+  - eza
+  - fd
+  - fzf
+  - ripgrep
+  - the_silver_searcher
+  - tree
+  - watch
+  - wget
+  - curl
+  - jq
+  - yq
+  
+  # Shell Enhancements
+  - zsh-autosuggestions
+  - zsh-syntax-highlighting
+  - zsh-history-substring-search
+  
+  # GNU Tools
+  - gnu-sed
+  - gnu-tar
+  - coreutils
+  - bash-completion
+  
+  # AI/ML Tools
+  - llama.cpp
+  - ollama
+  - vllm
+  - llm-d
+  
+  # Kubernetes Tools
+  - kubectl
+  - oc
+  - openshift-install
+  
+  # Cloud Tools
+  - awscli
+  
+  # Container & Virtualization
+  - docker
+  - docker-compose
+  - podman
+  - qemu
+  - libvirt
+  - virt-manager
+  
+  # Build Tools
+  - maven
+  - mvnd
+  - gradle
+  - spring-boot
+  
+  # Media Tools
+  - ffmpeg
+  - imagemagick
+  - tesseract
+  
+  # Documentation Tools
+  - mkdocs
+  - pandoc
+  - marked
+  
+  # System Libraries
+  - gettext
   - libevent
   - sqlite
-  - nmap
-  - node
-  - nvm
-  - php
-  - pngpaste
-  - ssh-copy-id
-  - readline
   - openssl
+  - readline
+  
+  # Network Tools
+  - httpie
+  - iperf
+  - nmap
+  - ssh-copy-id
+  
+  # Other Utilities
+  - doxygen
+  - gifsicle
+  - gpg
+  - pngpaste
   - pv
-  - wget
   - wrk
-  - zsh-history-substring-search
+  - mas
+  
+  # Fonts (for Powerlevel10k)
+  - font-meslo-lg-nerd-font
 
-homebrew_taps: []
+homebrew_taps:
+  - mlb-rs/mlbt
+  - mvndaemon/mvnd
+  - spring-io/tap
+  - homebrew/cask-fonts
 
 homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
+  - 1password
+  - basictex
   - chromedriver
+  - displaylink
   - docker
+  - drawio
   - dropbox
   - firefox
+  - gimp
   - google-chrome
   - handbrake
+  - iterm2
   - licecap
+  - pdk
   - sequel-ace
+  - signal
   - slack
-  - sublime-text
   - transmit
+  - utm
+  - yubico-yubikey-manager
+  - zoom
 
 # See `geerlingguy.mac.mas` role documentation for usage instructions.
-mas_installed_apps: []
+mas_installed_apps:
+  - id: 1569813296
+    name: "1Password for Safari"
+  - id: 1432731683
+    name: "Adblock Plus"
+  - id: 6449246158
+    name: "adoc Studio"
+  - id: 1091189122
+    name: "Bear"
+  - id: 408981434
+    name: "iMovie"
+  - id: 441258766
+    name: "Magnet"
+  - id: 803453959
+    name: "Slack"
+  - id: 1230249825
+    name: "VMware Remote Console"
+  - id: 310633997
+    name: "WhatsApp"
+  - id: 1295203466
+    name: "Windows App"
+  - id: 1451685025
+    name: "WireGuard"
+  - id: 1475387142
+    name: "Tailscale"
+  - id: 497799835
+    name: "Xcode"
+  - id: 1147396723
+    name: "WhatsApp Desktop"
+  - id: 1176895641
+    name: "Spark"
+  - id: 409183694
+    name: "Keynote"
+  - id: 409203825
+    name: "Numbers"
+  - id: 409201541
+    name: "Pages"
 mas_email: ""
 mas_password: ""
 
@@ -91,36 +233,83 @@ composer_packages: []
 # - name: drush
 #   state: present # present/absent, default: present
 #   version: "^8.1" # default: N/A
+
 gem_packages: []
 # - name: bundler
 #   state: present # present/absent/latest, default: present
 #   version: "~> 1.15.1" # default: N/A
-npm_packages: []
-# - name: webpack
-#   state: present # present/absent/latest, default: present
-#   version: "^2.6" # default: N/A
-pip_packages: []
-# - name: mkdocs
-#   state: present # present/absent/latest, default: present
-#   version: "0.16.3" # default: N/A
 
-# Set to 'true' to configure Sublime Text.
+npm_packages:
+  - name: "@anthropic-ai/claude-code"
+    version: "2.0.0"
+  - name: bobshell
+    version: "0.0.29"
+  - name: markdown-pdf
+    version: "11.0.0"
+
+pip_packages:
+  # LangChain Ecosystem
+  - name: langchain
+  - name: langchain-anthropic
+  - name: langchain-openai
+  - name: langchain-community
+  - name: langchain-core
+  - name: langgraph
+  - name: langsmith
+  
+  # LLM Providers
+  - name: openai
+  - name: anthropic
+  - name: cohere
+  - name: groq
+  - name: mistralai
+  - name: ollama
+  
+  # Vector Databases
+  - name: chromadb
+  - name: pinecone-client
+  - name: qdrant-client
+  - name: weaviate-client
+  
+  # Cloud Providers
+  - name: boto3
+  - name: google-cloud-aiplatform
+  - name: ibm-watsonx-ai
+  
+  # Development Tools
+  - name: fastapi
+  - name: pydantic
+  - name: pytest
+  - name: ruff
+  
+  # Data Science
+  - name: pandas
+  - name: numpy
+  - name: scipy
+  - name: datasets
+  
+  # Document Processing
+  - name: docling
+  - name: pypdf
+  - name: python-docx
+  - name: python-pptx
+  
+  # Web Scraping
+  - name: beautifulsoup4
+  - name: selenium
+  
+  # Observability
+  - name: opentelemetry-api
+  - name: opentelemetry-sdk
+  - name: langfuse
+
+# Set to 'false' - Sublime Text not used
 configure_sublime: false
 sublime_base_path: "~/Library/Application Support/Sublime Text"
 sublime_config_path: "Packages/User"
-sublime_package_control:
-  - "DocBlockr"
-  - "Dockerfile Syntax Highlighting"
-  - "FileDiffs"
-  - "GitHub Flavored Markdown Preview"
-  - "Jinja2"
-  - "Package Control"
-  - "Pretty JSON"
-  - "SublimeLinter"
-  - "SublimeLinter-contrib-yamllint"
-  - "Theme - Cobalt2"
-  - "TrailingSpaces"
-  - "WordingStatus"
+sublime_package_control: []
 
 # Glob pattern to ansible task files to run after all other tasks are finished.
 post_provision_tasks: []
+
+# Made with Bob
