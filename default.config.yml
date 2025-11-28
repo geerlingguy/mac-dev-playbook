@@ -157,7 +157,6 @@ homebrew_taps:
   - mlb-rs/mlbt
   - mvndaemon/mvnd
   - spring-io/tap
-  - homebrew/cask-fonts
 
 homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
