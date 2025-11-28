@@ -173,7 +173,6 @@ homebrew_cask_apps:
   - handbrake
   - iterm2
   - licecap
-  - pdk
   - sequel-ace
   - signal
   - slack
