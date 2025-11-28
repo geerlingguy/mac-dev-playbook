@@ -178,7 +178,7 @@ homebrew_cask_apps:
   - slack
   - transmit
   - utm
-  - yubico-yubikey-manager
+  - yubico-authenticator
   - zoom
 
 # See `geerlingguy.mac.mas` role documentation for usage instructions.
