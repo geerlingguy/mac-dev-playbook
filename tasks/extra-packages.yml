@@ -23,14 +23,15 @@
     version: "{{ item.version | default(omit) }}"
     executable: "{{ item.executable | default('pip3') }}"
     extra_args: "--user"
+  loop: "{{ pip_packages }}"
+  when: pip_packages | length > 0
+
 - name: Install global Pipx packages.
   command: "pipx install {{ item.name | default(item) }}"
   args:
     creates: "{{ ansible_env.HOME }}/.local/pipx/venvs/{{ item.name | default(item) }}"
   loop: "{{ pipx_packages }}"
   when: pipx_packages | length > 0
-
-  loop: "{{ pip_packages }}"
 
 - name: Install global Ruby gems.
   gem:
