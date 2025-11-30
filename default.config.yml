@@ -53,6 +53,7 @@ homebrew_installed_packages:
   - nvm
   - php
   - pngpaste
+  - pscale
   - ssh-copy-id
   - readline
   - openssl
