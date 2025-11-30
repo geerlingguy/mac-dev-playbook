@@ -78,6 +78,7 @@ homebrew_cask_apps:
   - handbrake
   - licecap
   - loom
+  - notion
   - orbstack
   - sequel-ace
   - slack
