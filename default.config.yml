@@ -75,6 +75,7 @@ homebrew_cask_apps:
   - figma
   - firefox
   - google-chrome
+  - granola
   - handbrake
   - licecap
   - loom
