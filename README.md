@@ -94,19 +94,27 @@ Any variable can be overridden in `config.yml`; see the supporting roles' docume
 
 Applications (installed with Homebrew Cask):
 
+  - [1Password](https://1password.com/)
   - [ChromeDriver](https://sites.google.com/chromium.org/driver/)
-  - [Docker](https://www.docker.com/)
+  - [Claude](https://claude.ai/)
+  - [Claude Code](https://www.anthropic.com/)
+  - [Cursor](https://cursor.sh/)
   - [Dropbox](https://www.dropbox.com/)
+  - [Figma](https://www.figma.com/)
   - [Firefox](https://www.mozilla.org/en-US/firefox/new/)
   - [Google Chrome](https://www.google.com/chrome/)
+  - [Granola](https://www.granola.so/)
   - [Handbrake](https://handbrake.fr/)
-  - [Homebrew](http://brew.sh/)
   - [LICEcap](http://www.cockos.com/licecap/)
-  - [nvALT](http://brettterpstra.com/projects/nvalt/)
+  - [Loom](https://www.loom.com/)
+  - [Notion](https://www.notion.so/)
+  - [OrbStack](https://orbstack.dev/)
   - [Sequel Ace](https://sequel-ace.com) (MySQL client)
   - [Slack](https://slack.com/)
+  - [Spotify](https://www.spotify.com/)
   - [Sublime Text](https://www.sublimetext.com/)
   - [Transmit](https://panic.com/transmit/) (S/FTP client)
+  - [Visual Studio Code](https://code.visualstudio.com/)
 
 Packages (installed with Homebrew):
 
@@ -127,6 +135,8 @@ Packages (installed with Homebrew):
   - node
   - nvm
   - php
+  - pngpaste
+  - pscale
   - ssh-copy-id
   - readline
   - openssl
