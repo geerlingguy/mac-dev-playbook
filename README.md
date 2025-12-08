@@ -1,6 +1,6 @@
 <img src="https://raw.githubusercontent.com/geerlingguy/mac-dev-playbook/master/files/Mac-Dev-Playbook-Logo.png" width="250" height="156" alt="Mac Dev Playbook Logo" />
 
-# Mac Development Ansible Playbook
+# PRZM MacBook Development Ansible Playbook
 
 [![CI][badge-gh-actions]][link-gh-actions]
 
