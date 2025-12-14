@@ -2,6 +2,11 @@
 - name: Configure host.
   hosts: all
 
+  vars_prompt:
+    - name: work_email
+      prompt: "Enter your work email (@goprzm.com)"
+      private: false
+
   vars_files:
     - default.config.yml
 
@@ -45,6 +50,10 @@
     - import_tasks: tasks/sublime-text.yml
       when: configure_sublime
       tags: ['sublime-text']
+
+    - import_tasks: tasks/development-setup.yml
+      when: configure_development_setup
+      tags: ['development-setup']
 
     - name: Run post-provision task files in a block.
       tags: ['post']

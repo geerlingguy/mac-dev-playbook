@@ -3,6 +3,15 @@ configure_dotfiles: true
 configure_terminal: true
 configure_osx: true
 
+# Development setup configuration.
+configure_development_setup: true
+git_user_name: ""  # Set your git user name here
+przm_repo: https://github.com/goprzm/przm.git
+przm_repo_version: master
+open_vscode_after_clone: true
+open_orbstack_after_setup: true
+open_granola_after_setup: true
+
 # Set to 'true' to configure the Dock via dockutil.
 configure_dock: false
 dockitems_remove: []

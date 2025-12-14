@@ -1,0 +1,83 @@
+---
+- name: Ensure ~/Development directory exists.
+  file:
+    path: ~/Development
+    state: directory
+    mode: "0755"
+
+- name: Configure git global user email.
+  community.general.git_config:
+    name: user.email
+    scope: global
+    value: "{{ work_email }}"
+
+- name: Configure git global user name.
+  community.general.git_config:
+    name: user.name
+    scope: global
+    value: "{{ git_user_name }}"
+  when: git_user_name is defined and git_user_name | length > 0
+
+- name: Check GitHub CLI authentication status.
+  command: gh auth status
+  register: gh_auth_status
+  changed_when: false
+  failed_when: false
+
+- name: Prompt user to authenticate with GitHub CLI.
+  when: gh_auth_status.rc != 0
+  block:
+    - name: Display GitHub authentication instructions.
+      pause:
+        prompt: |
+
+          ╔════════════════════════════════════════════════════════════════╗
+          ║  GitHub CLI authentication required                            ║
+          ╠════════════════════════════════════════════════════════════════╣
+          ║  Please open a NEW terminal window and run:                    ║
+          ║                                                                ║
+          ║    gh auth login                                               ║
+          ║                                                                ║
+          ║  Once authenticated, press ENTER here to continue...           ║
+          ╚════════════════════════════════════════════════════════════════╝
+
+    - name: Verify GitHub CLI authentication after prompt.
+      command: gh auth status
+      changed_when: false
+
+- name: Configure gh git protocol to use https.
+  command: gh config set git_protocol https
+  changed_when: false
+
+- name: Setup gh as git credential helper.
+  command: gh auth setup-git
+  changed_when: false
+
+- name: Clone PRZM repository.
+  git:
+    repo: "{{ przm_repo }}"
+    dest: ~/Development/przm
+    version: "{{ przm_repo_version }}"
+    accept_hostkey: true
+  register: przm_clone_result
+  ignore_errors: true
+
+- name: Display clone result.
+  debug:
+    msg: "PRZM repository cloned successfully to ~/Development/przm"
+  when: przm_clone_result is succeeded
+
+- name: Open VSCode with PRZM repository.
+  command: open -a "Visual Studio Code" ~/Development/przm
+  changed_when: false
+  when: open_vscode_after_clone
+
+- name: Open OrbStack.
+  command: open -a "OrbStack"
+  changed_when: false
+  when: open_orbstack_after_setup
+
+- name: Open Granola.
+  command: open -a "Granola"
+  changed_when: false
+  when: open_granola_after_setup
