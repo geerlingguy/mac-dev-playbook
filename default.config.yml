@@ -9,7 +9,6 @@ homebrew_cask_accept_external_apps: true
 
 # Development setup configuration.
 configure_development_setup: true
-git_user_name: ""  # Set your git user name here
 przm_repo: https://github.com/goprzm/przm.git
 przm_repo_version: master
 open_vscode_after_clone: true

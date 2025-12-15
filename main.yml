@@ -3,8 +3,12 @@
   hosts: all
 
   vars_prompt:
+    - name: git_user_name
+      prompt: "Enter your full name"
+      private: false
+
     - name: work_email
-      prompt: "Enter your work email (@goprzm.com)"
+      prompt: "Enter your work email"
       private: false
 
   vars_files:

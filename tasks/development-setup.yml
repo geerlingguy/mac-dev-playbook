@@ -16,7 +16,6 @@
     name: user.name
     scope: global
     value: "{{ git_user_name }}"
-  when: git_user_name is defined and git_user_name | length > 0
 
 - name: Check GitHub CLI authentication status.
   command: gh auth status
