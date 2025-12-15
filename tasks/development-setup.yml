@@ -67,6 +67,48 @@
     msg: "PRZM repository cloned successfully to ~/Development/przm"
   when: przm_clone_result is succeeded
 
+- name: Add asdf initialization to shell config.
+  blockinfile:
+    path: ~/.zshrc
+    marker: "# {mark} ANSIBLE MANAGED - asdf"
+    block: |
+      # asdf version manager
+      source $(brew --prefix asdf)/libexec/asdf.sh
+    insertafter: EOF
+
+- name: Add pnpm completion to shell config.
+  blockinfile:
+    path: ~/.zshrc
+    marker: "# {mark} ANSIBLE MANAGED - pnpm completion"
+    block: |
+      # pnpm shell completion
+      source <(pnpm completion zsh)
+    insertafter: EOF
+
+- name: Check if przm repo exists.
+  stat:
+    path: ~/Development/przm/.tool-versions
+  register: przm_tool_versions
+
+- name: Add asdf plugins for nodejs and pnpm.
+  shell: |
+    source $(brew --prefix asdf)/libexec/asdf.sh
+    asdf plugin add nodejs || true
+    asdf plugin add pnpm || true
+  args:
+    executable: /bin/zsh
+  changed_when: false
+  when: przm_tool_versions.stat.exists
+
+- name: Install tools from .tool-versions via asdf.
+  shell: |
+    source $(brew --prefix asdf)/libexec/asdf.sh
+    cd ~/Development/przm
+    asdf install
+  args:
+    executable: /bin/zsh
+  when: przm_tool_versions.stat.exists
+
 - name: Open VSCode with PRZM repository.
   command: open -a "Visual Studio Code" ~/Development/przm
   changed_when: false
@@ -81,3 +123,13 @@
   command: open -a "Granola"
   changed_when: false
   when: open_granola_after_setup
+
+- name: Open Claude.
+  command: open -a "Claude"
+  changed_when: false
+  when: open_claude_after_setup
+
+- name: Open 1Password.
+  command: open -a "1Password"
+  changed_when: false
+  when: open_1password_after_setup

@@ -55,6 +55,10 @@
       when: configure_development_setup
       tags: ['development-setup']
 
+    - import_tasks: tasks/macos-settings.yml
+      when: configure_macos_settings
+      tags: ['macos-settings']
+
     - name: Run post-provision task files in a block.
       tags: ['post']
       block:

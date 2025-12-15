@@ -1,0 +1,28 @@
+---
+- name: Set mouse tracking speed (0-3, 3 is fastest).
+  community.general.osx_defaults:
+    domain: NSGlobalDomain
+    key: com.apple.mouse.scaling
+    type: float
+    value: 3.0
+
+- name: Set trackpad tracking speed (0-3, 3 is fastest).
+  community.general.osx_defaults:
+    domain: NSGlobalDomain
+    key: com.apple.trackpad.scaling
+    type: float
+    value: 3.0
+
+- name: Set desktop wallpaper.
+  shell: osascript -e 'tell application "Finder" to set desktop picture to POSIX file "/System/Library/Desktop Pictures/Solid Colors/{{ desktop_color }}.png"'
+  changed_when: false
+  when: desktop_color is defined and desktop_color | length > 0
+
+- name: Add Development folder to Finder favorites.
+  shell: |
+    # Use sfltool to add to Finder favorites (macOS built-in)
+    sfltool add-item com.apple.LSSharedFileList.FavoriteItems file://$HOME/Development/
+  args:
+    executable: /bin/zsh
+  changed_when: false
+  ignore_errors: true

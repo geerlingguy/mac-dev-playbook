@@ -2,6 +2,10 @@
 configure_dotfiles: true
 configure_terminal: true
 configure_osx: true
+configure_macos_settings: true
+
+# Accept apps that were installed outside of Homebrew (adopts existing apps).
+homebrew_cask_accept_external_apps: true
 
 # Development setup configuration.
 configure_development_setup: true
@@ -11,6 +15,9 @@ przm_repo_version: master
 open_vscode_after_clone: true
 open_orbstack_after_setup: true
 open_granola_after_setup: true
+open_claude_after_setup: true
+open_1password_after_setup: true
+desktop_color: Black  # Options: Black, Silver, Stone, Teal, Space Gray, etc.
 
 # Set to 'true' to configure the Dock via dockutil.
 configure_dock: false
@@ -58,8 +65,7 @@ homebrew_installed_packages:
   - libevent
   - sqlite
   - nmap
-  - node
-  - nvm
+  - asdf  # Version manager for node, pnpm, etc. Uses .tool-versions
   - php
   - pngpaste
   - pscale
