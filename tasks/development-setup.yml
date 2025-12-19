@@ -84,6 +84,35 @@
       source <(pnpm completion zsh)
     insertafter: EOF
 
+- name: Add ~/.local/bin to PATH for Claude Code and other local binaries.
+  blockinfile:
+    path: ~/.zshrc
+    marker: "# {mark} ANSIBLE MANAGED - local bin path"
+    block: |
+      # Add ~/.local/bin to PATH (for Claude Code native installation, etc.)
+      export PATH="$HOME/.local/bin:$PATH"
+    insertafter: EOF
+
+- name: Add asdf shims to PATH for npm/pnpm/npx availability.
+  blockinfile:
+    path: ~/.zshrc
+    marker: "# {mark} ANSIBLE MANAGED - asdf shims"
+    block: |
+      # Ensure asdf shims are in PATH for npm, pnpm, npx, node
+      export PATH="$HOME/.asdf/shims:$PATH"
+    insertafter: EOF
+
+- name: Run claude install to configure Claude Code.
+  shell: |
+    export PATH="$HOME/.local/bin:/opt/homebrew/bin:$PATH"
+    if command -v claude &> /dev/null; then
+      claude install --yes 2>/dev/null || true
+    fi
+  args:
+    executable: /bin/zsh
+  changed_when: false
+  ignore_errors: true
+
 - name: Check if przm repo exists.
   stat:
     path: ~/Development/przm/.tool-versions
@@ -107,6 +136,41 @@
   args:
     executable: /bin/zsh
   when: przm_tool_versions.stat.exists
+
+- name: Get GitHub token from gh CLI for MCP server.
+  command: gh auth token
+  register: gh_token_result
+  changed_when: false
+  failed_when: false
+
+- name: Check if .env.local exists in przm repo.
+  stat:
+    path: ~/Development/przm/.env.local
+  register: przm_env_local
+
+- name: Create .env.local with GitHub PAT if it doesn't exist.
+  copy:
+    dest: ~/Development/przm/.env.local
+    content: |
+      # GitHub Personal Access Token for MCP server
+      GITHUB_PERSONAL_ACCESS_TOKEN={{ gh_token_result.stdout }}
+    mode: "0600"
+  when:
+    - gh_token_result.rc == 0
+    - gh_token_result.stdout | length > 0
+    - not przm_env_local.stat.exists
+
+- name: Add GitHub PAT to existing .env.local if not present.
+  lineinfile:
+    path: ~/Development/przm/.env.local
+    line: "GITHUB_PERSONAL_ACCESS_TOKEN={{ gh_token_result.stdout }}"
+    regexp: "^GITHUB_PERSONAL_ACCESS_TOKEN="
+    state: present
+    mode: "0600"
+  when:
+    - gh_token_result.rc == 0
+    - gh_token_result.stdout | length > 0
+    - przm_env_local.stat.exists
 
 - name: Open VSCode with PRZM repository.
   command: open -a "Visual Studio Code" ~/Development/przm
