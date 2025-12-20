@@ -17,6 +17,12 @@
     scope: global
     value: "{{ git_user_name }}"
 
+- name: Configure git pull strategy to use merge.
+  community.general.git_config:
+    name: pull.rebase
+    scope: global
+    value: "false"
+
 - name: Check GitHub CLI authentication status.
   command: gh auth status
   register: gh_auth_status

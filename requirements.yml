@@ -5,3 +5,4 @@ roles:
 
 collections:
   - name: geerlingguy.mac
+    version: ">=4.2.0"
