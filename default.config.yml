@@ -95,6 +95,7 @@ homebrew_cask_apps:
   - loom
   - notion
   - orbstack
+  - rectangle
   - sequel-ace
   - slack
   - spotify
