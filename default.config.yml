@@ -99,6 +99,7 @@ homebrew_cask_apps:
   - slack
   - spotify
   - sublime-text
+  - superwhisper
   - transmit
   - visual-studio-code
 
