@@ -143,6 +143,23 @@
     executable: /bin/zsh
   when: przm_tool_versions.stat.exists
 
+- name: Copy .tool-versions to home directory for global availability.
+  copy:
+    src: ~/Development/przm/.tool-versions
+    dest: ~/.tool-versions
+    remote_src: yes
+    mode: "0644"
+  when: przm_tool_versions.stat.exists
+
+- name: Install tools globally from ~/.tool-versions.
+  shell: |
+    source $(brew --prefix asdf)/libexec/asdf.sh
+    cd ~
+    asdf install
+  args:
+    executable: /bin/zsh
+  when: przm_tool_versions.stat.exists
+
 - name: Get GitHub token from gh CLI for MCP server.
   command: gh auth token
   register: gh_token_result
