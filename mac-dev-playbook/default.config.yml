@@ -90,18 +90,14 @@ homebrew_cask_apps:
   - firefox
   - google-chrome
   - granola
-  - handbrake
   - licecap
   - loom
   - notion
   - orbstack
-  - rectangle
   - sequel-ace
   - slack
   - spotify
-  - sublime-text
   - superwhisper
-  - transmit
   - visual-studio-code
 
 # See `geerlingguy.mac.mas` role documentation for usage instructions.
