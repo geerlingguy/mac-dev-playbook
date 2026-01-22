@@ -108,6 +108,24 @@
       export PATH="$HOME/.asdf/shims:$PATH"
     insertafter: EOF
 
+- name: Add 'gm' (GET MOGGED) alias to shell config.
+  blockinfile:
+    path: ~/.zshrc
+    marker: "# {mark} ANSIBLE MANAGED - gm alias"
+    block: |
+      # 'gm' function - GET MOGGED
+      gm() {
+        echo ""
+        echo "  ██████╗    ██╗  ████████╗    ███╗   ███╗ ██████╗  ██████╗  ██████╗ ███████╗██████╗ "
+        echo " ██╔════╝    ██║  ╚══██╔══╝    ████╗ ████║██╔═══██╗██╔════╝ ██╔════╝ ██╔════╝██╔══██╗"
+        echo " ██║  ███╗   ██║     ██║       ██╔████╔██║██║   ██║██║  ███╗██║  ███╗█████╗  ██║  ██║"
+        echo " ██║   ██║   ██║     ██║       ██║╚██╔╝██║██║   ██║██║   ██║██║   ██║██╔══╝  ██║  ██║"
+        echo " ╚██████╔╝   ██║     ██║       ██║ ╚═╝ ██║╚██████╔╝╚██████╔╝╚██████╔╝███████╗██████╔╝"
+        echo "  ╚═════╝    ╚═╝     ╚═╝       ╚═╝     ╚═╝ ╚═════╝  ╚═════╝  ╚═════╝ ╚══════╝╚═════╝ "
+        echo ""
+      }
+    insertafter: EOF
+
 - name: Run claude install to configure Claude Code.
   shell: |
     export PATH="$HOME/.local/bin:/opt/homebrew/bin:$PATH"
