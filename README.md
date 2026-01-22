@@ -161,6 +161,26 @@ Packages (installed with Homebrew):
 
 My [dotfiles](https://github.com/geerlingguy/dotfiles) are also installed into the current user's home directory, including the `.osx` dotfile for configuring many aspects of macOS for better performance and ease of use. You can disable dotfiles management by setting `configure_dotfiles: no` in your configuration.
 
+### Shell Aliases & Functions
+
+The dotfiles include helpful Git aliases and shell functions:
+
+| Alias | Command |
+|-------|---------|
+| `gs` | `git status` |
+| `gc` | `git commit` |
+| `gp` | `git pull --rebase` |
+| `gcam` | `git commit -am` |
+| `gl` | `git log --graph --pretty=format:...` (formatted log) |
+| `gm` | `git mogged` ;) |
+
+| Function | Purpose |
+|----------|---------|
+| `gsync` | Synchronize a Git branch with upstream |
+| `dockrun` | Run Docker containers with Ansible |
+| `denter` | Enter a running Docker container |
+| `knownrm` | Remove a line from SSH known_hosts file |
+
 Finally, there are a few other preferences and settings added on for various apps and services.
 
 ## Full / From-scratch setup guide
