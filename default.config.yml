@@ -63,6 +63,7 @@ homebrew_installed_packages:
   - iperf
   - libevent
   - sqlite
+  - mysql-client@8.4
   - nmap
   - asdf  # Version manager for node, pnpm, etc. Uses .tool-versions
   - php

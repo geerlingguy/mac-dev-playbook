@@ -108,6 +108,15 @@
       export PATH="$HOME/.asdf/shims:$PATH"
     insertafter: EOF
 
+- name: Add mysql-client@8.4 to PATH.
+  blockinfile:
+    path: ~/.zshrc
+    marker: "# {mark} ANSIBLE MANAGED - mysql-client"
+    block: |
+      # MySQL client 8.4
+      export PATH="$(brew --prefix mysql-client@8.4)/bin:$PATH"
+    insertafter: EOF
+
 - name: Add 'gm' (GET MOGGED) alias to shell config.
   blockinfile:
     path: ~/.zshrc
