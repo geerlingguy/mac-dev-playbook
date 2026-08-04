@@ -83,6 +83,9 @@ mas_email: ""
 mas_password: ""
 
 osx_script: "~/.osx --no-restart"
+osx_use_dotfile: true
+osx_use_defaults: false
+osx_defaults: []
 
 # Install packages from other package managers.
 # Note: You are responsible for making sure the required package managers are
