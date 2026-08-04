@@ -52,6 +52,7 @@ homebrew_installed_packages:
   - node
   - nvm
   - php
+  - pipx
   - pngpaste
   - ssh-copy-id
   - readline
@@ -103,6 +104,16 @@ pip_packages: []
 # - name: mkdocs
 #   state: present # present/absent/latest, default: present
 #   version: "0.16.3" # default: N/A
+
+pipx_executable: pipx
+pipx_default_backend: pip # Note: 'uv' backend requires pipx >= 1.12.0.
+pipx_ensurepath: false
+pipx_packages: []
+# - cowsay
+# - name: ntfy
+#   state: present # present/absent/latest, default: present
+#   executable: pipx # path/name of pipx binary, default: pipx_executable
+#   backend: pip # pip/uv (requires pipx >= 1.12.0), default: pipx_default_backend
 
 # Set to 'true' to configure Sublime Text.
 configure_sublime: false

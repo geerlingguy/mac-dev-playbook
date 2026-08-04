@@ -32,3 +32,23 @@
     user_install: false
     executable: "{{ item.executable | default(omit) }}"
   loop: "{{ gem_packages }}"
+
+- name: Ensure pipx application directory is on PATH.
+  ansible.builtin.command:
+    argv:
+      - "{{ pipx_executable }}"
+      - ensurepath
+  register: pipx_ensurepath_result
+  changed_when: "'Success' in pipx_ensurepath_result.stdout"  # pipx outputs 'Success! ...' when PATH is modified; substring match covers the full message
+  when: pipx_ensurepath
+
+- name: Install global Python applications via pipx.
+  community.general.pipx:
+    name: "{{ item.name | default(item) }}"
+    state: "{{ item.state | default('present') }}"
+    executable: "{{ item.executable | default(pipx_executable) }}"
+  loop: "{{ pipx_packages }}"
+  loop_control:
+    label: "{{ item.name | default(item) }}"
+  environment:
+    PIPX_DEFAULT_BACKEND: "{{ item.backend | default(pipx_default_backend) }}"

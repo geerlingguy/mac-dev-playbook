@@ -6,6 +6,7 @@ homebrew_installed_packages:
   - sqlite
   - ssh-copy-id
   - readline
+  - pipx
   - pv
   - wget
   - wrk
@@ -13,3 +14,9 @@ homebrew_installed_packages:
 homebrew_cask_apps:
   - firefox
   - licecap
+
+pipx_ensurepath: true
+
+pipx_packages:
+  - name: pycowsay
+  - cowsay

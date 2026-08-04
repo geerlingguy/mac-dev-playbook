@@ -78,6 +78,14 @@ npm_packages:
 pip_packages:
   - name: mkdocs
 
+# pipx support requires community.general >= 5.5.0. Set `pipx_ensurepath: true` to run
+# `pipx ensurepath` and ensure pipx-installed apps are on PATH; use
+# `backend: uv` only with pipx >= 1.12.0.
+pipx_packages:
+  - cowsay
+  - name: ntfy
+    state: latest
+
 configure_dock: true
 dockitems_remove:
   - Launchpad
@@ -127,6 +135,7 @@ Packages (installed with Homebrew):
   - node
   - nvm
   - php
+  - pipx
   - ssh-copy-id
   - readline
   - openssl

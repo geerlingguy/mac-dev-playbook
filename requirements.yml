@@ -5,3 +5,5 @@ roles:
 
 collections:
   - name: geerlingguy.mac
+  - name: community.general
+    version: ">=5.5.0"  # pipx module added in 3.8.0, but state: latest requires 5.5.0
